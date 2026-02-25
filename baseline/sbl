@@ -1,0 +1,66 @@
+
+pip install -e .
+input:baseline/issue_pr_map.json
+#transfer data set
+python baseline/sbl_prepare_pull2issue_from_issue_pr_map.py \
+  --input baseline/issue_pr_map.json \
+  --cutoff_date 20090101 \
+  --gh_token_file baseline/tokens.txt \
+  --token_id 0
+
+
+#cut off date :set any early date
+#gh_token you can add a lot incase runs out
+
+
+
+#process each part to structure
+chmod +x ./baseline/step2.sh
+./baseline/step2.sh
+
+# Step3 准备：把 step2 生成的（非空）task instances 合并，并生成 RepoLaunch 的 dataset/config
+python baseline/sbl_step3_prepare_launch_dataset.py
+
+# Step3（RepoLaunch）：这一步会用到 AI key，用来自动把 repo 变成可测试的容器环境，并产出 organize.jsonl
+# 注意：RepoLaunch 需要 Python>=3.12，建议单独 conda 环境（我这边已创建：sbl-launch）
+
+export OPENAI_API_KEY=...（forge key）
+export TAVILY_API_KEY=...
+export OPENAI_BASE_URL=...（optional, for OpenAI-compatible endpoints）
+
+cd /home/cc/SWE-bench-Live/launch
+conda run --no-capture-output -n sbl-launch python -m launch.run --config-path data/sbl_baseline/config.json
+
+
+or
+（because 2 env are slightly different）
+cd /home/cc/SWE-bench-Live/launch
+conda activate sbl-launch
+python -m launch.run --config-path data/sbl_baseline/config.json
+
+# Example (DO NOT commit real keys):
+# export TAVILY_API_KEY="tvly-..."
+# export OPENAI_BASE_URL="https://api.forge.tensorblock.co/v1"
+# export OPENAI_API_KEY="forge-..."
+# Step4（生成 F2P 数据集）：对 organize.jsonl 跑 validation，得到 validated_instances.jsonl（含 FAIL_TO_PASS/PASS_TO_PASS）
+cd /home/cc/SWE-bench-Live
+python -m evaluation.validation \
+  --input_dir launch/data/sbl_baseline/organize.jsonl \
+  --platform linux \
+  --workers 4 \
+  --output_dir logs/val \
+  --overwrite 1
+
+useswefactory f2p judger
+cd /home/cc/SWE-bench-Live
+python baseline/sf_make_judge_f2p_folder_from_organize_jsonl.py \
+  --input launch/data/sbl_baseline/organize.jsonl \
+  --out-dir baseline/sf_judge_f2p_outputs \
+  --platform linux \
+  --workers 2 \
+  --overwrite 1
+
+  python /home/cc/swe-factory/scripts/judge_fail2pass.py \
+  /home/cc/SWE-bench-Live/baseline/sf_judge_f2p_outputs \
+  /home/cc/SWE-bench-Live/baseline/sf_judge_f2p_summary.json \
+  --processes 20

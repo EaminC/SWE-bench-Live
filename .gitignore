@@ -439,4 +439,16 @@ MANIFEST
 # personal keys
 **/.env
 **/tokens.txt
-**/*config.json
+
+# RepoLaunch includes tracked example configs; do NOT ignore all config.json files.
+# If you have local secrets, use a different filename like *.local.json instead.
+**/*.local.json
+
+# Generated artifacts from this workflow
+baseline/sbl_inputs/
+baseline/sf_judge_f2p_outputs/
+baseline/sf_judge_f2p_summary.json
+baseline/sbl_task_instances_with_tests.jsonl
+
+# RepoLaunch runtime outputs for this benchmark run
+launch/data/sbl_baseline/

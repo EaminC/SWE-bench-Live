@@ -1,0 +1,489 @@
+"""
+Environment verification agent for testing repository setup correctness.
+"""
+import json
+import time
+from typing import Any, Literal
+
+from langchain.schema import HumanMessage, SystemMessage
+from pydantic import BaseModel, Field
+
+from launch.agent.action_parser import ActionParser
+from launch.agent.prompt import ReAct_prompt
+from launch.agent.state import AgentState, auto_catch
+from launch.utilities.language_handlers import get_language_handler
+
+from launch.scripts.parser import run_parser
+
+submission_prompt: str = """
+You last action to submit and exit should be like:
+<submit>
+    <test_command>your test commands that writes verbose and structured output to file, separated by ; if multiple commands is needed</test_command>
+    <print_command>your shell commands to print the content of the output file, separated by ; if multiple commands is needed</print_command>
+    <parser>parsing success</parser>
+</submit>
+In your submission you do not need to write the parser again because your last parser is automatically recorded. In your submission you only need to confirm the parser is correct with <parser>parsing success</parser>
+The three answers are all required and should not be empty.
+"""
+
+system_msg: str = """You are a developer. You have already setup all dependencies and build the repository in the current folder.
+Your task is to organize the MINIMAL test commands to run ALL test cases with verbose output of each test status AND write a python script to parse the output and extract test case statuses.
+
+## Environment
+- You are inside a docker container with the source code at /testbed
+- Dependencies are already installed
+- Previous setup commands: {commands}
+- Re-build commands (already executed): {setup_cmd}
+- You only need to output test commands now
+
+## THREE STEPS YOU MUST COMPLETE
+
+## STEP 1 — Run All Tests & Save Output
+
+Find the **minimal test command** that runs *ALL* test cases and outputs the status (pass/fail/skip) of **every individual test case** to the smallest unit / granularity.
+
+### Use this decision logic:
+
+### Prefer Structured Output (JSON/XML)
+Many frameworks automatically generate structured result files:
+
+| Framework | Structured Output Location |
+|----------|-----------------------------|
+| Maven | `target/surefire-reports/*.xml` |
+| Gradle | `build/test-results/test/*.xml` |
+| Jest | use `--json --outputFile=...` |
+| Vitest | use `--reporter=json` |
+| Pytest (plugin) | `--json-report --json-report-file=...` |
+
+If structured output is available:
+- **Run the test command normally**
+- Do **not** redirect stdout
+- The structured reports will be auto-generated on disk
+
+### Fallback: No Structured Output Available
+If the framework does **not** generate machine-readable test results:
+- Run tests in verbose mode
+- Redirect **all** output to a file
+- Example:
+  ```bash
+  go test ./... -v 2>&1 | tee test-output.log
+
+### Requirements for Step 1:
+- Must run **ALL** test cases
+- Must expose every test case's status (pass/fail/skip)
+- Must try your best to record the status of each single test to the smallest unit / granularity
+- Prefer structured output -- json or xml format; otherwise, capture verbose logs
+- Save output or ensure structured files exist
+
+### Language-specific Hints
+{test_cmd_hints}
+
+## STEP 2: Print Test Results
+After running tests, print the actual result file(s).
+
+If structured report files exist, print those files:
+- Maven:
+    cat target/surefire-reports/*.xml
+- Gradle:
+    cat build/test-results/test/*.xml
+- Jest:
+    cat jest-results.json
+
+If no structured output exists, print the redirected log file:
+    cat test-output.log
+
+## STEP 3: Write Python Parser
+Write a python script to extract each test case and its result (pass/fail/skip) from the output. 
+Make sure it actually run the parser to validate.
+
+The parser function should:
+- **For structured formats (JSON/XML):** Use json.loads() or xml.etree.ElementTree to parse
+- **For text logs:** Use regex to extract test names and statuses
+- Extract test case names and their status (pass/fail/skip)
+- Return a dictionary mapping test names to status strings: {{"test_case_name": "pass" | "fail" | "skip"}}. Only one of "pass" , "fail" , "skip" in lower case is allowed in the result. All kinds of failure should be parsed as fail.
+- No extra information or explanation should be included in the returned dictionary
+
+The parser will be auto-stored when you execute it. Write a parser and see its output with action:
+<python>
+# your parser function here
+</python>
+
+## Important Notes
+- Always choose structured report files when available.
+- Fall back to verbose text logs only when necessary.
+- The test command must run all test cases.
+- The print command must print actual statuses of all testcases, not generic logs.
+- The parser must reliably extract per testcase status.
+
+## Submission format
+_SUBMISSION_PROMPT_
+
+**Note**: Only one submission with confirmation of all three steps is allowed. No resubmission of previous steps is allowed, so you must run actions first to verify all of your three answers before you make any submission.
+You need to finish in {steps} steps.
+""".replace("_SUBMISSION_PROMPT_", submission_prompt)
+
+
+class VerifyAction(BaseModel):
+    """
+Command: run a command in the shell, reply with following format, your command should not require sudo/admin privilage or interactive input:
+    <command>...</command>
+    e.g. <command>pytest -rA</command>
+    e.g. <command>tox -- -rA</command>
+Search: search the web if you need some information, generate query and reply with following format:
+    <search>...</search>
+    e.g. <search>how to fix 'No module named setuptools'</search>
+Parse: parse the test output with python script, wrap your python script in  
+    <python>def parser(log:str)->dict[str, str]:\n\rreturn</python>
+    The "log" argument is the test case output, the system will automatically pass the last standard output into the function you define and give you execution results, so you only need to run the print command `cat ...` in the first command and then submit the python script in the second command, and then you will see the parsing result in the next observation.
+    The test log would contain much noise, so you'd better use regex to parse the log, you must only use built-in python libs
+    The first example parse script: <python>def parser(log: str) -> dict[str, str]:
+    import re
+    result: dict[str, str] = {}
+    for line in log.splitlines():
+        # match test lines like: tests/foo/bar.py::test_name PASSED ...
+        m = re.search(r'(\S+::\S+)\s+(PASSED|FAILED|SKIPPED|XFAIL|XPASS)', line)
+        if m:
+            test, status = m.groups()
+            status = status.upper()
+            if status == "PASSED":
+                result[test] = "pass"
+            elif status in ("FAILED", "XFAIL", "XPASS"):
+                result[test] = "fail"
+            elif status == "SKIPPED":
+                result[test] = "skip"
+    return result</python>
+    The second example parse script: <python>def parser(log: str) -> dict[str, str]:
+    import re
+    from typing import Dict
+    test_header_re = re.compile(r"^\s*-{3,}\s*$|^\s*Test set:\s+(.+?)\s*$")
+    # Typical line: ------------------------------------------------------------------------------- Tests run: 11, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.025 s -- in org.asynchttpclient.ws.WebSocketWriteFutureTest
+    summary_re = re.compile(
+        r"Tests run:\s*(\d+)\s*,\s*Failures:\s*(\d+)\s*,\s*Errors:\s*(\d+)\s*,\s*Skipped:\s*(\d+)",
+        re.IGNORECASE,
+    )
+
+    results: Dict[str, str] = {}
+    current_suite: str | None = None
+
+    for line in log.splitlines():
+        # Detect the 'Test set:' header and capture suite name
+        m = test_header_re.match(line)
+        if m:
+            suite = m.group(1)
+            if suite:  # it's a 'Test set:' line (not a dashed separator)
+                current_suite = suite.strip()
+            continue
+
+        if current_suite is None:
+            continue  # not inside a suite block yet
+
+        # Parse the first summary line encountered after the current suite header
+        s = summary_re.search(line)
+        if s:
+            tests_run = int(s.group(1))
+            failures = int(s.group(2))
+            errors = int(s.group(3))
+            skipped = int(s.group(4))
+
+            if failures > 0 or errors > 0:
+                status = "fail"
+            elif tests_run == 0 and skipped > 0:
+                status = "skip"
+            else:
+                status = "pass"
+
+            results[current_suite] = status
+            current_suite = None  # reset until next 'Test set:' header
+
+    return results</python>
+
+Submit: One submission of three answers to three steps required (where parser is auto-stored):
+    
+    SUBMISSION 1 - Test commands (STEP 1): You must first use <command></command> to run tests and save output to file. If the output file content is ok, submit your test command like
+    <test_command>npm run test:unit -- --json --outputFile=jest-results.json</test_command>
+    <test_command>pytest tests/ --json-report --json-report-file=report.json</test_command>
+    <test_command>go test ./... -v 2>&1 | tee test-output.log</test_command> # if structured output is not possible
+    
+    SUBMISSION 2 - Print commands (STEP 2): Print the file contents
+    <print_command>cat jest-results.json</print_command>
+    <print_command>cat report.json</print_command>
+    <print_command>cat test-output.log</print_command>
+    
+    SUBMISSION 3 - Execute parser (STEP 3): Write, execute and verify your parser.
+    After you validate your log parser with <python>...</python>, confirm your parser script in the submission with
+    <parser>parsing success</parser>
+    You don't need to write the whole parser again as your last parser is automatically stored.
+
+    Wrap the three answers in <submit></submit> like:
+    <submit>
+        <test_command>npm run test:unit -- --json --outputFile=jest-results.json</test_command>
+        <print_command>cat jest-results.json</print_command>
+        <parser>parsing success</parser>
+    </submit>
+
+    The answer to each step could contain multiple commands if necessary. Separate multiple commands by ;. For example, if one test command cannot cover all tests so you have to split commands:
+    <submit>
+        <test_command> api_request/test --output=api_request.json ; api_response/test --output=api_response.json </test_command>
+        <print_command> cat api_request.json ; cat api_response.json </print_command>
+        <parser>parsing success</parser>
+    </submit>
+
+# Warning
+- You should run <command></command> and <python></python> for all of the three steps to confirm your answer is correct before you make the submission because resubmission is not allowed.
+
+    """
+
+    action: Literal["command", "search", "python", "submit"] = Field(
+        "command", description="The action type"
+    )
+    args: Any = Field(None, description="The action arguments")
+
+
+class SetupObservation(BaseModel):
+    """Observation for the setup action"""
+
+    content: str = Field("", description="The content of the observation")
+    is_stop: bool = Field(False, description="Whether stop the setup loop")
+
+
+class VerifyActionParser(ActionParser):
+    """Parser for setup agent actions."""
+
+    def parse(self, response: str) -> VerifyAction | None:
+        """Parse setup action from LLM response text."""
+        response = self.clean_response(response)
+        
+        submit = self.extract_tag_content(response, "submit")
+        if submit:
+            return VerifyAction(action="submit", args=submit)
+
+        script = self.extract_tag_content(response, "python")
+        if script:
+            return VerifyAction(action="python", args=script)
+
+        command = self.extract_tag_content(response, "command")
+        if command:
+            return VerifyAction(action="command", args=command)
+            
+        search = self.extract_tag_content(response, "search")
+        if search:
+            return VerifyAction(action="search", args=search)
+            
+        return None
+
+
+def parse_verify_action(response: str) -> VerifyAction | None:
+    """Parse setup action from LLM response text."""
+    parser = VerifyActionParser()
+    return parser.parse(response)
+
+
+class SubmissionParser(ActionParser):
+    """Parser for submission action."""
+    
+    def parse(self, response: str) -> VerifyAction | None:
+
+        test_command = self.extract_tag_content(response, "test_command")
+        if test_command is None or test_command == "":
+            return None
+        print_command = self.extract_tag_content(response, "print_command")
+        if print_command is None or print_command == "":
+            return None
+        parser = self.extract_tag_content(response, "parser")
+        if parser is None:
+            return None
+            
+        return (test_command, print_command, parser)
+
+def parse_submission(response: str) -> VerifyAction | None:
+    """Parse setup action from LLM response text."""
+    parser = SubmissionParser()
+    return parser.parse(response)
+
+
+VERIFY_CONVERSATION_WINDOW = 40
+
+
+@auto_catch
+def organize_test_cmd(state: AgentState, max_steps: int) -> dict:
+    """
+    ReAct agent for environment verification through test command execution.
+    
+    Args:
+        max_steps (int): Maximum number of verification steps allowed
+        state (AgentState): Current agent state with setup results
+        
+    Returns:
+        dict: Updated state with verification results and success status
+    """
+
+    test_output: str = ""
+    test_status: str = ""
+    parser: str = ""
+    test_command: str = ""  # Store STEP 1: test command
+    print_command: str = ""  # Store STEP 2: print/cat command
+
+    def observation_for_verify_action(
+        state: AgentState, action: VerifyAction | None
+    ) -> SetupObservation:
+        """
+        Execute setup action and return observation.
+        
+        Args:
+            state (AgentState): Current agent state
+            action (VerifyAction | None): Action to execute
+            
+        Returns:
+            SetupObservation: Result of action execution
+        """
+        nonlocal test_output, test_status, test_command, print_command
+
+        if not action or not action.action:
+            content = f"""Please using following format after `Action: ` to make a valid action choice: \n{VerifyAction.__doc__}"""
+            return SetupObservation(content=content, is_stop=False)
+        if action.action == "command":
+            session = state["session"]
+            if action.args.strip().lower() == "exit":
+                return SetupObservation(content=f"The correct way to submit is \n{submission_prompt}", is_stop=False) 
+            result = session.send_command(action.args)
+            test_output = result.output # This is full (unstripped) command output
+            return SetupObservation(content=result.to_observation(), is_stop=False) # content is trucated history
+        if action.action == "python":
+            #if print_command != "":
+            #    session = state["session"]
+            #    test_output = session.send_command(print_command).output        
+            result = run_parser(action.args, test_output)
+            test_status = json.dumps(result, indent = True)
+            truncated_result = test_status
+            if len(truncated_result) > 40000:
+                truncated_result = truncated_result[:40000] + "\n...result truncated due to length...\n"
+            content = f"""
+Below is the execution result of your Python script:
+{truncated_result}
+Please judge whether:
+(1) Your Python script extracts the statuses of all testcases and 
+(2) Your script and test command have made best effort to reveal the status of each unit testcase under a test suite / set if there's test suite / set. The testcase names in your output should be split to the finest granularity.
+If not successful, please adjust your test command, run your new test command in container, and adjust your Python script to extract test status.
+If successful, please submit.
+"""
+            return SetupObservation(content=content, is_stop=False)
+        if action.action == "search":
+            result = state["search_tool"].invoke(action.args)
+            return SetupObservation(content=json.dumps(result), is_stop=False)
+        if action.action == "submit":
+            res = parse_submission(action.args)
+            
+            if res is None:
+                content = f"""Your submission cannot be parsed correctly. Please using following format after `Action: ` to make a valid action choice: \n{VerifyAction.__doc__}"""
+                return SetupObservation(content=content, is_stop=False)
+            
+            test_command, print_command, parser = res
+        
+            # Check if parser was executed and results obtained
+            if parser and test_status:
+                # Parser was executed and produced results
+                content = "Parser validated. Test analysis complete."
+                return SetupObservation(content=content, is_stop=True)
+            else:
+                # Parser was not executed or produced no results
+                content = "Note: Parser have not yet been validated. Please verify your parser runs correctly with <python>your script</python> before submission to finish the process."
+                return SetupObservation(content=content, is_stop=False)
+
+    if state["exception"]:
+        raise state["exception"]
+
+    hints = "\n\n"
+    llm = state["llm"]
+    logger = state["logger"]
+    setup_commands = state["setup_commands"]
+
+    logger.info(f"setup state: {state.get("success" , "false")}, {state["exception"]} ... ")
+    hints = "\n\n"
+    history_cmds = state["instance"].get("setup_cmds", [])
+    history_cmds += state["instance"].get("test_cmds", [])
+    platform_hints = ""
+    if state["platform"] == "windows":
+        platform_hints = f"\n\nNote: This is a windows server image. Use windows powershell command.\n"
+    hints += platform_hints
+    
+    language = state["language"]
+    language_handler = get_language_handler(language)
+    test_cmd_hints = language_handler.get_test_cmd_instructions()
+    messages = [
+        SystemMessage(
+            system_msg.format(
+               commands=history_cmds,
+               setup_cmd=setup_commands,
+               test_cmd_hints=test_cmd_hints,
+               steps=max_steps,
+            )
+        ),
+        HumanMessage(
+            ReAct_prompt.format(
+                tools=VerifyAction.__doc__,
+                project_structure=state["repo_structure"],
+                docs=state["docs"],
+            ) + hints
+        ),
+    ]
+    prefix_messages = len(messages)
+    commands = []
+    step = 0
+    answer = None
+    logger.info("-" * 10 + "Start test conversation" + "-" * 10)
+    while step < max_steps:
+        step += 1
+        # uses a window to avoid exceed context
+        if len(messages) < VERIFY_CONVERSATION_WINDOW + prefix_messages:
+            input_messages = messages
+        else:
+            input_messages = (
+                messages[:prefix_messages] + messages[-VERIFY_CONVERSATION_WINDOW:]
+            )
+        response = llm.invoke(input_messages)
+
+        logger.info("\n" + response.pretty_repr())
+        messages.append(response)
+        action = parse_verify_action(response.content)
+        observation = observation_for_verify_action(state, action)
+        if observation.is_stop:
+            answer = observation.content
+            break
+        if action and action.action == "command":
+            commands.append(action.args)
+        if action and action.action == "python":
+            parser = action.args
+        message = HumanMessage(f"Observation:\n{observation.content}")
+        logger.info("\n" + message.pretty_repr())
+        messages.append(message)
+
+    logger.info("-" * 10 + "End verify conversation" + "-" * 10)
+    try:
+        test_status = json.loads(test_status)
+    except:
+        test_status = None
+    
+    # # Combine test and print commands into final list
+    # final_commands = []
+    # if test_command:
+    #     final_commands.append(test_command)
+    # if print_command:
+    #     final_commands.append(print_command)
+    
+    # # If we got both test and print commands, use them
+    # # Otherwise fall back to answer (for backwards compatibility)
+    # if final_commands:
+    #     test_commands = final_commands
+    # else:
+    #     test_commands = [answer] if answer else []
+    
+    return {
+        "messages": messages,
+        "verify_messages": messages[prefix_messages:],
+        "test_commands": [test_command],
+        "print_commands": [print_command],
+        "commands": commands,
+        "parser": parser,
+        "test_status": test_status,
+        "success": bool((test_command or answer) and parser and test_status),
+    }

@@ -167,6 +167,7 @@ def main(
     with Pool(len(tokens)) as p:
         p.map(construct_data_files, data_pooled)
     
+    os.makedirs("job_status", exist_ok=True)
     for token_id in token_ids:
         with open(f"job_status/{token_id}.completion", "w") as f:
             f.write("")
