@@ -44,16 +44,15 @@ echo " Master Log File: $LOG_FILE"
 echo "============================================================"
 
 # ==============================================================================
-# Step 1: Create and activate conda environment
+# Step 1: Activate conda environment
 # ==============================================================================
-echo -e "\n[1] Setting up Conda environment (sbl-main)..."
+echo -e "\n[1] Activating Conda environment (sbl-main)..."
 if ! conda info --envs | grep -q "^sbl-main "; then
-    conda create -y -n sbl-main python=3.12
+    echo "ERROR: Conda environment 'sbl-main' not found."
+    echo "Please execute 'bash setup_env.sh' to provision the infrastructure before running the pipeline."
+    exit 1
 fi
 conda activate sbl-main
-pip install openai requests
-# Pinning chardet<6 to prevent the RequestsDependencyWarning
-pip install -e . "chardet<6"
 
 # ==============================================================================
 # INITIALIZE TOKEN TRACKING
