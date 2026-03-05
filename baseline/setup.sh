@@ -14,5 +14,5 @@ for d in baseline/sbl_inputs/*; do
     --token_ids "$TOKEN_ID" \
     --path_prs "$d/prs" \
     --path_tasks "$d/tasks" \
-    --cutoff_date "$CUT"
+    --cutoff_date "$CUT" 
 done

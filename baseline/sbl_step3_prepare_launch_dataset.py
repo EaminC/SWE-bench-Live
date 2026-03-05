@@ -145,9 +145,8 @@ def main() -> None:
     # NOTE: some OpenAI-compatible endpoints require a provider-prefixed model id
     # (e.g. "tensorblock/gpt-4.1"). We detect that case to avoid a silent 400 loop.
     base_url = os.getenv("OPENAI_BASE_URL", "") or ""
-    default_model = "gpt-4.1-20250414"
-    if "forge.tensorblock.co" in base_url:
-        default_model = "tensorblock/gpt-4.1-mini"
+    default_model = "tensorblock/gpt-4.1-mini"
+
 
     config = {
         "mode": {"setup": True, "organize": True},
@@ -198,4 +197,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

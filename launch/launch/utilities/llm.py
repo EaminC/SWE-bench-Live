@@ -114,8 +114,6 @@ class OpenAIModel:
             # base_url="https://openrouter.ai/api/v1",
             model=model_name,
             temperature=temperature,
-            timeout=60,
-            max_retries=0,
         )
     
     def invoke(self, messages: List[BaseMessage]) -> BaseMessage:
@@ -150,8 +148,6 @@ class AnthropicModel:
         self.llm = ChatAnthropic(
             model=model_name,
             temperature=temperature,
-            timeout=60,
-            max_retries=0,
         )
     
     def invoke(self, messages: List[BaseMessage]) -> BaseMessage:
@@ -185,8 +181,6 @@ class AzureOpenAIModel:
         self.llm = AzureChatOpenAI(  # Directly initialize the instance
             model=model_name,
             temperature=temperature,
-            timeout=60,
-            max_retries=0,
         )
     
     def invoke(self, messages: List[BaseMessage]) -> BaseMessage:

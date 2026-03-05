@@ -124,33 +124,13 @@ class AgentState(State):
                 history = json.loads(history)
                 docs = history.get("docs", None)
 
-        # Tavily is optional in practice. If `TAVILY_API_KEY` is not set, we
-        # degrade to a no-op search tool so the workflow can still run.
-        tavily_key = os.getenv("TAVILY_API_KEY")
-
-        class _NoSearch:
-            def __init__(self, logger: Logger):
-                self._logger = logger
-
-            def invoke(self, query: str):
-                self._logger.warning(
-                    "TAVILY_API_KEY is not set; search is disabled. Returning empty results."
-                )
-                return []
-
-        search_tool = (
-            TavilySearchResults(max_results=max_search_results)
-            if tavily_key
-            else _NoSearch(logger)
-        )
-
         return cls(
             instance=instance,
             llm=llm,
             language=language,
             logger=logger,
             messages=[],
-            search_tool=search_tool,  # type: ignore[assignment]
+            search_tool=TavilySearchResults(max_results=max_search_results),
             setup_messages=[],
             verify_messages=[],
             setup_commands=[],

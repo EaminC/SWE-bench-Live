@@ -9,7 +9,6 @@ import os
 import shutil
 import threading
 import time
-import signal
 from concurrent.futures import ThreadPoolExecutor, as_completed, TimeoutError
 from pathlib import Path
 import traceback
@@ -30,36 +29,6 @@ from launch.scripts import collect
 
 lock = threading.Lock()
 GLOBAL_TIMEOUT = 36000 # 10 hr limit, if it cannot finish in 10 hrs the program must be stuck
-STOP_EVENT = threading.Event()
-_SIGNAL_COUNT = 0
-
-
-def _install_signal_handlers(console: Console | None = None) -> None:
-    """
-    Ensure Ctrl+C (SIGINT) / SIGTERM stops the executor promptly.
-    """
-
-    def _handler(signum, frame):  # noqa: ARG001
-        global _SIGNAL_COUNT
-        _SIGNAL_COUNT += 1
-        STOP_EVENT.set()
-        if console is not None:
-            try:
-                console.print(f"[yellow]Received signal {signum}, stopping...[/yellow]")
-            except Exception:
-                pass
-        # First Ctrl+C: raise to break out of waits (e.g. as_completed()).
-        # Second Ctrl+C: force-exit in case worker threads are stuck.
-        if _SIGNAL_COUNT >= 2:
-            os._exit(130)  # noqa: S404
-        raise KeyboardInterrupt
-
-    try:
-        signal.signal(signal.SIGINT, _handler)
-        signal.signal(signal.SIGTERM, _handler)
-    except Exception:
-        # Best effort; some environments may restrict signal handling.
-        pass
 
 def setup_instance(instance, config, workspace_root):
     """
@@ -79,9 +48,6 @@ def setup_instance(instance, config, workspace_root):
     instance[
         "commit_url"
     ] = f"https://github.com/{instance['repo']}/tree/{instance['base_commit']}"
-
-    if STOP_EVENT.is_set():
-        return "skip", instance.get("instance_id", "unknown"), "Stopped"
 
     
     instance_path = workspace_root / "playground" / instance["instance_id"] 
@@ -141,9 +107,6 @@ def organize_instance(instance, config, workspace_root):
     instance[
         "commit_url"
     ] = f"https://github.com/{instance['repo']}/tree/{instance['base_commit']}"
-
-    if STOP_EVENT.is_set():
-        return "skip", instance.get("instance_id", "unknown"), "Stopped"
 
     instance_path = workspace_root / "playground" / instance["instance_id"] 
     result_path = instance_path / "result.json"
@@ -218,16 +181,15 @@ def run_setup(config: Config, dataset: list):
             fail=0,
         )
 
-        executor = ThreadPoolExecutor(max_workers=config.max_workers)
-        futures = {
-            executor.submit(setup_instance, instance, config, workspace_root): instance
-            for instance in dataset
-        }
-        try:
-            for future in as_completed(futures):
-                if STOP_EVENT.is_set():
-                    console.print("[yellow]Stopping: cancelling pending tasks...[/yellow]")
-                    break
+        with ThreadPoolExecutor(max_workers=config.max_workers) as executor:
+            futures = {
+                executor.submit(
+                    setup_instance, instance, config, workspace_root
+                ): instance
+                for instance in dataset
+            }
+
+            for future in as_completed(futures): 
                 try:
                     status, instance_id, error = future.result(timeout=GLOBAL_TIMEOUT) 
                     if status == "skip":
@@ -249,22 +211,15 @@ def run_setup(config: Config, dataset: list):
                             )
                         console.print(f"[green]Success![/green] {instance_id}")
                 except TimeoutError:
+                    # Find the instance_id for this future
                     instance_id = futures.get(future, {}).get("instance_id", "unknown")
                     with lock:
                         progress.update(
                             task, advance=0, fail=progress.tasks[0].fields["fail"] + 1
                         )
                     console.print(f"[red]Timeout[/red] {instance_id}: Task exceeded {GLOBAL_TIMEOUT/3600} hour global timeout")
-                    future.cancel()
+                    future.cancel()  # Cancel the timed-out task
                 progress.update(task, advance=1)
-        except KeyboardInterrupt:
-            STOP_EVENT.set()
-            console.print("[yellow]KeyboardInterrupt: cancelling pending tasks...[/yellow]")
-        finally:
-            for fut in futures:
-                if not fut.done():
-                    fut.cancel()
-            executor.shutdown(wait=False, cancel_futures=True)
 
     console.rule("[bold green] Finished setting up all instances!")
 
@@ -316,16 +271,15 @@ def run_organize(config: Config, dataset: list):
             fail=0,
         )
 
-        executor = ThreadPoolExecutor(max_workers=config.max_workers)
-        futures = {
-            executor.submit(organize_instance, instance, config, workspace_root): instance
-            for instance in dataset
-        }
-        try:
-            for future in as_completed(futures):
-                if STOP_EVENT.is_set():
-                    console.print("[yellow]Stopping: cancelling pending tasks...[/yellow]")
-                    break
+        with ThreadPoolExecutor(max_workers=config.max_workers) as executor:
+            futures = {
+                executor.submit(
+                    organize_instance, instance, config, workspace_root
+                ): instance
+                for instance in dataset
+            }
+
+            for future in as_completed(futures): 
                 try:
                     status, instance_id, error = future.result(timeout=GLOBAL_TIMEOUT)  
                     if status == "skip":
@@ -347,22 +301,15 @@ def run_organize(config: Config, dataset: list):
                             )
                         console.print(f"[green]Success![/green] {instance_id}")
                 except TimeoutError:
+                    # Find the instance_id for this future
                     instance_id = futures.get(future, {}).get("instance_id", "unknown")
                     with lock:
                         progress.update(
                             task, advance=0, fail=progress.tasks[0].fields["fail"] + 1
                         )
                     console.print(f"[red]Timeout[/red] {instance_id}: Task exceeded {GLOBAL_TIMEOUT/3600} hour global timeout")
-                    future.cancel()
+                    future.cancel()  # Cancel the timed-out task
                 progress.update(task, advance=1)
-        except KeyboardInterrupt:
-            STOP_EVENT.set()
-            console.print("[yellow]KeyboardInterrupt: cancelling pending tasks...[/yellow]")
-        finally:
-            for fut in futures:
-                if not fut.done():
-                    fut.cancel()
-            executor.shutdown(wait=False, cancel_futures=True)
 
     console.rule("[bold green] Finished organizing all instances!")
 
@@ -375,15 +322,11 @@ def run_organize(config: Config, dataset: list):
 
 def run_launch(config_path):
     config: Config = load_config(config_path)
-    console = Console()
     with open(config.dataset, "r") as f:
         dataset = [json.loads(line) for line in f]
         instance_ids: list[str] = [instance["instance_id"] for instance in dataset]
     if config.mode["setup"]:
         run_setup(config, dataset)
-        if STOP_EVENT.is_set():
-            console.print("[yellow]Stopped after setup. Skipping collect/organize.[/yellow]")
-            raise SystemExit(130)
         collect.main(config.workspace_root, platform = config.platform, step = "setup", instance_ids = instance_ids)
     if config.mode["organize"]:
         if not os.path.exists(f"{config.workspace_root}/setup.jsonl"):
@@ -391,9 +334,6 @@ def run_launch(config_path):
         with open(f"{config.workspace_root}/setup.jsonl") as f:
             dataset = [json.loads(line) for line in f]
         run_organize(config, dataset)
-        if STOP_EVENT.is_set():
-            console.print("[yellow]Stopped after organize. Skipping collect.[/yellow]")
-            raise SystemExit(130)
         collect.main(config.workspace_root, platform = config.platform, step = "organize", instance_ids = instance_ids)
     return
 
@@ -413,14 +353,7 @@ def main():
     )
     args = argparser.parse_args()
 
-    console = Console()
-    _install_signal_handlers(console)
-    try:
-        run_launch(args.config_path)
-    except KeyboardInterrupt:
-        STOP_EVENT.set()
-        console.print("[yellow]Interrupted. Exiting.[/yellow]")
-        raise SystemExit(130)
+    run_launch(args.config_path)
 
 
 if __name__ == "__main__":

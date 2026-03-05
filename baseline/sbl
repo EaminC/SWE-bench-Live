@@ -17,7 +17,7 @@ python baseline/sbl_prepare_pull2issue_from_issue_pr_map.py \
 
 
 # Step 2: run the curation pipeline over the prepared inputs.
-chmod +x ./baseline/step2.sh
+chmod +x ./baseline/setup.sh
 ./baseline/step2.sh
 
 # Step 3 (prepare): merge non-empty task instances and generate RepoLaunch dataset/config.
