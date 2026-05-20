@@ -1,0 +1,29 @@
+{
+  "total": 15,
+  "categories": {
+    "fail2pass": [
+      "strands-agents__sdk-python-994",
+      "agentscope-ai__agentscope-1279",
+      "dapr__dapr-agents-152",
+      "Significant-Gravitas__AutoGPT-2616"
+    ],
+    "fail2fail": [
+      "AntonOsika__gpt-engineer-1198",
+      "agentscope-ai__agentscope-1290",
+      "agentscope-ai__agentscope-443",
+      "Significant-Gravitas__AutoGPT-4278",
+      "agentscope-ai__agentscope-1141",
+      "Aider-AI__aider-1239"
+    ],
+    "pass2pass": [
+      "agentscope-ai__agentscope-263",
+      "langchain-ai__langgraph-5801",
+      "AntonOsika__gpt-engineer-173",
+      "AntonOsika__gpt-engineer-930"
+    ],
+    "pass2fail": [
+      "AntonOsika__gpt-engineer-409"
+    ],
+    "error": []
+  }
+}

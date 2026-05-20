@@ -1,0 +1,303 @@
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-8.1.2, pluggy-1.5.0 -- /root/.cache/pypoetry/virtualenvs/gpt-engineer-QnKYwBMZ-py3.11/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+plugins: cov-4.1.0, anyio-4.3.0
+collecting ... collected 126 items
+
+tests/applications/cli/test_cli_agent.py::test_init_standard_config PASSED [  0%]
+tests/applications/cli/test_cli_agent.py::test_init_lite_config PASSED   [  1%]
+tests/applications/cli/test_cli_agent.py::test_init_clarified_gen_config PASSED [  2%]
+tests/applications/cli/test_cli_agent.py::test_improve_standard_config PASSED [  3%]
+tests/applications/cli/test_collection_consent.py::test_check_consent_file_exists_and_true PASSED [  3%]
+tests/applications/cli/test_collection_consent.py::test_check_consent_file_exists_and_false PASSED [  4%]
+tests/applications/cli/test_collection_consent.py::test_check_consent_file_not_exists_and_user_says_yes PASSED [  5%]
+tests/applications/cli/test_collection_consent.py::test_check_consent_file_not_exists_and_user_says_no PASSED [  6%]
+tests/applications/cli/test_collection_consent.py::test_ask_collection_consent_yes PASSED [  7%]
+tests/applications/cli/test_collection_consent.py::test_ask_collection_consent_no PASSED [  7%]
+tests/applications/cli/test_collection_consent.py::test_ask_collection_consent_invalid_then_yes PASSED [  8%]
+tests/applications/cli/test_collection_consent.py::test_ask_collection_consent_invalid_then_no PASSED [  9%]
+tests/applications/cli/test_learning.py::test_human_review_input_no_concent_returns_none PASSED [ 10%]
+tests/applications/cli/test_learning.py::test_human_review_input_consent_code_ran_no_comments PASSED [ 11%]
+tests/applications/cli/test_learning.py::test_human_review_input_consent_code_ran_not_perfect_but_useful_no_comments PASSED [ 11%]
+tests/applications/cli/test_learning.py::test_check_collection_consent_yes PASSED [ 12%]
+tests/applications/cli/test_learning.py::test_check_collection_consent_no_ask_collection_consent PASSED [ 13%]
+tests/applications/cli/test_learning.py::test_ask_collection_consent_yes PASSED [ 14%]
+tests/applications/cli/test_learning.py::test_ask_collection_consent_no PASSED [ 15%]
+tests/applications/cli/test_learning.py::test_extract_learning PASSED    [ 15%]
+tests/applications/cli/test_learning.py::test_get_session PASSED         [ 16%]
+tests/applications/cli/test_main.py::TestMain::test_default_settings_generate_project PASSED [ 17%]
+tests/applications/cli/test_main.py::TestMain::test_improve_existing_project PASSED [ 18%]
+tests/applications/cli/test_main.py::TestMain::test_lite_mode_generate_project PASSED [ 19%]
+tests/applications/cli/test_main.py::TestMain::test_clarify_mode_generate_project PASSED [ 19%]
+tests/applications/cli/test_main.py::TestMain::test_self_heal_mode_generate_project PASSED [ 20%]
+tests/applications/cli/test_main.py::TestMain::test_clarify_lite_improve_mode_generate_project PASSED [ 21%]
+tests/applications/cli/test_main.py::TestLoadPrompt::test_load_prompt_existing_file PASSED [ 22%]
+tests/applications/cli/test_main.py::TestLoadPrompt::test_load_prompt_no_file_improve_mode_false PASSED [ 23%]
+tests/applications/cli/test_main.py::TestLoadPrompt::test_load_prompt_directory_file PASSED [ 23%]
+tests/applications/cli/test_main.py::TestLoadPrompt::test_load_prompt_empty_file PASSED [ 24%]
+tests/applications/cli/test_main.py::TestLoadPrompt::test_load_prompt_no_image_directory PASSED [ 25%]
+tests/benchmark/test_BenchConfig.py::TestBenchConfig::test_default_values PASSED [ 26%]
+tests/benchmark/test_BenchConfig.py::TestBenchConfig::test_specific_values PASSED [ 26%]
+tests/benchmark/test_BenchConfig.py::TestBenchConfig::test_from_dict_valid_dict PASSED [ 27%]
+tests/benchmark/test_BenchConfig.py::TestBenchConfig::test_from_toml_invalid_path PASSED [ 28%]
+tests/core/default/test_disk_execution_env.py::TestOnDiskExecutionEnv::test_execution_with_output PASSED [ 29%]
+tests/core/default/test_disk_execution_env.py::TestOnDiskExecutionEnv::test_keyboard_interrupt_handling PASSED [ 30%]
+tests/core/default/test_disk_execution_env.py::TestOnDiskExecutionEnv::test_missing_entrypoint PASSED [ 30%]
+tests/core/default/test_disk_execution_env.py::TestOnDiskExecutionEnv::test_successful_execution PASSED [ 31%]
+tests/core/default/test_disk_file_repository.py::test_DB_operations PASSED [ 32%]
+tests/core/default/test_disk_file_repository.py::test_large_files PASSED [ 33%]
+tests/core/default/test_disk_file_repository.py::test_concurrent_access PASSED [ 34%]
+tests/core/default/test_disk_file_repository.py::test_error_messages PASSED [ 34%]
+tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_set_and_get_value PASSED [ 35%]
+tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_key_exists PASSED [ 36%]
+tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_fetch_default_value PASSED [ 37%]
+tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_delete_file_or_directory PASSED [ 38%]
+tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_iterate_files PASSED [ 38%]
+tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_key_error PASSED [ 39%]
+tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_value_error PASSED [ 40%]
+tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_type_error PASSED [ 41%]
+tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_large_file_contents PASSED [ 42%]
+tests/core/default/test_simple_agent.py::test_init PASSED                [ 42%]
+tests/core/default/test_simple_agent.py::test_improve PASSED             [ 43%]
+tests/core/default/test_steps.py::TestGenCode::test_generates_code_using_ai_model PASSED [ 44%]
+tests/core/default/test_steps.py::TestGenCode::test_generated_code_saved_to_disk PASSED [ 45%]
+tests/core/default/test_steps.py::TestGenCode::test_raises_type_error_if_keys_not_strings_or_path_objects PASSED [ 46%]
+tests/core/default/test_steps.py::TestGenCode::test_raises_type_error_if_values_not_strings PASSED [ 46%]
+tests/core/default/test_steps.py::TestGenCode::test_raises_key_error_if_file_not_exist_in_database PASSED [ 47%]
+tests/core/default/test_steps.py::TestStepUtilities::test_called_from_function PASSED [ 48%]
+tests/core/default/test_steps.py::TestStepUtilities::test_constructs_system_prompt_with_predefined_instructions_and_philosophies PASSED [ 49%]
+tests/core/default/test_steps.py::TestStepUtilities::test_constructs_system_prompt PASSED [ 50%]
+tests/core/default/test_steps.py::TestGenEntrypoint::test_valid_input_generates_valid_entrypoint PASSED [ 50%]
+tests/core/default/test_steps.py::TestGenEntrypoint::test_empty_codebase_returns_empty_entrypoint PASSED [ 51%]
+tests/core/default/test_steps.py::TestImprove::test_improve_existing_code PASSED [ 52%]
+tests/core/default/test_steps.py::TestImprove::test_lint_python PASSED   [ 53%]
+tests/core/default/test_steps.py::TestImprove::test_lint_files PASSED    [ 53%]
+tests/core/test_ai.py::test_start PASSED                                 [ 54%]
+tests/core/test_ai.py::test_next PASSED                                  [ 55%]
+tests/core/test_ai.py::test_token_logging PASSED                         [ 56%]
+tests/core/test_chat_to_files.py::test_basic_similarity PASSED           [ 57%]
+tests/core/test_chat_to_files.py::test_case_insensitivity_and_whitespace PASSED [ 57%]
+tests/core/test_chat_to_files.py::test_length_and_character_frequency PASSED [ 58%]
+tests/core/test_chat_to_files.py::test_edge_cases PASSED                 [ 59%]
+tests/core/test_chat_to_files.py::test_diff_changing_one_file PASSED     [ 60%]
+tests/core/test_chat_to_files.py::test_diff_adding_one_file PASSED       [ 61%]
+tests/core/test_chat_to_files.py::test_diff_changing_two_files PASSED    [ 61%]
+tests/core/test_chat_to_files.py::test_validate_diff_correct PASSED      [ 62%]
+tests/core/test_chat_to_files.py::test_correct_distorted_numbers PASSED  [ 63%]
+tests/core/test_chat_to_files.py::test_correct_skipped_lines PASSED      [ 64%]
+tests/core/test_chat_to_files.py::test_correct_skipped_lines_and_number_correction PASSED [ 65%]
+tests/core/test_chat_to_files.py::test_diff_regex PASSED                 [ 65%]
+tests/core/test_chat_to_files.py::test_single_diff PASSED                [ 66%]
+tests/core/test_chat_to_files.py::test_multi_diff_discard 
+Multiple diffs found for a/file1.txt. Only the first one is kept.
+PASSED         [ 67%]
+tests/core/test_chat_to_files.py::test_controller_diff PASSED            [ 68%]
+tests/core/test_chat_to_files.py::test_simple_calculator_diff PASSED     [ 69%]
+tests/core/test_chat_to_files.py::test_complex_temperature_converter_diff PASSED [ 69%]
+tests/core/test_chat_to_files.py::test_complex_task_master_diff PASSED   [ 70%]
+tests/core/test_chat_to_files.py::test_long_file_diff PASSED             [ 71%]
+tests/core/test_git.py::test_verify_git_installed PASSED                 [ 72%]
+tests/core/test_git.py::test_init_git_repo PASSED                        [ 73%]
+tests/core/test_git.py::test_stage_files PASSED                          [ 73%]
+tests/core/test_git.py::test_filter_by_gitignore PASSED                  [ 74%]
+tests/core/test_git.py::test_filter_by_uncommitted_changes PASSED        [ 75%]
+tests/core/test_git.py::test_filter_by_uncommitted_changes_ignore_staged_files PASSED [ 76%]
+tests/core/test_git.py::test_filter_by_uncommitted_changes_ignore_untracked PASSED [ 76%]
+tests/core/test_salvage_correct_hunks.py::test_validation_and_apply_complex_diff PASSED [ 77%]
+tests/core/test_salvage_correct_hunks.py::test_validation_and_apply_long_diff PASSED [ 78%]
+tests/core/test_salvage_correct_hunks.py::test_validation_and_apply_wrong_diff PASSED [ 79%]
+tests/core/test_salvage_correct_hunks.py::test_validation_and_apply_non_change_diff PASSED [ 80%]
+tests/core/test_salvage_correct_hunks.py::test_validation_and_apply_diff_on_apps_benchmark_6 PASSED [ 80%]
+tests/core/test_salvage_correct_hunks.py::test_validation_and_apply_diff_on_apps_benchmark_6_v2 PASSED [ 81%]
+tests/core/test_salvage_correct_hunks.py::test_create_two_new_files PASSED [ 82%]
+tests/core/test_salvage_correct_hunks.py::test_theo_case PASSED          [ 83%]
+tests/core/test_salvage_correct_hunks.py::test_zbf_yml_missing PASSED    [ 84%]
+tests/core/test_salvage_correct_hunks.py::test_clean_up_folder PASSED    [ 84%]
+tests/core/test_token_usage.py::test_format_log PASSED                   [ 85%]
+tests/core/test_token_usage.py::test_usage_cost PASSED                   [ 86%]
+tests/core/test_token_usage.py::test_image_tokenizer PASSED              [ 87%]
+tests/core/test_token_usage.py::test_list_type_message_with_image PASSED [ 88%]
+tests/test_install.py::test_installation PASSED                          [ 88%]
+tests/test_install.py::test_cli_execution PASSED                         [ 89%]
+tests/test_install.py::test_installed_main_execution FAILED              [ 90%]
+tests/test_project_config.py::test_config_load PASSED                    [ 91%]
+tests/test_project_config.py::test_config_defaults PASSED                [ 92%]
+tests/test_project_config.py::test_config_from_dict PASSED               [ 92%]
+tests/test_project_config.py::test_config_from_dict_with_openapi PASSED  [ 93%]
+tests/test_project_config.py::test_config_load_partial PASSED            [ 94%]
+tests/test_project_config.py::test_config_update PASSED                  [ 95%]
+tests/test_project_config.py::test_filter_none[input_dict0-expected0] PASSED [ 96%]
+tests/test_project_config.py::test_filter_none[input_dict1-expected1] PASSED [ 96%]
+tests/test_project_config.py::test_filter_none[input_dict2-expected2] PASSED [ 97%]
+tests/test_project_config.py::test_filter_none[input_dict3-expected3] PASSED [ 98%]
+tests/test_project_config.py::test_filter_none[input_dict4-expected4] PASSED [ 99%]
+tests/test_project_config.py::test_filter_none[input_dict5-expected5] PASSED [100%]
+
+=================================== FAILURES ===================================
+________________________ test_installed_main_execution _________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-10/test_installed_main_execution0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f571e17e790>
+
+    @pytest.mark.requires_key
+    def test_installed_main_execution(tmp_path, monkeypatch):
+        # Ignore git installation check
+        monkeypatch.setattr("gpt_engineer.core.git.is_git_installed", lambda: False)
+        tmp_path = Path(tmp_path)
+        p = tmp_path / "projects/example"
+        p.mkdir(parents=True)
+        (p / "prompt").write_text("make a program that prints the outcome of 4+4")
+        proc = subprocess.Popen(
+            ["gpte", str(p)],
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            text=True,
+            cwd=tmp_path,
+        )
+    
+        inputs = "Y\nn"
+        output, _ = proc.communicate(inputs)
+    
+>       assert "8" in output
+E       AssertionError: assert '8' in ''
+
+tests/test_install.py:107: AssertionError
+----------------------------- Captured stderr call -----------------------------
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /testbed/gpt_engineer/applications/cli/main.py:448 in main                   │
+│                                                                              │
+│   445 │   if llm_via_clipboard:                                              │
+│   446 │   │   ai = ClipboardAI()                                             │
+│   447 │   else:                                                              │
+│ ❱ 448 │   │   ai = AI(                                                       │
+│   449 │   │   │   model_name=model,                                          │
+│   450 │   │   │   temperature=temperature,                                   │
+│   451 │   │   │   azure_endpoint=azure_endpoint,                             │
+│                                                                              │
+│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+│ │         azure_endpoint = ''                                              │ │
+│ │           clarify_mode = False                                           │ │
+│ │                  debug = False                                           │ │
+│ │ entrypoint_prompt_file = ''                                              │ │
+│ │        image_directory = ''                                              │ │
+│ │           improve_mode = False                                           │ │
+│ │              lite_mode = False                                           │ │
+│ │      llm_via_clipboard = False                                           │ │
+│ │                  model = 'gpt-4o'                                        │ │
+│ │           no_execution = False                                           │ │
+│ │           project_path = '/tmp/pytest-of-root/pytest-10/test_installed_… │ │
+│ │            prompt_file = 'prompt'                                        │ │
+│ │         self_heal_mode = False                                           │ │
+│ │                sysinfo = False                                           │ │
+│ │            temperature = 0.1                                             │ │
+│ │              use_cache = False                                           │ │
+│ │  use_custom_preprompts = False                                           │ │
+│ │                verbose = False                                           │ │
+│ ╰─────────────────────────────────────────────────────────────────────────╯ │
+│                                                                              │
+│ /testbed/gpt_engineer/core/ai.py:115 in __init__                             │
+│                                                                              │
+│   112 │   │   │   or ("gpt-4-turbo" in model_name and "preview" not in model │
+│   113 │   │   │   or ("claude" in model_name)                                │
+│   114 │   │   )                                                              │
+│ ❱ 115 │   │   self.llm = self._create_chat_model()                           │
+│   116 │   │   self.token_usage_log = TokenUsageLog(model_name)               │
+│   117 │   │                                                                  │
+│   118 │   │   logger.debug(f"Using model {self.model_name}")                 │
+│                                                                              │
+│ ╭────────────────────────────── locals ───────────────────────────────╮      │
+│ │ azure_endpoint = ''                                                 │      │
+│ │     model_name = 'gpt-4o'                                           │      │
+│ │           self = <gpt_engineer.core.ai.AI object at 0x7f4766dcb710> │      │
+│ │      streaming = True                                               │      │
+│ │    temperature = 0.1                                                │      │
+│ │         vision = False                                              │      │
+│ ╰─────────────────────────────────────────────────────────────────────╯      │
+│                                                                              │
+│ /testbed/gpt_engineer/core/ai.py:374 in _create_chat_model                   │
+│                                                                              │
+│   371 │   │   │   │   max_tokens=4096,  # vision models default to low max t │
+│   372 │   │   │   )                                                          │
+│   373 │   │   else:                                                          │
+│ ❱ 374 │   │   │   return ChatOpenAI(                                         │
+│   375 │   │   │   │   model=self.model_name,                                 │
+│   376 │   │   │   │   temperature=self.temperature,                          │
+│   377 │   │   │   │   streaming=self.streaming,                              │
+│                                                                              │
+│ ╭───────────────────────── locals ──────────────────────────╮                │
+│ │ self = <gpt_engineer.core.ai.AI object at 0x7f4766dcb710> │                │
+│ ╰───────────────────────────────────────────────────────────╯                │
+│                                                                              │
+│ /root/.cache/pypoetry/virtualenvs/gpt-engineer-QnKYwBMZ-py3.11/lib/python3.1 │
+│ 1/site-packages/pydantic/v1/main.py:341 in __init__                          │
+│                                                                              │
+│    338 │   │   # Uses something other than `self` the first arg to allow "se │
+│    339 │   │   values, fields_set, validation_error = validate_model(__pydan │
+│    340 │   │   if validation_error:                                          │
+│ ❱  341 │   │   │   raise validation_error                                    │
+│    342 │   │   try:                                                          │
+│    343 │   │   │   object_setattr(__pydantic_self__, '__dict__', values)     │
+│    344 │   │   except TypeError as e:                                        │
+│                                                                              │
+│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+│ │             data = {                                                     │ │
+│ │                    │   'model': 'gpt-4o',                                │ │
+│ │                    │   'temperature': 0.1,                               │ │
+│ │                    │   'streaming': True,                                │ │
+│ │                    │   'callbacks': [                                    │ │
+│ │                    │   │                                                 │ │
+│ │                    <langchain_core.callbacks.streaming_stdout.Streaming… │ │
+│ │                    object at 0x7f4765eb7d10>                             │ │
+│ │                    │   ],                                                │ │
+│ │                    │   'model_kwargs': {}                                │ │
+│ │                    }                                                     │ │
+│ │       fields_set = {                                                     │ │
+│ │                    │   'temperature',                                    │ │
+│ │                    │   'streaming',                                      │ │
+│ │                    │   'model_name',                                     │ │
+│ │                    │   'model_kwargs',                                   │ │
+│ │                    │   'callbacks'                                       │ │
+│ │                    }                                                     │ │
+│ │ validation_error = ValidationError(                                      │ │
+│ │                    │   model='ChatOpenAI',                               │ │
+│ │                    │   errors=[                                          │ │
+│ │                    │   │   {                                             │ │
+│ │                    │   │   │   'loc': ('__root__',),                     │ │
+│ │                    │   │   │   'msg': 'Did not find openai_api_key,      │ │
+│ │                    please add an environment variable                    │ │
+│ │                    `OPENAI_API_KEY`'+66,                                 │ │
+│ │                    │   │   │   'type': 'value_error'                     │ │
+│ │                    │   │   }                                             │ │
+│ │                    │   ]                                                 │ │
+│ │                    )                                                     │ │
+│ │           values = {                                                     │ │
+│ │                    │   'name': None,                                     │ │
+│ │                    │   'cache': None,                                    │ │
+│ │                    │   'verbose': False,                                 │ │
+│ │                    │   'callbacks': [                                    │ │
+│ │                    │   │                                                 │ │
+│                     <langchain_core.callbacks.streaming_stdout.Streaming… │ │
+│ │                    object at 0x7f4765eb7d10>                             │ │
+│ │                    │   ],                                                │ │
+│ │                    │   'tags': None,                                     │ │
+│ │                    │   'metadata': None,                                 │ │
+│ │                    │   'custom_get_token_ids': None,                     │ │
+│ │                    │   'callback_manager': None,                         │ │
+│ │                    │   'client': None,                                   │ │
+│ │                    │   'async_client': None,                             │ │
+│ │                    │   ... +17                                           │ │
+│ │                    }                                                     │ │
+│ ╰──────────────────────────────────────────────────────────────────────────╯ │
+╰──────────────────────────────────────────────────────────────────────────────╯
+ValidationError: 1 validation error for ChatOpenAI
+__root__
+  Did not find openai_api_key, please add an environment variable 
+`OPENAI_API_KEY` which contains it, or pass `openai_api_key` as a named 
+parameter. (type=value_error)
+=========================== short test summary info ============================
+FAILED tests/test_install.py::test_installed_main_execution - AssertionError:...
+======================== 1 failed, 125 passed in 19.74s ========================
+echo OMNIGRIL_EXIT_CODE=1

@@ -1,0 +1,453 @@
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-7.4.3, pluggy-1.3.0 -- /root/.cache/pypoetry/virtualenvs/gpt-engineer-QnKYwBMZ-py3.11/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed
+plugins: cov-4.1.0, anyio-4.2.0
+collecting ... collected 69 items
+
+tests/test_install.py::test_installation SKIPPED (Could not create v...) [  1%]
+tests/test_install.py::test_cli_execution SKIPPED (Could not create ...) [  2%]
+tests/test_install.py::test_installed_main_execution SKIPPED (Could ...) [  4%]
+tests/applications/cli/test_cli_agent.py::test_init_standard_config PASSED [  5%]
+tests/applications/cli/test_cli_agent.py::test_init_lite_config PASSED   [  7%]
+tests/applications/cli/test_cli_agent.py::test_init_clarified_gen_config PASSED [  8%]
+tests/applications/cli/test_cli_agent.py::test_improve_standard_config PASSED [ 10%]
+tests/applications/cli/test_collection_consent.py::test_check_consent_file_exists_and_true PASSED [ 11%]
+tests/applications/cli/test_collection_consent.py::test_check_consent_file_exists_and_false PASSED [ 13%]
+tests/applications/cli/test_collection_consent.py::test_check_consent_file_not_exists_and_user_says_yes PASSED [ 14%]
+tests/applications/cli/test_collection_consent.py::test_check_consent_file_not_exists_and_user_says_no PASSED [ 15%]
+tests/applications/cli/test_collection_consent.py::test_ask_collection_consent_yes PASSED [ 17%]
+tests/applications/cli/test_collection_consent.py::test_ask_collection_consent_no PASSED [ 18%]
+tests/applications/cli/test_collection_consent.py::test_ask_collection_consent_invalid_then_yes PASSED [ 20%]
+tests/applications/cli/test_collection_consent.py::test_ask_collection_consent_invalid_then_no PASSED [ 21%]
+tests/applications/cli/test_main.py::TestMain::test_default_settings_generate_project PASSED [ 23%]
+tests/applications/cli/test_main.py::TestMain::test_improve_existing_project PASSED [ 24%]
+tests/applications/cli/test_main.py::TestMain::test_lite_mode_generate_project PASSED [ 26%]
+tests/applications/cli/test_main.py::TestMain::test_clarify_mode_generate_project PASSED [ 27%]
+tests/applications/cli/test_main.py::TestMain::test_self_heal_mode_generate_project PASSED [ 28%]
+tests/core/test_ai.py::test_start PASSED                                 [ 30%]
+tests/core/test_ai.py::test_next PASSED                                  [ 31%]
+tests/core/test_ai.py::test_token_logging PASSED                         [ 33%]
+tests/core/test_chat_to_files.py::test_standard_input PASSED             [ 34%]
+tests/core/test_chat_to_files.py::test_no_code_blocks PASSED             [ 36%]
+tests/core/test_chat_to_files.py::test_special_characters_in_filename PASSED [ 37%]
+tests/core/test_chat_to_files.py::test_empty_code_blocks PASSED          [ 39%]
+tests/core/test_chat_to_files.py::test_mixed_content PASSED              [ 40%]
+tests/core/test_chat_to_files.py::test_filename_line_break PASSED        [ 42%]
+tests/core/test_chat_to_files.py::test_filename_in_backticks PASSED      [ 43%]
+tests/core/test_chat_to_files.py::test_filename_with_file_tag PASSED     [ 44%]
+tests/core/test_chat_to_files.py::test_filename_with_different_extension PASSED [ 46%]
+tests/core/test_chat_to_files.py::test_parse_with_additional_text PASSED [ 47%]
+tests/core/test_chat_to_files.py::test_apply_overwrite_existing_file PASSED [ 49%]
+tests/core/test_chat_to_files.py::test_apply_edit_new_file PASSED        [ 50%]
+tests/core/test_chat_to_files.py::test_apply_edit_no_match PASSED        [ 52%]
+tests/core/test_chat_to_files.py::test_apply_edit_multiple_matches PASSED [ 53%]
+tests/core/test_token_usage.py::test_format_log PASSED                   [ 55%]
+tests/core/test_token_usage.py::test_usage_cost PASSED                   [ 56%]
+tests/core/default/test_disk_execution_env.py::TestOnDiskExecutionEnv::test_execution_with_output PASSED [ 57%]
+tests/core/default/test_disk_execution_env.py::TestOnDiskExecutionEnv::test_keyboard_interrupt_handling PASSED [ 59%]
+tests/core/default/test_disk_execution_env.py::TestOnDiskExecutionEnv::test_missing_entrypoint PASSED [ 60%]
+tests/core/default/test_disk_execution_env.py::TestOnDiskExecutionEnv::test_successful_execution PASSED [ 62%]
+tests/core/default/test_disk_file_repository.py::test_DB_operations PASSED [ 63%]
+tests/core/default/test_disk_file_repository.py::test_large_files PASSED [ 65%]
+tests/core/default/test_disk_file_repository.py::test_concurrent_access PASSED [ 66%]
+tests/core/default/test_disk_file_repository.py::test_error_messages PASSED [ 68%]
+tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_set_and_get_value PASSED [ 69%]
+tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_key_exists PASSED [ 71%]
+tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_fetch_default_value PASSED [ 72%]
+tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_delete_file_or_directory PASSED [ 73%]
+tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_iterate_files PASSED [ 75%]
+tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_key_error PASSED [ 76%]
+tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_value_error PASSED [ 78%]
+tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_type_error PASSED [ 79%]
+tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_large_file_contents PASSED [ 81%]
+tests/core/default/test_simple_agent.py::test_init PASSED                [ 82%]
+tests/core/default/test_simple_agent.py::test_improve PASSED             [ 84%]
+tests/core/default/test_steps.py::TestGenCode::test_generates_code_using_ai_model PASSED [ 85%]
+tests/core/default/test_steps.py::TestGenCode::test_generated_code_saved_to_disk PASSED [ 86%]
+tests/core/default/test_steps.py::TestGenCode::test_raises_type_error_if_keys_not_strings_or_path_objects PASSED [ 88%]
+tests/core/default/test_steps.py::TestGenCode::test_raises_type_error_if_values_not_strings PASSED [ 89%]
+tests/core/default/test_steps.py::TestGenCode::test_raises_key_error_if_file_not_exist_in_database PASSED [ 91%]
+tests/core/default/test_steps.py::TestStepUtilities::test_called_from_function PASSED [ 92%]
+tests/core/default/test_steps.py::TestStepUtilities::test_constructs_system_prompt_with_predefined_instructions_and_philosophies PASSED [ 94%]
+tests/core/default/test_steps.py::TestStepUtilities::test_constructs_system_prompt PASSED [ 95%]
+tests/core/default/test_steps.py::TestGenEntrypoint::test_valid_input_generates_valid_entrypoint PASSED [ 97%]
+tests/core/default/test_steps.py::TestGenEntrypoint::test_empty_codebase_returns_empty_entrypoint PASSED [ 98%]
+tests/core/default/test_steps.py::TestImprove::test_improve_existing_code PASSED [100%]
+
+==================================== PASSES ====================================
+__________________________ test_init_standard_config ___________________________
+----------------------------- Captured stdout call -----------------------------
+
+
+Do you want to execute this code? (Y/n)
+
+# No dependencies to install since requirements.txt indicates no external dependencies.
+
+# Run the main.py script
+python main.py
+
+
+Executing the code...
+
+Note: If it does not work as expected, consider running the code in another way than above.
+
+You can press ctrl+c *once* to stop the execution.
+
+
+--- Start of run ---
+$ bash run.sh
+
+--- Start of run ---
+$ bash run.sh
+____________________________ test_init_lite_config _____________________________
+----------------------------- Captured stdout call -----------------------------
+
+
+Do you want to execute this code? (Y/n)
+
+python3 hello_world.py
+
+
+Executing the code...
+
+Note: If it does not work as expected, consider running the code in another way than above.
+
+You can press ctrl+c *once* to stop the execution.
+
+
+--- Start of run ---
+$ bash run.sh
+
+--- Start of run ---
+$ bash run.sh
+________________________ test_init_clarified_gen_config ________________________
+----------------------------- Captured stdout call -----------------------------
+(answer in text, or "c" to move on)
+
+
+
+
+
+
+Do you want to execute this code? (Y/n)
+
+python3 main.py
+
+
+Executing the code...
+
+Note: If it does not work as expected, consider running the code in another way than above.
+
+You can press ctrl+c *once* to stop the execution.
+
+
+--- Start of run ---
+$ bash run.sh
+
+--- Start of run ---
+$ bash run.sh
+_________________________ test_improve_standard_config _________________________
+----------------------------- Captured stdout call -----------------------------
+
+Do you want to execute this code? (Y/n)
+
+python3 main.py
+
+
+Executing the code...
+
+Note: If it does not work as expected, consider running the code in another way than above.
+
+You can press ctrl+c *once* to stop the execution.
+
+
+--- Start of run ---
+$ bash run.sh
+
+--- Start of run ---
+$ bash run.sh
+___________________ test_check_consent_file_exists_and_false ___________________
+----------------------------- Captured stdout call -----------------------------
+No worries! GPT Engineer will not collect your prompts. ❤️
+_____________ test_check_consent_file_not_exists_and_user_says_yes _____________
+----------------------------- Captured stdout call -----------------------------
+Thank you️
+
+(If you no longer wish to participate in data collection, delete the file .gpte_consent)
+_____________ test_check_consent_file_not_exists_and_user_says_no ______________
+----------------------------- Captured stdout call -----------------------------
+No worries! GPT Engineer will not collect your prompts. ❤️
+_______________________ test_ask_collection_consent_yes ________________________
+----------------------------- Captured stdout call -----------------------------
+Thank you️
+
+(If you no longer wish to participate in data collection, delete the file .gpte_consent)
+________________________ test_ask_collection_consent_no ________________________
+----------------------------- Captured stdout call -----------------------------
+No worries! GPT Engineer will not collect your prompts. ❤️
+_________________ test_ask_collection_consent_invalid_then_yes _________________
+----------------------------- Captured stdout call -----------------------------
+Thank you️
+
+(If you no longer wish to participate in data collection, delete the file .gpte_consent)
+_________________ test_ask_collection_consent_invalid_then_no __________________
+----------------------------- Captured stdout call -----------------------------
+No worries! GPT Engineer will not collect your prompts. ❤️
+_______________ TestMain.test_default_settings_generate_project ________________
+----------------------------- Captured stdout call -----------------------------
+Running gpt-engineer in /tmp/pytest-of-root/pytest-11/test_default_settings_generate0/projects/example 
+
+
+
+Do you want to execute this code? (Y/n)
+
+# There are no dependencies to install for this Python script.
+# Simply run the Python script with the following command:
+
+python main.py
+
+
+Executing the code...
+
+Note: If it does not work as expected, consider running the code in another way than above.
+
+You can press ctrl+c *once* to stop the execution.
+
+
+--- Start of run ---
+$ bash run.sh
+
+No worries! GPT Engineer will not collect your prompts. ❤️
+Total api cost: $  0
+
+--- Start of run ---
+$ bash run.sh
+____________________ TestMain.test_improve_existing_project ____________________
+----------------------------- Captured stdout call -----------------------------
+Running gpt-engineer in /tmp/pytest-of-root/pytest-11/test_improve_existing_project0/projects/example 
+
+     example/
+0.   └──  prompt
+
+
+Do you want to execute this code? (Y/n)
+
+# Install dependencies (none required for this script)
+# Run the Python script
+python write_hello.py
+
+
+Executing the code...
+
+Note: If it does not work as expected, consider running the code in another way than above.
+
+You can press ctrl+c *once* to stop the execution.
+
+
+--- Start of run ---
+$ bash run.sh
+
+No worries! GPT Engineer will not collect your prompts. ❤️
+Total api cost: $  0
+
+--- Start of run ---
+$ bash run.sh
+___________________ TestMain.test_lite_mode_generate_project ___________________
+----------------------------- Captured stdout call -----------------------------
+Running gpt-engineer in /tmp/pytest-of-root/pytest-11/test_lite_mode_generate_projec0/projects/example 
+
+
+
+Do you want to execute this code? (Y/n)
+
+# Install Python dependencies (if any)
+pip install --user -r requirements.txt
+
+# Run the Python script
+python write_hello.py
+
+
+Executing the code...
+
+Note: If it does not work as expected, consider running the code in another way than above.
+
+You can press ctrl+c *once* to stop the execution.
+
+
+--- Start of run ---
+$ bash run.sh
+ERROR: Can not perform a '--user' install. User site-packages are not visible in this virtualenv.
+
+No worries! GPT Engineer will not collect your prompts. ❤️
+Total api cost: $  0
+
+--- Start of run ---
+$ bash run.sh
+ERROR: Can not perform a '--user' install. User site-packages are not visible in this virtualenv.
+_________________ TestMain.test_clarify_mode_generate_project __________________
+----------------------------- Captured stdout call -----------------------------
+Running gpt-engineer in /tmp/pytest-of-root/pytest-11/test_clarify_mode_generate_pro0/projects/example 
+
+
+
+
+
+Do you want to execute this code? (Y/n)
+
+python3 main.py
+
+
+Executing the code...
+
+Note: If it does not work as expected, consider running the code in another way than above.
+
+You can press ctrl+c *once* to stop the execution.
+
+
+--- Start of run ---
+$ bash run.sh
+
+No worries! GPT Engineer will not collect your prompts. ❤️
+Total api cost: $  0
+
+--- Start of run ---
+$ bash run.sh
+________________ TestMain.test_self_heal_mode_generate_project _________________
+----------------------------- Captured stdout call -----------------------------
+Running gpt-engineer in /tmp/pytest-of-root/pytest-11/test_self_heal_mode_generate_p0/projects/example 
+
+
+Do you want to execute this code? (Y/n)
+
+# There are no dependencies to install for this Python script.
+# Simply run the Python script with the following command:
+
+python main.py
+
+
+Executing the code...
+
+--- Start of run ---
+$ bash run.sh
+
+Thank you️
+
+(If you no longer wish to participate in data collection, delete the file .gpte_consent)
+
+To help gpt-engineer learn, please answer 3 questions:
+
+Total api cost: $  0
+
+--- Start of run ---
+$ bash run.sh
+______________________ test_apply_overwrite_existing_file ______________________
+------------------------------ Captured log call -------------------------------
+WARNING  gpt_engineer.core.chat_to_files:chat_to_files.py:180 The edit to be applied wants to create a new file `existing_file.py`, but that already exists. The file will be overwritten. See `.gpteng/memory` for previous version.
+___________________________ test_apply_edit_no_match ___________________________
+------------------------------ Captured log call -------------------------------
+WARNING  gpt_engineer.core.chat_to_files:chat_to_files.py:187 While applying an edit to `file.py`, the code block to be replaced was not found. No instances will be replaced.
+_______________________ test_apply_edit_multiple_matches _______________________
+------------------------------ Captured log call -------------------------------
+WARNING  gpt_engineer.core.chat_to_files:chat_to_files.py:191 While applying an edit to `file.py`, the code block to be replaced was found multiple times. All instances will be replaced.
+___________ TestOnDiskExecutionEnv.test_keyboard_interrupt_handling ____________
+----------------------------- Captured stdout call -----------------------------
+
+--- Start of run ---
+$ bash run.sh
+
+Stopping execution.
+Execution stopped.
+
+--- Finished run ---
+
+__________________________________ test_init ___________________________________
+----------------------------- Captured stdout call -----------------------------
+
+
+--- Start of run ---
+$ bash run.sh
+_________________________________ test_improve _________________________________
+----------------------------- Captured stdout call -----------------------------
+
+--- Start of run ---
+$ bash run.sh
+________ TestGenEntrypoint.test_valid_input_generates_valid_entrypoint _________
+----------------------------- Captured stdout call -----------------------------
+
+________ TestGenEntrypoint.test_empty_codebase_returns_empty_entrypoint ________
+----------------------------- Captured stdout call -----------------------------
+
+=========================== short test summary info ============================
+PASSED tests/applications/cli/test_cli_agent.py::test_init_standard_config
+PASSED tests/applications/cli/test_cli_agent.py::test_init_lite_config
+PASSED tests/applications/cli/test_cli_agent.py::test_init_clarified_gen_config
+PASSED tests/applications/cli/test_cli_agent.py::test_improve_standard_config
+PASSED tests/applications/cli/test_collection_consent.py::test_check_consent_file_exists_and_true
+PASSED tests/applications/cli/test_collection_consent.py::test_check_consent_file_exists_and_false
+PASSED tests/applications/cli/test_collection_consent.py::test_check_consent_file_not_exists_and_user_says_yes
+PASSED tests/applications/cli/test_collection_consent.py::test_check_consent_file_not_exists_and_user_says_no
+PASSED tests/applications/cli/test_collection_consent.py::test_ask_collection_consent_yes
+PASSED tests/applications/cli/test_collection_consent.py::test_ask_collection_consent_no
+PASSED tests/applications/cli/test_collection_consent.py::test_ask_collection_consent_invalid_then_yes
+PASSED tests/applications/cli/test_collection_consent.py::test_ask_collection_consent_invalid_then_no
+PASSED tests/applications/cli/test_main.py::TestMain::test_default_settings_generate_project
+PASSED tests/applications/cli/test_main.py::TestMain::test_improve_existing_project
+PASSED tests/applications/cli/test_main.py::TestMain::test_lite_mode_generate_project
+PASSED tests/applications/cli/test_main.py::TestMain::test_clarify_mode_generate_project
+PASSED tests/applications/cli/test_main.py::TestMain::test_self_heal_mode_generate_project
+PASSED tests/core/test_ai.py::test_start
+PASSED tests/core/test_ai.py::test_next
+PASSED tests/core/test_ai.py::test_token_logging
+PASSED tests/core/test_chat_to_files.py::test_standard_input
+PASSED tests/core/test_chat_to_files.py::test_no_code_blocks
+PASSED tests/core/test_chat_to_files.py::test_special_characters_in_filename
+PASSED tests/core/test_chat_to_files.py::test_empty_code_blocks
+PASSED tests/core/test_chat_to_files.py::test_mixed_content
+PASSED tests/core/test_chat_to_files.py::test_filename_line_break
+PASSED tests/core/test_chat_to_files.py::test_filename_in_backticks
+PASSED tests/core/test_chat_to_files.py::test_filename_with_file_tag
+PASSED tests/core/test_chat_to_files.py::test_filename_with_different_extension
+PASSED tests/core/test_chat_to_files.py::test_parse_with_additional_text
+PASSED tests/core/test_chat_to_files.py::test_apply_overwrite_existing_file
+PASSED tests/core/test_chat_to_files.py::test_apply_edit_new_file
+PASSED tests/core/test_chat_to_files.py::test_apply_edit_no_match
+PASSED tests/core/test_chat_to_files.py::test_apply_edit_multiple_matches
+PASSED tests/core/test_token_usage.py::test_format_log
+PASSED tests/core/test_token_usage.py::test_usage_cost
+PASSED tests/core/default/test_disk_execution_env.py::TestOnDiskExecutionEnv::test_execution_with_output
+PASSED tests/core/default/test_disk_execution_env.py::TestOnDiskExecutionEnv::test_keyboard_interrupt_handling
+PASSED tests/core/default/test_disk_execution_env.py::TestOnDiskExecutionEnv::test_missing_entrypoint
+PASSED tests/core/default/test_disk_execution_env.py::TestOnDiskExecutionEnv::test_successful_execution
+PASSED tests/core/default/test_disk_file_repository.py::test_DB_operations
+PASSED tests/core/default/test_disk_file_repository.py::test_large_files
+PASSED tests/core/default/test_disk_file_repository.py::test_concurrent_access
+PASSED tests/core/default/test_disk_file_repository.py::test_error_messages
+PASSED tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_set_and_get_value
+PASSED tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_key_exists
+PASSED tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_fetch_default_value
+PASSED tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_delete_file_or_directory
+PASSED tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_iterate_files
+PASSED tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_key_error
+PASSED tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_value_error
+PASSED tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_type_error
+PASSED tests/core/default/test_disk_file_repository.py::TestOnDiskRepository::test_large_file_contents
+PASSED tests/core/default/test_simple_agent.py::test_init
+PASSED tests/core/default/test_simple_agent.py::test_improve
+PASSED tests/core/default/test_steps.py::TestGenCode::test_generates_code_using_ai_model
+PASSED tests/core/default/test_steps.py::TestGenCode::test_generated_code_saved_to_disk
+PASSED tests/core/default/test_steps.py::TestGenCode::test_raises_type_error_if_keys_not_strings_or_path_objects
+PASSED tests/core/default/test_steps.py::TestGenCode::test_raises_type_error_if_values_not_strings
+PASSED tests/core/default/test_steps.py::TestGenCode::test_raises_key_error_if_file_not_exist_in_database
+PASSED tests/core/default/test_steps.py::TestStepUtilities::test_called_from_function
+PASSED tests/core/default/test_steps.py::TestStepUtilities::test_constructs_system_prompt_with_predefined_instructions_and_philosophies
+PASSED tests/core/default/test_steps.py::TestStepUtilities::test_constructs_system_prompt
+PASSED tests/core/default/test_steps.py::TestGenEntrypoint::test_valid_input_generates_valid_entrypoint
+PASSED tests/core/default/test_steps.py::TestGenEntrypoint::test_empty_codebase_returns_empty_entrypoint
+PASSED tests/core/default/test_steps.py::TestImprove::test_improve_existing_code
+SKIPPED [1] tests/test_install.py:51: Could not create venv or install dependencies: Command '['./venv_test_installation/bin/poetry', 'install']' returned non-zero exit status 1.
+SKIPPED [1] tests/test_install.py:71: Could not create venv or install dependencies: Command '['./venv_test_installation/bin/poetry', 'install']' returned non-zero exit status 1.
+SKIPPED [1] tests/test_install.py:87: Could not create venv or install dependencies: Command '['./venv_test_installation/bin/poetry', 'install']' returned non-zero exit status 1.
+======================== 66 passed, 3 skipped in 15.47s ========================
+echo OMNIGRIL_EXIT_CODE=0

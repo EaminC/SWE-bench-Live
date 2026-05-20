@@ -1,0 +1,696 @@
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.10.20, pytest-9.0.2, pluggy-1.6.0 -- /usr/local/bin/python3.10
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+plugins: anyio-4.12.1, forked-1.6.0
+collecting ... collected 259 items
+
+tests/a2a_agent_test.py::A2AAgentTest::test_observe_and_reply_merge PASSED [  0%]
+tests/a2a_agent_test.py::A2AAgentTest::test_observe_method PASSED        [  0%]
+tests/a2a_agent_test.py::A2AAgentTest::test_reply_with_no_messages PASSED [  1%]
+tests/a2a_agent_test.py::A2AAgentTest::test_reply_with_only_observed_messages PASSED [  1%]
+tests/a2a_agent_test.py::A2AAgentTest::test_reply_with_task PASSED       [  1%]
+tests/a2a_resolver_test.py::A2AAgentCardResolverTest::test_file_card_resolver PASSED [  2%]
+tests/config_test.py::ConfigTest::test_config_attributes PASSED          [  2%]
+tests/embedding_cache_test.py::EmbeddingCacheTest::test_embedding_cache PASSED [  3%]
+tests/evaluation_test.py::EvaluatorTest::test_general_evaluator PASSED   [  3%]
+tests/evaluation_test.py::EvaluatorTest::test_ray_evaluator PASSED       [  3%]
+tests/formatter_a2a_test.py::A2AFormatterTest::test_a2a_msg_to_as PASSED [  4%]
+tests/formatter_a2a_test.py::A2AFormatterTest::test_a2a_task_to_as PASSED [  4%]
+tests/formatter_a2a_test.py::A2AFormatterTest::test_as_to_a2a PASSED     [  5%]
+tests/formatter_anthropic_test.py::TestAnthropicChatFormatterFormatter::test_chat_formatter PASSED [  5%]
+tests/formatter_anthropic_test.py::TestAnthropicChatFormatterFormatter::test_multiagent_formater PASSED [  5%]
+tests/formatter_dashscope_test.py::TestDashScopeFormatter::test_chat_formatter FAILED [  6%]
+tests/formatter_dashscope_test.py::TestDashScopeFormatter::test_chat_formatter_with_extract_media_blocks FAILED [  6%]
+tests/formatter_dashscope_test.py::TestDashScopeFormatter::test_multiagent_formater FAILED [  6%]
+tests/formatter_dashscope_test.py::TestDashScopeFormatter::test_multiagent_formatter_with_promote_media_tool_result FAILED [  7%]
+tests/formatter_deepseek_test.py::TestDeepSeekFormatter::test_chat_formatter PASSED [  7%]
+tests/formatter_deepseek_test.py::TestDeepSeekFormatter::test_multi_agent_formatter PASSED [  8%]
+tests/formatter_gemini_test.py::TestGeminiFormatter::test_chat_formatter PASSED [  8%]
+tests/formatter_gemini_test.py::TestGeminiFormatter::test_chat_formatter_with_extract_image_blocks PASSED [  8%]
+tests/formatter_gemini_test.py::TestGeminiFormatter::test_multi_agent_formatter PASSED [  9%]
+tests/formatter_gemini_test.py::TestGeminiFormatter::test_multi_agent_formatter_with_promote_tool_result_images PASSED [  9%]
+tests/formatter_ollama_test.py::TestOllamaFormatter::test_chat_formatter PASSED [ 10%]
+tests/formatter_ollama_test.py::TestOllamaFormatter::test_chat_formatter_with_extract_image_blocks PASSED [ 10%]
+tests/formatter_ollama_test.py::TestOllamaFormatter::test_multi_agent_formatter PASSED [ 10%]
+tests/formatter_ollama_test.py::TestOllamaFormatter::test_multi_agent_formatter_with_promote_tool_result_images PASSED [ 11%]
+tests/formatter_openai_test.py::TestOpenAIFormatter::test_formatter PASSED [ 11%]
+tests/formatter_openai_test.py::TestOpenAIFormatter::test_formatter_with_extract_image_blocks PASSED [ 11%]
+tests/formatter_openai_test.py::TestOpenAIFormatter::test_multiagent_formatter PASSED [ 12%]
+tests/formatter_openai_test.py::TestOpenAIFormatter::test_multiagent_formatter_with_promote_tool_result_images PASSED [ 12%]
+tests/hook_test.py::HookTest::test_observe_hooks PASSED                  [ 13%]
+tests/hook_test.py::HookTest::test_print_hooks PASSED                    [ 13%]
+tests/hook_test.py::HookTest::test_reply_hooks PASSED                    [ 13%]
+tests/mcp_sse_client_test.py::SseMCPClientTest::test_stateful_client PASSED [ 14%]
+tests/mcp_sse_client_test.py::SseMCPClientTest::test_stateless_client PASSED [ 14%]
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_embedded_content PASSED [ 15%]
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_streamable_http_stateless_client PASSED [ 15%]
+tests/memory_compression_test.py::MemoryCompressionTest::test_memory_compression PASSED [ 15%]
+tests/memory_reme_test.py::TestReMeMemory::test_context_manager_usage SKIPPED [ 16%]
+tests/memory_reme_test.py::TestReMeMemory::test_init_with_default_params SKIPPED [ 16%]
+tests/memory_reme_test.py::TestReMeMemory::test_integration_record_and_retrieve SKIPPED [ 16%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_direct_app_not_started SKIPPED [ 17%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_direct_filters_none_messages SKIPPED [ 17%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_direct_method_success SKIPPED [ 18%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_direct_with_empty_list SKIPPED [ 18%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_direct_with_single_message SKIPPED [ 18%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_to_memory_app_not_started SKIPPED [ 19%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_to_memory_error_handling SKIPPED [ 19%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_to_memory_success SKIPPED [ 20%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_direct_app_not_started SKIPPED [ 20%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_direct_invalid_input SKIPPED [ 20%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_direct_method_success SKIPPED [ 21%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_direct_with_message_list SKIPPED [ 21%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_direct_with_none_message SKIPPED [ 22%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_from_memory_app_not_started SKIPPED [ 22%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_from_memory_no_results SKIPPED [ 22%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_from_memory_success SKIPPED [ 23%]
+tests/memory_test.py::InMemoryMemoryTest::test_memory PASSED             [ 23%]
+tests/memory_test.py::AsyncSQLAlchemyMemoryTest::test_memory PASSED      [ 23%]
+tests/memory_test.py::RedisMemoryTest::test_memory PASSED                [ 24%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_call_with_regular_messages PASSED [ 24%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_call_with_structured_model_integration PASSED [ 25%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_call_with_system_message PASSED [ 25%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_call_with_thinking_enabled PASSED [ 25%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_call_with_tools_integration PASSED [ 26%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_generate_kwargs_integration PASSED [ 26%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_init_default_params PASSED [ 27%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_init_with_custom_params PASSED [ 27%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_streaming_response_processing PASSED [ 27%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_call_with_enable_thinking_streaming PASSED [ 28%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_call_with_regular_model PASSED [ 28%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_call_with_structured_model_integration PASSED [ 28%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_call_with_tools_integration PASSED [ 29%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_error_handling_scenarios PASSED [ 29%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_init_default_params PASSED [ 30%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_init_with_custom_params PASSED [ 30%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_init_with_enable_thinking_forces_stream PASSED [ 30%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_streaming_response_processing PASSED [ 31%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_tools_schema_validation_through_api PASSED [ 31%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_call_with_regular_model PASSED [ 32%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_call_with_structured_model_integration PASSED [ 32%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_call_with_thinking_enabled PASSED [ 32%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_call_with_tools_integration PASSED [ 33%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_format_tools_with_nested_schema PASSED [ 33%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_generate_kwargs_integration PASSED [ 33%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_init_default_params PASSED [ 34%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_init_with_custom_params PASSED [ 34%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_streaming_response_processing PASSED [ 35%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_call_with_regular_model PASSED [ 35%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_call_with_structured_model_integration PASSED [ 35%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_call_with_thinking_enabled PASSED [ 36%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_call_with_tools_integration PASSED [ 36%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_init_default_params PASSED [ 37%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_init_with_custom_params PASSED [ 37%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_options_integration PASSED [ 37%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_streaming_response_processing PASSED [ 38%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_call_with_reasoning_effort PASSED [ 38%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_call_with_regular_model PASSED [ 38%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_call_with_structured_model_integration PASSED [ 39%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_call_with_tools_integration PASSED [ 39%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_init_default_params PASSED [ 40%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_init_with_custom_params PASSED [ 40%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_streaming_response_processing PASSED [ 40%]
+tests/pipeline_test.py::PipelineTest::test_class_fanout_pipeline_concurrent PASSED [ 41%]
+tests/pipeline_test.py::PipelineTest::test_class_fanout_pipeline_sequential PASSED [ 41%]
+tests/pipeline_test.py::PipelineTest::test_class_sequential_pipeline PASSED [ 42%]
+tests/pipeline_test.py::PipelineTest::test_class_sequential_pipeline_with_none_message PASSED [ 42%]
+tests/pipeline_test.py::PipelineTest::test_empty_agent_list PASSED       [ 42%]
+tests/pipeline_test.py::PipelineTest::test_fanout_pipeline_empty_agents PASSED [ 43%]
+tests/pipeline_test.py::PipelineTest::test_fanout_pipeline_with_none_message PASSED [ 43%]
+tests/pipeline_test.py::PipelineTest::test_functional_fanout_pipeline_concurrent PASSED [ 44%]
+tests/pipeline_test.py::PipelineTest::test_functional_fanout_pipeline_sequential PASSED [ 44%]
+tests/pipeline_test.py::PipelineTest::test_functional_sequential_pipeline PASSED [ 44%]
+tests/pipeline_test.py::PipelineTest::test_functional_sequential_pipeline_with_none_message PASSED [ 45%]
+tests/pipeline_test.py::PipelineTest::test_single_agent_pipeline PASSED  [ 45%]
+tests/pipeline_test.py::PipelineTest::test_stream_printing_messages PASSED [ 45%]
+tests/pipeline_test.py::PipelineTest::test_stream_printing_messages_with_error_after_print PASSED [ 46%]
+tests/plan_test.py::PlanTest::test_plan_model PASSED                     [ 46%]
+tests/plan_test.py::PlanTest::test_plan_subtasks PASSED                  [ 47%]
+tests/plan_test.py::PlanTest::test_serialization PASSED                  [ 47%]
+tests/rag_knowledge_test.py::RAGKnowledgeTest::test_simple_knowledge PASSED [ 47%]
+tests/rag_reader_test.py::RAGReaderText::test_excel_reader_with_images_and_tables PASSED [ 48%]
+tests/rag_reader_test.py::RAGReaderText::test_pdf_reader PASSED          [ 48%]
+tests/rag_reader_test.py::RAGReaderText::test_text_reader PASSED         [ 49%]
+tests/rag_reader_test.py::RAGReaderText::test_word_reader_with_images_and_tables PASSED [ 49%]
+tests/rag_store_test.py::RAGStoreTest::test_alibabacloud_mysql_store PASSED [ 49%]
+tests/rag_store_test.py::RAGStoreTest::test_milvus_lite_store PASSED     [ 50%]
+tests/rag_store_test.py::RAGStoreTest::test_mongodb_store PASSED         [ 50%]
+tests/rag_store_test.py::RAGStoreTest::test_qdrant_store PASSED          [ 50%]
+tests/react_agent_test.py::ReActAgentTest::test_react_agent PASSED       [ 51%]
+tests/session_test.py::SessionTest::test_session_base PASSED             [ 51%]
+tests/token_anthropic_test.py::AnthropicTokenCounterTest::test_anthropic_token_counter PASSED [ 52%]
+tests/token_char_test.py::CharTokenCounterTest::test_count_tokens PASSED [ 52%]
+tests/token_openai_test.py::OpenAITokenCounterTest::test_openai_token_counter PASSED [ 52%]
+tests/tool_dashscope_test.py::TestDashScopeTextToImage::test_text_to_image_success_url_mode PASSED [ 53%]
+tests/tool_dashscope_test.py::TestDashScopeTextToImage::test_text_to_image_success_base64_mode PASSED [ 53%]
+tests/tool_dashscope_test.py::TestDashScopeTextToImage::test_text_to_image_empty_results PASSED [ 54%]
+tests/tool_dashscope_test.py::TestDashScopeTextToImage::test_text_to_image_none_results PASSED [ 54%]
+tests/tool_dashscope_test.py::TestDashScopeTextToImage::test_text_to_image_exception PASSED [ 54%]
+tests/tool_dashscope_test.py::TestDashScopeImageToText::test_image_to_text_single_url_success PASSED [ 55%]
+tests/tool_dashscope_test.py::TestDashScopeImageToText::test_image_to_text_multiple_urls_success PASSED [ 55%]
+tests/tool_dashscope_test.py::TestDashScopeImageToText::test_image_to_text_local_file_success PASSED [ 55%]
+tests/tool_dashscope_test.py::TestDashScopeImageToText::test_image_to_text_invalid_local_path PASSED [ 56%]
+tests/tool_dashscope_test.py::TestDashScopeImageToText::test_image_to_text_list_content_response PASSED [ 56%]
+tests/tool_dashscope_test.py::TestDashScopeImageToText::test_image_to_text_none_content PASSED [ 57%]
+tests/tool_dashscope_test.py::TestDashScopeImageToText::test_image_to_text_exception PASSED [ 57%]
+tests/tool_dashscope_test.py::TestDashScopeTextToAudio::test_text_to_audio_success PASSED [ 57%]
+tests/tool_dashscope_test.py::TestDashScopeTextToAudio::test_text_to_audio_no_data PASSED [ 58%]
+tests/tool_dashscope_test.py::TestDashScopeTextToAudio::test_text_to_audio_api_exception PASSED [ 58%]
+tests/tool_openai_test.py::TestOpenAITextToImage::test_text_to_image_success_url_mode PASSED [ 59%]
+tests/tool_openai_test.py::TestOpenAITextToImage::test_text_to_image_success_base64_mode PASSED [ 59%]
+tests/tool_openai_test.py::TestOpenAITextToImage::test_text_to_image_gpt_image_1_force_base64 PASSED [ 59%]
+tests/tool_openai_test.py::TestOpenAITextToImage::test_text_to_image_exception PASSED [ 60%]
+tests/tool_openai_test.py::TestOpenAIEditImage::test_edit_image_success_url_input PASSED [ 60%]
+tests/tool_openai_test.py::TestOpenAIEditImage::test_edit_image_success_local_file PASSED [ 61%]
+tests/tool_openai_test.py::TestOpenAIEditImage::test_edit_image_exception PASSED [ 61%]
+tests/tool_openai_test.py::TestOpenAIEditImage::test_edit_image_file_not_found PASSED [ 61%]
+tests/tool_openai_test.py::TestOpenAICreateImageVariation::test_create_variation_success_url_mode PASSED [ 62%]
+tests/tool_openai_test.py::TestOpenAICreateImageVariation::test_create_variation_success_base64_mode PASSED [ 62%]
+tests/tool_openai_test.py::TestOpenAICreateImageVariation::test_create_variation_exception PASSED [ 62%]
+tests/tool_openai_test.py::TestOpenAIImageToText::test_image_to_text_single_url_success PASSED [ 63%]
+tests/tool_openai_test.py::TestOpenAIImageToText::test_image_to_text_multiple_urls_success PASSED [ 63%]
+tests/tool_openai_test.py::TestOpenAIImageToText::test_image_to_text_exception PASSED [ 64%]
+tests/tool_openai_test.py::TestOpenAITextToAudio::test_text_to_audio_success PASSED [ 64%]
+tests/tool_openai_test.py::TestOpenAITextToAudio::test_text_to_audio_different_format PASSED [ 64%]
+tests/tool_openai_test.py::TestOpenAITextToAudio::test_text_to_audio_exception PASSED [ 65%]
+tests/tool_openai_test.py::TestOpenAIAudioToText::test_audio_to_text_local_file_success PASSED [ 65%]
+tests/tool_openai_test.py::TestOpenAIAudioToText::test_audio_to_text_url_success PASSED [ 66%]
+tests/tool_openai_test.py::TestOpenAIAudioToText::test_audio_to_text_file_not_found PASSED [ 66%]
+tests/tool_openai_test.py::TestOpenAIAudioToText::test_audio_to_text_api_exception PASSED [ 66%]
+tests/tool_test.py::ToolTest::test_execute_python_code PASSED            [ 67%]
+tests/tool_test.py::ToolTest::test_execute_shell_command PASSED          [ 67%]
+tests/tool_test.py::ToolTest::test_insert_text_file PASSED               [ 67%]
+tests/tool_test.py::ToolTest::test_view_text_file PASSED                 [ 68%]
+tests/tool_test.py::ToolTest::test_write_text_file PASSED                [ 68%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_async_func PASSED    [ 69%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_async_postprocess_func PASSED [ 69%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_basic_functionalities PASSED [ 69%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_create_tool_group PASSED [ 70%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_detailed_arguments PASSED [ 70%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_duplicate_tool_registration PASSED [ 71%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_extended_model_reusing_same_base_model PASSED [ 71%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_func_name_parameter PASSED [ 71%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_partial_function PASSED [ 72%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_postprocess_func PASSED [ 72%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_register_async_func_return_async_generator PASSED [ 72%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_register_async_func_return_sync_generator PASSED [ 73%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_register_async_generator_func PASSED [ 73%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_register_sync_generator_func PASSED [ 74%]
+tests/toolkit_meta_tool_test.py::ToolkitMetaToolTest::test_meta_tool PASSED [ 74%]
+tests/tracing_converter_test.py::ConverterTest::test_convert_audio_block PASSED [ 74%]
+tests/tracing_converter_test.py::ConverterTest::test_convert_image_block PASSED [ 75%]
+tests/tracing_converter_test.py::ConverterTest::test_convert_invalid_blocks PASSED [ 75%]
+tests/tracing_converter_test.py::ConverterTest::test_convert_text_block PASSED [ 76%]
+tests/tracing_converter_test.py::ConverterTest::test_convert_thinking_block PASSED [ 76%]
+tests/tracing_converter_test.py::ConverterTest::test_convert_tool_result_block PASSED [ 76%]
+tests/tracing_converter_test.py::ConverterTest::test_convert_tool_use_block PASSED [ 77%]
+tests/tracing_converter_test.py::ConverterTest::test_convert_video_block PASSED [ 77%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_agent_messages_empty_list PASSED [ 77%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_agent_messages_list_of_msgs PASSED [ 78%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_agent_messages_single_msg PASSED [ 78%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_agent_request_attributes PASSED [ 79%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_agent_request_attributes_with_list PASSED [ 79%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_agent_response_attributes PASSED [ 79%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_agent_response_attributes_with_list PASSED [ 80%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_common_attributes PASSED [ 80%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_embedding_request_attributes PASSED [ 81%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_format_target PASSED [ 81%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_formatter_request_attributes PASSED [ 81%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_formatter_response_attributes PASSED [ 82%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_generic_function_request_attributes PASSED [ 82%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_llm_request_attributes PASSED [ 83%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_llm_response_attributes PASSED [ 83%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_provider_name PASSED [ 83%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_tool_definitions PASSED [ 84%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_tool_request_attributes PASSED [ 84%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_tool_response_attributes PASSED [ 84%]
+tests/tracing_test.py::TracingTest::test_trace PASSED                    [ 85%]
+tests/tracing_test.py::TracingTest::test_trace_embedding PASSED          [ 85%]
+tests/tracing_test.py::TracingTest::test_trace_format PASSED             [ 86%]
+tests/tracing_test.py::TracingTest::test_trace_llm PASSED                [ 86%]
+tests/tracing_test.py::TracingTest::test_trace_reply PASSED              [ 86%]
+tests/tracing_test.py::TracingTest::test_trace_toolkit PASSED            [ 87%]
+tests/tracing_utils_test.py::UtilsTest::test_serialize_to_str_complex_nested PASSED [ 87%]
+tests/tracing_utils_test.py::UtilsTest::test_serialize_to_str_dict PASSED [ 88%]
+tests/tracing_utils_test.py::UtilsTest::test_serialize_to_str_list PASSED [ 88%]
+tests/tracing_utils_test.py::UtilsTest::test_serialize_to_str_non_serializable PASSED [ 88%]
+tests/tracing_utils_test.py::UtilsTest::test_serialize_to_str_simple PASSED [ 89%]
+tests/tracing_utils_test.py::UtilsTest::test_serialize_to_str_unicode PASSED [ 89%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_collections PASSED [ 89%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_dataclass PASSED [ 90%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_datetime PASSED [ 90%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_dict PASSED [ 91%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_enum PASSED [ 91%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_msg PASSED  [ 91%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_nested_structures PASSED [ 92%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_primitive_types PASSED [ 92%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_pydantic_model PASSED [ 93%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_timedelta PASSED [ 93%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_unknown_type PASSED [ 93%]
+tests/tts_dashscope_test.py::DashScopeRealtimeTTSModelTest::test_init PASSED [ 94%]
+tests/tts_dashscope_test.py::DashScopeRealtimeTTSModelTest::test_push_incremental_text PASSED [ 94%]
+tests/tts_dashscope_test.py::DashScopeRealtimeTTSModelTest::test_synthesize_non_streaming PASSED [ 94%]
+tests/tts_dashscope_test.py::DashScopeRealtimeTTSModelTest::test_synthesize_streaming PASSED [ 95%]
+tests/tts_dashscope_test.py::DashScopeTTSModelTest::test_init PASSED     [ 95%]
+tests/tts_dashscope_test.py::DashScopeTTSModelTest::test_synthesize_non_streaming PASSED [ 96%]
+tests/tts_dashscope_test.py::DashScopeTTSModelTest::test_synthesize_streaming PASSED [ 96%]
+tests/tts_gemini_test.py::GeminiTTSModelTest::test_init PASSED           [ 96%]
+tests/tts_gemini_test.py::GeminiTTSModelTest::test_synthesize_non_streaming PASSED [ 97%]
+tests/tts_gemini_test.py::GeminiTTSModelTest::test_synthesize_streaming PASSED [ 97%]
+tests/tts_openai_test.py::OpenAITTSModelTest::test_init PASSED           [ 98%]
+tests/tts_openai_test.py::OpenAITTSModelTest::test_synthesize_non_streaming PASSED [ 98%]
+tests/tts_openai_test.py::OpenAITTSModelTest::test_synthesize_streaming PASSED [ 98%]
+tests/tuner_test.py::TestTunerFunctionType::test_validate_workflow_type PASSED [ 99%]
+tests/tuner_test.py::TestDataset::test_preview SKIPPED (datasets lib...) [ 99%]
+tests/user_input_test.py::UserInputTest::test_user_terminal_input PASSED [100%]
+
+=================================== FAILURES ===================================
+__________________ TestDashScopeFormatter.test_chat_formatter __________________
+
+self = <formatter_dashscope_test.TestDashScopeFormatter testMethod=test_chat_formatter>
+mock_save_base64_data = <MagicMock name='_save_base64_data' id='140572739118672'>
+
+    @patch("agentscope.formatter._formatter_base._save_base64_data")
+    async def test_chat_formatter(
+        self,
+        mock_save_base64_data: MagicMock,
+    ) -> None:
+        """Test the chat formatter."""
+        mock_save_base64_data.side_effect = self._mock_save_base64_data
+    
+        formatter = DashScopeChatFormatter()
+    
+        # Full history
+        res = await formatter.format(
+            [*self.msgs_system, *self.msgs_conversation, *self.msgs_tools],
+        )
+>       self.assertListEqual(self.ground_truth_chat, res)
+E       AssertionError: Lists differ: [{'ro[525 chars]t': [], 'tool_calls': [{'id': '1', 'type': 'fu[516 chars]o.'}] != [{'ro[525 chars]t': [{'text': None}], 'tool_calls': [{'id': '1[530 chars]o.'}]
+E       
+E       First differing element 6:
+E       {'rol[24 chars]t': [], 'tool_calls': [{'id': '1', 'type': 'fu[79 chars]'}}]}
+E       {'rol[24 chars]t': [{'text': None}], 'tool_calls': [{'id': '1[93 chars]'}}]}
+E       
+E       Diff is 1380 characters long. Set self.maxDiff to None to see it.
+
+tests/formatter_dashscope_test.py:519: AssertionError
+_____ TestDashScopeFormatter.test_chat_formatter_with_extract_media_blocks _____
+
+self = <formatter_dashscope_test.TestDashScopeFormatter testMethod=test_chat_formatter_with_extract_media_blocks>
+mock_save_base64_data = <MagicMock name='_save_base64_data' id='140572740040640'>
+
+    @patch("agentscope.formatter._formatter_base._save_base64_data")
+    async def test_chat_formatter_with_extract_media_blocks(
+        self,
+        mock_save_base64_data: MagicMock,
+    ) -> None:
+        """Test the chat formatter with promote_tool_result_images=True."""
+        mock_save_base64_data.side_effect = self._mock_save_base64_data
+    
+        formatter = DashScopeChatFormatter(
+            promote_tool_result_images=True,
+            promote_tool_result_audios=True,
+            promote_tool_result_videos=True,
+        )
+    
+        # Test with tool result containing image blocks
+        res = await formatter.format(
+            [*self.msgs_system, *self.msgs_conversation, *self.msgs_tools],
+        )
+    
+        # Expected result: image blocks should be extracted and inserted
+        # as a separate user message after the tool result message
+        expected_result = [
+            {
+                "role": "system",
+                "content": "You're a helpful assistant.",
+            },
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "text": "What is the capital of France?",
+                    },
+                    {
+                        "image": f"file://{os.path.abspath(self.image_path)}",
+                    },
+                ],
+            },
+            {
+                "role": "assistant",
+                "content": "The capital of France is Paris.",
+            },
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "text": "What is the capital of Germany?",
+                    },
+                    {
+                        "audio": "https://example.com/audio1.mp3",
+                    },
+                ],
+            },
+            {
+                "role": "assistant",
+                "content": "The capital of Germany is Berlin.",
+            },
+            {
+                "role": "user",
+                "content": "What is the capital of Japan?",
+            },
+            {
+                "role": "assistant",
+                "content": [],
+                "tool_calls": [
+                    {
+                        "id": "1",
+                        "type": "function",
+                        "function": {
+                            "name": "get_capital",
+                            "arguments": '{"country": "Japan"}',
+                        },
+                    },
+                ],
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "1",
+                "content": "- The capital of Japan is Tokyo.\n"
+                "- The returned image can be found at: ./image.png"
+                "\n- The returned audio can be found at: "
+                f"{self.mock_audio_path}"
+                f"\n- The returned video can be found at: "
+                f"{self.mock_video_path}",
+                "name": "get_capital",
+            },
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "text": "<system-info>The following are "
+                        "the media contents from the tool "
+                        "result of 'get_capital':",
+                    },
+                    {
+                        "text": "\n- The image from './image.png': ",
+                    },
+                    {
+                        "image": f"file://{os.path.abspath(self.image_path)}",
+                    },
+                    {
+                        "text": "\n- The audio from "
+                        f"'{self.mock_audio_path}': ",
+                    },
+                    {
+                        "audio": self.mock_audio_path,
+                    },
+                    {
+                        "text": "\n- The video from "
+                        f"'{self.mock_video_path}': ",
+                    },
+                    {
+                        "video": self.mock_video_path,
+                    },
+                    {
+                        "text": "</system-info>",
+                    },
+                ],
+            },
+            {
+                "role": "assistant",
+                "content": "The capital of Japan is Tokyo.",
+            },
+        ]
+    
+>       self.assertListEqual(expected_result, res)
+E       AssertionError: Lists differ: [{'ro[525 chars]t': [], 'tool_calls': [{'id': '1', 'type': 'fu[1125 chars]o.'}] != [{'ro[525 chars]t': [{'text': None}], 'tool_calls': [{'id': '1[1139 chars]o.'}]
+E       
+E       First differing element 6:
+E       {'rol[24 chars]t': [], 'tool_calls': [{'id': '1', 'type': 'fu[79 chars]'}}]}
+E       {'rol[24 chars]t': [{'text': None}], 'tool_calls': [{'id': '1[93 chars]'}}]}
+E       
+E       Diff is 2248 characters long. Set self.maxDiff to None to see it.
+
+tests/formatter_dashscope_test.py:677: AssertionError
+_______________ TestDashScopeFormatter.test_multiagent_formater ________________
+
+self = <formatter_dashscope_test.TestDashScopeFormatter testMethod=test_multiagent_formater>
+mock_save_base64_data = <MagicMock name='_save_base64_data' id='140572739124672'>
+
+    @patch("agentscope.formatter._formatter_base._save_base64_data")
+    async def test_multiagent_formater(
+        self,
+        mock_save_base64_data: MagicMock,
+    ) -> None:
+        """Test the multi-agent formatter."""
+        mock_save_base64_data.side_effect = self._mock_save_base64_data
+    
+        formatter = DashScopeMultiAgentFormatter()
+    
+        # system + conversation + tools + conversation + tools
+        res = await formatter.format(
+            [
+                *self.msgs_system,
+                *self.msgs_conversation,
+                *self.msgs_tools,
+                *self.msgs_conversation_2,
+                *self.msgs_tools_2,
+            ],
+        )
+    
+>       self.assertListEqual(res, self.ground_truth_multiagent_2)
+E       AssertionError: Lists differ: [{'ro[571 chars]t': [{'text': None}], 'tool_calls': [{'id': '1[1156 chars]y>'}] != [{'ro[571 chars]t': [], 'tool_calls': [{'id': '1', 'type': 'fu[1128 chars]y>'}]
+E       
+E       First differing element 2:
+E       {'rol[24 chars]t': [{'text': None}], 'tool_calls': [{'id': '1[93 chars]'}}]}
+E       {'rol[24 chars]t': [], 'tool_calls': [{'id': '1', 'type': 'fu[79 chars]'}}]}
+E       
+E       Diff is 2537 characters long. Set self.maxDiff to None to see it.
+
+tests/formatter_dashscope_test.py:700: AssertionError
+_ TestDashScopeFormatter.test_multiagent_formatter_with_promote_media_tool_result _
+
+self = <formatter_dashscope_test.TestDashScopeFormatter testMethod=test_multiagent_formatter_with_promote_media_tool_result>
+mock_save_base64_data = <MagicMock name='_save_base64_data' id='140572740028256'>
+
+    @patch("agentscope.formatter._formatter_base._save_base64_data")
+    async def test_multiagent_formatter_with_promote_media_tool_result(
+        self,
+        mock_save_base64_data: MagicMock,
+    ) -> None:
+        """Test the multi-agent formatter with
+        promote_tool_result_images=True."""
+        mock_save_base64_data.side_effect = self._mock_save_base64_data
+    
+        formatter = DashScopeMultiAgentFormatter(
+            promote_tool_result_images=True,
+            promote_tool_result_audios=True,
+            promote_tool_result_videos=True,
+        )
+    
+        # Test with tool result containing image blocks
+        res = await formatter.format(
+            [
+                *self.msgs_system,
+                *self.msgs_conversation,
+                *self.msgs_tools,
+            ],
+        )
+    
+        # Expected result: image blocks should be promoted and inserted
+        # as a separate user message after the tool result message
+        expected_result = [
+            {
+                "role": "system",
+                "content": "You're a helpful assistant.",
+            },
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "text": "# Conversation History\nThe content between"
+                        " <history></history> tags contains your"
+                        " conversation history\n<history>\nuser: What"
+                        " is the capital of France?",
+                    },
+                    {
+                        "image": f"file://{os.path.abspath(self.image_path)}",
+                    },
+                    {
+                        "text": "assistant: The capital of France is Paris."
+                        "\nuser: What is the capital of Germany?",
+                    },
+                    {
+                        "audio": "https://example.com/audio1.mp3",
+                    },
+                    {
+                        "text": "assistant: The capital of Germany is Berlin."
+                        "\nuser: What is the capital of Japan?"
+                        "\n</history>",
+                    },
+                ],
+            },
+            {
+                "role": "assistant",
+                "content": [],
+                "tool_calls": [
+                    {
+                        "id": "1",
+                        "type": "function",
+                        "function": {
+                            "name": "get_capital",
+                            "arguments": '{"country": "Japan"}',
+                        },
+                    },
+                ],
+            },
+            {
+                "role": "tool",
+                "tool_call_id": "1",
+                "content": "- The capital of Japan is Tokyo.\n- The returned"
+                " image can be found at: ./image.png\n- The"
+                " returned audio can be found at: "
+                f"{self.mock_audio_path}"
+                f"\n- The returned video can be found at: "
+                f"{self.mock_video_path}",
+                "name": "get_capital",
+            },
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "text": "<system-info>The following are "
+                        "the media contents from the tool "
+                        "result of 'get_capital':",
+                    },
+                    {
+                        "text": "\n- The image from './image.png': ",
+                    },
+                    {
+                        "image": f"file://{os.path.abspath(self.image_path)}",
+                    },
+                    {
+                        "text": "\n- The audio from "
+                        f"'{self.mock_audio_path}': ",
+                    },
+                    {
+                        "audio": self.mock_audio_path,
+                    },
+                    {
+                        "text": "\n- The video from "
+                        f"'{self.mock_video_path}': ",
+                    },
+                    {
+                        "video": self.mock_video_path,
+                    },
+                    {
+                        "text": "</system-info>",
+                    },
+                ],
+            },
+            {
+                "role": "user",
+                "content": "<history>\nassistant:"
+                " The capital of Japan is Tokyo.\n</history>",
+            },
+        ]
+    
+        self.maxDiff = None
+>       self.assertListEqual(expected_result, res)
+E       AssertionError: Lists differ: [{'ro[571 chars]t': [], 'tool_calls': [{'id': '1', 'type': 'fu[1154 chars]y>'}] != [{'ro[571 chars]t': [{'text': None}], 'tool_calls': [{'id': '1[1168 chars]y>'}]
+E       
+E       First differing element 2:
+E       {'rol[24 chars]t': [], 'tool_calls': [{'id': '1', 'type': 'fu[79 chars]'}}]}
+E       {'rol[24 chars]t': [{'text': None}], 'tool_calls': [{'id': '1[93 chars]'}}]}
+E       
+E         [{'content': "You're a helpful assistant.", 'role': 'system'},
+E          {'content': [{'text': '# Conversation History\n'
+E                                'The content between <history></history> tags contains '
+E                                'your conversation history\n'
+E                                '<history>\n'
+E                                'user: What is the capital of France?'},
+E                       {'image': 'file:///testbed/image.png'},
+E                       {'text': 'assistant: The capital of France is Paris.\n'
+E                                'user: What is the capital of Germany?'},
+E                       {'audio': 'https://example.com/audio1.mp3'},
+E                       {'text': 'assistant: The capital of Germany is Berlin.\n'
+E                                'user: What is the capital of Japan?\n'
+E                                '</history>'}],
+E           'role': 'user'},
+E       -  {'content': [],
+E       +  {'content': [{'text': None}],
+E           'role': 'assistant',
+E           'tool_calls': [{'function': {'arguments': '{"country": "Japan"}',
+E                                        'name': 'get_capital'},
+E                           'id': '1',
+E                           'type': 'function'}]},
+E          {'content': '- The capital of Japan is Tokyo.\n'
+E                      '- The returned image can be found at: ./image.png\n'
+E                      '- The returned audio can be found at: '
+E                      '/var/folders/gf/krg8x_ws409cpw_46b2s6rjc0000gn/T/tmpfymnv2w9.wav\n'
+E                      '- The returned video can be found at: '
+E                      '/var/folders/gf/krg8x_ws409cpw_46b2s6rjc0000gn/T/tmpfymnv2w9.mp4',
+E           'name': 'get_capital',
+E           'role': 'tool',
+E           'tool_call_id': '1'},
+E          {'content': [{'text': '<system-info>The following are the media contents from '
+E                                "the tool result of 'get_capital':"},
+E                       {'text': "\n- The image from './image.png': "},
+E                       {'image': 'file:///testbed/image.png'},
+E                       {'text': '\n'
+E                                '- The audio from '
+E                                "'/var/folders/gf/krg8x_ws409cpw_46b2s6rjc0000gn/T/tmpfymnv2w9.wav': "},
+E                       {'audio': '/var/folders/gf/krg8x_ws409cpw_46b2s6rjc0000gn/T/tmpfymnv2w9.wav'},
+E                       {'text': '\n'
+E                                '- The video from '
+E                                "'/var/folders/gf/krg8x_ws409cpw_46b2s6rjc0000gn/T/tmpfymnv2w9.mp4': "},
+E                       {'video': '/var/folders/gf/krg8x_ws409cpw_46b2s6rjc0000gn/T/tmpfymnv2w9.mp4'},
+E                       {'text': '</system-info>'}],
+E           'role': 'user'},
+E          {'content': '<history>\nassistant: The capital of Japan is Tokyo.\n</history>',
+E           'role': 'user'}]
+
+tests/formatter_dashscope_test.py:903: AssertionError
+=============================== warnings summary ===============================
+tests/rag_knowledge_test.py:19
+  /testbed/tests/rag_knowledge_test.py:19: PytestCollectionWarning: cannot collect test class 'TestTextEmbedding' because it has a __init__ constructor (from: tests/rag_knowledge_test.py)
+    class TestTextEmbedding(EmbeddingModelBase):
+
+tests/evaluation_test.py::EvaluatorTest::test_general_evaluator
+  /usr/local/lib/python3.10/site-packages/ray/_private/worker.py:2046: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+    warnings.warn(
+
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_embedded_content
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_embedded_content
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_streamable_http_stateless_client
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_streamable_http_stateless_client
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_streamable_http_stateless_client
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_streamable_http_stateless_client
+  /usr/local/lib/python3.10/contextlib.py:103: DeprecationWarning: Use `streamable_http_client` instead.
+    self.gen = func(*args, **kwds)
+
+tests/memory_test.py::RedisMemoryTest::test_memory
+  /testbed/src/agentscope/memory/_working_memory/_redis_memory.py:564: DeprecationWarning: Call to deprecated close. (Use aclose() instead) -- Deprecated since version 5.0.1.
+    await self._client.close()
+
+tests/rag_store_test.py::RAGStoreTest::test_milvus_lite_store
+  /usr/local/lib/python3.10/site-packages/milvus_lite/__init__.py:15: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    from pkg_resources import DistributionNotFound, get_distribution
+
+tests/rag_store_test.py::RAGStoreTest::test_milvus_lite_store
+  /usr/local/lib/python3.10/site-packages/pkg_resources/__init__.py:3147: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sphinxcontrib')`.
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(pkg)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/formatter_dashscope_test.py::TestDashScopeFormatter::test_chat_formatter
+FAILED tests/formatter_dashscope_test.py::TestDashScopeFormatter::test_chat_formatter_with_extract_media_blocks
+FAILED tests/formatter_dashscope_test.py::TestDashScopeFormatter::test_multiagent_formater
+FAILED tests/formatter_dashscope_test.py::TestDashScopeFormatter::test_multiagent_formatter_with_promote_media_tool_result
+====== 4 failed, 235 passed, 20 skipped, 11 warnings in 112.48s (0:01:52) ======
+echo OMNIGRIL_EXIT_CODE=1

@@ -7,6 +7,32 @@ set -euo pipefail
 # This allows 'conda activate' to work inside a bash script
 eval "$(conda shell.bash hook)"
 
+ENV_NAME="sbl-main"
+ENV_PATH="/home/cc/miniconda3/envs/$ENV_NAME"
+
+echo "============================================================"
+echo " Provisioning Conda Environment: $ENV_NAME"
+echo "============================================================"
+
+if ! conda info --envs | grep -q "^$ENV_NAME "; then
+    echo "Creating new conda environment '$ENV_NAME' with Python 3.12..."
+    conda create -y -n "$ENV_NAME" python=3.12
+else
+    echo "Environment '$ENV_NAME' already exists. Skipping creation."
+fi
+
+echo "Activating '$ENV_NAME'..."
+conda activate "$ENV_NAME"
+
+echo "Installing core dependencies..."
+# Direct call to the env's python to run pip
+"$ENV_PATH/bin/python" -m pip install --upgrade pip
+"$ENV_PATH/bin/python" -m pip install openai requests
+
+# Install the editable package
+echo "Installing SWE-bench-Live in editable mode..."
+"$ENV_PATH/bin/python" -m pip install -e .
+
 # ==============================================================================
 # LOGGING, TELEMETRY, & PATH SETUP
 # ==============================================================================
@@ -60,7 +86,7 @@ conda activate sbl-main
 STATS_SCRIPT="$SBL_ROOT/stats/entry.py"
 echo -e "\n[Telemetry] Starting token and cost tracker..."
 if [[ -f "$STATS_SCRIPT" ]]; then
-    python "$STATS_SCRIPT" start || echo "Warning: Failed to start stats tracker."
+    "$ENV_PATH/bin/python" "$STATS_SCRIPT" start || echo "Warning: Failed to start stats tracker."
 else
     echo "Warning: Stats script not found at $STATS_SCRIPT"
 fi
@@ -70,7 +96,7 @@ fi
 # ==============================================================================
 echo -e "\n[2] Preparing Pull2Issue from Map..."
 cd baseline/
-python sbl_prepare_pull2issue_from_issue_pr_map.py \
+"$ENV_PATH/bin/python" sbl_prepare_pull2issue_from_issue_pr_map.py \
   --input issue_pr_map.json \
   --cutoff_date 20090101 \
   --gh_token_file tokens.txt \
@@ -93,7 +119,7 @@ bash baseline/setup.sh
 # Step 5: Prepare Launch Config
 # ==============================================================================
 echo -e "\n[5] Merging Task Instances & Preparing Launch Config..."
-python baseline/sbl_step3_prepare_launch_dataset.py
+"$ENV_PATH/bin/python" baseline/sbl_step3_prepare_launch_dataset.py
 
 # ==============================================================================
 # Step 6: Export API Keys
@@ -101,7 +127,7 @@ python baseline/sbl_step3_prepare_launch_dataset.py
 echo -e "\n[6] Exporting API Keys..."
 # REMINDER: Replace these placeholders with your actual keys before running!
 export OPENAI_API_KEY=forge-key
-export TAVILY_API_KEY=tvly-key
+export TAVILY_API_KEY=tvly-dev-key
 export OPENAI_BASE_URL=https://api.forge.tensorblock.co/v1
 
 # ==============================================================================
@@ -109,15 +135,15 @@ export OPENAI_BASE_URL=https://api.forge.tensorblock.co/v1
 # ==============================================================================
 echo -e "\n[7] Executing RepoLaunch (Generating testable containers)..."
 cd launch/
-pip install -e .
-python -m launch.run --config-path data/sbl_baseline/config.json
+"$ENV_PATH/bin/python" -m pip install -e .
+"$ENV_PATH/bin/python" -m launch.run --config-path data/sbl_baseline/config.json
 
 # ==============================================================================
 # Step 8: Validation (F2P Dataset)
 # ==============================================================================
 echo -e "\n[8] Building F2P Dataset (Validation)..."
 cd ..
-python -m evaluation.validation \
+"$ENV_PATH/bin/python" -m evaluation.validation \
   --input_dir "$ORGANIZE_JSONL" \
   --platform linux \
   --workers 4 \
@@ -128,7 +154,7 @@ python -m evaluation.validation \
 # Step 9: Prepare Judge Folder
 # ==============================================================================
 echo -e "\n[9] Preparing SWE-Factory Judge format..."
-python baseline/sf_make_judge_f2p_folder_from_organize_jsonl.py \
+"$ENV_PATH/bin/python" baseline/sf_make_judge_f2p_folder_from_organize_jsonl.py \
   --input "$ORGANIZE_JSONL" \
   --out-dir baseline/sf_judge_f2p_outputs \
   --platform linux \
@@ -139,7 +165,7 @@ python baseline/sf_make_judge_f2p_folder_from_organize_jsonl.py \
 # Step 10: Judge Fail2Pass
 # ==============================================================================
 echo -e "\n[10] Classifying Fail2Pass Status (SWE-Factory)..."
-python baseline/judge_fail2pass.py \
+"$ENV_PATH/bin/python" baseline/judge_fail2pass.py \
   "$SBL_ROOT/baseline/sf_judge_f2p_outputs" \
   "$SBL_ROOT/$SUMMARY_JSON" \
   --processes 20
@@ -151,7 +177,7 @@ echo -e "\n[Telemetry] Waiting 5 seconds for API metrics to sync..."
 sleep 5
 echo "Ending cost tracker..."
 if [[ -f "$STATS_SCRIPT" ]]; then
-    python "$STATS_SCRIPT" end || echo "Warning: Failed to end stats tracker."
+    "$ENV_PATH/bin/python" "$STATS_SCRIPT" end || echo "Warning: Failed to end stats tracker."
 fi
 
 # --- END PIPELINE TIMER ---
