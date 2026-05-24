@@ -1,0 +1,439 @@
+{
+  "task_files_total": 9,
+  "task_files_non_empty": 6,
+  "instances_merged": 39,
+  "merged_output": "baseline/sbl_task_instances_with_tests.jsonl",
+  "launch_dataset": "launch/data/sbl_baseline/dataset.jsonl",
+  "launch_config": "launch/data/sbl_baseline/config.json",
+  "instances": [
+    {
+      "instance_id": "AntonOsika__gpt-engineer-720",
+      "repo": "AntonOsika/gpt-engineer",
+      "pull_number": 720,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 6
+      },
+      "source_file": "baseline/sbl_inputs/AntonOsika__gpt-engineer/tasks/gpt-engineer-task-instances.jsonl"
+    },
+    {
+      "instance_id": "AntonOsika__gpt-engineer-721",
+      "repo": "AntonOsika/gpt-engineer",
+      "pull_number": 721,
+      "language": "Python",
+      "ext_counts": {
+        ".md": 3,
+        ".py": 5
+      },
+      "source_file": "baseline/sbl_inputs/AntonOsika__gpt-engineer/tasks/gpt-engineer-task-instances.jsonl"
+    },
+    {
+      "instance_id": "AntonOsika__gpt-engineer-930",
+      "repo": "AntonOsika/gpt-engineer",
+      "pull_number": 930,
+      "language": "Python",
+      "ext_counts": {
+        ".json": 1,
+        ".py": 1
+      },
+      "source_file": "baseline/sbl_inputs/AntonOsika__gpt-engineer/tasks/gpt-engineer-task-instances.jsonl"
+    },
+    {
+      "instance_id": "AntonOsika__gpt-engineer-1120",
+      "repo": "AntonOsika/gpt-engineer",
+      "pull_number": 1120,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 3
+      },
+      "source_file": "baseline/sbl_inputs/AntonOsika__gpt-engineer/tasks/gpt-engineer-task-instances.jsonl"
+    },
+    {
+      "instance_id": "FoundationAgents__MetaGPT-799",
+      "repo": "FoundationAgents/MetaGPT",
+      "pull_number": 799,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/FoundationAgents__MetaGPT/tasks/MetaGPT-task-instances.jsonl"
+    },
+    {
+      "instance_id": "FoundationAgents__MetaGPT-1058",
+      "repo": "FoundationAgents/MetaGPT",
+      "pull_number": 1058,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 6
+      },
+      "source_file": "baseline/sbl_inputs/FoundationAgents__MetaGPT/tasks/MetaGPT-task-instances.jsonl"
+    },
+    {
+      "instance_id": "FoundationAgents__MetaGPT-1431",
+      "repo": "FoundationAgents/MetaGPT",
+      "pull_number": 1431,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 7,
+        ".txt": 1
+      },
+      "source_file": "baseline/sbl_inputs/FoundationAgents__MetaGPT/tasks/MetaGPT-task-instances.jsonl"
+    },
+    {
+      "instance_id": "FoundationAgents__MetaGPT-1450",
+      "repo": "FoundationAgents/MetaGPT",
+      "pull_number": 1450,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 5
+      },
+      "source_file": "baseline/sbl_inputs/FoundationAgents__MetaGPT/tasks/MetaGPT-task-instances.jsonl"
+    },
+    {
+      "instance_id": "FoundationAgents__MetaGPT-1500",
+      "repo": "FoundationAgents/MetaGPT",
+      "pull_number": 1500,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 4
+      },
+      "source_file": "baseline/sbl_inputs/FoundationAgents__MetaGPT/tasks/MetaGPT-task-instances.jsonl"
+    },
+    {
+      "instance_id": "FoundationAgents__MetaGPT-1544",
+      "repo": "FoundationAgents/MetaGPT",
+      "pull_number": 1544,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 6
+      },
+      "source_file": "baseline/sbl_inputs/FoundationAgents__MetaGPT/tasks/MetaGPT-task-instances.jsonl"
+    },
+    {
+      "instance_id": "agentscope-ai__agentscope-263",
+      "repo": "agentscope-ai/agentscope",
+      "pull_number": 263,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/agentscope-ai__agentscope/tasks/agentscope-task-instances.jsonl"
+    },
+    {
+      "instance_id": "agentscope-ai__agentscope-962",
+      "repo": "agentscope-ai/agentscope",
+      "pull_number": 962,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 6
+      },
+      "source_file": "baseline/sbl_inputs/agentscope-ai__agentscope/tasks/agentscope-task-instances.jsonl"
+    },
+    {
+      "instance_id": "langflow-ai__langflow-2602",
+      "repo": "langflow-ai/langflow",
+      "pull_number": 2602,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 4
+      },
+      "source_file": "baseline/sbl_inputs/langflow-ai__langflow/tasks/langflow-task-instances.jsonl"
+    },
+    {
+      "instance_id": "langflow-ai__langflow-3698",
+      "repo": "langflow-ai/langflow",
+      "pull_number": 3698,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 5
+      },
+      "source_file": "baseline/sbl_inputs/langflow-ai__langflow/tasks/langflow-task-instances.jsonl"
+    },
+    {
+      "instance_id": "langflow-ai__langflow-3862",
+      "repo": "langflow-ai/langflow",
+      "pull_number": 3862,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 4,
+        ".ts": 2
+      },
+      "source_file": "baseline/sbl_inputs/langflow-ai__langflow/tasks/langflow-task-instances.jsonl"
+    },
+    {
+      "instance_id": "langflow-ai__langflow-4291",
+      "repo": "langflow-ai/langflow",
+      "pull_number": 4291,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/langflow-ai__langflow/tasks/langflow-task-instances.jsonl"
+    },
+    {
+      "instance_id": "langflow-ai__langflow-5272",
+      "repo": "langflow-ai/langflow",
+      "pull_number": 5272,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/langflow-ai__langflow/tasks/langflow-task-instances.jsonl"
+    },
+    {
+      "instance_id": "langflow-ai__langflow-6747",
+      "repo": "langflow-ai/langflow",
+      "pull_number": 6747,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2,
+        ".json": 26
+      },
+      "source_file": "baseline/sbl_inputs/langflow-ai__langflow/tasks/langflow-task-instances.jsonl"
+    },
+    {
+      "instance_id": "langflow-ai__langflow-10103",
+      "repo": "langflow-ai/langflow",
+      "pull_number": 10103,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 5
+      },
+      "source_file": "baseline/sbl_inputs/langflow-ai__langflow/tasks/langflow-task-instances.jsonl"
+    },
+    {
+      "instance_id": "langflow-ai__langflow-10201",
+      "repo": "langflow-ai/langflow",
+      "pull_number": 10201,
+      "language": "Python",
+      "ext_counts": {
+        ".json": 1,
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/langflow-ai__langflow/tasks/langflow-task-instances.jsonl"
+    },
+    {
+      "instance_id": "langflow-ai__langflow-11370",
+      "repo": "langflow-ai/langflow",
+      "pull_number": 11370,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 3
+      },
+      "source_file": "baseline/sbl_inputs/langflow-ai__langflow/tasks/langflow-task-instances.jsonl"
+    },
+    {
+      "instance_id": "lobehub__lobehub-5391",
+      "repo": "lobehub/lobehub",
+      "pull_number": 5391,
+      "language": "JS/TS",
+      "ext_counts": {
+        ".json": 18,
+        ".tsx": 1,
+        ".ts": 3,
+        ".snap": 1
+      },
+      "source_file": "baseline/sbl_inputs/lobehub__lobehub/tasks/lobehub-task-instances.jsonl"
+    },
+    {
+      "instance_id": "lobehub__lobehub-5429",
+      "repo": "lobehub/lobehub",
+      "pull_number": 5429,
+      "language": "JS/TS",
+      "ext_counts": {
+        ".json": 19,
+        ".tsx": 7,
+        ".ts": 9
+      },
+      "source_file": "baseline/sbl_inputs/lobehub__lobehub/tasks/lobehub-task-instances.jsonl"
+    },
+    {
+      "instance_id": "lobehub__lobehub-5454",
+      "repo": "lobehub/lobehub",
+      "pull_number": 5454,
+      "language": "JS/TS",
+      "ext_counts": {
+        ".ts": 5
+      },
+      "source_file": "baseline/sbl_inputs/lobehub__lobehub/tasks/lobehub-task-instances.jsonl"
+    },
+    {
+      "instance_id": "lobehub__lobehub-5671",
+      "repo": "lobehub/lobehub",
+      "pull_number": 5671,
+      "language": "JS/TS",
+      "ext_counts": {
+        ".tsx": 4,
+        ".ts": 6
+      },
+      "source_file": "baseline/sbl_inputs/lobehub__lobehub/tasks/lobehub-task-instances.jsonl"
+    },
+    {
+      "instance_id": "lobehub__lobehub-5739",
+      "repo": "lobehub/lobehub",
+      "pull_number": 5739,
+      "language": "JS/TS",
+      "ext_counts": {
+        ".ts": 2
+      },
+      "source_file": "baseline/sbl_inputs/lobehub__lobehub/tasks/lobehub-task-instances.jsonl"
+    },
+    {
+      "instance_id": "lobehub__lobehub-5824",
+      "repo": "lobehub/lobehub",
+      "pull_number": 5824,
+      "language": "JS/TS",
+      "ext_counts": {
+        ".ts": 3
+      },
+      "source_file": "baseline/sbl_inputs/lobehub__lobehub/tasks/lobehub-task-instances.jsonl"
+    },
+    {
+      "instance_id": "lobehub__lobehub-6186",
+      "repo": "lobehub/lobehub",
+      "pull_number": 6186,
+      "language": "JS/TS",
+      "ext_counts": {
+        ".ts": 10,
+        ".tsx": 1
+      },
+      "source_file": "baseline/sbl_inputs/lobehub__lobehub/tasks/lobehub-task-instances.jsonl"
+    },
+    {
+      "instance_id": "tensorzero__tensorzero-195",
+      "repo": "tensorzero/tensorzero",
+      "pull_number": 195,
+      "language": "Rust",
+      "ext_counts": {
+        ".json": 14,
+        ".minijinja": 13,
+        ".toml": 2,
+        ".rs": 2,
+        ".yml": 1
+      },
+      "source_file": "baseline/sbl_inputs/tensorzero__tensorzero/tasks/tensorzero-task-instances.jsonl"
+    },
+    {
+      "instance_id": "tensorzero__tensorzero-544",
+      "repo": "tensorzero/tensorzero",
+      "pull_number": 544,
+      "language": "Rust",
+      "ext_counts": {
+        ".rs": 3
+      },
+      "source_file": "baseline/sbl_inputs/tensorzero__tensorzero/tasks/tensorzero-task-instances.jsonl"
+    },
+    {
+      "instance_id": "tensorzero__tensorzero-936",
+      "repo": "tensorzero/tensorzero",
+      "pull_number": 936,
+      "language": "Rust",
+      "ext_counts": {
+        ".rs": 3,
+        ".toml": 1
+      },
+      "source_file": "baseline/sbl_inputs/tensorzero__tensorzero/tasks/tensorzero-task-instances.jsonl"
+    },
+    {
+      "instance_id": "tensorzero__tensorzero-1276",
+      "repo": "tensorzero/tensorzero",
+      "pull_number": 1276,
+      "language": "Rust",
+      "ext_counts": {
+        ".rs": 1,
+        ".py": 1
+      },
+      "source_file": "baseline/sbl_inputs/tensorzero__tensorzero/tasks/tensorzero-task-instances.jsonl"
+    },
+    {
+      "instance_id": "tensorzero__tensorzero-3006",
+      "repo": "tensorzero/tensorzero",
+      "pull_number": 3006,
+      "language": "Rust",
+      "ext_counts": {
+        ".rs": 3,
+        ".toml": 1
+      },
+      "source_file": "baseline/sbl_inputs/tensorzero__tensorzero/tasks/tensorzero-task-instances.jsonl"
+    },
+    {
+      "instance_id": "tensorzero__tensorzero-3417",
+      "repo": "tensorzero/tensorzero",
+      "pull_number": 3417,
+      "language": "Rust",
+      "ext_counts": {
+        ".rs": 21
+      },
+      "source_file": "baseline/sbl_inputs/tensorzero__tensorzero/tasks/tensorzero-task-instances.jsonl"
+    },
+    {
+      "instance_id": "tensorzero__tensorzero-3681",
+      "repo": "tensorzero/tensorzero",
+      "pull_number": 3681,
+      "language": "Rust",
+      "ext_counts": {
+        ".toml": 3,
+        ".rs": 3
+      },
+      "source_file": "baseline/sbl_inputs/tensorzero__tensorzero/tasks/tensorzero-task-instances.jsonl"
+    },
+    {
+      "instance_id": "tensorzero__tensorzero-3737",
+      "repo": "tensorzero/tensorzero",
+      "pull_number": 3737,
+      "language": "Rust",
+      "ext_counts": {
+        ".md": 1,
+        ".rs": 3,
+        ".py": 1
+      },
+      "source_file": "baseline/sbl_inputs/tensorzero__tensorzero/tasks/tensorzero-task-instances.jsonl"
+    },
+    {
+      "instance_id": "tensorzero__tensorzero-4335",
+      "repo": "tensorzero/tensorzero",
+      "pull_number": 4335,
+      "language": "Rust",
+      "ext_counts": {
+        ".rs": 3
+      },
+      "source_file": "baseline/sbl_inputs/tensorzero__tensorzero/tasks/tensorzero-task-instances.jsonl"
+    },
+    {
+      "instance_id": "tensorzero__tensorzero-5535",
+      "repo": "tensorzero/tensorzero",
+      "pull_number": 5535,
+      "language": "Rust",
+      "ext_counts": {
+        ".yml": 6,
+        ".md": 4,
+        ".mdx": 7,
+        ".toml": 3,
+        ".example": 1,
+        ".rs": 5,
+        ".sh": 1
+      },
+      "source_file": "baseline/sbl_inputs/tensorzero__tensorzero/tasks/tensorzero-task-instances.jsonl"
+    },
+    {
+      "instance_id": "tensorzero__tensorzero-5537",
+      "repo": "tensorzero/tensorzero",
+      "pull_number": 5537,
+      "language": "Rust",
+      "ext_counts": {
+        ".pyi": 1,
+        ".mdx": 1,
+        ".ipynb": 1,
+        ".ts": 1,
+        ".rs": 3
+      },
+      "source_file": "baseline/sbl_inputs/tensorzero__tensorzero/tasks/tensorzero-task-instances.jsonl"
+    }
+  ],
+  "next_commands": [
+    "cd launch",
+    "export OPENAI_API_KEY=...  # required by RepoLaunch",
+    "export TAVILY_API_KEY=...  # required by RepoLaunch",
+    "python -m launch.run --config-path data/sbl_baseline/config.json"
+  ]
+}
