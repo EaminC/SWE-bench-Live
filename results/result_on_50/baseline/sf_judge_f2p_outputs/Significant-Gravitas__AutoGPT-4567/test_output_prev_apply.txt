@@ -1,0 +1,75 @@
+cat test-output.log
+test_invalid_json_leading_sentence_with_gpt (tests.unit.test_json_parser.TestParseJson)
+Test that a REALLY invalid JSON string raises an error when try_to_fix_with_gpt is False ... ok
+test_invalid_json_major_with_gpt (tests.unit.test_json_parser.TestParseJson)
+Test that an invalid JSON string raises an error when try_to_fix_with_gpt is False ... ok
+test_invalid_json_major_without_gpt (tests.unit.test_json_parser.TestParseJson)
+Test that a REALLY invalid JSON string raises an error when try_to_fix_with_gpt is False ... ok
+test_invalid_json_minor (tests.unit.test_json_parser.TestParseJson)
+Test that an invalid JSON string can not be fixed without gpt ... ok
+test_valid_json (tests.unit.test_json_parser.TestParseJson)
+Test that a valid JSON string is parsed correctly. ... ok
+test_add_command (tests.unit.test_prompt_generator.TestPromptGenerator)
+Test if the add_command() method adds a command to the generator's commands list. ... ok
+test_add_constraint (tests.unit.test_prompt_generator.TestPromptGenerator)
+Test if the add_constraint() method adds a constraint to the generator's constraints list. ... ok
+test_add_performance_evaluation (tests.unit.test_prompt_generator.TestPromptGenerator)
+Test if the add_performance_evaluation() method adds an evaluation to the generator's ... ok
+test_add_resource (tests.unit.test_prompt_generator.TestPromptGenerator)
+Test if the add_resource() method adds a resource to the generator's resources list. ... ok
+test_generate_prompt_string (tests.unit.test_prompt_generator.TestPromptGenerator)
+Test if the generate_prompt_string() method generates a prompt string with all the added ... ok
+test_parsers (tests.unit.test_text_file_parsers.TestConfig) ... incorrect startxref pointer(1)
+ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.094s
+
+OK
+  Command 'download_file' is disabled: Error: You do not have user authorization to download files locally.
+  Command 'execute_shell' is disabled: You are not allowed to run local shell commands. To execute shell commands, EXECUTE_LOCAL_COMMANDS must be set to 'True' in your config file: .env - do not attempt to bypass the restriction.
+  Command 'execute_shell_popen' is disabled: You are not allowed to run local shell commands. To execute shell commands, EXECUTE_LOCAL_COMMANDS must be set to 'True' in your config. Do not attempt to bypass the restriction.
+  Command 'generate_image' is disabled: Requires a image provider to be set.
+  Command 'clone_repository' is disabled: Configure github_username and github_api_key.
+  Command 'google' is disabled: Configure google_api_key and custom_search_engine_id.
+I suggest we start by browsing the repository to find any issues that we can fix.
+
+{
+    "command": {
+        "name": "browse_website",
+        "args":{
+            "url": "https://github.com/Torantulino/Auto-GPT"
+        }
+    },
+    "thoughts":
+    {
+        "text": "I suggest we start browsing the repository to find any issues that we can fix.",
+        "reasoning": "Browsing the repository will give us an idea of the current state of the codebase and identify any issues that we can address to improve the repo.",
+        "plan": "- Look through the repository to find any issues.
+- Investigate any issues to determine what needs to be fixed
+- Identify possible solutions to fix the issues
+- Open Pull Requests with fixes",
+        "criticism": "I should be careful while browsing so as not to accidentally introduce any new bugs or issues.",
+        "speak": "I will start browsing the repository to find any issues we can fix."
+    }
+}  json
+Expecting value: line 1 column 1 (char 0)  json loads error
+BEGIN: "name": "John" - "age": 30 - "city": "New York" :END  json
+Expecting value: line 1 column 1 (char 0)  json loads error
+BEGIN: "name": "John" - "age": 30 - "city": "New York" :END  json
+Expecting value: line 1 column 1 (char 0)  json loads error
+{"name": "John", "age": 30, "city": "New York",}  json
+Expecting property name enclosed in double quotes: line 1 column 48 (char 47)  json loads error
+  Reading file /tmp/tmpzwb8eley.txt with parser <autogpt.commands.file_operations_utils.TXTParser object at 0x7f282a7b11b0>
+  Reading '/tmp/tmpzwb8eley.txt' with encoding 'ascii'
+  Reading file /tmp/tmpgf8kgf_1.csv with parser <autogpt.commands.file_operations_utils.TXTParser object at 0x7f282a7b1f00>
+  Reading '/tmp/tmpgf8kgf_1.csv' with encoding 'ascii'
+  Reading file /tmp/tmp8c7u0d_g.pdf with parser <autogpt.commands.file_operations_utils.PDFParser object at 0x7f282a7b1f90>
+  Reading file /tmp/tmp0i9utbdv.docx with parser <autogpt.commands.file_operations_utils.DOCXParser object at 0x7f282a7b1ff0>
+  Reading file /tmp/tmpbhc3jo0o.json with parser <autogpt.commands.file_operations_utils.JSONParser object at 0x7f282a7b20b0>
+  Reading file /tmp/tmpv8hze9fe.xml with parser <autogpt.commands.file_operations_utils.XMLParser object at 0x7f282a7b2230>
+  Reading file /tmp/tmpcy0b54dq.yaml with parser <autogpt.commands.file_operations_utils.YAMLParser object at 0x7f282ab48670>
+  Reading file /tmp/tmpcijuxvj4.html with parser <autogpt.commands.file_operations_utils.HTMLParser object at 0x7f282ab486d0>
+  Reading file /tmp/tmpu9xkcfg_.md with parser <autogpt.commands.file_operations_utils.MarkdownParser object at 0x7f282ab48760>
+  Reading file /tmp/tmp6fjgw2zl.tex with parser <autogpt.commands.file_operations_utils.LaTeXParser object at 0x7f282ab487c0>
+echo OMNIGRIL_EXIT_CODE=0
