@@ -1,0 +1,15 @@
+{
+  "task_files_total": 4,
+  "task_files_non_empty": 0,
+  "instances_merged": 0,
+  "merged_output": "baseline/sbl_task_instances_with_tests.jsonl",
+  "launch_dataset": "launch/data/sbl_baseline/dataset.jsonl",
+  "launch_config": "launch/data/sbl_baseline/config.json",
+  "instances": [],
+  "next_commands": [
+    "cd launch",
+    "export OPENAI_API_KEY=...  # required by RepoLaunch",
+    "export TAVILY_API_KEY=...  # required by RepoLaunch",
+    "python -m launch.run --config-path data/sbl_baseline/config.json"
+  ]
+}

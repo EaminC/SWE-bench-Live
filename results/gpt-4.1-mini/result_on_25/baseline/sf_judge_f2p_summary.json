@@ -1,0 +1,10 @@
+{
+  "total": 0,
+  "categories": {
+    "fail2pass": [],
+    "fail2fail": [],
+    "pass2pass": [],
+    "pass2fail": [],
+    "error": []
+  }
+}

@@ -1,0 +1,49 @@
+cat test-output.log
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 9.21s
+     Running unittests src/lib.rs (target/debug/deps/autopilot_client-e4736030936b220d)
+
+running 12 tests
+test types::export_bindings_autopilotstatus ... ok
+test types::export_bindings_createeventresponse ... ok
+test types::export_bindings_listeventsparams ... ok
+test types::export_bindings_listsessionsparams ... ok
+test types::export_bindings_listsessionsresponse ... ok
+test types::export_bindings_session ... ok
+test types::export_bindings_statusupdate ... ok
+test types::export_bindings_streameventsparams ... ok
+test types::export_bindings_eventpayload ... ok
+test types::export_bindings_listeventsresponse ... ok
+test types::export_bindings_event ... ok
+test types::export_bindings_streamupdate ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running unittests src/lib.rs (target/debug/deps/autopilot_tools-a4b7525bea109838)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/config_tools.rs (target/debug/deps/config_tools-1eca568ac437a69e)
+
+running 2 tests
+
+thread 'test_write_config_tool_sets_autopilot_tags' panicked at /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-postgres-0.9.0-alpha.1/src/testing/mod.rs:93:44:
+DATABASE_URL must be set: EnvVar(NotPresent)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread 'test_get_config_tool_with_hash' panicked at /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-postgres-0.9.0-alpha.1/src/testing/mod.rs:93:44:
+DATABASE_URL must be set: EnvVar(NotPresent)
+test test_write_config_tool_sets_autopilot_tags ... FAILED
+test test_get_config_tool_with_hash ... FAILED
+
+failures:
+
+failures:
+    test_get_config_tool_with_hash
+    test_write_config_tool_sets_autopilot_tags
+
+test result: FAILED. 0 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `-p autopilot-tools --test config_tools`
+echo OMNIGRIL_EXIT_CODE=1

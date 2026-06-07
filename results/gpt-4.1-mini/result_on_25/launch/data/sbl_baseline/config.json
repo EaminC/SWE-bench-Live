@@ -1,0 +1,24 @@
+{
+  "mode": {
+    "setup": true,
+    "organize": true
+  },
+  "llm_provider_name": "OpenAI",
+  "model_config": {
+    "model_name": "tensorblock/gpt-4.1-mini",
+    "temperature": 0.0
+  },
+  "workspace_root": "data/sbl_baseline/",
+  "dataset": "data/sbl_baseline/dataset.jsonl",
+  "print_to_console": false,
+  "first_N_repos": 50,
+  "overwrite": false,
+  "max_workers": 8,
+  "os": "linux",
+  "max_trials": 1,
+  "max_steps_setup": 30,
+  "max_steps_verify": 10,
+  "max_steps_organize": 20,
+  "cmd_timeout": 20,
+  "image_prefix": "repolaunch/dev"
+}

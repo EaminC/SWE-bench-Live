@@ -1,0 +1,401 @@
+{
+  "task_files_total": 5,
+  "task_files_non_empty": 4,
+  "instances_merged": 37,
+  "merged_output": "baseline/sbl_task_instances_with_tests.jsonl",
+  "launch_dataset": "launch/data/sbl_baseline/dataset.jsonl",
+  "launch_config": "launch/data/sbl_baseline/config.json",
+  "instances": [
+    {
+      "instance_id": "AntonOsika__gpt-engineer-1118",
+      "repo": "AntonOsika/gpt-engineer",
+      "pull_number": 1118,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/AntonOsika__gpt-engineer/tasks/gpt-engineer-task-instances.jsonl"
+    },
+    {
+      "instance_id": "Significant-Gravitas__AutoGPT-3250",
+      "repo": "Significant-Gravitas/AutoGPT",
+      "pull_number": 3250,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 6,
+        ".sh": 1,
+        ".yaml": 1
+      },
+      "source_file": "baseline/sbl_inputs/Significant-Gravitas__AutoGPT/tasks/AutoGPT-task-instances.jsonl"
+    },
+    {
+      "instance_id": "Significant-Gravitas__AutoGPT-3375",
+      "repo": "Significant-Gravitas/AutoGPT",
+      "pull_number": 3375,
+      "language": "Python",
+      "ext_counts": {
+        ".template": 1,
+        ".py": 7,
+        ".md": 1,
+        ".yaml": 1
+      },
+      "source_file": "baseline/sbl_inputs/Significant-Gravitas__AutoGPT/tasks/AutoGPT-task-instances.jsonl"
+    },
+    {
+      "instance_id": "Significant-Gravitas__AutoGPT-4383",
+      "repo": "Significant-Gravitas/AutoGPT",
+      "pull_number": 4383,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/Significant-Gravitas__AutoGPT/tasks/AutoGPT-task-instances.jsonl"
+    },
+    {
+      "instance_id": "Significant-Gravitas__AutoGPT-4567",
+      "repo": "Significant-Gravitas/AutoGPT",
+      "pull_number": 4567,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 4
+      },
+      "source_file": "baseline/sbl_inputs/Significant-Gravitas__AutoGPT/tasks/AutoGPT-task-instances.jsonl"
+    },
+    {
+      "instance_id": "Significant-Gravitas__AutoGPT-4875",
+      "repo": "Significant-Gravitas/AutoGPT",
+      "pull_number": 4875,
+      "language": "Python",
+      "ext_counts": {
+        ".template": 1,
+        ".py": 4
+      },
+      "source_file": "baseline/sbl_inputs/Significant-Gravitas__AutoGPT/tasks/AutoGPT-task-instances.jsonl"
+    },
+    {
+      "instance_id": "agentscope-ai__agentscope-2",
+      "repo": "agentscope-ai/agentscope",
+      "pull_number": 2,
+      "language": "Python",
+      "ext_counts": {
+        ".md": 2,
+        ".yml": 3
+      },
+      "source_file": "baseline/sbl_inputs/agentscope-ai__agentscope/tasks/agentscope-task-instances.jsonl"
+    },
+    {
+      "instance_id": "agentscope-ai__agentscope-197",
+      "repo": "agentscope-ai/agentscope",
+      "pull_number": 197,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 5
+      },
+      "source_file": "baseline/sbl_inputs/agentscope-ai__agentscope/tasks/agentscope-task-instances.jsonl"
+    },
+    {
+      "instance_id": "agentscope-ai__agentscope-1097",
+      "repo": "agentscope-ai/agentscope",
+      "pull_number": 1097,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 10
+      },
+      "source_file": "baseline/sbl_inputs/agentscope-ai__agentscope/tasks/agentscope-task-instances.jsonl"
+    },
+    {
+      "instance_id": "agentscope-ai__agentscope-1356",
+      "repo": "agentscope-ai/agentscope",
+      "pull_number": 1356,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 7
+      },
+      "source_file": "baseline/sbl_inputs/agentscope-ai__agentscope/tasks/agentscope-task-instances.jsonl"
+    },
+    {
+      "instance_id": "agentscope-ai__agentscope-1390",
+      "repo": "agentscope-ai/agentscope",
+      "pull_number": 1390,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/agentscope-ai__agentscope/tasks/agentscope-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-1818",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 1818,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 3
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-1820",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 1820,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 3,
+        ".json": 1
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-2063",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 2063,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-2071",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 2071,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 3
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-2192",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 2192,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-2231",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 2231,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-2265",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 2265,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-2336",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 2336,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2,
+        ".yaml": 1
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-2408",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 2408,
+      "language": "Python",
+      "ext_counts": {
+        ".mdx": 1,
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-2423",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 2423,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-2552",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 2552,
+      "language": "Python",
+      "ext_counts": {
+        ".mdx": 1,
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-2553",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 2553,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 3,
+        ".yml": 1
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-2562",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 2562,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-2570",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 2570,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-2588",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 2588,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-2594",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 2594,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-2793",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 2793,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 6
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-2893",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 2893,
+      "language": "Python",
+      "ext_counts": {
+        ".mdx": 1,
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-3057",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 3057,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-3072",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 3072,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-3120",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 3120,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 3
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-3187",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 3187,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-3390",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 3390,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-3465",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 3465,
+      "language": "Python",
+      "ext_counts": {
+        ".mdx": 3,
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-3839",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 3839,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-3904",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 3904,
+      "language": "Python",
+      "ext_counts": {
+        ".mdx": 1,
+        ".py": 3
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    }
+  ],
+  "next_commands": [
+    "cd launch",
+    "export OPENAI_API_KEY=...  # required by RepoLaunch",
+    "export TAVILY_API_KEY=...  # required by RepoLaunch",
+    "python -m launch.run --config-path data/sbl_baseline/config.json"
+  ]
+}
