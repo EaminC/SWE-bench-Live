@@ -1,0 +1,50 @@
+cat reports/test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.10.20, pytest-8.3.2, pluggy-1.5.0 -- /root/.cache/pypoetry/virtualenvs/langflow-base-UByWe6JP-py3.10/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.10.20', 'Platform': 'Linux-5.4.0-198-generic-x86_64-with-glibc2.41', 'Packages': {'pytest': '8.3.2', 'pluggy': '1.5.0'}, 'Plugins': {'json-report': '1.5.0', 'asyncio': '0.23.8', 'metadata': '3.1.1', 'instafail': '0.5.0', 'devtools': '0.12.2', 'sugar': '1.0.0', 'anyio': '4.4.0', 'respx': '0.21.1', 'split': '0.9.0', 'flakefinder': '1.1.0', 'mock': '3.14.0', 'profiling': '1.7.0', 'xdist': '3.6.1', 'cov': '5.0.0'}}
+rootdir: /testbed
+configfile: pyproject.toml
+plugins: json-report-1.5.0, asyncio-0.23.8, metadata-3.1.1, instafail-0.5.0, devtools-0.12.2, sugar-1.0.0, anyio-4.4.0, respx-0.21.1, split-0.9.0, flakefinder-1.1.0, mock-3.14.0, profiling-1.7.0, xdist-3.6.1, cov-5.0.0
+asyncio: mode=strict
+collecting ... collected 18 items / 2 errors
+
+==================================== ERRORS ====================================
+_ ERROR collecting src/backend/tests/integration/components/astra/test_astra_component.py _
+ImportError while importing test module '/testbed/src/backend/tests/integration/components/astra/test_astra_component.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.10/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+../tests/integration/components/astra/test_astra_component.py:3: in <module>
+    from astrapy.db import AstraDB
+E   ModuleNotFoundError: No module named 'astrapy.db'
+_ ERROR collecting src/backend/tests/integration/components/helpers/test_parse_json_data.py _
+ImportError while importing test module '/testbed/src/backend/tests/integration/components/helpers/test_parse_json_data.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.10/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+../tests/integration/components/helpers/test_parse_json_data.py:3: in <module>
+    from langflow.components.helpers.ParseJSONData import ParseJSONDataComponent
+langflow/components/__init__.py:1: in <module>
+    from . import (
+langflow/components/toolkits/__init__.py:3: in <module>
+    from .ComposioAPI import ComposioAPIComponent
+langflow/components/toolkits/ComposioAPI.py:3: in <module>
+    from composio_langchain import Action, App, ComposioToolSet  # type: ignore
+E   ModuleNotFoundError: No module named 'composio_langchain'
+=============================== warnings summary ===============================
+../../../../root/.cache/pypoetry/virtualenvs/langflow-base-UByWe6JP-py3.10/lib/python3.10/site-packages/pydantic/_internal/_config.py:341
+  /root/.cache/pypoetry/virtualenvs/langflow-base-UByWe6JP-py3.10/lib/python3.10/site-packages/pydantic/_internal/_config.py:341: UserWarning: Valid config keys have changed in V2:
+  * 'allow_population_by_field_name' has been renamed to 'populate_by_name'
+  * 'smart_union' has been removed
+    warnings.warn(message, UserWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+ERROR ../tests/integration/components/astra/test_astra_component.py
+ERROR ../tests/integration/components/helpers/test_parse_json_data.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!!
+========================= 1 warning, 2 errors in 3.53s =========================
+echo OMNIGRIL_EXIT_CODE=1

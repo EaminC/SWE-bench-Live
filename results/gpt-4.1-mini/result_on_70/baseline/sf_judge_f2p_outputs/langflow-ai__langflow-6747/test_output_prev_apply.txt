@@ -1,0 +1,3 @@
+cat test-output.log
+bash: uv: command not found
+echo OMNIGRIL_EXIT_CODE=0
