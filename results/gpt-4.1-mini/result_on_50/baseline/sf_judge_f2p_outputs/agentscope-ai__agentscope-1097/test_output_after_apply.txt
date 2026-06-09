@@ -317,5 +317,5 @@ tests/session_test.py::RedisSessionTest::test_redis_session_save_and_load
     await self._redis.close()
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-=========== 249 passed, 20 skipped, 13 warnings in 114.25s (0:01:54) ===========
-echo OMNIGRIL_EXIT_CODE=0
+=========== 249 passed, 20 skipped, 13 warnings in 115.62s (0:01:55) ===========
+echo OMNIGRIL_EXIT_CODE=1
