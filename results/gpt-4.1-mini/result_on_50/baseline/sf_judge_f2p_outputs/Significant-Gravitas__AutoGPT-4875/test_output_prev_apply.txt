@@ -1,11 +1,11 @@
 cat test-output.log
 ============================= test session starts ==============================
-platform linux -- Python 3.10.20, pytest-7.3.1, pluggy-1.0.0 -- /usr/local/bin/python3.10
+platform linux -- Python 3.10.20, pytest-7.4.0, pluggy-1.2.0 -- /usr/local/bin/python3.10
 cachedir: .pytest_cache
 benchmark: 4.0.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
 rootdir: /testbed
 configfile: pyproject.toml
-plugins: integration-0.2.3, mock-3.10.0, benchmark-4.0.0, xdist-3.2.1, cov-4.0.0, asyncio-0.21.0, recording-0.12.2, anyio-3.6.2
+plugins: integration-0.2.3, benchmark-4.0.0, cov-4.1.0, anyio-3.7.0, xdist-3.3.1, mock-3.11.1, asyncio-0.21.0, recording-0.12.2
 asyncio: mode=strict
 collecting ... collected 310 items
 
@@ -97,35 +97,35 @@ tests/unit/test_commands.py::TestCommandRegistry::test_import_temp_command_file_
 tests/unit/test_config.py::test_initial_values PASSED                    [ 27%]
 tests/unit/test_config.py::test_set_continuous_mode PASSED               [ 28%]
 tests/unit/test_config.py::test_set_speak_mode PASSED                    [ 28%]
-tests/unit/test_config.py::test_set_fast_llm PASSED                      [ 28%]
-tests/unit/test_config.py::test_set_smart_llm PASSED                     [ 29%]
+tests/unit/test_config.py::test_set_fast_llm_model PASSED                [ 28%]
+tests/unit/test_config.py::test_set_smart_llm_model PASSED               [ 29%]
 tests/unit/test_config.py::test_set_debug_mode PASSED                    [ 29%]
-tests/unit/test_config.py::test_smart_and_fast_llms_set_to_gpt4 PASSED   [ 29%]
+tests/unit/test_config.py::test_smart_and_fast_llm_models_set_to_gpt4 PASSED [ 29%]
 tests/unit/test_config.py::test_missing_azure_config PASSED              [ 30%]
-tests/unit/test_config.py::test_azure_config PASSED                      [ 30%]
-tests/unit/test_config.py::test_azure_deployment_id_for_model PASSED     [ 30%]
-tests/unit/test_config.py::test_create_config_gpt4only PASSED            [ 30%]
-tests/unit/test_config.py::test_create_config_gpt3only PASSED            [ 31%]
-tests/unit/test_execute_command.py::test_execute_command_plugin PASSED   [ 31%]
+tests/unit/test_config.py::test_azure_config FAILED                      [ 30%]
+tests/unit/test_config.py::test_azure_deployment_id_for_model FAILED     [ 30%]
+tests/unit/test_config.py::test_create_config_gpt4only ERROR             [ 30%]
+tests/unit/test_config.py::test_create_config_gpt3only ERROR             [ 31%]
+tests/unit/test_execute_command.py::test_execute_command_plugin ERROR    [ 31%]
 tests/unit/test_file_operations.py::test_file_operations_log PASSED      [ 31%]
 tests/unit/test_file_operations.py::test_file_operations_state PASSED    [ 32%]
-tests/unit/test_file_operations.py::test_is_duplicate_operation PASSED   [ 32%]
-tests/unit/test_file_operations.py::test_log_operation PASSED            [ 32%]
+tests/unit/test_file_operations.py::test_is_duplicate_operation ERROR    [ 32%]
+tests/unit/test_file_operations.py::test_log_operation ERROR             [ 32%]
 tests/unit/test_file_operations.py::test_text_checksum PASSED            [ 33%]
-tests/unit/test_file_operations.py::test_log_operation_with_checksum PASSED [ 33%]
-tests/unit/test_file_operations.py::test_read_file PASSED                [ 33%]
-tests/unit/test_file_operations.py::test_read_file_not_found PASSED      [ 34%]
-tests/unit/test_file_operations.py::test_write_to_file PASSED            [ 34%]
-tests/unit/test_file_operations.py::test_write_file_logs_checksum PASSED [ 34%]
-tests/unit/test_file_operations.py::test_write_file_fails_if_content_exists PASSED [ 35%]
-tests/unit/test_file_operations.py::test_write_file_succeeds_if_content_different PASSED [ 35%]
-tests/unit/test_file_operations.py::test_append_to_file PASSED           [ 35%]
-tests/unit/test_file_operations.py::test_append_to_file_uses_checksum_from_appended_file PASSED [ 36%]
-tests/unit/test_file_operations.py::test_delete_file PASSED              [ 36%]
-tests/unit/test_file_operations.py::test_delete_missing_file PASSED      [ 36%]
-tests/unit/test_file_operations.py::test_list_files PASSED               [ 37%]
-tests/unit/test_git_commands.py::test_clone_auto_gpt_repository PASSED   [ 37%]
-tests/unit/test_git_commands.py::test_clone_repository_error PASSED      [ 37%]
+tests/unit/test_file_operations.py::test_log_operation_with_checksum ERROR [ 33%]
+tests/unit/test_file_operations.py::test_read_file ERROR                 [ 33%]
+tests/unit/test_file_operations.py::test_read_file_not_found ERROR       [ 34%]
+tests/unit/test_file_operations.py::test_write_to_file ERROR             [ 34%]
+tests/unit/test_file_operations.py::test_write_file_logs_checksum ERROR  [ 34%]
+tests/unit/test_file_operations.py::test_write_file_fails_if_content_exists ERROR [ 35%]
+tests/unit/test_file_operations.py::test_write_file_succeeds_if_content_different ERROR [ 35%]
+tests/unit/test_file_operations.py::test_append_to_file ERROR            [ 35%]
+tests/unit/test_file_operations.py::test_append_to_file_uses_checksum_from_appended_file ERROR [ 36%]
+tests/unit/test_file_operations.py::test_delete_file ERROR               [ 36%]
+tests/unit/test_file_operations.py::test_delete_missing_file ERROR       [ 36%]
+tests/unit/test_file_operations.py::test_list_files ERROR                [ 37%]
+tests/unit/test_git_commands.py::test_clone_auto_gpt_repository ERROR    [ 37%]
+tests/unit/test_git_commands.py::test_clone_repository_error ERROR       [ 37%]
 tests/unit/test_logs.py::test_remove_color_codes[COMMAND = \x1b[36mbrowse_website\x1b[0m  ARGUMENTS = \x1b[36m{'url': 'https://www.google.com', 'question': 'What is the capital of France?'}\x1b[0m-COMMAND = browse_website  ARGUMENTS = {'url': 'https://www.google.com', 'question': 'What is the capital of France?'}] PASSED [ 38%]
 tests/unit/test_logs.py::test_remove_color_codes[{'Schaue dir meine Projekte auf github () an, als auch meine Webseiten': 'https://github.com/Significant-Gravitas/Auto-GPT, https://discord.gg/autogpt und https://twitter.com/SigGravitas'}-{'Schaue dir meine Projekte auf github () an, als auch meine Webseiten': 'https://github.com/Significant-Gravitas/Auto-GPT, https://discord.gg/autogpt und https://twitter.com/SigGravitas'}] PASSED [ 38%]
 tests/unit/test_logs.py::test_remove_color_codes[-] PASSED               [ 38%]
@@ -133,19 +133,19 @@ tests/unit/test_logs.py::test_remove_color_codes[hello-hello] PASSED     [ 39%]
 tests/unit/test_logs.py::test_remove_color_codes[hello\x1b[31m world-hello world] PASSED [ 39%]
 tests/unit/test_logs.py::test_remove_color_codes[\x1b[36mHello,\x1b[32m World!-Hello, World!] PASSED [ 39%]
 tests/unit/test_logs.py::test_remove_color_codes[\x1b[1m\x1b[31mError:\x1b[0m\x1b[31m file not found-Error: file not found] PASSED [ 40%]
-tests/unit/test_message_history.py::test_message_history_batch_summary PASSED [ 40%]
-tests/unit/test_plugins.py::test_scan_plugins_openai PASSED              [ 40%]
-tests/unit/test_plugins.py::test_scan_plugins_generic PASSED             [ 40%]
-tests/unit/test_plugins.py::test_scan_plugins_not_enabled PASSED         [ 41%]
+tests/unit/test_message_history.py::test_message_history_batch_summary ERROR [ 40%]
+tests/unit/test_plugins.py::test_scan_plugins_openai ERROR               [ 40%]
+tests/unit/test_plugins.py::test_scan_plugins_generic ERROR              [ 40%]
+tests/unit/test_plugins.py::test_scan_plugins_not_enabled ERROR          [ 41%]
 tests/unit/test_plugins.py::test_inspect_zip_for_modules PASSED          [ 41%]
-tests/unit/test_plugins.py::test_create_base_config PASSED               [ 41%]
-tests/unit/test_plugins.py::test_load_config PASSED                      [ 42%]
+tests/unit/test_plugins.py::test_create_base_config ERROR                [ 41%]
+tests/unit/test_plugins.py::test_load_config ERROR                       [ 42%]
 tests/unit/test_prompt_config.py::test_prompt_config_loading PASSED      [ 42%]
 tests/unit/test_prompt_generator.py::test_add_constraint PASSED          [ 42%]
 tests/unit/test_prompt_generator.py::test_add_command PASSED             [ 43%]
 tests/unit/test_prompt_generator.py::test_add_resource PASSED            [ 43%]
 tests/unit/test_prompt_generator.py::test_add_performance_evaluation PASSED [ 43%]
-tests/unit/test_prompt_generator.py::test_generate_prompt_string PASSED  [ 44%]
+tests/unit/test_prompt_generator.py::test_generate_prompt_string ERROR   [ 44%]
 tests/unit/test_retry_provider_openai.py::test_retry_open_api_no_error PASSED [ 44%]
 tests/unit/test_retry_provider_openai.py::test_retry_open_api_passing[RateLimitError-passing] PASSED [ 44%]
 tests/unit/test_retry_provider_openai.py::test_retry_open_api_passing[RateLimitError-passing_edge] PASSED [ 45%]
@@ -214,20 +214,20 @@ tests/unit/test_utils.py::test_get_latest_bulletin_new_bulletin_same_as_old_bull
 tests/unit/test_utils.py::test_get_current_git_branch PASSED             [ 65%]
 tests/unit/test_utils.py::test_get_current_git_branch_success PASSED     [ 65%]
 tests/unit/test_utils.py::test_get_current_git_branch_failure PASSED     [ 66%]
-tests/unit/test_utils.py::test_validate_json_valid PASSED                [ 66%]
-tests/unit/test_utils.py::test_validate_json_invalid PASSED              [ 66%]
+tests/unit/test_utils.py::test_validate_json_valid ERROR                 [ 66%]
+tests/unit/test_utils.py::test_validate_json_invalid ERROR               [ 66%]
 tests/unit/test_utils.py::test_extract_json_from_response PASSED         [ 67%]
 tests/unit/test_utils.py::test_extract_json_from_response_wrapped_in_code_block PASSED [ 67%]
 tests/unit/test_web_search.py::test_safe_google_results[test-test] PASSED [ 67%]
 tests/unit/test_web_search.py::test_safe_google_results[query1-["test1", "test2"]] PASSED [ 68%]
 tests/unit/test_web_search.py::test_safe_google_results_invalid_input PASSED [ 68%]
-tests/unit/test_web_search.py::test_google_search[test-1-[\n    {\n        "title": "Result 1",\n        "link": "https://example.com/result1"\n    }\n]-return_value0] FAILED [ 68%]
-tests/unit/test_web_search.py::test_google_search[-1-[]-return_value1] PASSED [ 69%]
-tests/unit/test_web_search.py::test_google_search[no results-1-[]-return_value2] FAILED [ 69%]
-tests/unit/test_web_search.py::test_google_official_search[test-3-search_results0-expected_output0] PASSED [ 69%]
-tests/unit/test_web_search.py::test_google_official_search[-3-search_results1-expected_output1] PASSED [ 70%]
-tests/unit/test_web_search.py::test_google_official_search_errors[invalid query-3-Error: <HttpError 400 when requesting https://www.googleapis.com/customsearch/v1?q=invalid+query&cx returned "Invalid Value". Details: "Invalid Value">-400-Invalid Value] PASSED [ 70%]
-tests/unit/test_web_search.py::test_google_official_search_errors[invalid API key-3-Error: The provided Google API key is invalid or missing.-403-invalid API key] PASSED [ 70%]
+tests/unit/test_web_search.py::test_google_search[test-1-[\n    {\n        "title": "Result 1",\n        "link": "https://example.com/result1"\n    }\n]-return_value0] ERROR [ 68%]
+tests/unit/test_web_search.py::test_google_search[-1-[]-return_value1] ERROR [ 69%]
+tests/unit/test_web_search.py::test_google_search[no results-1-[]-return_value2] ERROR [ 69%]
+tests/unit/test_web_search.py::test_google_official_search[test-3-search_results0-expected_output0] ERROR [ 69%]
+tests/unit/test_web_search.py::test_google_official_search[-3-search_results1-expected_output1] ERROR [ 70%]
+tests/unit/test_web_search.py::test_google_official_search_errors[invalid query-3-Error: <HttpError 400 when requesting https://www.googleapis.com/customsearch/v1?q=invalid+query&cx returned "Invalid Value". Details: "Invalid Value">-400-Invalid Value] ERROR [ 70%]
+tests/unit/test_web_search.py::test_google_official_search_errors[invalid API key-3-Error: The provided Google API key is invalid or missing.-403-invalid API key] ERROR [ 70%]
 tests/unit/test_workspace.py::test_sanitize_path_accessible[accessible_path0] PASSED [ 70%]
 tests/unit/test_workspace.py::test_sanitize_path_accessible[accessible_path1] PASSED [ 71%]
 tests/unit/test_workspace.py::test_sanitize_path_accessible[accessible_path2] PASSED [ 71%]
@@ -327,7 +327,7 @@ request = <SubRequest 'vcr' for <Function test_browse_website>>
 vcr_markers = [Mark(name='vcr', args=(), kwargs={})]
 vcr_cassette_dir = 'tests/Auto-GPT-test-cassettes/test_browse_website'
 record_mode = 'none', disable_recording = False
-pytestconfig = <_pytest.config.Config object at 0x7fd1ffda66b0>
+pytestconfig = <_pytest.config.Config object at 0x7fd8efdc65f0>
 
     @pytest.fixture(autouse=True)  # type: ignore
     def vcr(  # pylint: disable=too-many-arguments
@@ -385,7 +385,7 @@ request = <SubRequest 'vcr' for <Function test_write_file>>
 vcr_markers = [Mark(name='vcr', args=(), kwargs={})]
 vcr_cassette_dir = 'tests/Auto-GPT-test-cassettes/test_write_file'
 record_mode = 'none', disable_recording = False
-pytestconfig = <_pytest.config.Config object at 0x7fd1ffda66b0>
+pytestconfig = <_pytest.config.Config object at 0x7fd8efdc65f0>
 
     @pytest.fixture(autouse=True)  # type: ignore
     def vcr(  # pylint: disable=too-many-arguments
@@ -443,7 +443,7 @@ request = <SubRequest 'vcr' for <Function test_debug_code_challenge_a>>
 vcr_markers = [Mark(name='vcr', args=(), kwargs={})]
 vcr_cassette_dir = 'tests/Auto-GPT-test-cassettes/test_debug_code_challenge_a'
 record_mode = 'none', disable_recording = False
-pytestconfig = <_pytest.config.Config object at 0x7fd1ffda66b0>
+pytestconfig = <_pytest.config.Config object at 0x7fd8efdc65f0>
 
     @pytest.fixture(autouse=True)  # type: ignore
     def vcr(  # pylint: disable=too-many-arguments
@@ -501,7 +501,7 @@ request = <SubRequest 'vcr' for <Function test_information_retrieval_challenge_a
 vcr_markers = [Mark(name='vcr', args=(), kwargs={})]
 vcr_cassette_dir = 'tests/Auto-GPT-test-cassettes/test_information_retrieval_challenge_a'
 record_mode = 'none', disable_recording = False
-pytestconfig = <_pytest.config.Config object at 0x7fd1ffda66b0>
+pytestconfig = <_pytest.config.Config object at 0x7fd8efdc65f0>
 
     @pytest.fixture(autouse=True)  # type: ignore
     def vcr(  # pylint: disable=too-many-arguments
@@ -559,7 +559,7 @@ request = <SubRequest 'vcr' for <Function test_information_retrieval_challenge_b
 vcr_markers = [Mark(name='vcr', args=(), kwargs={})]
 vcr_cassette_dir = 'tests/Auto-GPT-test-cassettes/test_information_retrieval_challenge_b'
 record_mode = 'none', disable_recording = False
-pytestconfig = <_pytest.config.Config object at 0x7fd1ffda66b0>
+pytestconfig = <_pytest.config.Config object at 0x7fd8efdc65f0>
 
     @pytest.fixture(autouse=True)  # type: ignore
     def vcr(  # pylint: disable=too-many-arguments
@@ -617,7 +617,7 @@ request = <SubRequest 'vcr' for <Function test_information_retrieval_challenge_c
 vcr_markers = [Mark(name='vcr', args=(), kwargs={})]
 vcr_cassette_dir = 'tests/Auto-GPT-test-cassettes/test_information_retrieval_challenge_c'
 record_mode = 'none', disable_recording = False
-pytestconfig = <_pytest.config.Config object at 0x7fd1ffda66b0>
+pytestconfig = <_pytest.config.Config object at 0x7fd8efdc65f0>
 
     @pytest.fixture(autouse=True)  # type: ignore
     def vcr(  # pylint: disable=too-many-arguments
@@ -675,7 +675,7 @@ request = <SubRequest 'vcr' for <Function test_kubernetes_template_challenge_a>>
 vcr_markers = [Mark(name='vcr', args=(), kwargs={})]
 vcr_cassette_dir = 'tests/Auto-GPT-test-cassettes/test_kubernetes_template_challenge_a'
 record_mode = 'none', disable_recording = False
-pytestconfig = <_pytest.config.Config object at 0x7fd1ffda66b0>
+pytestconfig = <_pytest.config.Config object at 0x7fd8efdc65f0>
 
     @pytest.fixture(autouse=True)  # type: ignore
     def vcr(  # pylint: disable=too-many-arguments
@@ -733,7 +733,7 @@ request = <SubRequest 'vcr' for <Function test_memory_challenge_a>>
 vcr_markers = [Mark(name='vcr', args=(), kwargs={})]
 vcr_cassette_dir = 'tests/Auto-GPT-test-cassettes/test_memory_challenge_a'
 record_mode = 'none', disable_recording = False
-pytestconfig = <_pytest.config.Config object at 0x7fd1ffda66b0>
+pytestconfig = <_pytest.config.Config object at 0x7fd8efdc65f0>
 
     @pytest.fixture(autouse=True)  # type: ignore
     def vcr(  # pylint: disable=too-many-arguments
@@ -791,7 +791,7 @@ request = <SubRequest 'vcr' for <Function test_memory_challenge_b>>
 vcr_markers = [Mark(name='vcr', args=(), kwargs={})]
 vcr_cassette_dir = 'tests/Auto-GPT-test-cassettes/test_memory_challenge_b'
 record_mode = 'none', disable_recording = False
-pytestconfig = <_pytest.config.Config object at 0x7fd1ffda66b0>
+pytestconfig = <_pytest.config.Config object at 0x7fd8efdc65f0>
 
     @pytest.fixture(autouse=True)  # type: ignore
     def vcr(  # pylint: disable=too-many-arguments
@@ -849,7 +849,7 @@ request = <SubRequest 'vcr' for <Function test_memory_challenge_c>>
 vcr_markers = [Mark(name='vcr', args=(), kwargs={})]
 vcr_cassette_dir = 'tests/Auto-GPT-test-cassettes/test_memory_challenge_c'
 record_mode = 'none', disable_recording = False
-pytestconfig = <_pytest.config.Config object at 0x7fd1ffda66b0>
+pytestconfig = <_pytest.config.Config object at 0x7fd8efdc65f0>
 
     @pytest.fixture(autouse=True)  # type: ignore
     def vcr(  # pylint: disable=too-many-arguments
@@ -907,7 +907,7 @@ request = <SubRequest 'vcr' for <Function test_memory_challenge_d>>
 vcr_markers = [Mark(name='vcr', args=(), kwargs={})]
 vcr_cassette_dir = 'tests/Auto-GPT-test-cassettes/test_memory_challenge_d'
 record_mode = 'none', disable_recording = False
-pytestconfig = <_pytest.config.Config object at 0x7fd1ffda66b0>
+pytestconfig = <_pytest.config.Config object at 0x7fd8efdc65f0>
 
     @pytest.fixture(autouse=True)  # type: ignore
     def vcr(  # pylint: disable=too-many-arguments
@@ -965,7 +965,7 @@ request = <SubRequest 'vcr' for <Function test_dalle[256]>>
 vcr_markers = [Mark(name='vcr', args=(), kwargs={})]
 vcr_cassette_dir = 'tests/Auto-GPT-test-cassettes/test_dalle[256]'
 record_mode = 'none', disable_recording = False
-pytestconfig = <_pytest.config.Config object at 0x7fd1ffda66b0>
+pytestconfig = <_pytest.config.Config object at 0x7fd8efdc65f0>
 
     @pytest.fixture(autouse=True)  # type: ignore
     def vcr(  # pylint: disable=too-many-arguments
@@ -1023,7 +1023,7 @@ request = <SubRequest 'vcr' for <Function test_dalle[512]>>
 vcr_markers = [Mark(name='vcr', args=(), kwargs={})]
 vcr_cassette_dir = 'tests/Auto-GPT-test-cassettes/test_dalle[512]'
 record_mode = 'none', disable_recording = False
-pytestconfig = <_pytest.config.Config object at 0x7fd1ffda66b0>
+pytestconfig = <_pytest.config.Config object at 0x7fd8efdc65f0>
 
     @pytest.fixture(autouse=True)  # type: ignore
     def vcr(  # pylint: disable=too-many-arguments
@@ -1081,7 +1081,7 @@ request = <SubRequest 'vcr' for <Function test_dalle[1024]>>
 vcr_markers = [Mark(name='vcr', args=(), kwargs={})]
 vcr_cassette_dir = 'tests/Auto-GPT-test-cassettes/test_dalle[1024]'
 record_mode = 'none', disable_recording = False
-pytestconfig = <_pytest.config.Config object at 0x7fd1ffda66b0>
+pytestconfig = <_pytest.config.Config object at 0x7fd8efdc65f0>
 
     @pytest.fixture(autouse=True)  # type: ignore
     def vcr(  # pylint: disable=too-many-arguments
@@ -1139,7 +1139,7 @@ request = <SubRequest 'vcr' for <Function test_generate_aiconfig_automatic_defau
 vcr_markers = [Mark(name='vcr', args=(), kwargs={})]
 vcr_cassette_dir = 'tests/Auto-GPT-test-cassettes/test_generate_aiconfig_automatic_default'
 record_mode = 'none', disable_recording = False
-pytestconfig = <_pytest.config.Config object at 0x7fd1ffda66b0>
+pytestconfig = <_pytest.config.Config object at 0x7fd8efdc65f0>
 
     @pytest.fixture(autouse=True)  # type: ignore
     def vcr(  # pylint: disable=too-many-arguments
@@ -1197,7 +1197,7 @@ request = <SubRequest 'vcr' for <Function test_generate_aiconfig_automatic_typic
 vcr_markers = [Mark(name='vcr', args=(), kwargs={})]
 vcr_cassette_dir = 'tests/Auto-GPT-test-cassettes/test_generate_aiconfig_automatic_typical'
 record_mode = 'none', disable_recording = False
-pytestconfig = <_pytest.config.Config object at 0x7fd1ffda66b0>
+pytestconfig = <_pytest.config.Config object at 0x7fd8efdc65f0>
 
     @pytest.fixture(autouse=True)  # type: ignore
     def vcr(  # pylint: disable=too-many-arguments
@@ -1255,7 +1255,7 @@ request = <SubRequest 'vcr' for <Function test_generate_aiconfig_automatic_fallb
 vcr_markers = [Mark(name='vcr', args=(), kwargs={})]
 vcr_cassette_dir = 'tests/Auto-GPT-test-cassettes/test_generate_aiconfig_automatic_fallback'
 record_mode = 'none', disable_recording = False
-pytestconfig = <_pytest.config.Config object at 0x7fd1ffda66b0>
+pytestconfig = <_pytest.config.Config object at 0x7fd8efdc65f0>
 
     @pytest.fixture(autouse=True)  # type: ignore
     def vcr(  # pylint: disable=too-many-arguments
@@ -1313,7 +1313,7 @@ request = <SubRequest 'vcr' for <Function test_prompt_user_manual_mode>>
 vcr_markers = [Mark(name='vcr', args=(), kwargs={})]
 vcr_cassette_dir = 'tests/Auto-GPT-test-cassettes/test_prompt_user_manual_mode'
 record_mode = 'none', disable_recording = False
-pytestconfig = <_pytest.config.Config object at 0x7fd1ffda66b0>
+pytestconfig = <_pytest.config.Config object at 0x7fd8efdc65f0>
 
     @pytest.fixture(autouse=True)  # type: ignore
     def vcr(  # pylint: disable=too-many-arguments
@@ -1371,7 +1371,7 @@ request = <SubRequest 'vcr' for <Function test_browse_website>>
 vcr_markers = [Mark(name='vcr', args=(), kwargs={})]
 vcr_cassette_dir = 'tests/Auto-GPT-test-cassettes/test_browse_website'
 record_mode = 'none', disable_recording = False
-pytestconfig = <_pytest.config.Config object at 0x7fd1ffda66b0>
+pytestconfig = <_pytest.config.Config object at 0x7fd8efdc65f0>
 
     @pytest.fixture(autouse=True)  # type: ignore
     def vcr(  # pylint: disable=too-many-arguments
@@ -1429,7 +1429,7 @@ request = <SubRequest 'vcr' for <Function test_json_memory_get_relevant>>
 vcr_markers = [Mark(name='vcr', args=(), kwargs={})]
 vcr_cassette_dir = 'tests/Auto-GPT-test-cassettes/test_json_memory_get_relevant'
 record_mode = 'none', disable_recording = False
-pytestconfig = <_pytest.config.Config object at 0x7fd1ffda66b0>
+pytestconfig = <_pytest.config.Config object at 0x7fd8efdc65f0>
 
     @pytest.fixture(autouse=True)  # type: ignore
     def vcr(  # pylint: disable=too-many-arguments
@@ -1481,7 +1481,1600 @@ serializer = <module 'vcr.serializers.yamlserializer' from '/usr/local/lib/pytho
 E           ValueError: No cassettes found.
 
 /usr/local/lib/python3.10/site-packages/pytest_recording/_vcr.py:48: ValueError
+________________ ERROR at setup of test_create_config_gpt4only _________________
+
+temp_plugins_config_file = '/tmp/tmpw6adzomw/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86db4e0b0>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86db4c730>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+________________ ERROR at setup of test_create_config_gpt3only _________________
+
+temp_plugins_config_file = '/tmp/tmp047_70wo/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86dc99810>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86dc98b50>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+________________ ERROR at setup of test_execute_command_plugin _________________
+
+temp_plugins_config_file = '/tmp/tmpdmsgg1iw/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86dcc9690>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86dcca6e0>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+________________ ERROR at setup of test_is_duplicate_operation _________________
+
+temp_plugins_config_file = '/tmp/tmpjyq41am6/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86dcc5e10>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86dcc4d90>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+_____________________ ERROR at setup of test_log_operation _____________________
+
+temp_plugins_config_file = '/tmp/tmpvie9rrf8/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86dcccdc0>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86dcccc70>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+______________ ERROR at setup of test_log_operation_with_checksum ______________
+
+temp_plugins_config_file = '/tmp/tmpm_rkj_ff/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86de19d80>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86de1ac20>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+_______________________ ERROR at setup of test_read_file _______________________
+
+temp_plugins_config_file = '/tmp/tmpyqg4v17u/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86dc7ba90>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86dc782b0>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+__________________ ERROR at setup of test_read_file_not_found __________________
+
+temp_plugins_config_file = '/tmp/tmp5javtq8r/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86de1ae60>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86de194b0>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+_____________________ ERROR at setup of test_write_to_file _____________________
+
+temp_plugins_config_file = '/tmp/tmpfr0o_pl5/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86e8e0be0>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86e8e2920>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+  Resolving path 'test_file.txt' in workspace '/tmp/pytest-of-root/pytest-33/test_write_to_file0/home/users/monty/auto_gpt_workspace'
+  Resolved root as '/tmp/pytest-of-root/pytest-33/test_write_to_file0/home/users/monty/auto_gpt_workspace'
+  Joined paths as '/tmp/pytest-of-root/pytest-33/test_write_to_file0/home/users/monty/auto_gpt_workspace/test_file.txt'
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+DEBUG    LOGGER:logs.py:148 Resolving path 'test_file.txt' in workspace '/tmp/pytest-of-root/pytest-33/test_write_to_file0/home/users/monty/auto_gpt_workspace'
+DEBUG    LOGGER:logs.py:148 Resolved root as '/tmp/pytest-of-root/pytest-33/test_write_to_file0/home/users/monty/auto_gpt_workspace'
+DEBUG    LOGGER:logs.py:148 Joined paths as '/tmp/pytest-of-root/pytest-33/test_write_to_file0/home/users/monty/auto_gpt_workspace/test_file.txt'
+ERROR    LOGGER:logs.py:148
+_______________ ERROR at setup of test_write_file_logs_checksum ________________
+
+temp_plugins_config_file = '/tmp/tmpf0ubpt3m/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86db50e80>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86db519f0>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+  Resolving path 'test_file.txt' in workspace '/tmp/pytest-of-root/pytest-33/test_write_file_logs_checksum0/home/users/monty/auto_gpt_workspace'
+  Resolved root as '/tmp/pytest-of-root/pytest-33/test_write_file_logs_checksum0/home/users/monty/auto_gpt_workspace'
+  Joined paths as '/tmp/pytest-of-root/pytest-33/test_write_file_logs_checksum0/home/users/monty/auto_gpt_workspace/test_file.txt'
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+DEBUG    LOGGER:logs.py:148 Resolving path 'test_file.txt' in workspace '/tmp/pytest-of-root/pytest-33/test_write_file_logs_checksum0/home/users/monty/auto_gpt_workspace'
+DEBUG    LOGGER:logs.py:148 Resolved root as '/tmp/pytest-of-root/pytest-33/test_write_file_logs_checksum0/home/users/monty/auto_gpt_workspace'
+DEBUG    LOGGER:logs.py:148 Joined paths as '/tmp/pytest-of-root/pytest-33/test_write_file_logs_checksum0/home/users/monty/auto_gpt_workspace/test_file.txt'
+ERROR    LOGGER:logs.py:148
+__________ ERROR at setup of test_write_file_fails_if_content_exists ___________
+
+temp_plugins_config_file = '/tmp/tmphr2v2osd/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86dccd330>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86dccd660>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+  Resolving path 'test_file.txt' in workspace '/tmp/pytest-of-root/pytest-33/test_write_file_fails_if_conte0/home/users/monty/auto_gpt_workspace'
+  Resolved root as '/tmp/pytest-of-root/pytest-33/test_write_file_fails_if_conte0/home/users/monty/auto_gpt_workspace'
+  Joined paths as '/tmp/pytest-of-root/pytest-33/test_write_file_fails_if_conte0/home/users/monty/auto_gpt_workspace/test_file.txt'
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+DEBUG    LOGGER:logs.py:148 Resolving path 'test_file.txt' in workspace '/tmp/pytest-of-root/pytest-33/test_write_file_fails_if_conte0/home/users/monty/auto_gpt_workspace'
+DEBUG    LOGGER:logs.py:148 Resolved root as '/tmp/pytest-of-root/pytest-33/test_write_file_fails_if_conte0/home/users/monty/auto_gpt_workspace'
+DEBUG    LOGGER:logs.py:148 Joined paths as '/tmp/pytest-of-root/pytest-33/test_write_file_fails_if_conte0/home/users/monty/auto_gpt_workspace/test_file.txt'
+ERROR    LOGGER:logs.py:148
+_______ ERROR at setup of test_write_file_succeeds_if_content_different ________
+
+temp_plugins_config_file = '/tmp/tmp9jed0rwc/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86dcc85e0>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86dcc9240>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+  Resolving path 'test_file.txt' in workspace '/tmp/pytest-of-root/pytest-33/test_write_file_succeeds_if_co0/home/users/monty/auto_gpt_workspace'
+  Resolved root as '/tmp/pytest-of-root/pytest-33/test_write_file_succeeds_if_co0/home/users/monty/auto_gpt_workspace'
+  Joined paths as '/tmp/pytest-of-root/pytest-33/test_write_file_succeeds_if_co0/home/users/monty/auto_gpt_workspace/test_file.txt'
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+DEBUG    LOGGER:logs.py:148 Resolving path 'test_file.txt' in workspace '/tmp/pytest-of-root/pytest-33/test_write_file_succeeds_if_co0/home/users/monty/auto_gpt_workspace'
+DEBUG    LOGGER:logs.py:148 Resolved root as '/tmp/pytest-of-root/pytest-33/test_write_file_succeeds_if_co0/home/users/monty/auto_gpt_workspace'
+DEBUG    LOGGER:logs.py:148 Joined paths as '/tmp/pytest-of-root/pytest-33/test_write_file_succeeds_if_co0/home/users/monty/auto_gpt_workspace/test_file.txt'
+ERROR    LOGGER:logs.py:148
+____________________ ERROR at setup of test_append_to_file _____________________
+
+temp_plugins_config_file = '/tmp/tmphi9oqj1b/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86dcce530>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86dccf520>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+  Resolving path 'nested/test_file.txt' in workspace '/tmp/pytest-of-root/pytest-33/test_append_to_file0/home/users/monty/auto_gpt_workspace'
+  Resolved root as '/tmp/pytest-of-root/pytest-33/test_append_to_file0/home/users/monty/auto_gpt_workspace'
+  Joined paths as '/tmp/pytest-of-root/pytest-33/test_append_to_file0/home/users/monty/auto_gpt_workspace/nested/test_file.txt'
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+DEBUG    LOGGER:logs.py:148 Resolving path 'nested/test_file.txt' in workspace '/tmp/pytest-of-root/pytest-33/test_append_to_file0/home/users/monty/auto_gpt_workspace'
+DEBUG    LOGGER:logs.py:148 Resolved root as '/tmp/pytest-of-root/pytest-33/test_append_to_file0/home/users/monty/auto_gpt_workspace'
+DEBUG    LOGGER:logs.py:148 Joined paths as '/tmp/pytest-of-root/pytest-33/test_append_to_file0/home/users/monty/auto_gpt_workspace/nested/test_file.txt'
+ERROR    LOGGER:logs.py:148
+____ ERROR at setup of test_append_to_file_uses_checksum_from_appended_file ____
+
+temp_plugins_config_file = '/tmp/tmpzrvfagny/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86e759f00>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86e7599f0>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+  Resolving path 'test_file.txt' in workspace '/tmp/pytest-of-root/pytest-33/test_append_to_file_uses_check0/home/users/monty/auto_gpt_workspace'
+  Resolved root as '/tmp/pytest-of-root/pytest-33/test_append_to_file_uses_check0/home/users/monty/auto_gpt_workspace'
+  Joined paths as '/tmp/pytest-of-root/pytest-33/test_append_to_file_uses_check0/home/users/monty/auto_gpt_workspace/test_file.txt'
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+DEBUG    LOGGER:logs.py:148 Resolving path 'test_file.txt' in workspace '/tmp/pytest-of-root/pytest-33/test_append_to_file_uses_check0/home/users/monty/auto_gpt_workspace'
+DEBUG    LOGGER:logs.py:148 Resolved root as '/tmp/pytest-of-root/pytest-33/test_append_to_file_uses_check0/home/users/monty/auto_gpt_workspace'
+DEBUG    LOGGER:logs.py:148 Joined paths as '/tmp/pytest-of-root/pytest-33/test_append_to_file_uses_check0/home/users/monty/auto_gpt_workspace/test_file.txt'
+ERROR    LOGGER:logs.py:148
+______________________ ERROR at setup of test_delete_file ______________________
+
+temp_plugins_config_file = '/tmp/tmpaw37mjsx/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86dc79e70>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86dc79780>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+  Resolving path 'test_file.txt' in workspace '/tmp/pytest-of-root/pytest-33/test_delete_file0/home/users/monty/auto_gpt_workspace'
+  Resolved root as '/tmp/pytest-of-root/pytest-33/test_delete_file0/home/users/monty/auto_gpt_workspace'
+  Joined paths as '/tmp/pytest-of-root/pytest-33/test_delete_file0/home/users/monty/auto_gpt_workspace/test_file.txt'
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+DEBUG    LOGGER:logs.py:148 Resolving path 'test_file.txt' in workspace '/tmp/pytest-of-root/pytest-33/test_delete_file0/home/users/monty/auto_gpt_workspace'
+DEBUG    LOGGER:logs.py:148 Resolved root as '/tmp/pytest-of-root/pytest-33/test_delete_file0/home/users/monty/auto_gpt_workspace'
+DEBUG    LOGGER:logs.py:148 Joined paths as '/tmp/pytest-of-root/pytest-33/test_delete_file0/home/users/monty/auto_gpt_workspace/test_file.txt'
+ERROR    LOGGER:logs.py:148
+__________________ ERROR at setup of test_delete_missing_file __________________
+
+temp_plugins_config_file = '/tmp/tmpoh76ppha/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86dccb070>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86dcc9690>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+______________________ ERROR at setup of test_list_files _______________________
+
+temp_plugins_config_file = '/tmp/tmpfm1gm1gm/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86db534c0>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86db507c0>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+  Resolving path 'test_directory' in workspace '/tmp/pytest-of-root/pytest-33/test_list_files0/home/users/monty/auto_gpt_workspace'
+  Resolved root as '/tmp/pytest-of-root/pytest-33/test_list_files0/home/users/monty/auto_gpt_workspace'
+  Joined paths as '/tmp/pytest-of-root/pytest-33/test_list_files0/home/users/monty/auto_gpt_workspace/test_directory'
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+DEBUG    LOGGER:logs.py:148 Resolving path 'test_directory' in workspace '/tmp/pytest-of-root/pytest-33/test_list_files0/home/users/monty/auto_gpt_workspace'
+DEBUG    LOGGER:logs.py:148 Resolved root as '/tmp/pytest-of-root/pytest-33/test_list_files0/home/users/monty/auto_gpt_workspace'
+DEBUG    LOGGER:logs.py:148 Joined paths as '/tmp/pytest-of-root/pytest-33/test_list_files0/home/users/monty/auto_gpt_workspace/test_directory'
+ERROR    LOGGER:logs.py:148
+_______________ ERROR at setup of test_clone_auto_gpt_repository _______________
+
+temp_plugins_config_file = '/tmp/tmp6gmp5u8h/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86e759a50>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86e758490>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+________________ ERROR at setup of test_clone_repository_error _________________
+
+temp_plugins_config_file = '/tmp/tmpqds4u092/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86de2e710>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86de2d750>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+_____________ ERROR at setup of test_message_history_batch_summary _____________
+
+temp_plugins_config_file = '/tmp/tmpog5nkj4_/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86dcc91e0>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86dcc8be0>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+__________________ ERROR at setup of test_scan_plugins_openai __________________
+
+temp_plugins_config_file = '/tmp/tmplcu4a04c/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86dcc76d0>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86dcc5870>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+_________________ ERROR at setup of test_scan_plugins_generic __________________
+
+temp_plugins_config_file = '/tmp/tmps247nc4i/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86e759780>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86e758dc0>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+_______________ ERROR at setup of test_scan_plugins_not_enabled ________________
+
+temp_plugins_config_file = '/tmp/tmppzwa3z7j/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86dcc6110>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86dcc5b70>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+__________________ ERROR at setup of test_create_base_config ___________________
+
+temp_plugins_config_file = '/tmp/tmpwej3nini/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86e8e2800>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86e8e0d30>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+______________________ ERROR at setup of test_load_config ______________________
+
+temp_plugins_config_file = '/tmp/tmpvka1cjji/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86de2d630>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86dcc88b0>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+________________ ERROR at setup of test_generate_prompt_string _________________
+
+temp_plugins_config_file = '/tmp/tmpxy3ub69o/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86dc984c0>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86dc98100>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+__________________ ERROR at setup of test_validate_json_valid __________________
+
+temp_plugins_config_file = '/tmp/tmpgjq9w3c6/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86ce95480>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86ce94f10>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+_________________ ERROR at setup of test_validate_json_invalid _________________
+
+temp_plugins_config_file = '/tmp/tmpwa307p8t/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86dc99b10>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86dc99000>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+_ ERROR at setup of test_google_search[test-1-[\n    {\n        "title": "Result 1",\n        "link": "https://example.com/result1"\n    }\n]-return_value0] _
+
+temp_plugins_config_file = '/tmp/tmpufja_9j6/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86de2dcc0>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86de2edd0>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+__________ ERROR at setup of test_google_search[-1-[]-return_value1] ___________
+
+temp_plugins_config_file = '/tmp/tmplhlf19va/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86db0e8f0>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86db0f250>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+_____ ERROR at setup of test_google_search[no results-1-[]-return_value2] ______
+
+temp_plugins_config_file = '/tmp/tmpz_r0p16p/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86de19cf0>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86de18f10>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+_ ERROR at setup of test_google_official_search[test-3-search_results0-expected_output0] _
+
+temp_plugins_config_file = '/tmp/tmpsfoaz5sd/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86db051e0>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86da21060>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+_ ERROR at setup of test_google_official_search[-3-search_results1-expected_output1] _
+
+temp_plugins_config_file = '/tmp/tmp8dbgv71i/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86cf7aad0>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86cf74610>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+_ ERROR at setup of test_google_official_search_errors[invalid query-3-Error: <HttpError 400 when requesting https://www.googleapis.com/customsearch/v1?q=invalid+query&cx returned "Invalid Value". Details: "Invalid Value">-400-Invalid Value] _
+
+temp_plugins_config_file = '/tmp/tmpg4n18s96/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86cf10400>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86cf7b130>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
+_ ERROR at setup of test_google_official_search_errors[invalid API key-3-Error: The provided Google API key is invalid or missing.-403-invalid API key] _
+
+temp_plugins_config_file = '/tmp/tmpz2fgx_6u/plugins_config.yaml'
+mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd86cf43460>
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86cf79420>
+
+    @pytest.fixture()
+    def config(
+        temp_plugins_config_file: str, mocker: MockerFixture, workspace: Workspace
+    ) -> Config:
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/conftest.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+---------------------------- Captured stdout setup -----------------------------
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log setup ------------------------------
+ERROR    LOGGER:logs.py:148
 =================================== FAILURES ===================================
+______________________________ test_azure_config _______________________________
+
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86dc982b0>
+
+    def test_azure_config(workspace: Workspace) -> None:
+        yaml_content = """
+    azure_api_type: azure
+    azure_api_base: https://dummy.openai.azure.com
+    azure_api_version: 2023-06-01-preview
+    azure_model_map:
+        fast_llm_model_deployment_id: gpt-3.5-turbo
+        smart_llm_model_deployment_id: gpt-4
+        embedding_model_deployment_id: embedding-deployment-id-for-azure
+    """
+        config_file = workspace.get_path("azure.yaml")
+        config_file.write_text(yaml_content)
+        os.environ["USE_AZURE"] = "True"
+        os.environ["AZURE_CONFIG_FILE"] = str(config_file)
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/unit/test_config.py:163: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+----------------------------- Captured stdout call -----------------------------
+  Resolving path 'azure.yaml' in workspace '/tmp/pytest-of-root/pytest-33/test_azure_config0/home/users/monty/auto_gpt_workspace'
+  Resolved root as '/tmp/pytest-of-root/pytest-33/test_azure_config0/home/users/monty/auto_gpt_workspace'
+  Joined paths as '/tmp/pytest-of-root/pytest-33/test_azure_config0/home/users/monty/auto_gpt_workspace/azure.yaml'
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log call -------------------------------
+DEBUG    LOGGER:logs.py:148 Resolving path 'azure.yaml' in workspace '/tmp/pytest-of-root/pytest-33/test_azure_config0/home/users/monty/auto_gpt_workspace'
+DEBUG    LOGGER:logs.py:148 Resolved root as '/tmp/pytest-of-root/pytest-33/test_azure_config0/home/users/monty/auto_gpt_workspace'
+DEBUG    LOGGER:logs.py:148 Joined paths as '/tmp/pytest-of-root/pytest-33/test_azure_config0/home/users/monty/auto_gpt_workspace/azure.yaml'
+ERROR    LOGGER:logs.py:148
+______________________ test_azure_deployment_id_for_model ______________________
+
+workspace = <autogpt.workspace.workspace.Workspace object at 0x7fd86dcc47c0>
+
+    def test_azure_deployment_id_for_model(workspace: Workspace) -> None:
+        yaml_content = """
+    azure_api_type: azure
+    azure_api_base: https://dummy.openai.azure.com
+    azure_api_version: 2023-06-01-preview
+    azure_model_map:
+        fast_llm_model_deployment_id: gpt-3.5-turbo
+        smart_llm_model_deployment_id: gpt-4
+        embedding_model_deployment_id: embedding-deployment-id-for-azure
+    """
+        config_file = workspace.get_path("azure.yaml")
+        config_file.write_text(yaml_content)
+        os.environ["USE_AZURE"] = "True"
+        os.environ["AZURE_CONFIG_FILE"] = str(config_file)
+>       config = ConfigBuilder.build_config_from_env()
+
+tests/unit/test_config.py:192: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+autogpt/config/config.py:239: in build_config_from_env
+    azure_config = cls.load_azure_config()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'autogpt.config.config.ConfigBuilder'>
+config_file = '/testbed/autogpt/config/../../azure.yaml'
+
+    @classmethod
+    def load_azure_config(cls, config_file: str = AZURE_CONFIG_FILE) -> Dict[str, str]:
+        """
+        Loads the configuration parameters for Azure hosting from the specified file
+          path as a yaml file.
+    
+        Parameters:
+            config_file(str): The path to the config yaml file. DEFAULT: "../azure.yaml"
+    
+        Returns:
+            Dict
+        """
+>       with open(config_file) as file:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/testbed/autogpt/config/../../azure.yaml'
+
+autogpt/config/config.py:269: FileNotFoundError
+----------------------------- Captured stdout call -----------------------------
+  Resolving path 'azure.yaml' in workspace '/tmp/pytest-of-root/pytest-33/test_azure_deployment_id_for_m0/home/users/monty/auto_gpt_workspace'
+  Resolved root as '/tmp/pytest-of-root/pytest-33/test_azure_deployment_id_for_m0/home/users/monty/auto_gpt_workspace'
+  Joined paths as '/tmp/pytest-of-root/pytest-33/test_azure_deployment_id_for_m0/home/users/monty/auto_gpt_workspace/azure.yaml'
+Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
+------------------------------ Captured log call -------------------------------
+DEBUG    LOGGER:logs.py:148 Resolving path 'azure.yaml' in workspace '/tmp/pytest-of-root/pytest-33/test_azure_deployment_id_for_m0/home/users/monty/auto_gpt_workspace'
+DEBUG    LOGGER:logs.py:148 Resolved root as '/tmp/pytest-of-root/pytest-33/test_azure_deployment_id_for_m0/home/users/monty/auto_gpt_workspace'
+DEBUG    LOGGER:logs.py:148 Joined paths as '/tmp/pytest-of-root/pytest-33/test_azure_deployment_id_for_m0/home/users/monty/auto_gpt_workspace/azure.yaml'
+ERROR    LOGGER:logs.py:148
 _______________________ test_get_latest_bulletin_no_file _______________________
 
     def test_get_latest_bulletin_no_file():
@@ -1493,201 +3086,16 @@ _______________________ test_get_latest_bulletin_no_file _______________________
 E       assert False
 
 tests/unit/test_utils.py:122: AssertionError
-_ test_google_search[test-1-[\n    {\n        "title": "Result 1",\n        "link": "https://example.com/result1"\n    }\n]-return_value0] _
-
-query = 'test', num_results = 1
-expected_output = '[\n    {\n        "title": "Result 1",\n        "link": "https://example.com/result1"\n    }\n]'
-return_value = [{'link': 'https://example.com/result1', 'title': 'Result 1'}]
-mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd17ec3b280>
-agent = <autogpt.agent.agent.Agent object at 0x7fd17ec3be80>
-
-    @pytest.mark.parametrize(
-        "query, num_results, expected_output, return_value",
-        [
-            (
-                "test",
-                1,
-                '[\n    {\n        "title": "Result 1",\n        "link": "https://example.com/result1"\n    }\n]',
-                [{"title": "Result 1", "link": "https://example.com/result1"}],
-            ),
-            ("", 1, "[]", []),
-            ("no results", 1, "[]", []),
-        ],
-    )
-    def test_google_search(
-        query, num_results, expected_output, return_value, mocker, agent: Agent
-    ):
-        mock_ddg = mocker.Mock()
-        mock_ddg.return_value = return_value
-    
-        mocker.patch("autogpt.commands.web_search.DDGS.text", mock_ddg)
->       actual_output = web_search(query, agent=agent, num_results=num_results)
-
-tests/unit/test_web_search.py:45: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-autogpt/command_decorator.py:47: in wrapper
-    return func(*args, **kwargs)
-autogpt/commands/web_search.py:44: in web_search
-    results = DDGS().text(query)
-/usr/local/lib/python3.10/site-packages/ddgs/ddgs.py:458: in text
-    return self._search_sync("text", query, **kwargs)
-/usr/local/lib/python3.10/site-packages/ddgs/ddgs.py:401: in _search_sync
-    engines = self._get_engines(category, backend)
-/usr/local/lib/python3.10/site-packages/ddgs/ddgs.py:339: in _get_engines
-    engine_instance = engine_class(proxy=self._proxy, timeout=self._timeout, verify=self._verify)
-/usr/local/lib/python3.10/site-packages/ddgs/engines/duckduckgo.py:34: in __init__
-    self.http_client = HttpClient2(headers=self.headers, proxy=proxy, timeout=timeout, verify=verify)  # type: ignore[assignment]
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-self = <ddgs.http_client2.HttpClient2 object at 0x7fd17ec1a500>
-headers = {'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Mobile/15E148 Safari/604.1'}
-proxy = None, timeout = 5
-
-    def __init__(
-        self,
-        headers: dict[str, str] | None = None,
-        proxy: str | None = None,
-        timeout: int | None = 10,
-        *,
-        verify: bool | str = True,
-    ) -> None:
-        """Initialize the HttpClient object.
-    
-        Args:
-            headers (dict, optional): headers for the HTTP client.
-            proxy (str, optional): proxy for the HTTP client, supports http/https/socks5 protocols.
-                example: "http://user:pass@example.com:3128". Defaults to None.
-            timeout (int, optional): Timeout value for the HTTP client. Defaults to 10.
-            verify: (bool | str):  True to verify, False to skip or str path to a PEM file. Defaults to True.
-    
-        """
->       self.client = httpx.Client(
-            headers=headers,
-            proxy=proxy,
-            timeout=timeout,
-            verify=_get_random_ssl_context(verify=verify) if verify else False,
-            follow_redirects=False,
-            http2=True,
-        )
-E       TypeError: Client.__init__() got an unexpected keyword argument 'proxy'
-
-/usr/local/lib/python3.10/site-packages/ddgs/http_client2.py:55: TypeError
----------------------------- Captured stdout setup -----------------------------
-Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
-  Resolving path 'file_logger.txt' in workspace '/tmp/pytest-of-root/pytest-34/test_google_search_test_1___n_0/home/users/monty/auto_gpt_workspace'
-  Resolved root as '/tmp/pytest-of-root/pytest-34/test_google_search_test_1___n_0/home/users/monty/auto_gpt_workspace'
-  Joined paths as '/tmp/pytest-of-root/pytest-34/test_google_search_test_1___n_0/home/users/monty/auto_gpt_workspace/file_logger.txt'
-  Saving memory index to file /tmp/pytest-of-root/pytest-34/test_json_memory_get_stats0/home/users/monty/auto_gpt_workspace/auto-gpt-memory.json
------------------------------- Captured log setup ------------------------------
-ERROR    LOGGER:logs.py:148 
-DEBUG    LOGGER:logs.py:148 Resolving path 'file_logger.txt' in workspace '/tmp/pytest-of-root/pytest-34/test_google_search_test_1___n_0/home/users/monty/auto_gpt_workspace'
-DEBUG    LOGGER:logs.py:148 Resolved root as '/tmp/pytest-of-root/pytest-34/test_google_search_test_1___n_0/home/users/monty/auto_gpt_workspace'
-DEBUG    LOGGER:logs.py:148 Joined paths as '/tmp/pytest-of-root/pytest-34/test_google_search_test_1___n_0/home/users/monty/auto_gpt_workspace/file_logger.txt'
-DEBUG    LOGGER:logs.py:148 Saving memory index to file /tmp/pytest-of-root/pytest-34/test_json_memory_get_stats0/home/users/monty/auto_gpt_workspace/auto-gpt-memory.json
-______________ test_google_search[no results-1-[]-return_value2] _______________
-
-query = 'no results', num_results = 1, expected_output = '[]', return_value = []
-mocker = <pytest_mock.plugin.MockerFixture object at 0x7fd17e397610>
-agent = <autogpt.agent.agent.Agent object at 0x7fd17e3963b0>
-
-    @pytest.mark.parametrize(
-        "query, num_results, expected_output, return_value",
-        [
-            (
-                "test",
-                1,
-                '[\n    {\n        "title": "Result 1",\n        "link": "https://example.com/result1"\n    }\n]',
-                [{"title": "Result 1", "link": "https://example.com/result1"}],
-            ),
-            ("", 1, "[]", []),
-            ("no results", 1, "[]", []),
-        ],
-    )
-    def test_google_search(
-        query, num_results, expected_output, return_value, mocker, agent: Agent
-    ):
-        mock_ddg = mocker.Mock()
-        mock_ddg.return_value = return_value
-    
-        mocker.patch("autogpt.commands.web_search.DDGS.text", mock_ddg)
->       actual_output = web_search(query, agent=agent, num_results=num_results)
-
-tests/unit/test_web_search.py:45: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-autogpt/command_decorator.py:47: in wrapper
-    return func(*args, **kwargs)
-autogpt/commands/web_search.py:44: in web_search
-    results = DDGS().text(query)
-/usr/local/lib/python3.10/site-packages/ddgs/ddgs.py:458: in text
-    return self._search_sync("text", query, **kwargs)
-/usr/local/lib/python3.10/site-packages/ddgs/ddgs.py:401: in _search_sync
-    engines = self._get_engines(category, backend)
-/usr/local/lib/python3.10/site-packages/ddgs/ddgs.py:339: in _get_engines
-    engine_instance = engine_class(proxy=self._proxy, timeout=self._timeout, verify=self._verify)
-/usr/local/lib/python3.10/site-packages/ddgs/engines/duckduckgo.py:34: in __init__
-    self.http_client = HttpClient2(headers=self.headers, proxy=proxy, timeout=timeout, verify=verify)  # type: ignore[assignment]
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-self = <ddgs.http_client2.HttpClient2 object at 0x7fd17e16d4e0>
-headers = {'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Mobile/15E148 Safari/604.1'}
-proxy = None, timeout = 5
-
-    def __init__(
-        self,
-        headers: dict[str, str] | None = None,
-        proxy: str | None = None,
-        timeout: int | None = 10,
-        *,
-        verify: bool | str = True,
-    ) -> None:
-        """Initialize the HttpClient object.
-    
-        Args:
-            headers (dict, optional): headers for the HTTP client.
-            proxy (str, optional): proxy for the HTTP client, supports http/https/socks5 protocols.
-                example: "http://user:pass@example.com:3128". Defaults to None.
-            timeout (int, optional): Timeout value for the HTTP client. Defaults to 10.
-            verify: (bool | str):  True to verify, False to skip or str path to a PEM file. Defaults to True.
-    
-        """
->       self.client = httpx.Client(
-            headers=headers,
-            proxy=proxy,
-            timeout=timeout,
-            verify=_get_random_ssl_context(verify=verify) if verify else False,
-            follow_redirects=False,
-            http2=True,
-        )
-E       TypeError: Client.__init__() got an unexpected keyword argument 'proxy'
-
-/usr/local/lib/python3.10/site-packages/ddgs/http_client2.py:55: TypeError
----------------------------- Captured stdout setup -----------------------------
-Plugin config is invalid, continuing without plugins. Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType  
-  Resolving path 'file_logger.txt' in workspace '/tmp/pytest-of-root/pytest-34/test_google_search_no_results_0/home/users/monty/auto_gpt_workspace'
-  Resolved root as '/tmp/pytest-of-root/pytest-34/test_google_search_no_results_0/home/users/monty/auto_gpt_workspace'
-  Joined paths as '/tmp/pytest-of-root/pytest-34/test_google_search_no_results_0/home/users/monty/auto_gpt_workspace/file_logger.txt'
-  Saving memory index to file /tmp/pytest-of-root/pytest-34/test_json_memory_get_stats0/home/users/monty/auto_gpt_workspace/auto-gpt-memory.json
------------------------------- Captured log setup ------------------------------
-ERROR    LOGGER:logs.py:148 
-DEBUG    LOGGER:logs.py:148 Resolving path 'file_logger.txt' in workspace '/tmp/pytest-of-root/pytest-34/test_google_search_no_results_0/home/users/monty/auto_gpt_workspace'
-DEBUG    LOGGER:logs.py:148 Resolved root as '/tmp/pytest-of-root/pytest-34/test_google_search_no_results_0/home/users/monty/auto_gpt_workspace'
-DEBUG    LOGGER:logs.py:148 Joined paths as '/tmp/pytest-of-root/pytest-34/test_google_search_no_results_0/home/users/monty/auto_gpt_workspace/file_logger.txt'
-DEBUG    LOGGER:logs.py:148 Saving memory index to file /tmp/pytest-of-root/pytest-34/test_json_memory_get_stats0/home/users/monty/auto_gpt_workspace/auto-gpt-memory.json
 =============================== warnings summary ===============================
 ../usr/local/lib/python3.10/site-packages/PyPDF2/__init__.py:21
   /usr/local/lib/python3.10/site-packages/PyPDF2/__init__.py:21: DeprecationWarning: PyPDF2 is deprecated. Please move to the pypdf library instead.
     warnings.warn(
 
-tests/unit/test_plugins.py::test_scan_plugins_openai
-tests/unit/test_plugins.py::test_scan_plugins_generic
-tests/unit/test_plugins.py::test_scan_plugins_not_enabled
-  <frozen zipimport>:283: DeprecationWarning: zipimport.zipimporter.load_module() is deprecated and slated for removal in Python 3.12; use exec_module() instead
-
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
 =========================== short test summary info ============================
+FAILED tests/unit/test_config.py::test_azure_config - FileNotFoundError: [Err...
+FAILED tests/unit/test_config.py::test_azure_deployment_id_for_model - FileNo...
 FAILED tests/unit/test_utils.py::test_get_latest_bulletin_no_file - assert False
-FAILED tests/unit/test_web_search.py::test_google_search[test-1-[\n    {\n        "title": "Result 1",\n        "link": "https://example.com/result1"\n    }\n]-return_value0]
-FAILED tests/unit/test_web_search.py::test_google_search[no results-1-[]-return_value2]
 ERROR tests/challenges/basic_abilities/test_browse_website.py::test_browse_website
 ERROR tests/challenges/basic_abilities/test_write_file.py::test_write_file - ...
 ERROR tests/challenges/debug_code/test_debug_code_challenge_a.py::test_debug_code_challenge_a
@@ -1708,5 +3116,40 @@ ERROR tests/integration/test_setup.py::test_generate_aiconfig_automatic_fallback
 ERROR tests/integration/test_setup.py::test_prompt_user_manual_mode - ValueEr...
 ERROR tests/integration/test_web_selenium.py::test_browse_website - ValueErro...
 ERROR tests/integration/memory/test_json_file_memory.py::test_json_memory_get_relevant
-====== 3 failed, 275 passed, 12 xfailed, 4 warnings, 20 errors in 11.91s =======
+ERROR tests/unit/test_config.py::test_create_config_gpt4only - FileNotFoundEr...
+ERROR tests/unit/test_config.py::test_create_config_gpt3only - FileNotFoundEr...
+ERROR tests/unit/test_execute_command.py::test_execute_command_plugin - FileN...
+ERROR tests/unit/test_file_operations.py::test_is_duplicate_operation - FileN...
+ERROR tests/unit/test_file_operations.py::test_log_operation - FileNotFoundEr...
+ERROR tests/unit/test_file_operations.py::test_log_operation_with_checksum - ...
+ERROR tests/unit/test_file_operations.py::test_read_file - FileNotFoundError:...
+ERROR tests/unit/test_file_operations.py::test_read_file_not_found - FileNotF...
+ERROR tests/unit/test_file_operations.py::test_write_to_file - FileNotFoundEr...
+ERROR tests/unit/test_file_operations.py::test_write_file_logs_checksum - Fil...
+ERROR tests/unit/test_file_operations.py::test_write_file_fails_if_content_exists
+ERROR tests/unit/test_file_operations.py::test_write_file_succeeds_if_content_different
+ERROR tests/unit/test_file_operations.py::test_append_to_file - FileNotFoundE...
+ERROR tests/unit/test_file_operations.py::test_append_to_file_uses_checksum_from_appended_file
+ERROR tests/unit/test_file_operations.py::test_delete_file - FileNotFoundErro...
+ERROR tests/unit/test_file_operations.py::test_delete_missing_file - FileNotF...
+ERROR tests/unit/test_file_operations.py::test_list_files - FileNotFoundError...
+ERROR tests/unit/test_git_commands.py::test_clone_auto_gpt_repository - FileN...
+ERROR tests/unit/test_git_commands.py::test_clone_repository_error - FileNotF...
+ERROR tests/unit/test_message_history.py::test_message_history_batch_summary
+ERROR tests/unit/test_plugins.py::test_scan_plugins_openai - FileNotFoundErro...
+ERROR tests/unit/test_plugins.py::test_scan_plugins_generic - FileNotFoundErr...
+ERROR tests/unit/test_plugins.py::test_scan_plugins_not_enabled - FileNotFoun...
+ERROR tests/unit/test_plugins.py::test_create_base_config - FileNotFoundError...
+ERROR tests/unit/test_plugins.py::test_load_config - FileNotFoundError: [Errn...
+ERROR tests/unit/test_prompt_generator.py::test_generate_prompt_string - File...
+ERROR tests/unit/test_utils.py::test_validate_json_valid - FileNotFoundError:...
+ERROR tests/unit/test_utils.py::test_validate_json_invalid - FileNotFoundErro...
+ERROR tests/unit/test_web_search.py::test_google_search[test-1-[\n    {\n        "title": "Result 1",\n        "link": "https://example.com/result1"\n    }\n]-return_value0]
+ERROR tests/unit/test_web_search.py::test_google_search[-1-[]-return_value1]
+ERROR tests/unit/test_web_search.py::test_google_search[no results-1-[]-return_value2]
+ERROR tests/unit/test_web_search.py::test_google_official_search[test-3-search_results0-expected_output0]
+ERROR tests/unit/test_web_search.py::test_google_official_search[-3-search_results1-expected_output1]
+ERROR tests/unit/test_web_search.py::test_google_official_search_errors[invalid query-3-Error: <HttpError 400 when requesting https://www.googleapis.com/customsearch/v1?q=invalid+query&cx returned "Invalid Value". Details: "Invalid Value">-400-Invalid Value]
+ERROR tests/unit/test_web_search.py::test_google_official_search_errors[invalid API key-3-Error: The provided Google API key is invalid or missing.-403-invalid API key]
+======= 3 failed, 240 passed, 12 xfailed, 1 warning, 55 errors in 12.15s =======
 echo OMNIGRIL_EXIT_CODE=1

@@ -460,7 +460,7 @@ E               'type': 'tool_use'}]
 
 tests/model_gemini_test.py:208: AssertionError
 ------------------------------ Captured log call -------------------------------
-WARNING  asyncio:base_events.py:1904 Executing <Task pending name='Task-563' coro=<IsolatedAsyncioTestCase._asyncioLoopRunner() running at /usr/local/lib/python3.10/unittest/async_case.py:95> wait_for=<Future pending cb=[Task.task_wakeup()] created at /usr/local/lib/python3.10/asyncio/base_events.py:429> created at /usr/local/lib/python3.10/unittest/async_case.py:117> took 0.149 seconds
+WARNING  asyncio:base_events.py:1904 Executing <Task pending name='Task-563' coro=<IsolatedAsyncioTestCase._asyncioLoopRunner() running at /usr/local/lib/python3.10/unittest/async_case.py:95> wait_for=<Future pending cb=[Task.task_wakeup()] created at /usr/local/lib/python3.10/asyncio/base_events.py:429> created at /usr/local/lib/python3.10/unittest/async_case.py:117> took 0.145 seconds
 _____________ TestOllamaChatModel.test_call_with_tools_integration _____________
 
 self = <model_ollama_test.TestOllamaChatModel testMethod=test_call_with_tools_integration>
@@ -577,5 +577,5 @@ tests/session_test.py::RedisSessionTest::test_redis_session_save_and_load
 FAILED tests/model_dashscope_test.py::TestDashScopeChatModel::test_streaming_response_processing
 FAILED tests/model_gemini_test.py::TestGeminiChatModel::test_call_with_tools_integration
 FAILED tests/model_ollama_test.py::TestOllamaChatModel::test_call_with_tools_integration
-====== 3 failed, 246 passed, 20 skipped, 13 warnings in 117.38s (0:01:57) ======
+====== 3 failed, 246 passed, 20 skipped, 13 warnings in 115.24s (0:01:55) ======
 echo OMNIGRIL_EXIT_CODE=1
