@@ -1,0 +1,24 @@
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.10.20, pytest-7.3.1, pluggy-1.0.0 -- /usr/local/bin/python3.10
+cachedir: .pytest_cache
+benchmark: 4.0.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /testbed
+plugins: integration-0.2.3, mock-3.10.0, benchmark-4.0.0, cov-4.0.0, asyncio-0.21.0, recording-0.12.2, xdist-3.3.0, anyio-3.6.2
+asyncio: mode=strict
+collecting ... collected 309 items / 1 error
+
+==================================== ERRORS ====================================
+________________ ERROR collecting tests/unit/test_llm_utils.py _________________
+ImportError while importing test module '/testbed/tests/unit/test_llm_utils.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.10/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+tests/unit/test_llm_utils.py:8: in <module>
+    from autogpt.llm.llm_utils import check_model
+E   ImportError: cannot import name 'check_model' from 'autogpt.llm.llm_utils' (/testbed/autogpt/llm/llm_utils.py)
+=========================== short test summary info ============================
+ERROR tests/unit/test_llm_utils.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+=============================== 1 error in 0.44s ===============================

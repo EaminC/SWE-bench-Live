@@ -1,0 +1,533 @@
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-8.2.0, pluggy-1.5.0 -- /usr/local/bin/python3.9
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+plugins: anyio-4.3.0, cov-5.0.0
+collecting ... collected 98 items
+
+tests/agent_test.py::BasicAgentTest::test_agent_init PASSED              [  1%]
+tests/dashscope_test.py::TestDashScopeChatWrapper::test_call_failure PASSED [  2%]
+tests/dashscope_test.py::TestDashScopeChatWrapper::test_call_success PASSED [  3%]
+tests/dashscope_test.py::TestDashScopeImageSynthesisWrapper::test_image_synthesis_wrapper_call_failure PASSED [  4%]
+tests/dashscope_test.py::TestDashScopeImageSynthesisWrapper::test_image_synthesis_wrapper_call_success PASSED [  5%]
+tests/dashscope_test.py::TestDashScopeTextEmbeddingWrapper::test_call_failure PASSED [  6%]
+tests/dashscope_test.py::TestDashScopeTextEmbeddingWrapper::test_call_success PASSED [  7%]
+tests/dashscope_test.py::TestDashScopeMultiModalWrapper::test_call_failure PASSED [  8%]
+tests/dashscope_test.py::TestDashScopeMultiModalWrapper::test_call_success PASSED [  9%]
+tests/example_test.py::ExampleTest::test_dummy PASSED                    [ 10%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_basic_expression PASSED [ 11%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_no_input_code PASSED [ 12%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_raising_exceptions PASSED [ 13%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_timeout PASSED [ 14%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_using_external_libs PASSED [ 15%]
+tests/execute_shell_command_test.py::ExecuteShellCommandTest::test PASSED [ 16%]
+tests/format_test.py::ExampleTest::test_dashscope_chat PASSED            [ 17%]
+tests/format_test.py::ExampleTest::test_dashscope_multimodal_audio PASSED [ 18%]
+tests/format_test.py::ExampleTest::test_dashscope_multimodal_image PASSED [ 19%]
+tests/format_test.py::ExampleTest::test_gemini_chat PASSED               [ 20%]
+tests/format_test.py::ExampleTest::test_ollama_chat PASSED               [ 21%]
+tests/format_test.py::ExampleTest::test_ollama_generation PASSED         [ 22%]
+tests/format_test.py::ExampleTest::test_openai_chat PASSED               [ 23%]
+tests/format_test.py::ExampleTest::test_zhipuai_chat PASSED              [ 24%]
+tests/gemini_test.py::GeminiModelWrapperTest::test_gemini_chat PASSED    [ 25%]
+tests/gemini_test.py::GeminiModelWrapperTest::test_gemini_embedding PASSED [ 26%]
+tests/logger_test.py::LoggerTest::test_logger_chat PASSED                [ 27%]
+tests/memory_test.py::TemporaryMemoryTest::test_add PASSED               [ 28%]
+tests/memory_test.py::TemporaryMemoryTest::test_delete PASSED            [ 29%]
+tests/memory_test.py::TemporaryMemoryTest::test_invalid FAILED           [ 30%]
+tests/memory_test.py::TemporaryMemoryTest::test_load_export FAILED       [ 31%]
+tests/memory_test.py::TemporaryMemoryTest::test_tht_memory FAILED        [ 32%]
+tests/model_test.py::BasicModelTest::test_load_model_configs PASSED      [ 33%]
+tests/model_test.py::BasicModelTest::test_model_registry PASSED          [ 34%]
+tests/monitor_test.py::MonitorFactoryTest::test_get_monitor PASSED       [ 35%]
+tests/monitor_test.py::MonitorFactoryTest::test_monitor_type PASSED      [ 36%]
+tests/monitor_test.py::DummyMonitorTest::test_dummy_monitor PASSED       [ 37%]
+tests/monitor_test.py::MonitorTestBase::test_add_clear_set_quota SKIPPED [ 38%]
+tests/monitor_test.py::MonitorTestBase::test_get SKIPPED (Base test ...) [ 39%]
+tests/monitor_test.py::MonitorTestBase::test_register_exists_remove SKIPPED [ 40%]
+tests/monitor_test.py::SqliteMonitorTest::test_add_clear_set_quota PASSED [ 41%]
+tests/monitor_test.py::SqliteMonitorTest::test_get PASSED                [ 42%]
+tests/monitor_test.py::SqliteMonitorTest::test_register_budget PASSED    [ 43%]
+tests/monitor_test.py::SqliteMonitorTest::test_register_exists_remove PASSED [ 44%]
+tests/msghub_test.py::MsgHubTest::test_msghub PASSED                     [ 45%]
+tests/msghub_test.py::MsgHubTest::test_msghub_operation PASSED           [ 46%]
+tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_chat PASSED    [ 47%]
+tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_embedding PASSED [ 48%]
+tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_generate PASSED [ 50%]
+tests/operate_file_test.py::OperateFileTest::test_dir PASSED             [ 51%]
+tests/operate_file_test.py::OperateFileTest::test_file PASSED            [ 52%]
+tests/operate_file_test.py::OperateFileTest::test_json PASSED            [ 53%]
+tests/operate_file_test.py::OperateFileTest::test_txt PASSED             [ 54%]
+tests/pipeline_test.py::BasicPipelineTest::test_for_pipeline PASSED      [ 55%]
+tests/pipeline_test.py::BasicPipelineTest::test_if_else_pipeline PASSED  [ 56%]
+tests/pipeline_test.py::BasicPipelineTest::test_sequential_pipeline PASSED [ 57%]
+tests/pipeline_test.py::BasicPipelineTest::test_switch_pipeline PASSED   [ 58%]
+tests/pipeline_test.py::BasicPipelineTest::test_while_pipeline PASSED    [ 59%]
+tests/pipeline_test.py::FunctionalPipelineTest::test_if_else_pipeline PASSED [ 60%]
+tests/pipeline_test.py::FunctionalPipelineTest::test_sequential_pipeline PASSED [ 61%]
+tests/prompt_engine_test.py::PromptEngineTest::test_list_prompt PASSED   [ 62%]
+tests/prompt_engine_test.py::PromptEngineTest::test_str_prompt PASSED    [ 63%]
+tests/record_api_invocation_test.py::RecordApiInvocation::test_record_model_invocation_with_init PASSED [ 64%]
+tests/retrieval_from_list_test.py::TestRetrieval::test_retrieval_from_list PASSED [ 65%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_agent_nesting PASSED    [ 66%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_clone_instances PASSED  [ 67%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_connect_to_an_existing_rpc_server PASSED [ 68%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_error_handling PASSED   [ 69%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_mix_rpc_agent_and_local_agent PASSED [ 70%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_msghub_compatibility PASSED [ 71%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_multi_agent_in_same_server PASSED [ 72%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_multi_rpc_agent PASSED  [ 73%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_single_rpc_agent_server PASSED [ 74%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_standalone_multiprocess_init PASSED [ 75%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_bing_search PASSED [ 76%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_enum PASSED      [ 77%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_exec_python_code PASSED [ 78%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_multi_tagged_content PASSED [ 79%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_retrieval PASSED [ 80%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_service_toolkit PASSED [ 81%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_sql_query PASSED [ 82%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_summary PASSED   [ 83%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mongodb_failure PASSED [ 84%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mongodb_success PASSED [ 85%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mysql_failure PASSED [ 86%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mysql_success PASSED [ 87%]
+tests/sql_query_test.py::TestSQLQueries::test_query_sqlite_exception_handling PASSED [ 88%]
+tests/sql_query_test.py::TestSQLQueries::test_query_sqlite_success PASSED [ 89%]
+tests/token_utils_test.py::TokenUtilsTest::test_count_openai_token PASSED [ 90%]
+tests/token_utils_test.py::TokenUtilsTest::test_get_openai_max_length PASSED [ 91%]
+tests/web_digest_test.py::TestWebDigest::test_web_digest PASSED          [ 92%]
+tests/web_digest_test.py::TestWebDigest::test_web_load PASSED            [ 93%]
+tests/web_search_test.py::TestWebSearches::test_arxiv_query_format PASSED [ 94%]
+tests/web_search_test.py::TestWebSearches::test_arxiv_search PASSED      [ 95%]
+tests/web_search_test.py::TestWebSearches::test_search_bing PASSED       [ 96%]
+tests/web_search_test.py::TestWebSearches::test_search_google PASSED     [ 97%]
+tests/zhipu_test.py::TestZhipuAIChatWrapper::test_chat PASSED            [ 98%]
+tests/zhipu_test.py::TestZhipuAIEmbeddingWrapper::test_embedding PASSED  [100%]
+
+=================================== FAILURES ===================================
+_______________________ TemporaryMemoryTest.test_invalid _______________________
+
+self = <tests.memory_test.TemporaryMemoryTest testMethod=test_invalid>
+
+    def test_invalid(self) -> None:
+        """Test invalid operations for memory"""
+        # test invalid add
+        with self.assertRaises(Exception) as context:
+>           self.memory.add(self.invalid)
+E           AssertionError: Exception not raised
+
+tests/memory_test.py:81: AssertionError
+_____________________ TemporaryMemoryTest.test_load_export _____________________
+
+self = <tests.memory_test.TemporaryMemoryTest testMethod=test_load_export>
+
+    def test_load_export(self) -> None:
+        """
+        Test load and export function of TemporaryMemory
+        """
+        memory = TemporaryMemory()
+        user_input = Msg(name="user", content="Hello")
+        agent_input = Msg(
+            name="agent",
+            content="Hello! How can I help you?",
+        )
+        memory.load([user_input, agent_input])
+        retrieved_mem = memory.export(to_mem=True)
+        self.assertEqual(
+            retrieved_mem,
+            [user_input, agent_input],
+        )
+    
+        memory.export(file_path=self.file_name_1)
+        memory.clear()
+        self.assertEqual(
+            memory.get_memory(),
+            [],
+        )
+>       memory.load(self.file_name_1)
+
+tests/memory_test.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <agentscope.memory.temporary_memory.TemporaryMemory object at 0x7f04e7b5faf0>
+memories = 'tmp_mem_file1.txt', overwrite = False
+
+    def load(
+        self,
+        memories: Union[str, dict, list],
+        overwrite: bool = False,
+    ) -> None:
+        if isinstance(memories, str):
+            if os.path.isfile(memories):
+                with open(memories, "r", encoding="utf-8") as f:
+                    self.add(json.load(f))
+            else:
+                try:
+                    load_memories = json.loads(memories)
+                    if not isinstance(load_memories, dict) and not isinstance(
+                        load_memories,
+                        list,
+                    ):
+                        logger.warning(
+                            "The memory loaded by json.loads is "
+                            "neither a dict nor a list, which may "
+                            "cause unpredictable errors.",
+                        )
+                except json.JSONDecodeError as e:
+                    raise json.JSONDecodeError(
+                        f"Cannot load [{memories}] via " f"json.loads.",
+                        e.doc,
+                        e.pos,
+                    )
+        else:
+            load_memories = memories
+    
+        # overwrite the original memories after loading the new ones
+        if overwrite:
+            self.clear()
+    
+>       self.add(load_memories)
+E       UnboundLocalError: local variable 'load_memories' referenced before assignment
+
+src/agentscope/memory/temporary_memory.py:155: UnboundLocalError
+_____________________ TemporaryMemoryTest.test_tht_memory ______________________
+
+self = <tests.memory_test.TemporaryMemoryTest testMethod=test_tht_memory>
+
+    def test_tht_memory(self) -> None:
+        """
+        Test temporary memory with Tht,
+        add, clear, export, loading
+        """
+        memory = TemporaryMemory()
+        thought = Tht("testing")
+        memory.add(thought)
+    
+        self.assertEqual(
+            memory.get_memory(),
+            [thought],
+        )
+    
+        memory.export(file_path=self.file_name_2)
+        memory.clear()
+        self.assertEqual(
+            memory.get_memory(),
+            [],
+        )
+>       memory.load(self.file_name_2)
+
+tests/memory_test.py:135: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <agentscope.memory.temporary_memory.TemporaryMemory object at 0x7f046fcff8e0>
+memories = 'tmp_mem_file2.txt', overwrite = False
+
+    def load(
+        self,
+        memories: Union[str, dict, list],
+        overwrite: bool = False,
+    ) -> None:
+        if isinstance(memories, str):
+            if os.path.isfile(memories):
+                with open(memories, "r", encoding="utf-8") as f:
+                    self.add(json.load(f))
+            else:
+                try:
+                    load_memories = json.loads(memories)
+                    if not isinstance(load_memories, dict) and not isinstance(
+                        load_memories,
+                        list,
+                    ):
+                        logger.warning(
+                            "The memory loaded by json.loads is "
+                            "neither a dict nor a list, which may "
+                            "cause unpredictable errors.",
+                        )
+                except json.JSONDecodeError as e:
+                    raise json.JSONDecodeError(
+                        f"Cannot load [{memories}] via " f"json.loads.",
+                        e.doc,
+                        e.pos,
+                    )
+        else:
+            load_memories = memories
+    
+        # overwrite the original memories after loading the new ones
+        if overwrite:
+            self.clear()
+    
+>       self.add(load_memories)
+E       UnboundLocalError: local variable 'load_memories' referenced before assignment
+
+src/agentscope/memory/temporary_memory.py:155: UnboundLocalError
+=============================== warnings summary ===============================
+tests/agent_test.py:11
+  /testbed/tests/agent_test.py:11: PytestCollectionWarning: cannot collect test class 'TestAgent' because it has a __init__ constructor (from: tests/agent_test.py)
+    class TestAgent(AgentBase):
+
+tests/agent_test.py:35
+  /testbed/tests/agent_test.py:35: PytestCollectionWarning: cannot collect test class 'TestAgentCopy' because it has a __init__ constructor (from: tests/agent_test.py)
+    class TestAgentCopy(TestAgent):
+
+tests/model_test.py:23
+  /testbed/tests/model_test.py:23: PytestCollectionWarning: cannot collect test class 'TestModelWrapperSimple' because it has a __init__ constructor (from: tests/model_test.py)
+    class TestModelWrapperSimple(ModelWrapperBase):
+
+tests/msghub_test.py:11
+  /testbed/tests/msghub_test.py:11: PytestCollectionWarning: cannot collect test class 'TestAgent' because it has a __init__ constructor (from: tests/msghub_test.py)
+    class TestAgent(AgentBase):
+
+tests/logger_test.py::LoggerTest::test_logger_chat
+  /usr/local/lib/python3.9/site-packages/loguru/_logger.py:2046: DeprecationWarning: The 'stop()' method is deprecated, please use 'remove()' instead
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+==================================== PASSES ====================================
+__________________ TestDashScopeChatWrapper.test_call_failure __________________
+----------------------------- Captured stderr call -----------------------------
+2026-06-09 14:35:07.889 | INFO     | agentscope.utils.monitor:_create_monitor_table:396 - Init [monitor_metrics] as the monitor table
+2026-06-09 14:35:07.889 | INFO     | agentscope.utils.monitor:_create_monitor_table:397 - Init [monitor_metrics_quota_exceeded] as the monitor trigger
+2026-06-09 14:35:07.889 | INFO     | agentscope.utils.monitor:__init__:366 - SqliteMonitor initialization completed at [agentscope.db]
+2026-06-09 14:35:07.889 | INFO     | agentscope.models.model:__init__:201 - Initialize model by configuration [test_config]
+__________________ TestDashScopeChatWrapper.test_call_success __________________
+----------------------------- Captured stderr call -----------------------------
+2026-06-09 14:35:07.892 | INFO     | agentscope.models.model:__init__:201 - Initialize model by configuration [test_config]
+_ TestDashScopeImageSynthesisWrapper.test_image_synthesis_wrapper_call_failure _
+----------------------------- Captured stderr call -----------------------------
+2026-06-09 14:35:07.896 | INFO     | agentscope.models.model:__init__:201 - Initialize model by configuration [config_name]
+_ TestDashScopeImageSynthesisWrapper.test_image_synthesis_wrapper_call_success _
+----------------------------- Captured stderr call -----------------------------
+2026-06-09 14:35:07.898 | INFO     | agentscope.models.model:__init__:201 - Initialize model by configuration [config_name]
+_____________ TestDashScopeTextEmbeddingWrapper.test_call_failure ______________
+----------------------------- Captured stderr call -----------------------------
+2026-06-09 14:35:07.904 | INFO     | agentscope.models.model:__init__:201 - Initialize model by configuration [test_config]
+_____________ TestDashScopeTextEmbeddingWrapper.test_call_success ______________
+----------------------------- Captured stderr call -----------------------------
+2026-06-09 14:35:07.906 | INFO     | agentscope.models.model:__init__:201 - Initialize model by configuration [test_config]
+_______________ TestDashScopeMultiModalWrapper.test_call_failure _______________
+----------------------------- Captured stderr call -----------------------------
+2026-06-09 14:35:07.910 | INFO     | agentscope.models.model:__init__:201 - Initialize model by configuration [test_config]
+_______________ TestDashScopeMultiModalWrapper.test_call_success _______________
+----------------------------- Captured stderr call -----------------------------
+2026-06-09 14:35:07.912 | INFO     | agentscope.models.model:__init__:201 - Initialize model by configuration [test_config]
+_________________ ExecutePythonCodeTest.test_basic_expression __________________
+----------------------------- Captured stderr call -----------------------------
+2026-06-09 14:35:07.917 | WARNING  | agentscope.service.execute_code.exec_python:_execute_python_code_sys:187 - Executing code in system environments. There exists a risk of unintended destructive behavior. Please consider using a containerized environment.
+___________________ ExecutePythonCodeTest.test_no_input_code ___________________
+----------------------------- Captured stderr call -----------------------------
+2026-06-09 14:35:07.975 | WARNING  | agentscope.service.execute_code.exec_python:_execute_python_code_sys:187 - Executing code in system environments. There exists a risk of unintended destructive behavior. Please consider using a containerized environment.
+________________ ExecutePythonCodeTest.test_raising_exceptions _________________
+----------------------------- Captured stderr call -----------------------------
+2026-06-09 14:35:08.031 | WARNING  | agentscope.service.execute_code.exec_python:_execute_python_code_sys:187 - Executing code in system environments. There exists a risk of unintended destructive behavior. Please consider using a containerized environment.
+______________________ ExecutePythonCodeTest.test_timeout ______________________
+----------------------------- Captured stderr call -----------------------------
+2026-06-09 14:35:08.090 | WARNING  | agentscope.service.execute_code.exec_python:_execute_python_code_sys:187 - Executing code in system environments. There exists a risk of unintended destructive behavior. Please consider using a containerized environment.
+________________ ExecutePythonCodeTest.test_using_external_libs ________________
+----------------------------- Captured stderr call -----------------------------
+2026-06-09 14:35:09.152 | WARNING  | agentscope.service.execute_code.exec_python:_execute_python_code_sys:187 - Executing code in system environments. There exists a risk of unintended destructive behavior. Please consider using a containerized environment.
+_______________________ ExampleTest.test_dashscope_chat ________________________
+----------------------------- Captured stderr call -----------------------------
+2026-06-09 14:35:09.275 | INFO     | agentscope.models.model:__init__:201 - Initialize model by configuration []
+_________________ ExampleTest.test_dashscope_multimodal_audio __________________
+----------------------------- Captured stderr call -----------------------------
+2026-06-09 14:35:09.283 | INFO     | agentscope.models.model:__init__:201 - Initialize model by configuration []
+_________________ ExampleTest.test_dashscope_multimodal_image __________________
+----------------------------- Captured stderr call -----------------------------
+2026-06-09 14:35:09.287 | INFO     | agentscope.models.model:__init__:201 - Initialize model by configuration []
+_________________________ ExampleTest.test_gemini_chat _________________________
+----------------------------- Captured stderr call -----------------------------
+2026-06-09 14:35:09.292 | INFO     | agentscope.models.model:__init__:201 - Initialize model by configuration []
+_________________________ ExampleTest.test_ollama_chat _________________________
+----------------------------- Captured stderr call -----------------------------
+2026-06-09 14:35:09.295 | INFO     | agentscope.models.model:__init__:201 - Initialize model by configuration []
+______________________ ExampleTest.test_ollama_generation ______________________
+----------------------------- Captured stderr call -----------------------------
+2026-06-09 14:35:09.298 | INFO     | agentscope.models.model:__init__:201 - Initialize model by configuration []
+_________________________ ExampleTest.test_openai_chat _________________________
+----------------------------- Captured stderr call -----------------------------
+2026-06-09 14:35:09.301 | INFO     | agentscope.models.model:__init__:201 - Initialize model by configuration []
+2026-06-09 14:35:09.301 | INFO     | agentscope.utils.monitor:register_budget:609 - set budget None to gpt-4
+________________________ ExampleTest.test_zhipuai_chat _________________________
+----------------------------- Captured stderr call -----------------------------
+2026-06-09 14:35:09.304 | INFO     | agentscope.models.model:__init__:201 - Initialize model by configuration []
+___________________ GeminiModelWrapperTest.test_gemini_chat ____________________
+----------------------------- Captured stdout call -----------------------------
+2026-06-09 14:35:09.336 | INFO     | agentscope.models:read_model_configs:176 - Load configs for model wrapper: my_gemini_chat
+2026-06-09 14:35:09.340 | INFO     | agentscope.utils.monitor:_create_monitor_table:396 - Init [monitor_metrics] as the monitor table
+2026-06-09 14:35:09.340 | INFO     | agentscope.utils.monitor:_create_monitor_table:397 - Init [monitor_metrics_quota_exceeded] as the monitor trigger
+2026-06-09 14:35:09.341 | INFO     | agentscope.utils.monitor:__init__:366 - SqliteMonitor initialization completed at [./runs/run_20260609-143507_jzp0n4/agentscope.db]
+2026-06-09 14:35:09.342 | INFO     | agentscope.models.model:__init__:201 - Initialize model by configuration [my_gemini_chat]
+2026-06-09 14:35:09.343 | INFO     | agentscope.utils.monitor:register:417 - Register metric [gemini-pro.call_counter] to SqliteMonitor with unit [times] and quota [None]
+2026-06-09 14:35:09.345 | INFO     | agentscope.utils.monitor:register:417 - Register metric [gemini-pro.prompt_tokens] to SqliteMonitor with unit [token] and quota [None]
+2026-06-09 14:35:09.347 | INFO     | agentscope.utils.monitor:register:417 - Register metric [gemini-pro.completion_tokens] to SqliteMonitor with unit [token] and quota [None]
+2026-06-09 14:35:09.349 | INFO     | agentscope.utils.monitor:register:417 - Register metric [gemini-pro.total_tokens] to SqliteMonitor with unit [token] and quota [None]
+_________________ GeminiModelWrapperTest.test_gemini_embedding _________________
+----------------------------- Captured stdout call -----------------------------
+2026-06-09 14:35:09.365 | INFO     | agentscope.models:read_model_configs:176 - Load configs for model wrapper: my_gemini_chat, my_gemini_embedding
+2026-06-09 14:35:09.369 | INFO     | agentscope.utils.monitor:_create_monitor_table:396 - Init [monitor_metrics] as the monitor table
+2026-06-09 14:35:09.370 | INFO     | agentscope.utils.monitor:_create_monitor_table:397 - Init [monitor_metrics_quota_exceeded] as the monitor trigger
+2026-06-09 14:35:09.370 | INFO     | agentscope.utils.monitor:__init__:366 - SqliteMonitor initialization completed at [./runs/run_20260609-143507_u85iks/agentscope.db]
+2026-06-09 14:35:09.372 | INFO     | agentscope.models.model:__init__:201 - Initialize model by configuration [my_gemini_embedding]
+2026-06-09 14:35:09.373 | INFO     | agentscope.utils.monitor:register:417 - Register metric [models/embedding-001.call_counter] to SqliteMonitor with unit [times] and quota [None]
+_________________________ LoggerTest.test_logger_chat __________________________
+----------------------------- Captured stdout call -----------------------------
+Test
+Chat
+
+Message
+
+
+Alice: Hi!
+
+Alice: https://xxx.png
+Alice: https://xxx.png
+{'abc': 1}
+_____________________ ServiceToolkitTest.test_bing_search ______________________
+----------------------------- Captured stdout call -----------------------------
+{
+    "type": "function",
+    "function": {
+        "name": "bing_search",
+        "description": "Search question in Bing Search API and return the searching results",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "num_results": {
+                    "type": "number",
+                    "description": "The number of search results to return.",
+                    "default": 10
+                },
+                "question": {
+                    "type": "string",
+                    "description": "The search query string."
+                }
+            },
+            "required": [
+                "question"
+            ]
+        }
+    }
+}
+_______________________ ServiceToolkitTest.test_summary ________________________
+----------------------------- Captured stdout call -----------------------------
+{
+    "type": "function",
+    "function": {
+        "name": "summarization",
+        "description": "Summarize the input text.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "text": {
+                    "type": "string",
+                    "description": "Text to be summarized by the model."
+                }
+            },
+            "required": [
+                "text"
+            ]
+        }
+    }
+}
+=========================== short test summary info ============================
+PASSED tests/agent_test.py::BasicAgentTest::test_agent_init
+PASSED tests/dashscope_test.py::TestDashScopeChatWrapper::test_call_failure
+PASSED tests/dashscope_test.py::TestDashScopeChatWrapper::test_call_success
+PASSED tests/dashscope_test.py::TestDashScopeImageSynthesisWrapper::test_image_synthesis_wrapper_call_failure
+PASSED tests/dashscope_test.py::TestDashScopeImageSynthesisWrapper::test_image_synthesis_wrapper_call_success
+PASSED tests/dashscope_test.py::TestDashScopeTextEmbeddingWrapper::test_call_failure
+PASSED tests/dashscope_test.py::TestDashScopeTextEmbeddingWrapper::test_call_success
+PASSED tests/dashscope_test.py::TestDashScopeMultiModalWrapper::test_call_failure
+PASSED tests/dashscope_test.py::TestDashScopeMultiModalWrapper::test_call_success
+PASSED tests/example_test.py::ExampleTest::test_dummy
+PASSED tests/execute_python_code_test.py::ExecutePythonCodeTest::test_basic_expression
+PASSED tests/execute_python_code_test.py::ExecutePythonCodeTest::test_no_input_code
+PASSED tests/execute_python_code_test.py::ExecutePythonCodeTest::test_raising_exceptions
+PASSED tests/execute_python_code_test.py::ExecutePythonCodeTest::test_timeout
+PASSED tests/execute_python_code_test.py::ExecutePythonCodeTest::test_using_external_libs
+PASSED tests/execute_shell_command_test.py::ExecuteShellCommandTest::test
+PASSED tests/format_test.py::ExampleTest::test_dashscope_chat
+PASSED tests/format_test.py::ExampleTest::test_dashscope_multimodal_audio
+PASSED tests/format_test.py::ExampleTest::test_dashscope_multimodal_image
+PASSED tests/format_test.py::ExampleTest::test_gemini_chat
+PASSED tests/format_test.py::ExampleTest::test_ollama_chat
+PASSED tests/format_test.py::ExampleTest::test_ollama_generation
+PASSED tests/format_test.py::ExampleTest::test_openai_chat
+PASSED tests/format_test.py::ExampleTest::test_zhipuai_chat
+PASSED tests/gemini_test.py::GeminiModelWrapperTest::test_gemini_chat
+PASSED tests/gemini_test.py::GeminiModelWrapperTest::test_gemini_embedding
+PASSED tests/logger_test.py::LoggerTest::test_logger_chat
+PASSED tests/memory_test.py::TemporaryMemoryTest::test_add
+PASSED tests/memory_test.py::TemporaryMemoryTest::test_delete
+PASSED tests/model_test.py::BasicModelTest::test_load_model_configs
+PASSED tests/model_test.py::BasicModelTest::test_model_registry
+PASSED tests/monitor_test.py::MonitorFactoryTest::test_get_monitor
+PASSED tests/monitor_test.py::MonitorFactoryTest::test_monitor_type
+PASSED tests/monitor_test.py::DummyMonitorTest::test_dummy_monitor
+PASSED tests/monitor_test.py::SqliteMonitorTest::test_add_clear_set_quota
+PASSED tests/monitor_test.py::SqliteMonitorTest::test_get
+PASSED tests/monitor_test.py::SqliteMonitorTest::test_register_budget
+PASSED tests/monitor_test.py::SqliteMonitorTest::test_register_exists_remove
+PASSED tests/msghub_test.py::MsgHubTest::test_msghub
+PASSED tests/msghub_test.py::MsgHubTest::test_msghub_operation
+PASSED tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_chat
+PASSED tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_embedding
+PASSED tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_generate
+PASSED tests/operate_file_test.py::OperateFileTest::test_dir
+PASSED tests/operate_file_test.py::OperateFileTest::test_file
+PASSED tests/operate_file_test.py::OperateFileTest::test_json
+PASSED tests/operate_file_test.py::OperateFileTest::test_txt
+PASSED tests/pipeline_test.py::BasicPipelineTest::test_for_pipeline
+PASSED tests/pipeline_test.py::BasicPipelineTest::test_if_else_pipeline
+PASSED tests/pipeline_test.py::BasicPipelineTest::test_sequential_pipeline
+PASSED tests/pipeline_test.py::BasicPipelineTest::test_switch_pipeline
+PASSED tests/pipeline_test.py::BasicPipelineTest::test_while_pipeline
+PASSED tests/pipeline_test.py::FunctionalPipelineTest::test_if_else_pipeline
+PASSED tests/pipeline_test.py::FunctionalPipelineTest::test_sequential_pipeline
+PASSED tests/prompt_engine_test.py::PromptEngineTest::test_list_prompt
+PASSED tests/prompt_engine_test.py::PromptEngineTest::test_str_prompt
+PASSED tests/record_api_invocation_test.py::RecordApiInvocation::test_record_model_invocation_with_init
+PASSED tests/retrieval_from_list_test.py::TestRetrieval::test_retrieval_from_list
+PASSED tests/rpc_agent_test.py::BasicRpcAgentTest::test_agent_nesting
+PASSED tests/rpc_agent_test.py::BasicRpcAgentTest::test_clone_instances
+PASSED tests/rpc_agent_test.py::BasicRpcAgentTest::test_connect_to_an_existing_rpc_server
+PASSED tests/rpc_agent_test.py::BasicRpcAgentTest::test_error_handling
+PASSED tests/rpc_agent_test.py::BasicRpcAgentTest::test_mix_rpc_agent_and_local_agent
+PASSED tests/rpc_agent_test.py::BasicRpcAgentTest::test_msghub_compatibility
+PASSED tests/rpc_agent_test.py::BasicRpcAgentTest::test_multi_agent_in_same_server
+PASSED tests/rpc_agent_test.py::BasicRpcAgentTest::test_multi_rpc_agent
+PASSED tests/rpc_agent_test.py::BasicRpcAgentTest::test_single_rpc_agent_server
+PASSED tests/rpc_agent_test.py::BasicRpcAgentTest::test_standalone_multiprocess_init
+PASSED tests/service_toolkit_test.py::ServiceToolkitTest::test_bing_search
+PASSED tests/service_toolkit_test.py::ServiceToolkitTest::test_enum
+PASSED tests/service_toolkit_test.py::ServiceToolkitTest::test_exec_python_code
+PASSED tests/service_toolkit_test.py::ServiceToolkitTest::test_multi_tagged_content
+PASSED tests/service_toolkit_test.py::ServiceToolkitTest::test_retrieval
+PASSED tests/service_toolkit_test.py::ServiceToolkitTest::test_service_toolkit
+PASSED tests/service_toolkit_test.py::ServiceToolkitTest::test_sql_query
+PASSED tests/service_toolkit_test.py::ServiceToolkitTest::test_summary
+PASSED tests/sql_query_test.py::TestSQLQueries::test_query_mongodb_failure
+PASSED tests/sql_query_test.py::TestSQLQueries::test_query_mongodb_success
+PASSED tests/sql_query_test.py::TestSQLQueries::test_query_mysql_failure
+PASSED tests/sql_query_test.py::TestSQLQueries::test_query_mysql_success
+PASSED tests/sql_query_test.py::TestSQLQueries::test_query_sqlite_exception_handling
+PASSED tests/sql_query_test.py::TestSQLQueries::test_query_sqlite_success
+PASSED tests/token_utils_test.py::TokenUtilsTest::test_count_openai_token
+PASSED tests/token_utils_test.py::TokenUtilsTest::test_get_openai_max_length
+PASSED tests/web_digest_test.py::TestWebDigest::test_web_digest
+PASSED tests/web_digest_test.py::TestWebDigest::test_web_load
+PASSED tests/web_search_test.py::TestWebSearches::test_arxiv_query_format
+PASSED tests/web_search_test.py::TestWebSearches::test_arxiv_search
+PASSED tests/web_search_test.py::TestWebSearches::test_search_bing
+PASSED tests/web_search_test.py::TestWebSearches::test_search_google
+PASSED tests/zhipu_test.py::TestZhipuAIChatWrapper::test_chat
+PASSED tests/zhipu_test.py::TestZhipuAIEmbeddingWrapper::test_embedding
+SKIPPED [1] tests/monitor_test.py:135: Base test class
+SKIPPED [1] tests/monitor_test.py:162: Base test class
+SKIPPED [1] tests/monitor_test.py:102: Base test class
+FAILED tests/memory_test.py::TemporaryMemoryTest::test_invalid - AssertionErr...
+FAILED tests/memory_test.py::TemporaryMemoryTest::test_load_export - UnboundL...
+FAILED tests/memory_test.py::TemporaryMemoryTest::test_tht_memory - UnboundLo...
+======== 3 failed, 92 passed, 3 skipped, 5 warnings in 60.54s (0:01:00) ========

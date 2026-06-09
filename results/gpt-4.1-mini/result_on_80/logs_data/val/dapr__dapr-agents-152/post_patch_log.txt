@@ -1,0 +1,468 @@
+eval No.0 
+
+========  
+
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.10.20, pytest-7.4.4, pluggy-1.6.0 -- /usr/local/bin/python3.10
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+testpaths: tests
+plugins: asyncio-0.23.8, cov-4.1.0, anyio-4.9.0, mock-3.14.1
+asyncio: mode=auto
+collecting ... collected 93 items
+
+tests/test_signal_handlers.py::test_add_signal_handlers_cross_platform PASSED [  1%]
+tests/test_signal_handlers.py::test_add_signal_handlers_cross_platform_without_mocks_and_real_event_loop PASSED [  2%]
+tests/agents/test_base.py::TestAgentBaseClass::test_agent_creation_with_all_fields PASSED [  3%]
+tests/agents/test_base.py::TestAgentBaseClass::test_agent_creation_with_minimal_fields PASSED [  4%]
+tests/agents/test_base.py::TestAgentBaseClass::test_name_set_from_role_when_not_provided PASSED [  5%]
+tests/agents/test_base.py::TestAgentBaseClass::test_name_not_overwritten_when_provided PASSED [  6%]
+tests/agents/test_base.py::TestAgentBaseClass::test_agent_with_custom_system_prompt PASSED [  7%]
+tests/agents/test_base.py::TestAgentBaseClass::test_agent_with_tools PASSED [  8%]
+tests/agents/test_base.py::TestAgentBaseClass::test_agent_with_vector_store PASSED [  9%]
+tests/agents/test_base.py::TestAgentBaseClass::test_prompt_template_construction PASSED [ 10%]
+tests/agents/test_base.py::TestAgentBaseClass::test_system_prompt_construction PASSED [ 11%]
+tests/agents/test_base.py::TestAgentBaseClass::test_system_prompt_without_instructions PASSED [ 12%]
+tests/agents/test_base.py::TestAgentBaseClass::test_prompt_template_construction_with_system_prompt PASSED [ 13%]
+tests/agents/test_base.py::TestAgentBaseClass::test_construct_messages_with_string_input PASSED [ 15%]
+tests/agents/test_base.py::TestAgentBaseClass::test_construct_messages_with_dict_input PASSED [ 16%]
+tests/agents/test_base.py::TestAgentBaseClass::test_construct_messages_with_invalid_input PASSED [ 17%]
+tests/agents/test_base.py::TestAgentBaseClass::test_get_last_message_empty_memory PASSED [ 18%]
+tests/agents/test_base.py::TestAgentBaseClass::test_get_last_message_with_memory PASSED [ 19%]
+tests/agents/test_base.py::TestAgentBaseClass::test_get_last_user_message PASSED [ 20%]
+tests/agents/test_base.py::TestAgentBaseClass::test_get_last_user_message_no_user_messages PASSED [ 21%]
+tests/agents/test_base.py::TestAgentBaseClass::test_reset_memory PASSED  [ 22%]
+tests/agents/test_base.py::TestAgentBaseClass::test_pre_fill_prompt_template PASSED [ 23%]
+tests/agents/test_base.py::TestAgentBaseClass::test_pre_fill_prompt_template_without_template PASSED [ 24%]
+tests/agents/test_base.py::TestAgentBaseClass::test_chat_history_with_vector_memory_and_task PASSED [ 25%]
+tests/agents/test_base.py::TestAgentBaseClass::test_chat_history_with_regular_memory PASSED [ 26%]
+tests/agents/test_base.py::TestAgentBaseClass::test_prefill_agent_attributes_missing_fields_raises PASSED [ 27%]
+tests/agents/test_base.py::TestAgentBaseClass::test_validate_llm_openai_without_api_key PASSED [ 29%]
+tests/agents/test_base.py::TestAgentBaseClass::test_validate_memory_failure PASSED [ 30%]
+tests/agents/test_base.py::TestAgentBaseClass::test_signal_handler_setup PASSED [ 31%]
+tests/agents/test_base.py::TestAgentBaseClass::test_signal_handler PASSED [ 32%]
+tests/agents/test_base.py::TestAgentBaseClass::test_conflicting_prompt_templates PASSED [ 33%]
+tests/agents/test_base.py::TestAgentBaseClass::test_agent_with_custom_prompt_template PASSED [ 34%]
+tests/agents/test_base.py::TestAgentBaseClass::test_agent_with_llm_prompt_template PASSED [ 35%]
+tests/agents/test_base.py::TestAgentBaseClass::test_run_method_implementation PASSED [ 36%]
+tests/agents/test_base.py::TestAgentBaseClass::test_text_formatter_property PASSED [ 37%]
+tests/agents/test_base.py::TestAgentBaseClass::test_tool_executor_property PASSED [ 38%]
+tests/agents/test_base.py::TestAgentBaseClass::test_model_fields_set_detection PASSED [ 39%]
+tests/agents/test_base.py::TestAgentBaseClass::test_template_format_validation PASSED [ 40%]
+tests/agents/test_base.py::TestAgentBaseClass::test_max_iterations_default PASSED [ 41%]
+tests/agents/test_base.py::TestAgentBaseClass::test_max_iterations_custom PASSED [ 43%]
+tests/agents/agent/test_agent.py::TestAgent::test_agent_initialization PASSED [ 44%]
+tests/agents/agent/test_agent.py::TestAgent::test_agent_initialization_without_tools PASSED [ 45%]
+tests/agents/agent/test_agent.py::TestAgent::test_agent_initialization_with_custom_tool_choice PASSED [ 46%]
+tests/agents/agent/test_agent.py::TestAgent::test_run_with_shutdown_event PASSED [ 47%]
+tests/agents/agent/test_agent.py::TestAgent::test_run_with_cancellation PASSED [ 48%]
+tests/agents/agent/test_agent.py::TestAgent::test_run_with_exception PASSED [ 49%]
+tests/agents/agent/test_agent.py::TestAgent::test_run_agent_basic PASSED [ 50%]
+tests/agents/agent/test_agent.py::TestAgent::test_run_agent_with_tool_calls PASSED [ 51%]
+tests/agents/agent/test_agent.py::TestAgent::test_process_response_success PASSED [ 52%]
+tests/agents/agent/test_agent.py::TestAgent::test_process_response_failure PASSED [ 53%]
+tests/agents/agent/test_agent.py::TestAgent::test_process_iterations_max_reached PASSED [ 54%]
+tests/agents/agent/test_agent.py::TestAgent::test_process_iterations_with_llm_error PASSED [ 55%]
+tests/agents/agent/test_agent.py::TestAgent::test_run_tool_success PASSED [ 56%]
+tests/agents/agent/test_agent.py::TestAgent::test_run_tool_failure PASSED [ 58%]
+tests/agents/agent/test_agent.py::TestAgent::test_agent_properties PASSED [ 59%]
+tests/agents/agent/test_agent.py::TestAgent::test_agent_with_memory_context PASSED [ 60%]
+tests/agents/agent/test_agent.py::TestAgent::test_agent_tool_history_management PASSED [ 61%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_durable_agent_initialization PASSED [ 62%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_durable_agent_initialization_with_custom_topic PASSED [ 63%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_durable_agent_initialization_name_from_role PASSED [ 64%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_durable_agent_metadata PASSED [ 65%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_run_method PASSED [ 66%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_tool_calling_workflow_initialization PASSED [ 67%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_generate_response_activity PASSED [ 68%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_get_response_message_activity PASSED [ 69%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_get_finish_reason_activity PASSED [ 70%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_get_tool_calls_activity_with_tools PASSED [ 72%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_get_tool_calls_activity_no_tools PASSED [ 73%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_execute_tool_activity_success PASSED [ 74%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_execute_tool_activity_failure PASSED [ 75%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_broadcast_message_to_agents_activity PASSED [ 76%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_send_response_back_activity PASSED [ 77%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_finish_workflow_activity PASSED [ 78%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_update_workflow_state PASSED [ 79%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_broadcast_message PASSED [ 80%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_send_message_to_agent PASSED [ 81%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_register_agentic_system PASSED [ 82%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_process_broadcast_message PASSED [ 83%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_durable_agent_properties PASSED [ 84%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_durable_agent_workflow_name PASSED [ 86%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_durable_agent_state_initialization PASSED [ 87%]
+tests/document/embedder/test_sentence.py::TestSentenceTransformerEmbedder::test_embedder_creation PASSED [ 88%]
+tests/document/embedder/test_sentence.py::TestSentenceTransformerEmbedder::test_embedder_has_name_attribute PASSED [ 89%]
+tests/document/embedder/test_sentence.py::TestSentenceTransformerEmbedder::test_embedder_call_method PASSED [ 90%]
+tests/document/embedder/test_sentence.py::TestSentenceTransformerEmbedder::test_embedder_with_different_texts PASSED [ 91%]
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_chroma_vectorstore_creation PASSED [ 92%]
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_embedder_has_name_attribute PASSED [ 93%]
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_with_embedder PASSED [ 94%]
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_persistent_setting PASSED [ 95%]
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_different_names PASSED [ 96%]
+tests/workflow/orchestrators/test_random.py::test_random_orchestrator_initialization PASSED [ 97%]
+tests/workflow/orchestrators/test_random.py::test_process_input PASSED   [ 98%]
+tests/workflow/orchestrators/test_random.py::test_select_random_speaker PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/test_signal_handlers.py:32
+  tests/test_signal_handlers.py:32: PytestDeprecationWarning: test_add_signal_handlers_cross_platform_without_mocks_and_real_event_loop is asynchronous and explicitly requests the "event_loop" fixture. Asynchronous fixtures and test functions should use "asyncio.get_running_loop()" instead.
+    @pytest.mark.asyncio
+
+tests/agents/test_base.py:16
+  /testbed/tests/agents/test_base.py:16: PytestCollectionWarning: cannot collect test class 'TestAgentBase' because it has a __init__ constructor (from: tests/agents/test_base.py)
+    class TestAgentBase(AgentBase):
+
+tests/test_signal_handlers.py::test_add_signal_handlers_cross_platform_without_mocks_and_real_event_loop
+  /usr/local/lib/python3.10/site-packages/pytest_asyncio/plugin.py:761: DeprecationWarning: The event_loop fixture provided by pytest-asyncio has been redefined in
+  /testbed/tests/conftest.py:150
+  Replacing the event_loop fixture with a custom implementation is deprecated
+  and will lead to errors in the future.
+  If you want to request an asyncio event loop with a scope other than function
+  scope, use the "scope" argument to the asyncio mark when marking the tests.
+  If you want to return different types of event loops, use the event_loop_policy
+  fixture.
+  
+    warnings.warn(
+
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_tool_calling_workflow_initialization
+  /testbed/tests/agents/durableagent/test_durable_agent.py:297: RuntimeWarning: coroutine 'AsyncMockMixin._execute_mock_call' was never awaited
+    next(workflow_gen)
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_send_message_to_agent
+  /testbed/tests/agents/durableagent/test_durable_agent.py:554: RuntimeWarning: coroutine 'AgenticWorkflow.send_message_to_agent' was never awaited
+    basic_durable_agent.send_message_to_agent("TargetAgent", task_response)
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_chroma_vectorstore_creation
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_with_embedder
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_persistent_setting
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_persistent_setting
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_different_names
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_different_names
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_different_names
+  /usr/local/lib/python3.10/site-packages/chromadb/api/collection_configuration.py:347: DeprecationWarning: legacy embedding function config: 'SentenceTransformerEmbedder' object has no attribute 'is_legacy'
+    return json.dumps(create_collection_configuration_to_json(config))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 93 passed, 12 warnings in 13.59s =======================
+ 
+
+eval No.1 
+
+========  
+
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.10.20, pytest-7.4.4, pluggy-1.6.0 -- /usr/local/bin/python3.10
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+testpaths: tests
+plugins: asyncio-0.23.8, cov-4.1.0, anyio-4.9.0, mock-3.14.1
+asyncio: mode=auto
+collecting ... collected 93 items
+
+tests/test_signal_handlers.py::test_add_signal_handlers_cross_platform PASSED [  1%]
+tests/test_signal_handlers.py::test_add_signal_handlers_cross_platform_without_mocks_and_real_event_loop PASSED [  2%]
+tests/agents/test_base.py::TestAgentBaseClass::test_agent_creation_with_all_fields PASSED [  3%]
+tests/agents/test_base.py::TestAgentBaseClass::test_agent_creation_with_minimal_fields PASSED [  4%]
+tests/agents/test_base.py::TestAgentBaseClass::test_name_set_from_role_when_not_provided PASSED [  5%]
+tests/agents/test_base.py::TestAgentBaseClass::test_name_not_overwritten_when_provided PASSED [  6%]
+tests/agents/test_base.py::TestAgentBaseClass::test_agent_with_custom_system_prompt PASSED [  7%]
+tests/agents/test_base.py::TestAgentBaseClass::test_agent_with_tools PASSED [  8%]
+tests/agents/test_base.py::TestAgentBaseClass::test_agent_with_vector_store PASSED [  9%]
+tests/agents/test_base.py::TestAgentBaseClass::test_prompt_template_construction PASSED [ 10%]
+tests/agents/test_base.py::TestAgentBaseClass::test_system_prompt_construction PASSED [ 11%]
+tests/agents/test_base.py::TestAgentBaseClass::test_system_prompt_without_instructions PASSED [ 12%]
+tests/agents/test_base.py::TestAgentBaseClass::test_prompt_template_construction_with_system_prompt PASSED [ 13%]
+tests/agents/test_base.py::TestAgentBaseClass::test_construct_messages_with_string_input PASSED [ 15%]
+tests/agents/test_base.py::TestAgentBaseClass::test_construct_messages_with_dict_input PASSED [ 16%]
+tests/agents/test_base.py::TestAgentBaseClass::test_construct_messages_with_invalid_input PASSED [ 17%]
+tests/agents/test_base.py::TestAgentBaseClass::test_get_last_message_empty_memory PASSED [ 18%]
+tests/agents/test_base.py::TestAgentBaseClass::test_get_last_message_with_memory PASSED [ 19%]
+tests/agents/test_base.py::TestAgentBaseClass::test_get_last_user_message PASSED [ 20%]
+tests/agents/test_base.py::TestAgentBaseClass::test_get_last_user_message_no_user_messages PASSED [ 21%]
+tests/agents/test_base.py::TestAgentBaseClass::test_reset_memory PASSED  [ 22%]
+tests/agents/test_base.py::TestAgentBaseClass::test_pre_fill_prompt_template PASSED [ 23%]
+tests/agents/test_base.py::TestAgentBaseClass::test_pre_fill_prompt_template_without_template PASSED [ 24%]
+tests/agents/test_base.py::TestAgentBaseClass::test_chat_history_with_vector_memory_and_task PASSED [ 25%]
+tests/agents/test_base.py::TestAgentBaseClass::test_chat_history_with_regular_memory PASSED [ 26%]
+tests/agents/test_base.py::TestAgentBaseClass::test_prefill_agent_attributes_missing_fields_raises PASSED [ 27%]
+tests/agents/test_base.py::TestAgentBaseClass::test_validate_llm_openai_without_api_key PASSED [ 29%]
+tests/agents/test_base.py::TestAgentBaseClass::test_validate_memory_failure PASSED [ 30%]
+tests/agents/test_base.py::TestAgentBaseClass::test_signal_handler_setup PASSED [ 31%]
+tests/agents/test_base.py::TestAgentBaseClass::test_signal_handler PASSED [ 32%]
+tests/agents/test_base.py::TestAgentBaseClass::test_conflicting_prompt_templates PASSED [ 33%]
+tests/agents/test_base.py::TestAgentBaseClass::test_agent_with_custom_prompt_template PASSED [ 34%]
+tests/agents/test_base.py::TestAgentBaseClass::test_agent_with_llm_prompt_template PASSED [ 35%]
+tests/agents/test_base.py::TestAgentBaseClass::test_run_method_implementation PASSED [ 36%]
+tests/agents/test_base.py::TestAgentBaseClass::test_text_formatter_property PASSED [ 37%]
+tests/agents/test_base.py::TestAgentBaseClass::test_tool_executor_property PASSED [ 38%]
+tests/agents/test_base.py::TestAgentBaseClass::test_model_fields_set_detection PASSED [ 39%]
+tests/agents/test_base.py::TestAgentBaseClass::test_template_format_validation PASSED [ 40%]
+tests/agents/test_base.py::TestAgentBaseClass::test_max_iterations_default PASSED [ 41%]
+tests/agents/test_base.py::TestAgentBaseClass::test_max_iterations_custom PASSED [ 43%]
+tests/agents/agent/test_agent.py::TestAgent::test_agent_initialization PASSED [ 44%]
+tests/agents/agent/test_agent.py::TestAgent::test_agent_initialization_without_tools PASSED [ 45%]
+tests/agents/agent/test_agent.py::TestAgent::test_agent_initialization_with_custom_tool_choice PASSED [ 46%]
+tests/agents/agent/test_agent.py::TestAgent::test_run_with_shutdown_event PASSED [ 47%]
+tests/agents/agent/test_agent.py::TestAgent::test_run_with_cancellation PASSED [ 48%]
+tests/agents/agent/test_agent.py::TestAgent::test_run_with_exception PASSED [ 49%]
+tests/agents/agent/test_agent.py::TestAgent::test_run_agent_basic PASSED [ 50%]
+tests/agents/agent/test_agent.py::TestAgent::test_run_agent_with_tool_calls PASSED [ 51%]
+tests/agents/agent/test_agent.py::TestAgent::test_process_response_success PASSED [ 52%]
+tests/agents/agent/test_agent.py::TestAgent::test_process_response_failure PASSED [ 53%]
+tests/agents/agent/test_agent.py::TestAgent::test_process_iterations_max_reached PASSED [ 54%]
+tests/agents/agent/test_agent.py::TestAgent::test_process_iterations_with_llm_error PASSED [ 55%]
+tests/agents/agent/test_agent.py::TestAgent::test_run_tool_success PASSED [ 56%]
+tests/agents/agent/test_agent.py::TestAgent::test_run_tool_failure PASSED [ 58%]
+tests/agents/agent/test_agent.py::TestAgent::test_agent_properties PASSED [ 59%]
+tests/agents/agent/test_agent.py::TestAgent::test_agent_with_memory_context PASSED [ 60%]
+tests/agents/agent/test_agent.py::TestAgent::test_agent_tool_history_management PASSED [ 61%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_durable_agent_initialization PASSED [ 62%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_durable_agent_initialization_with_custom_topic PASSED [ 63%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_durable_agent_initialization_name_from_role PASSED [ 64%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_durable_agent_metadata PASSED [ 65%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_run_method PASSED [ 66%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_tool_calling_workflow_initialization PASSED [ 67%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_generate_response_activity PASSED [ 68%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_get_response_message_activity PASSED [ 69%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_get_finish_reason_activity PASSED [ 70%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_get_tool_calls_activity_with_tools PASSED [ 72%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_get_tool_calls_activity_no_tools PASSED [ 73%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_execute_tool_activity_success PASSED [ 74%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_execute_tool_activity_failure PASSED [ 75%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_broadcast_message_to_agents_activity PASSED [ 76%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_send_response_back_activity PASSED [ 77%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_finish_workflow_activity PASSED [ 78%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_update_workflow_state PASSED [ 79%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_broadcast_message PASSED [ 80%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_send_message_to_agent PASSED [ 81%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_register_agentic_system PASSED [ 82%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_process_broadcast_message PASSED [ 83%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_durable_agent_properties PASSED [ 84%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_durable_agent_workflow_name PASSED [ 86%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_durable_agent_state_initialization PASSED [ 87%]
+tests/document/embedder/test_sentence.py::TestSentenceTransformerEmbedder::test_embedder_creation PASSED [ 88%]
+tests/document/embedder/test_sentence.py::TestSentenceTransformerEmbedder::test_embedder_has_name_attribute PASSED [ 89%]
+tests/document/embedder/test_sentence.py::TestSentenceTransformerEmbedder::test_embedder_call_method PASSED [ 90%]
+tests/document/embedder/test_sentence.py::TestSentenceTransformerEmbedder::test_embedder_with_different_texts PASSED [ 91%]
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_chroma_vectorstore_creation PASSED [ 92%]
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_embedder_has_name_attribute PASSED [ 93%]
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_with_embedder PASSED [ 94%]
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_persistent_setting PASSED [ 95%]
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_different_names PASSED [ 96%]
+tests/workflow/orchestrators/test_random.py::test_random_orchestrator_initialization PASSED [ 97%]
+tests/workflow/orchestrators/test_random.py::test_process_input PASSED   [ 98%]
+tests/workflow/orchestrators/test_random.py::test_select_random_speaker PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/test_signal_handlers.py:32
+  tests/test_signal_handlers.py:32: PytestDeprecationWarning: test_add_signal_handlers_cross_platform_without_mocks_and_real_event_loop is asynchronous and explicitly requests the "event_loop" fixture. Asynchronous fixtures and test functions should use "asyncio.get_running_loop()" instead.
+    @pytest.mark.asyncio
+
+tests/agents/test_base.py:16
+  /testbed/tests/agents/test_base.py:16: PytestCollectionWarning: cannot collect test class 'TestAgentBase' because it has a __init__ constructor (from: tests/agents/test_base.py)
+    class TestAgentBase(AgentBase):
+
+tests/test_signal_handlers.py::test_add_signal_handlers_cross_platform_without_mocks_and_real_event_loop
+  /usr/local/lib/python3.10/site-packages/pytest_asyncio/plugin.py:761: DeprecationWarning: The event_loop fixture provided by pytest-asyncio has been redefined in
+  /testbed/tests/conftest.py:150
+  Replacing the event_loop fixture with a custom implementation is deprecated
+  and will lead to errors in the future.
+  If you want to request an asyncio event loop with a scope other than function
+  scope, use the "scope" argument to the asyncio mark when marking the tests.
+  If you want to return different types of event loops, use the event_loop_policy
+  fixture.
+  
+    warnings.warn(
+
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_tool_calling_workflow_initialization
+  /testbed/tests/agents/durableagent/test_durable_agent.py:297: RuntimeWarning: coroutine 'AsyncMockMixin._execute_mock_call' was never awaited
+    next(workflow_gen)
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_send_message_to_agent
+  /testbed/tests/agents/durableagent/test_durable_agent.py:554: RuntimeWarning: coroutine 'AgenticWorkflow.send_message_to_agent' was never awaited
+    basic_durable_agent.send_message_to_agent("TargetAgent", task_response)
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_chroma_vectorstore_creation
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_with_embedder
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_persistent_setting
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_persistent_setting
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_different_names
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_different_names
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_different_names
+  /usr/local/lib/python3.10/site-packages/chromadb/api/collection_configuration.py:347: DeprecationWarning: legacy embedding function config: 'SentenceTransformerEmbedder' object has no attribute 'is_legacy'
+    return json.dumps(create_collection_configuration_to_json(config))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 93 passed, 12 warnings in 13.91s =======================
+ 
+
+eval No.2 
+
+========  
+
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.10.20, pytest-7.4.4, pluggy-1.6.0 -- /usr/local/bin/python3.10
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+testpaths: tests
+plugins: asyncio-0.23.8, cov-4.1.0, anyio-4.9.0, mock-3.14.1
+asyncio: mode=auto
+collecting ... collected 93 items
+
+tests/test_signal_handlers.py::test_add_signal_handlers_cross_platform PASSED [  1%]
+tests/test_signal_handlers.py::test_add_signal_handlers_cross_platform_without_mocks_and_real_event_loop PASSED [  2%]
+tests/agents/test_base.py::TestAgentBaseClass::test_agent_creation_with_all_fields PASSED [  3%]
+tests/agents/test_base.py::TestAgentBaseClass::test_agent_creation_with_minimal_fields PASSED [  4%]
+tests/agents/test_base.py::TestAgentBaseClass::test_name_set_from_role_when_not_provided PASSED [  5%]
+tests/agents/test_base.py::TestAgentBaseClass::test_name_not_overwritten_when_provided PASSED [  6%]
+tests/agents/test_base.py::TestAgentBaseClass::test_agent_with_custom_system_prompt PASSED [  7%]
+tests/agents/test_base.py::TestAgentBaseClass::test_agent_with_tools PASSED [  8%]
+tests/agents/test_base.py::TestAgentBaseClass::test_agent_with_vector_store PASSED [  9%]
+tests/agents/test_base.py::TestAgentBaseClass::test_prompt_template_construction PASSED [ 10%]
+tests/agents/test_base.py::TestAgentBaseClass::test_system_prompt_construction PASSED [ 11%]
+tests/agents/test_base.py::TestAgentBaseClass::test_system_prompt_without_instructions PASSED [ 12%]
+tests/agents/test_base.py::TestAgentBaseClass::test_prompt_template_construction_with_system_prompt PASSED [ 13%]
+tests/agents/test_base.py::TestAgentBaseClass::test_construct_messages_with_string_input PASSED [ 15%]
+tests/agents/test_base.py::TestAgentBaseClass::test_construct_messages_with_dict_input PASSED [ 16%]
+tests/agents/test_base.py::TestAgentBaseClass::test_construct_messages_with_invalid_input PASSED [ 17%]
+tests/agents/test_base.py::TestAgentBaseClass::test_get_last_message_empty_memory PASSED [ 18%]
+tests/agents/test_base.py::TestAgentBaseClass::test_get_last_message_with_memory PASSED [ 19%]
+tests/agents/test_base.py::TestAgentBaseClass::test_get_last_user_message PASSED [ 20%]
+tests/agents/test_base.py::TestAgentBaseClass::test_get_last_user_message_no_user_messages PASSED [ 21%]
+tests/agents/test_base.py::TestAgentBaseClass::test_reset_memory PASSED  [ 22%]
+tests/agents/test_base.py::TestAgentBaseClass::test_pre_fill_prompt_template PASSED [ 23%]
+tests/agents/test_base.py::TestAgentBaseClass::test_pre_fill_prompt_template_without_template PASSED [ 24%]
+tests/agents/test_base.py::TestAgentBaseClass::test_chat_history_with_vector_memory_and_task PASSED [ 25%]
+tests/agents/test_base.py::TestAgentBaseClass::test_chat_history_with_regular_memory PASSED [ 26%]
+tests/agents/test_base.py::TestAgentBaseClass::test_prefill_agent_attributes_missing_fields_raises PASSED [ 27%]
+tests/agents/test_base.py::TestAgentBaseClass::test_validate_llm_openai_without_api_key PASSED [ 29%]
+tests/agents/test_base.py::TestAgentBaseClass::test_validate_memory_failure PASSED [ 30%]
+tests/agents/test_base.py::TestAgentBaseClass::test_signal_handler_setup PASSED [ 31%]
+tests/agents/test_base.py::TestAgentBaseClass::test_signal_handler PASSED [ 32%]
+tests/agents/test_base.py::TestAgentBaseClass::test_conflicting_prompt_templates PASSED [ 33%]
+tests/agents/test_base.py::TestAgentBaseClass::test_agent_with_custom_prompt_template PASSED [ 34%]
+tests/agents/test_base.py::TestAgentBaseClass::test_agent_with_llm_prompt_template PASSED [ 35%]
+tests/agents/test_base.py::TestAgentBaseClass::test_run_method_implementation PASSED [ 36%]
+tests/agents/test_base.py::TestAgentBaseClass::test_text_formatter_property PASSED [ 37%]
+tests/agents/test_base.py::TestAgentBaseClass::test_tool_executor_property PASSED [ 38%]
+tests/agents/test_base.py::TestAgentBaseClass::test_model_fields_set_detection PASSED [ 39%]
+tests/agents/test_base.py::TestAgentBaseClass::test_template_format_validation PASSED [ 40%]
+tests/agents/test_base.py::TestAgentBaseClass::test_max_iterations_default PASSED [ 41%]
+tests/agents/test_base.py::TestAgentBaseClass::test_max_iterations_custom PASSED [ 43%]
+tests/agents/agent/test_agent.py::TestAgent::test_agent_initialization PASSED [ 44%]
+tests/agents/agent/test_agent.py::TestAgent::test_agent_initialization_without_tools PASSED [ 45%]
+tests/agents/agent/test_agent.py::TestAgent::test_agent_initialization_with_custom_tool_choice PASSED [ 46%]
+tests/agents/agent/test_agent.py::TestAgent::test_run_with_shutdown_event PASSED [ 47%]
+tests/agents/agent/test_agent.py::TestAgent::test_run_with_cancellation PASSED [ 48%]
+tests/agents/agent/test_agent.py::TestAgent::test_run_with_exception PASSED [ 49%]
+tests/agents/agent/test_agent.py::TestAgent::test_run_agent_basic PASSED [ 50%]
+tests/agents/agent/test_agent.py::TestAgent::test_run_agent_with_tool_calls PASSED [ 51%]
+tests/agents/agent/test_agent.py::TestAgent::test_process_response_success PASSED [ 52%]
+tests/agents/agent/test_agent.py::TestAgent::test_process_response_failure PASSED [ 53%]
+tests/agents/agent/test_agent.py::TestAgent::test_process_iterations_max_reached PASSED [ 54%]
+tests/agents/agent/test_agent.py::TestAgent::test_process_iterations_with_llm_error PASSED [ 55%]
+tests/agents/agent/test_agent.py::TestAgent::test_run_tool_success PASSED [ 56%]
+tests/agents/agent/test_agent.py::TestAgent::test_run_tool_failure PASSED [ 58%]
+tests/agents/agent/test_agent.py::TestAgent::test_agent_properties PASSED [ 59%]
+tests/agents/agent/test_agent.py::TestAgent::test_agent_with_memory_context PASSED [ 60%]
+tests/agents/agent/test_agent.py::TestAgent::test_agent_tool_history_management PASSED [ 61%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_durable_agent_initialization PASSED [ 62%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_durable_agent_initialization_with_custom_topic PASSED [ 63%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_durable_agent_initialization_name_from_role PASSED [ 64%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_durable_agent_metadata PASSED [ 65%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_run_method PASSED [ 66%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_tool_calling_workflow_initialization PASSED [ 67%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_generate_response_activity PASSED [ 68%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_get_response_message_activity PASSED [ 69%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_get_finish_reason_activity PASSED [ 70%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_get_tool_calls_activity_with_tools PASSED [ 72%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_get_tool_calls_activity_no_tools PASSED [ 73%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_execute_tool_activity_success PASSED [ 74%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_execute_tool_activity_failure PASSED [ 75%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_broadcast_message_to_agents_activity PASSED [ 76%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_send_response_back_activity PASSED [ 77%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_finish_workflow_activity PASSED [ 78%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_update_workflow_state PASSED [ 79%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_broadcast_message PASSED [ 80%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_send_message_to_agent PASSED [ 81%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_register_agentic_system PASSED [ 82%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_process_broadcast_message PASSED [ 83%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_durable_agent_properties PASSED [ 84%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_durable_agent_workflow_name PASSED [ 86%]
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_durable_agent_state_initialization PASSED [ 87%]
+tests/document/embedder/test_sentence.py::TestSentenceTransformerEmbedder::test_embedder_creation PASSED [ 88%]
+tests/document/embedder/test_sentence.py::TestSentenceTransformerEmbedder::test_embedder_has_name_attribute PASSED [ 89%]
+tests/document/embedder/test_sentence.py::TestSentenceTransformerEmbedder::test_embedder_call_method PASSED [ 90%]
+tests/document/embedder/test_sentence.py::TestSentenceTransformerEmbedder::test_embedder_with_different_texts PASSED [ 91%]
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_chroma_vectorstore_creation PASSED [ 92%]
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_embedder_has_name_attribute PASSED [ 93%]
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_with_embedder PASSED [ 94%]
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_persistent_setting PASSED [ 95%]
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_different_names PASSED [ 96%]
+tests/workflow/orchestrators/test_random.py::test_random_orchestrator_initialization PASSED [ 97%]
+tests/workflow/orchestrators/test_random.py::test_process_input PASSED   [ 98%]
+tests/workflow/orchestrators/test_random.py::test_select_random_speaker PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/test_signal_handlers.py:32
+  tests/test_signal_handlers.py:32: PytestDeprecationWarning: test_add_signal_handlers_cross_platform_without_mocks_and_real_event_loop is asynchronous and explicitly requests the "event_loop" fixture. Asynchronous fixtures and test functions should use "asyncio.get_running_loop()" instead.
+    @pytest.mark.asyncio
+
+tests/agents/test_base.py:16
+  /testbed/tests/agents/test_base.py:16: PytestCollectionWarning: cannot collect test class 'TestAgentBase' because it has a __init__ constructor (from: tests/agents/test_base.py)
+    class TestAgentBase(AgentBase):
+
+tests/test_signal_handlers.py::test_add_signal_handlers_cross_platform_without_mocks_and_real_event_loop
+  /usr/local/lib/python3.10/site-packages/pytest_asyncio/plugin.py:761: DeprecationWarning: The event_loop fixture provided by pytest-asyncio has been redefined in
+  /testbed/tests/conftest.py:150
+  Replacing the event_loop fixture with a custom implementation is deprecated
+  and will lead to errors in the future.
+  If you want to request an asyncio event loop with a scope other than function
+  scope, use the "scope" argument to the asyncio mark when marking the tests.
+  If you want to return different types of event loops, use the event_loop_policy
+  fixture.
+  
+    warnings.warn(
+
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_tool_calling_workflow_initialization
+  /testbed/tests/agents/durableagent/test_durable_agent.py:297: RuntimeWarning: coroutine 'AsyncMockMixin._execute_mock_call' was never awaited
+    next(workflow_gen)
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+
+tests/agents/durableagent/test_durable_agent.py::TestDurableAgent::test_send_message_to_agent
+  /testbed/tests/agents/durableagent/test_durable_agent.py:554: RuntimeWarning: coroutine 'AgenticWorkflow.send_message_to_agent' was never awaited
+    basic_durable_agent.send_message_to_agent("TargetAgent", task_response)
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_chroma_vectorstore_creation
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_with_embedder
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_persistent_setting
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_persistent_setting
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_different_names
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_different_names
+tests/storage/vectorstores/test_chroma.py::TestChromaVectorStore::test_vectorstore_different_names
+  /usr/local/lib/python3.10/site-packages/chromadb/api/collection_configuration.py:347: DeprecationWarning: legacy embedding function config: 'SentenceTransformerEmbedder' object has no attribute 'is_legacy'
+    return json.dumps(create_collection_configuration_to_json(config))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 93 passed, 12 warnings in 13.47s =======================
+ 
+

@@ -1,0 +1,40 @@
+{
+ "instance_id": "Significant-Gravitas__AutoGPT-4383",
+ "pre_patch_status": {
+  "test_add_command": "pass",
+  "test_add_constraint": "pass",
+  "test_add_performance_evaluation": "pass",
+  "test_add_resource": "pass",
+  "test_generate_prompt_string": "pass",
+  "test_invalid_json_leading_sentence_with_gpt": "pass",
+  "test_invalid_json_major_with_gpt": "pass",
+  "test_invalid_json_major_without_gpt": "pass",
+  "test_invalid_json_minor": "pass",
+  "test_valid_json": "pass"
+ },
+ "post_patch_status": {
+  "test_invalid_json_major_without_gpt": "pass",
+  "test_invalid_json_minor": "pass",
+  "test_valid_json": "pass",
+  "test_invalid_json_major_with_gpt": "pass",
+  "test_add_command": "pass",
+  "test_add_performance_evaluation": "pass",
+  "test_generate_prompt_string": "pass",
+  "test_invalid_json_leading_sentence_with_gpt": "pass",
+  "test_add_resource": "pass",
+  "test_add_constraint": "pass"
+ },
+ "PASS_TO_PASS": [
+  "test_invalid_json_major_without_gpt",
+  "test_generate_prompt_string",
+  "test_invalid_json_minor",
+  "test_invalid_json_leading_sentence_with_gpt",
+  "test_valid_json",
+  "test_invalid_json_major_with_gpt",
+  "test_add_command",
+  "test_add_resource",
+  "test_add_performance_evaluation",
+  "test_add_constraint"
+ ],
+ "FAIL_TO_PASS": []
+}

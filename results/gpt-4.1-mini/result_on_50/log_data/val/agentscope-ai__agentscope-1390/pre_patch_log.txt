@@ -1,0 +1,1042 @@
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.10.20, pytest-9.0.2, pluggy-1.6.0 -- /usr/local/bin/python3.10
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+plugins: forked-1.6.0, asyncio-1.3.0, anyio-4.13.0
+asyncio: mode=strict, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 458 items
+
+tests/a2a_agent_test.py::A2AAgentTest::test_observe_and_reply_merge PASSED [  0%]
+tests/a2a_agent_test.py::A2AAgentTest::test_observe_method PASSED        [  0%]
+tests/a2a_agent_test.py::A2AAgentTest::test_reply_with_no_messages PASSED [  0%]
+tests/a2a_agent_test.py::A2AAgentTest::test_reply_with_only_observed_messages PASSED [  0%]
+tests/a2a_agent_test.py::A2AAgentTest::test_reply_with_task PASSED       [  1%]
+tests/a2a_resolver_test.py::A2AAgentCardResolverTest::test_file_card_resolver PASSED [  1%]
+tests/config_test.py::ConfigTest::test_config_attributes PASSED          [  1%]
+tests/embedding_cache_test.py::EmbeddingCacheTest::test_embedding_cache PASSED [  1%]
+tests/evaluation_test.py::EvaluatorTest::test_general_evaluator PASSED   [  1%]
+tests/evaluation_test.py::EvaluatorTest::test_ray_evaluator PASSED       [  2%]
+tests/formatter_a2a_test.py::A2AFormatterTest::test_a2a_msg_to_as PASSED [  2%]
+tests/formatter_a2a_test.py::A2AFormatterTest::test_a2a_task_to_as PASSED [  2%]
+tests/formatter_a2a_test.py::A2AFormatterTest::test_as_to_a2a PASSED     [  2%]
+tests/formatter_anthropic_test.py::TestAnthropicChatFormatterFormatter::test_chat_formatter PASSED [  3%]
+tests/formatter_anthropic_test.py::TestAnthropicChatFormatterFormatter::test_multiagent_formater PASSED [  3%]
+tests/formatter_dashscope_test.py::TestDashScopeFormatter::test_chat_formatter PASSED [  3%]
+tests/formatter_dashscope_test.py::TestDashScopeFormatter::test_chat_formatter_with_extract_media_blocks PASSED [  3%]
+tests/formatter_dashscope_test.py::TestDashScopeFormatter::test_multiagent_formater PASSED [  3%]
+tests/formatter_dashscope_test.py::TestDashScopeFormatter::test_multiagent_formatter_with_promote_media_tool_result PASSED [  4%]
+tests/formatter_deepseek_test.py::TestDeepSeekFormatter::test_chat_formatter PASSED [  4%]
+tests/formatter_deepseek_test.py::TestDeepSeekFormatter::test_multi_agent_formatter PASSED [  4%]
+tests/formatter_gemini_test.py::TestGeminiFormatter::test_chat_formatter PASSED [  4%]
+tests/formatter_gemini_test.py::TestGeminiFormatter::test_chat_formatter_with_extract_image_blocks PASSED [  5%]
+tests/formatter_gemini_test.py::TestGeminiFormatter::test_multi_agent_formatter PASSED [  5%]
+tests/formatter_gemini_test.py::TestGeminiFormatter::test_multi_agent_formatter_with_promote_tool_result_images PASSED [  5%]
+tests/formatter_ollama_test.py::TestOllamaFormatter::test_chat_formatter PASSED [  5%]
+tests/formatter_ollama_test.py::TestOllamaFormatter::test_chat_formatter_with_extract_image_blocks PASSED [  5%]
+tests/formatter_ollama_test.py::TestOllamaFormatter::test_multi_agent_formatter PASSED [  6%]
+tests/formatter_ollama_test.py::TestOllamaFormatter::test_multi_agent_formatter_with_promote_tool_result_images PASSED [  6%]
+tests/formatter_openai_test.py::TestOpenAIFormatter::test_formatter PASSED [  6%]
+tests/formatter_openai_test.py::TestOpenAIFormatter::test_formatter_with_extract_image_blocks PASSED [  6%]
+tests/formatter_openai_test.py::TestOpenAIFormatter::test_multiagent_formatter PASSED [  6%]
+tests/formatter_openai_test.py::TestOpenAIFormatter::test_multiagent_formatter_with_promote_tool_result_images PASSED [  7%]
+tests/hook_test.py::HookTest::test_observe_hooks PASSED                  [  7%]
+tests/hook_test.py::HookTest::test_print_hooks PASSED                    [  7%]
+tests/hook_test.py::HookTest::test_reply_hooks PASSED                    [  7%]
+tests/mcp_sse_client_test.py::SseMCPClientTest::test_stateful_client PASSED [  8%]
+tests/mcp_sse_client_test.py::SseMCPClientTest::test_stateless_client PASSED [  8%]
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_embedded_content PASSED [  8%]
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_streamable_http_stateless_client PASSED [  8%]
+tests/mem0_utils_test.py::TestAgentScopeLLMWithOllama::test_agentscope_llm_async_gather_in_async_context PASSED [  8%]
+tests/mem0_utils_test.py::TestAgentScopeLLMWithOllama::test_agentscope_llm_parallel_calls_with_asyncio_gather PASSED [  9%]
+tests/memory_compression_test.py::MemoryCompressionTest::test_compression_above_threshold PASSED [  9%]
+tests/memory_compression_test.py::MemoryCompressionTest::test_no_compression_below_threshold PASSED [  9%]
+tests/memory_reme_test.py::TestReMeMemory::test_context_manager_usage SKIPPED [  9%]
+tests/memory_reme_test.py::TestReMeMemory::test_init_with_default_params SKIPPED [ 10%]
+tests/memory_reme_test.py::TestReMeMemory::test_integration_record_and_retrieve SKIPPED [ 10%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_direct_app_not_started SKIPPED [ 10%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_direct_filters_none_messages SKIPPED [ 10%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_direct_method_success SKIPPED [ 10%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_direct_with_empty_list SKIPPED [ 11%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_direct_with_single_message SKIPPED [ 11%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_to_memory_app_not_started SKIPPED [ 11%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_to_memory_error_handling SKIPPED [ 11%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_to_memory_success SKIPPED [ 12%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_direct_app_not_started SKIPPED [ 12%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_direct_invalid_input SKIPPED [ 12%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_direct_method_success SKIPPED [ 12%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_direct_with_message_list SKIPPED [ 12%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_direct_with_none_message SKIPPED [ 13%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_from_memory_app_not_started SKIPPED [ 13%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_from_memory_no_results SKIPPED [ 13%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_from_memory_success SKIPPED [ 13%]
+tests/memory_test.py::InMemoryMemoryTest::test_memory PASSED             [ 13%]
+tests/memory_test.py::InMemoryMemoryTest::test_serialization PASSED      [ 14%]
+tests/memory_test.py::AsyncSQLAlchemyMemoryTest::test_concurrent_add FAILED [ 14%]
+tests/memory_test.py::AsyncSQLAlchemyMemoryTest::test_concurrent_add ERROR [ 14%]
+tests/memory_test.py::AsyncSQLAlchemyMemoryTest::test_memory PASSED      [ 14%]
+tests/memory_test.py::RedisMemoryTest::test_memory PASSED                [ 14%]
+tests/memory_test.py::RedisMemoryTest::test_ttl PASSED                   [ 15%]
+tests/memory_test.py::RedisMemoryTestWithBytes::test_memory PASSED       [ 15%]
+tests/memory_test.py::RedisMemoryTestWithBytes::test_ttl PASSED          [ 15%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_call_with_regular_messages PASSED [ 15%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_call_with_structured_model_integration PASSED [ 15%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_call_with_system_message PASSED [ 16%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_call_with_thinking_enabled PASSED [ 16%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_call_with_tools_integration PASSED [ 16%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_generate_kwargs_integration PASSED [ 16%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_init_default_params PASSED [ 17%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_init_with_custom_params PASSED [ 17%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_streaming_response_processing PASSED [ 17%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_streaming_tool_input_prefers_valid_final_json PASSED [ 17%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_call_with_enable_thinking_streaming PASSED [ 17%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_call_with_multimodal_model PASSED [ 18%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_call_with_regular_model PASSED [ 18%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_call_with_structured_model_integration PASSED [ 18%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_call_with_tools_integration PASSED [ 18%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_error_handling_scenarios PASSED [ 18%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_init_default_params PASSED [ 19%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_init_with_custom_params PASSED [ 19%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_init_with_enable_thinking_forces_stream PASSED [ 19%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_streaming_response_processing PASSED [ 19%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_streaming_tool_input_prefers_valid_final_json PASSED [ 20%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_tools_schema_validation_through_api PASSED [ 20%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_call_with_regular_model PASSED [ 20%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_call_with_structured_model_integration PASSED [ 20%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_call_with_thinking_enabled PASSED [ 20%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_call_with_tools_integration PASSED [ 21%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_format_tools_with_nested_schema PASSED [ 21%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_generate_kwargs_integration PASSED [ 21%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_init_default_params PASSED [ 21%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_init_with_custom_params PASSED [ 22%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_streaming_response_processing PASSED [ 22%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_call_with_regular_model PASSED [ 22%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_call_with_structured_model_integration PASSED [ 22%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_call_with_thinking_enabled PASSED [ 22%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_call_with_tools_integration PASSED [ 23%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_init_default_params PASSED [ 23%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_init_with_custom_params PASSED [ 23%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_options_integration PASSED [ 23%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_streaming_response_processing PASSED [ 24%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_call_with_reasoning_effort PASSED [ 24%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_call_with_regular_model PASSED [ 24%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_call_with_structured_model_integration PASSED [ 24%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_call_with_tools_integration PASSED [ 24%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_init_default_params PASSED [ 25%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_init_with_custom_params PASSED [ 25%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_streaming_response_processing PASSED [ 25%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_streaming_response_with_none_delta PASSED [ 25%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_streaming_tool_input_prefers_valid_final_json PASSED [ 25%]
+tests/pipeline_test.py::PipelineTest::test_class_fanout_pipeline_concurrent PASSED [ 26%]
+tests/pipeline_test.py::PipelineTest::test_class_fanout_pipeline_sequential PASSED [ 26%]
+tests/pipeline_test.py::PipelineTest::test_class_sequential_pipeline PASSED [ 26%]
+tests/pipeline_test.py::PipelineTest::test_class_sequential_pipeline_with_none_message PASSED [ 26%]
+tests/pipeline_test.py::PipelineTest::test_empty_agent_list PASSED       [ 27%]
+tests/pipeline_test.py::PipelineTest::test_fanout_pipeline_empty_agents PASSED [ 27%]
+tests/pipeline_test.py::PipelineTest::test_fanout_pipeline_with_none_message PASSED [ 27%]
+tests/pipeline_test.py::PipelineTest::test_functional_fanout_pipeline_concurrent PASSED [ 27%]
+tests/pipeline_test.py::PipelineTest::test_functional_fanout_pipeline_sequential PASSED [ 27%]
+tests/pipeline_test.py::PipelineTest::test_functional_sequential_pipeline PASSED [ 28%]
+tests/pipeline_test.py::PipelineTest::test_functional_sequential_pipeline_with_none_message PASSED [ 28%]
+tests/pipeline_test.py::PipelineTest::test_single_agent_pipeline PASSED  [ 28%]
+tests/pipeline_test.py::PipelineTest::test_stream_printing_messages PASSED [ 28%]
+tests/pipeline_test.py::PipelineTest::test_stream_printing_messages_with_error_after_print PASSED [ 29%]
+tests/plan_test.py::PlanTest::test_edge_cases PASSED                     [ 29%]
+tests/plan_test.py::PlanTest::test_error_paths PASSED                    [ 29%]
+tests/plan_test.py::PlanTest::test_hint_generator_all_states PASSED      [ 29%]
+tests/plan_test.py::PlanTest::test_plan_model PASSED                     [ 29%]
+tests/plan_test.py::PlanTest::test_plan_subtasks PASSED                  [ 30%]
+tests/plan_test.py::PlanTest::test_recover_historical_plan_triggers_hook PASSED [ 30%]
+tests/plan_test.py::PlanTest::test_serialization PASSED                  [ 30%]
+tests/rag_knowledge_test.py::RAGKnowledgeTest::test_simple_knowledge PASSED [ 30%]
+tests/rag_reader_test.py::RAGReaderText::test_excel_reader_with_images_and_tables PASSED [ 31%]
+tests/rag_reader_test.py::RAGReaderText::test_pdf_reader PASSED          [ 31%]
+tests/rag_reader_test.py::RAGReaderText::test_ppt_reader_merged_table PASSED [ 31%]
+tests/rag_reader_test.py::RAGReaderText::test_ppt_reader_with_images_and_tables PASSED [ 31%]
+tests/rag_reader_test.py::RAGReaderText::test_ppt_reader_with_json_table_format PASSED [ 31%]
+tests/rag_reader_test.py::RAGReaderText::test_ppt_reader_without_image PASSED [ 32%]
+tests/rag_reader_test.py::RAGReaderText::test_ppt_reader_without_slide_tags PASSED [ 32%]
+tests/rag_reader_test.py::RAGReaderText::test_text_reader PASSED         [ 32%]
+tests/rag_reader_test.py::RAGReaderText::test_word_reader_with_images_and_tables PASSED [ 32%]
+tests/rag_store_test.py::RAGStoreTest::test_alibabacloud_mysql_store PASSED [ 32%]
+tests/rag_store_test.py::RAGStoreTest::test_milvus_lite_store PASSED     [ 33%]
+tests/rag_store_test.py::RAGStoreTest::test_mongodb_store PASSED         [ 33%]
+tests/rag_store_test.py::RAGStoreTest::test_oceanbase_store PASSED       [ 33%]
+tests/rag_store_test.py::RAGStoreTest::test_qdrant_store PASSED          [ 33%]
+tests/react_agent_test.py::ReActAgentTest::test_react_agent PASSED       [ 34%]
+tests/realtime_dashscope_test.py::TestDashScopeRealtimeModelParseAPIMessage::test_parse_error_event PASSED [ 34%]
+tests/realtime_dashscope_test.py::TestDashScopeRealtimeModelParseAPIMessage::test_parse_input_audio_buffer_speech_started_event PASSED [ 34%]
+tests/realtime_dashscope_test.py::TestDashScopeRealtimeModelParseAPIMessage::test_parse_input_audio_buffer_speech_stopped_event PASSED [ 34%]
+tests/realtime_dashscope_test.py::TestDashScopeRealtimeModelParseAPIMessage::test_parse_input_audio_transcription_completed_event PASSED [ 34%]
+tests/realtime_dashscope_test.py::TestDashScopeRealtimeModelParseAPIMessage::test_parse_response_audio_delta_event PASSED [ 35%]
+tests/realtime_dashscope_test.py::TestDashScopeRealtimeModelParseAPIMessage::test_parse_response_audio_done_event PASSED [ 35%]
+tests/realtime_dashscope_test.py::TestDashScopeRealtimeModelParseAPIMessage::test_parse_response_audio_transcript_delta_event PASSED [ 35%]
+tests/realtime_dashscope_test.py::TestDashScopeRealtimeModelParseAPIMessage::test_parse_response_audio_transcript_done_event PASSED [ 35%]
+tests/realtime_dashscope_test.py::TestDashScopeRealtimeModelParseAPIMessage::test_parse_response_created_event PASSED [ 36%]
+tests/realtime_dashscope_test.py::TestDashScopeRealtimeModelParseAPIMessage::test_parse_response_done_event PASSED [ 36%]
+tests/realtime_dashscope_test.py::TestDashScopeRealtimeModelParseAPIMessage::test_parse_session_created_event PASSED [ 36%]
+tests/realtime_dashscope_test.py::TestDashScopeRealtimeModelSend::test_send_audio_base64 PASSED [ 36%]
+tests/realtime_dashscope_test.py::TestDashScopeRealtimeModelSend::test_send_image_base64 PASSED [ 36%]
+tests/realtime_dashscope_test.py::TestDashScopeRealtimeModelSend::test_send_image_url PASSED [ 37%]
+tests/realtime_event_test.py::TestServerEventsFromModelEvent::test_model_error_event PASSED [ 37%]
+tests/realtime_event_test.py::TestServerEventsFromModelEvent::test_model_input_done_event PASSED [ 37%]
+tests/realtime_event_test.py::TestServerEventsFromModelEvent::test_model_input_started_event PASSED [ 37%]
+tests/realtime_event_test.py::TestServerEventsFromModelEvent::test_model_input_transcription_delta_event PASSED [ 37%]
+tests/realtime_event_test.py::TestServerEventsFromModelEvent::test_model_input_transcription_done_event PASSED [ 38%]
+tests/realtime_event_test.py::TestServerEventsFromModelEvent::test_model_response_audio_delta_event PASSED [ 38%]
+tests/realtime_event_test.py::TestServerEventsFromModelEvent::test_model_response_audio_done_event PASSED [ 38%]
+tests/realtime_event_test.py::TestServerEventsFromModelEvent::test_model_response_audio_transcript_delta_event PASSED [ 38%]
+tests/realtime_event_test.py::TestServerEventsFromModelEvent::test_model_response_audio_transcript_done_event PASSED [ 39%]
+tests/realtime_event_test.py::TestServerEventsFromModelEvent::test_model_response_created_event PASSED [ 39%]
+tests/realtime_event_test.py::TestServerEventsFromModelEvent::test_model_response_done_event PASSED [ 39%]
+tests/realtime_event_test.py::TestServerEventsFromModelEvent::test_model_response_tool_use_delta_event PASSED [ 39%]
+tests/realtime_event_test.py::TestServerEventsFromModelEvent::test_model_response_tool_use_done_event PASSED [ 39%]
+tests/realtime_event_test.py::TestClientEventsFromJson::test_client_audio_append_event PASSED [ 40%]
+tests/realtime_event_test.py::TestClientEventsFromJson::test_client_audio_commit_event PASSED [ 40%]
+tests/realtime_event_test.py::TestClientEventsFromJson::test_client_image_append_event PASSED [ 40%]
+tests/realtime_event_test.py::TestClientEventsFromJson::test_client_response_cancel_event PASSED [ 40%]
+tests/realtime_event_test.py::TestClientEventsFromJson::test_client_response_create_event PASSED [ 41%]
+tests/realtime_event_test.py::TestClientEventsFromJson::test_client_session_create_event PASSED [ 41%]
+tests/realtime_event_test.py::TestClientEventsFromJson::test_client_session_end_event PASSED [ 41%]
+tests/realtime_event_test.py::TestClientEventsFromJson::test_client_text_append_event PASSED [ 41%]
+tests/realtime_event_test.py::TestClientEventsFromJson::test_client_tool_result_event PASSED [ 41%]
+tests/realtime_event_test.py::TestClientEventsFromJson::test_invalid_json_data_no_type PASSED [ 42%]
+tests/realtime_event_test.py::TestClientEventsFromJson::test_invalid_json_data_not_dict PASSED [ 42%]
+tests/realtime_event_test.py::TestClientEventsFromJson::test_unknown_event_type PASSED [ 42%]
+tests/realtime_gemini_test.py::TestGeminiRealtimeModelParseAPIMessage::test_parse_audio_delta_event PASSED [ 42%]
+tests/realtime_gemini_test.py::TestGeminiRealtimeModelParseAPIMessage::test_parse_error_event PASSED [ 43%]
+tests/realtime_gemini_test.py::TestGeminiRealtimeModelParseAPIMessage::test_parse_generation_complete_event PASSED [ 43%]
+tests/realtime_gemini_test.py::TestGeminiRealtimeModelParseAPIMessage::test_parse_input_transcription_event PASSED [ 43%]
+tests/realtime_gemini_test.py::TestGeminiRealtimeModelParseAPIMessage::test_parse_output_transcription_event PASSED [ 43%]
+tests/realtime_gemini_test.py::TestGeminiRealtimeModelParseAPIMessage::test_parse_setup_complete_event PASSED [ 43%]
+tests/realtime_gemini_test.py::TestGeminiRealtimeModelParseAPIMessage::test_parse_tool_call_event PASSED [ 44%]
+tests/realtime_gemini_test.py::TestGeminiRealtimeModelParseAPIMessage::test_parse_turn_complete_event PASSED [ 44%]
+tests/realtime_gemini_test.py::TestGeminiRealtimeModelSend::test_send_audio_base64 PASSED [ 44%]
+tests/realtime_gemini_test.py::TestGeminiRealtimeModelSend::test_send_image_base64 PASSED [ 44%]
+tests/realtime_gemini_test.py::TestGeminiRealtimeModelSend::test_send_text PASSED [ 44%]
+tests/realtime_gemini_test.py::TestGeminiRealtimeModelSend::test_send_tool_result PASSED [ 45%]
+tests/realtime_openai_test.py::TestOpenAIRealtimeModelParseAPIMessage::test_parse_error_event PASSED [ 45%]
+tests/realtime_openai_test.py::TestOpenAIRealtimeModelParseAPIMessage::test_parse_function_call_arguments_delta_event PASSED [ 45%]
+tests/realtime_openai_test.py::TestOpenAIRealtimeModelParseAPIMessage::test_parse_function_call_arguments_done_event PASSED [ 45%]
+tests/realtime_openai_test.py::TestOpenAIRealtimeModelParseAPIMessage::test_parse_input_audio_buffer_speech_started_event PASSED [ 46%]
+tests/realtime_openai_test.py::TestOpenAIRealtimeModelParseAPIMessage::test_parse_input_audio_buffer_speech_stopped_event PASSED [ 46%]
+tests/realtime_openai_test.py::TestOpenAIRealtimeModelParseAPIMessage::test_parse_input_audio_transcription_completed_event PASSED [ 46%]
+tests/realtime_openai_test.py::TestOpenAIRealtimeModelParseAPIMessage::test_parse_response_audio_delta_event PASSED [ 46%]
+tests/realtime_openai_test.py::TestOpenAIRealtimeModelParseAPIMessage::test_parse_response_audio_done_event PASSED [ 46%]
+tests/realtime_openai_test.py::TestOpenAIRealtimeModelParseAPIMessage::test_parse_response_audio_transcript_delta_event PASSED [ 47%]
+tests/realtime_openai_test.py::TestOpenAIRealtimeModelParseAPIMessage::test_parse_response_audio_transcript_done_event PASSED [ 47%]
+tests/realtime_openai_test.py::TestOpenAIRealtimeModelParseAPIMessage::test_parse_response_created_event PASSED [ 47%]
+tests/realtime_openai_test.py::TestOpenAIRealtimeModelParseAPIMessage::test_parse_response_done_event PASSED [ 47%]
+tests/realtime_openai_test.py::TestOpenAIRealtimeModelParseAPIMessage::test_parse_session_created_event PASSED [ 48%]
+tests/realtime_openai_test.py::TestOpenAIRealtimeModelSend::test_send_audio_base64 PASSED [ 48%]
+tests/realtime_openai_test.py::TestOpenAIRealtimeModelSend::test_send_audio_url PASSED [ 48%]
+tests/realtime_openai_test.py::TestOpenAIRealtimeModelSend::test_send_text PASSED [ 48%]
+tests/realtime_openai_test.py::TestOpenAIRealtimeModelSend::test_send_tool_result PASSED [ 48%]
+tests/session_test.py::SessionTest::test_session_base PASSED             [ 49%]
+tests/session_test.py::RedisSessionTest::test_redis_session_save_and_load PASSED [ 49%]
+tests/session_test.py::TablestoreSessionTest::test_async_context_manager PASSED [ 49%]
+tests/session_test.py::TablestoreSessionTest::test_close PASSED          [ 49%]
+tests/session_test.py::TablestoreSessionTest::test_lifecycle_load_save_load PASSED [ 50%]
+tests/session_test.py::TablestoreSessionTest::test_load_before_save_raises_when_not_allowed PASSED [ 50%]
+tests/session_test.py::TablestoreSessionTest::test_load_before_save_session_not_exist PASSED [ 50%]
+tests/session_test.py::TablestoreSessionTest::test_save_and_load_session_state PASSED [ 50%]
+tests/session_test.py::TablestoreSessionTest::test_save_overwrites_previous_state PASSED [ 50%]
+tests/tablestore_memory_ft_test.py::test_memory_lifecycle SKIPPED (T...) [ 51%]
+tests/tablestore_memory_ft_test.py::test_add_and_get_memory SKIPPED      [ 51%]
+tests/tablestore_memory_ft_test.py::test_add_multiple_messages SKIPPED   [ 51%]
+tests/tablestore_memory_ft_test.py::test_add_no_duplicates SKIPPED (...) [ 51%]
+tests/tablestore_memory_ft_test.py::test_add_allow_duplicates SKIPPED    [ 51%]
+tests/tablestore_memory_ft_test.py::test_delete_messages SKIPPED (Ta...) [ 52%]
+tests/tablestore_memory_ft_test.py::test_delete_nonexistent SKIPPED      [ 52%]
+tests/tablestore_memory_ft_test.py::test_size SKIPPED (Tablestore en...) [ 52%]
+tests/tablestore_memory_ft_test.py::test_clear SKIPPED (Tablestore e...) [ 52%]
+tests/tablestore_memory_ft_test.py::test_add_with_marks SKIPPED (Tab...) [ 53%]
+tests/tablestore_memory_ft_test.py::test_get_memory_with_mark_filter SKIPPED [ 53%]
+tests/tablestore_memory_ft_test.py::test_get_memory_with_exclude_mark SKIPPED [ 53%]
+tests/tablestore_memory_ft_test.py::test_delete_by_mark SKIPPED (Tab...) [ 53%]
+tests/tablestore_memory_ft_test.py::test_update_messages_mark_add SKIPPED [ 53%]
+tests/tablestore_memory_ft_test.py::test_update_messages_mark_replace SKIPPED [ 54%]
+tests/tablestore_memory_ft_test.py::test_update_messages_mark_remove SKIPPED [ 54%]
+tests/tablestore_memory_ft_test.py::test_compressed_summary SKIPPED      [ 54%]
+tests/tablestore_memory_ft_test.py::test_state_dict_roundtrip SKIPPED    [ 54%]
+tests/tablestore_memory_ft_test.py::test_msg_roundtrip SKIPPED (Tabl...) [ 55%]
+tests/tablestore_memory_ft_test.py::test_isolation_between_users SKIPPED [ 55%]
+tests/tablestore_memory_ft_test.py::test_add_none SKIPPED (Tablestor...) [ 55%]
+tests/tablestore_memory_ft_test.py::test_get_memory_preserves_insertion_order SKIPPED [ 55%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_add_allow_duplicates PASSED [ 55%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_add_messages PASSED [ 56%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_add_no_duplicates PASSED [ 56%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_add_none PASSED [ 56%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_add_single_message PASSED [ 56%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_add_with_marks PASSED [ 56%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_clear PASSED [ 57%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_clear_empty PASSED [ 57%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_close PASSED [ 57%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_close_when_not_initialized PASSED [ 57%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_delete_by_mark PASSED [ 58%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_delete_by_mark_invalid_type PASSED [ 58%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_delete_by_mark_list PASSED [ 58%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_delete_messages PASSED [ 58%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_delete_nonexistent PASSED [ 58%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_document_to_msg_roundtrip PASSED [ 59%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_extract_msg_id PASSED [ 59%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_extract_msg_id_invalid_suffix PASSED [ 59%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_extract_msg_id_no_separator PASSED [ 59%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_get_memory_all PASSED [ 60%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_get_memory_invalid_mark_type PASSED [ 60%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_get_memory_with_exclude_mark PASSED [ 60%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_get_memory_with_mark_filter PASSED [ 60%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_get_memory_with_summary PASSED [ 60%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_invalid_mark_type PASSED [ 61%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_load_state_dict PASSED [ 61%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_make_and_extract_roundtrip PASSED [ 61%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_make_document_id PASSED [ 61%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_msg_to_document_list_content PASSED [ 62%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_msg_to_document_string_content PASSED [ 62%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_size PASSED  [ 62%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_state_dict PASSED [ 62%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_update_messages_mark_add PASSED [ 62%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_update_messages_mark_remove PASSED [ 63%]
+tests/tablestore_memory_test.py::TablestoreMemoryTest::test_update_messages_mark_replace PASSED [ 63%]
+tests/tablestore_session_ft_test.py::test_session_lifecycle SKIPPED      [ 63%]
+tests/tablestore_session_ft_test.py::test_save_and_load_session_state SKIPPED [ 63%]
+tests/tablestore_session_ft_test.py::test_save_overwrites_existing_state SKIPPED [ 63%]
+tests/tablestore_session_ft_test.py::test_load_nonexistent_session_allowed SKIPPED [ 64%]
+tests/tablestore_session_ft_test.py::test_load_nonexistent_session_disallowed SKIPPED [ 64%]
+tests/tablestore_session_ft_test.py::test_save_and_load_multiple_modules SKIPPED [ 64%]
+tests/tablestore_session_ft_test.py::test_save_and_load_with_memory_module SKIPPED [ 64%]
+tests/tablestore_session_ft_test.py::test_context_manager SKIPPED (T...) [ 65%]
+tests/tablestore_session_test.py::TablestoreSessionTest::test_async_context_manager PASSED [ 65%]
+tests/tablestore_session_test.py::TablestoreSessionTest::test_close PASSED [ 65%]
+tests/tablestore_session_test.py::TablestoreSessionTest::test_close_when_not_initialized PASSED [ 65%]
+tests/tablestore_session_test.py::TablestoreSessionTest::test_empty_user_id_defaults_to_default PASSED [ 65%]
+tests/tablestore_session_test.py::TablestoreSessionTest::test_load_partial_modules PASSED [ 66%]
+tests/tablestore_session_test.py::TablestoreSessionTest::test_load_session_no_state_data PASSED [ 66%]
+tests/tablestore_session_test.py::TablestoreSessionTest::test_load_session_no_state_raises_when_disallowed PASSED [ 66%]
+tests/tablestore_session_test.py::TablestoreSessionTest::test_load_session_state PASSED [ 66%]
+tests/tablestore_session_test.py::TablestoreSessionTest::test_load_session_state_not_exist_allowed PASSED [ 67%]
+tests/tablestore_session_test.py::TablestoreSessionTest::test_load_session_state_not_exist_disallowed PASSED [ 67%]
+tests/tablestore_session_test.py::TablestoreSessionTest::test_save_and_load_with_memory_module PASSED [ 67%]
+tests/tablestore_session_test.py::TablestoreSessionTest::test_save_session_state PASSED [ 67%]
+tests/tablestore_session_test.py::TablestoreSessionTest::test_save_session_state_existing_session PASSED [ 67%]
+tests/token_anthropic_test.py::AnthropicTokenCounterTest::test_anthropic_token_counter PASSED [ 68%]
+tests/token_char_test.py::CharTokenCounterTest::test_count_tokens PASSED [ 68%]
+tests/token_openai_test.py::OpenAITokenCounterTest::test_openai_token_counter PASSED [ 68%]
+tests/tool_dashscope_test.py::TestDashScopeTextToImage::test_text_to_image_success_url_mode PASSED [ 68%]
+tests/tool_dashscope_test.py::TestDashScopeTextToImage::test_text_to_image_success_base64_mode PASSED [ 68%]
+tests/tool_dashscope_test.py::TestDashScopeTextToImage::test_text_to_image_empty_results PASSED [ 69%]
+tests/tool_dashscope_test.py::TestDashScopeTextToImage::test_text_to_image_none_results PASSED [ 69%]
+tests/tool_dashscope_test.py::TestDashScopeTextToImage::test_text_to_image_exception PASSED [ 69%]
+tests/tool_dashscope_test.py::TestDashScopeImageToText::test_image_to_text_single_url_success PASSED [ 69%]
+tests/tool_dashscope_test.py::TestDashScopeImageToText::test_image_to_text_multiple_urls_success PASSED [ 70%]
+tests/tool_dashscope_test.py::TestDashScopeImageToText::test_image_to_text_local_file_success PASSED [ 70%]
+tests/tool_dashscope_test.py::TestDashScopeImageToText::test_image_to_text_invalid_local_path PASSED [ 70%]
+tests/tool_dashscope_test.py::TestDashScopeImageToText::test_image_to_text_list_content_response PASSED [ 70%]
+tests/tool_dashscope_test.py::TestDashScopeImageToText::test_image_to_text_none_content PASSED [ 70%]
+tests/tool_dashscope_test.py::TestDashScopeImageToText::test_image_to_text_exception PASSED [ 71%]
+tests/tool_dashscope_test.py::TestDashScopeTextToAudio::test_text_to_audio_success PASSED [ 71%]
+tests/tool_dashscope_test.py::TestDashScopeTextToAudio::test_text_to_audio_no_data PASSED [ 71%]
+tests/tool_dashscope_test.py::TestDashScopeTextToAudio::test_text_to_audio_api_exception PASSED [ 71%]
+tests/tool_openai_test.py::TestOpenAITextToImage::test_text_to_image_success_url_mode PASSED [ 72%]
+tests/tool_openai_test.py::TestOpenAITextToImage::test_text_to_image_success_base64_mode PASSED [ 72%]
+tests/tool_openai_test.py::TestOpenAITextToImage::test_text_to_image_gpt_image_1_force_base64 PASSED [ 72%]
+tests/tool_openai_test.py::TestOpenAITextToImage::test_text_to_image_exception PASSED [ 72%]
+tests/tool_openai_test.py::TestOpenAIEditImage::test_edit_image_success_url_input PASSED [ 72%]
+tests/tool_openai_test.py::TestOpenAIEditImage::test_edit_image_success_local_file PASSED [ 73%]
+tests/tool_openai_test.py::TestOpenAIEditImage::test_edit_image_exception PASSED [ 73%]
+tests/tool_openai_test.py::TestOpenAIEditImage::test_edit_image_file_not_found PASSED [ 73%]
+tests/tool_openai_test.py::TestOpenAICreateImageVariation::test_create_variation_success_url_mode PASSED [ 73%]
+tests/tool_openai_test.py::TestOpenAICreateImageVariation::test_create_variation_success_base64_mode PASSED [ 74%]
+tests/tool_openai_test.py::TestOpenAICreateImageVariation::test_create_variation_exception PASSED [ 74%]
+tests/tool_openai_test.py::TestOpenAIImageToText::test_image_to_text_single_url_success PASSED [ 74%]
+tests/tool_openai_test.py::TestOpenAIImageToText::test_image_to_text_multiple_urls_success PASSED [ 74%]
+tests/tool_openai_test.py::TestOpenAIImageToText::test_image_to_text_exception PASSED [ 74%]
+tests/tool_openai_test.py::TestOpenAITextToAudio::test_text_to_audio_success PASSED [ 75%]
+tests/tool_openai_test.py::TestOpenAITextToAudio::test_text_to_audio_different_format PASSED [ 75%]
+tests/tool_openai_test.py::TestOpenAITextToAudio::test_text_to_audio_exception PASSED [ 75%]
+tests/tool_openai_test.py::TestOpenAIAudioToText::test_audio_to_text_local_file_success PASSED [ 75%]
+tests/tool_openai_test.py::TestOpenAIAudioToText::test_audio_to_text_url_success PASSED [ 75%]
+tests/tool_openai_test.py::TestOpenAIAudioToText::test_audio_to_text_file_not_found PASSED [ 76%]
+tests/tool_openai_test.py::TestOpenAIAudioToText::test_audio_to_text_api_exception PASSED [ 76%]
+tests/tool_test.py::ToolTest::test_execute_python_code PASSED            [ 76%]
+tests/tool_test.py::ToolTest::test_execute_shell_command PASSED          [ 76%]
+tests/tool_test.py::ToolTest::test_insert_text_file PASSED               [ 77%]
+tests/tool_test.py::ToolTest::test_view_text_file PASSED                 [ 77%]
+tests/tool_test.py::ToolTest::test_write_text_file PASSED                [ 77%]
+tests/toolkit_async_execution_test.py::ToolkitAsyncExecutionTest::test_async_generator_result_is_accumulated PASSED [ 77%]
+tests/toolkit_async_execution_test.py::ToolkitAsyncExecutionTest::test_cancel_already_completed_task PASSED [ 77%]
+tests/toolkit_async_execution_test.py::ToolkitAsyncExecutionTest::test_cancel_invalid_task_id PASSED [ 78%]
+tests/toolkit_async_execution_test.py::ToolkitAsyncExecutionTest::test_cancel_task PASSED [ 78%]
+tests/toolkit_async_execution_test.py::ToolkitAsyncExecutionTest::test_view_invalid_task_id PASSED [ 78%]
+tests/toolkit_async_execution_test.py::ToolkitAsyncExecutionTest::test_view_task_completed PASSED [ 78%]
+tests/toolkit_async_execution_test.py::ToolkitAsyncExecutionTest::test_view_task_still_running PASSED [ 79%]
+tests/toolkit_async_execution_test.py::ToolkitAsyncExecutionTest::test_wait_invalid_task_id PASSED [ 79%]
+tests/toolkit_async_execution_test.py::ToolkitAsyncExecutionTest::test_wait_task_completes_within_timeout PASSED [ 79%]
+tests/toolkit_async_execution_test.py::ToolkitAsyncExecutionTest::test_wait_task_timeout PASSED [ 79%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_async_func PASSED    [ 79%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_async_postprocess_func PASSED [ 80%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_basic_functionalities PASSED [ 80%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_create_tool_group PASSED [ 80%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_detailed_arguments PASSED [ 80%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_duplicate_tool_registration PASSED [ 81%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_extended_model_reusing_same_base_model PASSED [ 81%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_func_name_parameter PASSED [ 81%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_partial_function PASSED [ 81%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_postprocess_func PASSED [ 81%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_register_async_func_return_async_generator PASSED [ 82%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_register_async_func_return_sync_generator PASSED [ 82%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_register_async_generator_func PASSED [ 82%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_register_sync_generator_func PASSED [ 82%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_register_with_custom_json_schema_without_overrides PASSED [ 82%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_register_with_invalid_json_schema PASSED [ 83%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_register_with_json_schema_preset_kwargs_keep_other_required PASSED [ 83%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_register_with_valid_json_schema PASSED [ 83%]
+tests/toolkit_meta_tool_test.py::ToolkitMetaToolTest::test_meta_tool PASSED [ 83%]
+tests/toolkit_middleware_test.py::ToolkitMiddlewareTest::test_toolkit_middleware PASSED [ 84%]
+tests/tracing_converter_test.py::ConverterTest::test_convert_audio_block PASSED [ 84%]
+tests/tracing_converter_test.py::ConverterTest::test_convert_image_block PASSED [ 84%]
+tests/tracing_converter_test.py::ConverterTest::test_convert_invalid_blocks PASSED [ 84%]
+tests/tracing_converter_test.py::ConverterTest::test_convert_text_block PASSED [ 84%]
+tests/tracing_converter_test.py::ConverterTest::test_convert_thinking_block PASSED [ 85%]
+tests/tracing_converter_test.py::ConverterTest::test_convert_tool_result_block PASSED [ 85%]
+tests/tracing_converter_test.py::ConverterTest::test_convert_tool_use_block PASSED [ 85%]
+tests/tracing_converter_test.py::ConverterTest::test_convert_video_block PASSED [ 85%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_agent_messages_empty_list PASSED [ 86%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_agent_messages_list_of_msgs PASSED [ 86%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_agent_messages_single_msg PASSED [ 86%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_agent_request_attributes PASSED [ 86%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_agent_request_attributes_with_list PASSED [ 86%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_agent_response_attributes PASSED [ 87%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_agent_response_attributes_with_list PASSED [ 87%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_common_attributes PASSED [ 87%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_embedding_request_attributes PASSED [ 87%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_format_target PASSED [ 87%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_formatter_request_attributes PASSED [ 88%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_formatter_response_attributes PASSED [ 88%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_generic_function_request_attributes PASSED [ 88%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_llm_request_attributes PASSED [ 88%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_llm_response_attributes PASSED [ 89%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_provider_name PASSED [ 89%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_tool_definitions PASSED [ 89%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_tool_request_attributes PASSED [ 89%]
+tests/tracing_extractor_test.py::ExtractorTest::test_get_tool_response_attributes PASSED [ 89%]
+tests/tracing_test.py::TracingTest::test_trace PASSED                    [ 90%]
+tests/tracing_test.py::TracingTest::test_trace_embedding PASSED          [ 90%]
+tests/tracing_test.py::TracingTest::test_trace_format PASSED             [ 90%]
+tests/tracing_test.py::TracingTest::test_trace_llm PASSED                [ 90%]
+tests/tracing_test.py::TracingTest::test_trace_reply PASSED              [ 91%]
+tests/tracing_test.py::TracingTest::test_trace_toolkit PASSED            [ 91%]
+tests/tracing_utils_test.py::UtilsTest::test_serialize_to_str_complex_nested PASSED [ 91%]
+tests/tracing_utils_test.py::UtilsTest::test_serialize_to_str_dict PASSED [ 91%]
+tests/tracing_utils_test.py::UtilsTest::test_serialize_to_str_list PASSED [ 91%]
+tests/tracing_utils_test.py::UtilsTest::test_serialize_to_str_non_serializable PASSED [ 92%]
+tests/tracing_utils_test.py::UtilsTest::test_serialize_to_str_simple PASSED [ 92%]
+tests/tracing_utils_test.py::UtilsTest::test_serialize_to_str_unicode PASSED [ 92%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_collections PASSED [ 92%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_dataclass PASSED [ 93%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_datetime PASSED [ 93%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_dict PASSED [ 93%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_enum PASSED [ 93%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_msg PASSED  [ 93%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_nested_structures PASSED [ 94%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_primitive_types PASSED [ 94%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_pydantic_model PASSED [ 94%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_timedelta PASSED [ 94%]
+tests/tracing_utils_test.py::UtilsTest::test_to_serializable_unknown_type PASSED [ 94%]
+tests/tts_dashscope_cosyvoice_test.py::DashScopeCosyVoiceTTSModelTest::test_init PASSED [ 95%]
+tests/tts_dashscope_cosyvoice_test.py::DashScopeCosyVoiceTTSModelTest::test_synthesize_non_streaming PASSED [ 95%]
+tests/tts_dashscope_cosyvoice_test.py::DashScopeCosyVoiceTTSModelTest::test_synthesize_streaming PASSED [ 95%]
+tests/tts_dashscope_cosyvoice_test.py::DashScopeCosyVoiceRealtimeTTSModelTest::test_init PASSED [ 95%]
+tests/tts_dashscope_cosyvoice_test.py::DashScopeCosyVoiceRealtimeTTSModelTest::test_push_incremental_text PASSED [ 96%]
+tests/tts_dashscope_cosyvoice_test.py::DashScopeCosyVoiceRealtimeTTSModelTest::test_synthesize_non_streaming PASSED [ 96%]
+tests/tts_dashscope_cosyvoice_test.py::DashScopeCosyVoiceRealtimeTTSModelTest::test_synthesize_streaming PASSED [ 96%]
+tests/tts_dashscope_test.py::DashScopeRealtimeTTSModelTest::test_init PASSED [ 96%]
+tests/tts_dashscope_test.py::DashScopeRealtimeTTSModelTest::test_push_incremental_text PASSED [ 96%]
+tests/tts_dashscope_test.py::DashScopeRealtimeTTSModelTest::test_synthesize_non_streaming PASSED [ 97%]
+tests/tts_dashscope_test.py::DashScopeRealtimeTTSModelTest::test_synthesize_streaming PASSED [ 97%]
+tests/tts_dashscope_test.py::DashScopeTTSModelTest::test_init PASSED     [ 97%]
+tests/tts_dashscope_test.py::DashScopeTTSModelTest::test_synthesize_non_streaming PASSED [ 97%]
+tests/tts_dashscope_test.py::DashScopeTTSModelTest::test_synthesize_streaming PASSED [ 98%]
+tests/tts_gemini_test.py::GeminiTTSModelTest::test_init PASSED           [ 98%]
+tests/tts_gemini_test.py::GeminiTTSModelTest::test_synthesize_non_streaming PASSED [ 98%]
+tests/tts_gemini_test.py::GeminiTTSModelTest::test_synthesize_streaming PASSED [ 98%]
+tests/tts_openai_test.py::OpenAITTSModelTest::test_init PASSED           [ 98%]
+tests/tts_openai_test.py::OpenAITTSModelTest::test_synthesize_non_streaming PASSED [ 99%]
+tests/tts_openai_test.py::OpenAITTSModelTest::test_synthesize_streaming PASSED [ 99%]
+tests/tuner_test.py::TestTunerFunctionType::test_validate_workflow_type PASSED [ 99%]
+tests/tuner_test.py::TestDataset::test_preview SKIPPED (datasets lib...) [ 99%]
+tests/user_input_test.py::UserInputTest::test_user_terminal_input PASSED [100%]
+
+==================================== ERRORS ====================================
+______ ERROR at teardown of AsyncSQLAlchemyMemoryTest.test_concurrent_add ______
+
+self = <sqlalchemy.engine.base.Connection object at 0x7fb75412d120>
+dialect = <sqlalchemy.dialects.sqlite.aiosqlite.SQLiteDialect_aiosqlite object at 0x7fb740683d00>
+context = <sqlalchemy.dialects.sqlite.aiosqlite.SQLiteExecutionContext_aiosqlite object at 0x7fb75412d3c0>
+statement = <sqlalchemy.dialects.sqlite.base.SQLiteCompiler object at 0x7fb75412c340>
+parameters = [('session_1',)]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py:1967: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/default.py:952: in do_execute
+    cursor.execute(statement, parameters)
+/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/sqlite/aiosqlite.py:182: in execute
+    self._adapt_connection._handle_exception(error)
+/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/sqlite/aiosqlite.py:342: in _handle_exception
+    raise error
+/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/sqlite/aiosqlite.py:164: in execute
+    self.await_(_cursor.execute(operation, parameters))
+/usr/local/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py:132: in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+/usr/local/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py:196: in greenlet_spawn
+    value = await result
+/usr/local/lib/python3.10/site-packages/aiosqlite/cursor.py:40: in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+/usr/local/lib/python3.10/site-packages/aiosqlite/cursor.py:32: in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+/usr/local/lib/python3.10/site-packages/aiosqlite/core.py:160: in _execute
+    return await future
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tx = <_queue.SimpleQueue object at 0x7fb74041af20>
+
+    def _connection_worker_thread(tx: _TxQueue):
+        """
+        Execute function calls on a separate thread.
+    
+        :meta private:
+        """
+        while True:
+            # Continues running until all queue items are processed,
+            # even after connection is closed (so we can finalize all
+            # futures)
+    
+            future, function = tx.get()
+    
+            try:
+                LOG.debug("executing %s", function)
+>               result = function()
+E               sqlite3.OperationalError: no such table: message_mark
+
+/usr/local/lib/python3.10/site-packages/aiosqlite/core.py:63: OperationalError
+
+The above exception was the direct cause of the following exception:
+
+self = <memory_test.AsyncSQLAlchemyMemoryTest testMethod=test_concurrent_add>
+
+    async def asyncTearDown(self) -> None:
+        """Clean up after unittests"""
+>       await super().asyncTearDown()
+
+tests/memory_test.py:687: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/memory_test.py:497: in asyncTearDown
+    await self.memory.clear()
+src/agentscope/memory/_working_memory/_sqlalchemy_memory.py:519: in clear
+    await self.session.execute(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py:449: in execute
+    result = await greenlet_spawn(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py:201: in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/session.py:2351: in execute
+    return self._execute_internal(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/session.py:2249: in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/bulk_persistence.py:2033: in orm_execute_statement
+    return super().orm_execute_statement(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/context.py:306: in orm_execute_statement
+    result = conn.execute(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py:1419: in execute
+    return meth(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/sql/elements.py:527: in _execute_on_connection
+    return connection._execute_clauseelement(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py:1641: in _execute_clauseelement
+    ret = self._execute_context(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py:1846: in _execute_context
+    return self._exec_single_context(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py:1986: in _exec_single_context
+    self._handle_dbapi_exception(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py:2363: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py:1967: in _exec_single_context
+    self.dialect.do_execute(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/default.py:952: in do_execute
+    cursor.execute(statement, parameters)
+/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/sqlite/aiosqlite.py:182: in execute
+    self._adapt_connection._handle_exception(error)
+/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/sqlite/aiosqlite.py:342: in _handle_exception
+    raise error
+/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/sqlite/aiosqlite.py:164: in execute
+    self.await_(_cursor.execute(operation, parameters))
+/usr/local/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py:132: in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+/usr/local/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py:196: in greenlet_spawn
+    value = await result
+/usr/local/lib/python3.10/site-packages/aiosqlite/cursor.py:40: in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+/usr/local/lib/python3.10/site-packages/aiosqlite/cursor.py:32: in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+/usr/local/lib/python3.10/site-packages/aiosqlite/core.py:160: in _execute
+    return await future
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tx = <_queue.SimpleQueue object at 0x7fb74041af20>
+
+    def _connection_worker_thread(tx: _TxQueue):
+        """
+        Execute function calls on a separate thread.
+    
+        :meta private:
+        """
+        while True:
+            # Continues running until all queue items are processed,
+            # even after connection is closed (so we can finalize all
+            # futures)
+    
+            future, function = tx.get()
+    
+            try:
+                LOG.debug("executing %s", function)
+>               result = function()
+E               sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: message_mark
+E               [SQL: DELETE FROM message_mark WHERE message_mark.msg_id IN (SELECT message.id 
+E               FROM message 
+E               WHERE message.session_id = ?) RETURNING mark, msg_id]
+E               [parameters: ('session_1',)]
+E               (Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+/usr/local/lib/python3.10/site-packages/aiosqlite/core.py:63: OperationalError
+=================================== FAILURES ===================================
+________________ AsyncSQLAlchemyMemoryTest.test_concurrent_add _________________
+
+self = <sqlalchemy.engine.base.Connection object at 0x7fb75412d120>
+dialect = <sqlalchemy.dialects.sqlite.aiosqlite.SQLiteDialect_aiosqlite object at 0x7fb740683d00>
+context = <sqlalchemy.dialects.sqlite.aiosqlite.SQLiteExecutionContext_aiosqlite object at 0x7fb7405dff10>
+statement = <sqlalchemy.dialects.sqlite.base.SQLiteCompiler object at 0x7fb75410fd00>
+parameters = [('user_1',)]
+
+    def _exec_single_context(
+        self,
+        dialect: Dialect,
+        context: ExecutionContext,
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+    ) -> CursorResult[Any]:
+        """continue the _execute_context() method for a single DBAPI
+        cursor.execute() or cursor.executemany() call.
+    
+        """
+        if dialect.bind_typing is BindTyping.SETINPUTSIZES:
+            generic_setinputsizes = context._prepare_set_input_sizes()
+    
+            if generic_setinputsizes:
+                try:
+                    dialect.do_set_input_sizes(
+                        context.cursor, generic_setinputsizes, context
+                    )
+                except BaseException as e:
+                    self._handle_dbapi_exception(
+                        e, str(statement), parameters, None, context
+                    )
+    
+        cursor, str_statement, parameters = (
+            context.cursor,
+            context.statement,
+            context.parameters,
+        )
+    
+        effective_parameters: Optional[_AnyExecuteParams]
+    
+        if not context.executemany:
+            effective_parameters = parameters[0]
+        else:
+            effective_parameters = parameters
+    
+        if self._has_events or self.engine._has_events:
+            for fn in self.dispatch.before_cursor_execute:
+                str_statement, effective_parameters = fn(
+                    self,
+                    cursor,
+                    str_statement,
+                    effective_parameters,
+                    context,
+                    context.executemany,
+                )
+    
+        if self._echo:
+            self._log_info(str_statement)
+    
+            stats = context._get_cache_stats()
+    
+            if not self.engine.hide_parameters:
+                self._log_info(
+                    "[%s] %r",
+                    stats,
+                    sql_util._repr_params(
+                        effective_parameters,
+                        batches=10,
+                        ismulti=context.executemany,
+                    ),
+                )
+            else:
+                self._log_info(
+                    "[%s] [SQL parameters hidden due to hide_parameters=True]",
+                    stats,
+                )
+    
+        evt_handled: bool = False
+        try:
+            if context.execute_style is ExecuteStyle.EXECUTEMANY:
+                effective_parameters = cast(
+                    "_CoreMultiExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_executemany:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_executemany(
+                        cursor,
+                        str_statement,
+                        effective_parameters,
+                        context,
+                    )
+            elif not effective_parameters and context.no_parameters:
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute_no_params:
+                        if fn(cursor, str_statement, context):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+                    self.dialect.do_execute_no_params(
+                        cursor, str_statement, context
+                    )
+            else:
+                effective_parameters = cast(
+                    "_CoreSingleExecuteParams", effective_parameters
+                )
+                if self.dialect._has_events:
+                    for fn in self.dialect.dispatch.do_execute:
+                        if fn(
+                            cursor,
+                            str_statement,
+                            effective_parameters,
+                            context,
+                        ):
+                            evt_handled = True
+                            break
+                if not evt_handled:
+>                   self.dialect.do_execute(
+                        cursor, str_statement, effective_parameters, context
+                    )
+
+/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py:1967: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/default.py:952: in do_execute
+    cursor.execute(statement, parameters)
+/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/sqlite/aiosqlite.py:182: in execute
+    self._adapt_connection._handle_exception(error)
+/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/sqlite/aiosqlite.py:342: in _handle_exception
+    raise error
+/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/sqlite/aiosqlite.py:164: in execute
+    self.await_(_cursor.execute(operation, parameters))
+/usr/local/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py:132: in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+/usr/local/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py:196: in greenlet_spawn
+    value = await result
+/usr/local/lib/python3.10/site-packages/aiosqlite/cursor.py:40: in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+/usr/local/lib/python3.10/site-packages/aiosqlite/cursor.py:32: in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+/usr/local/lib/python3.10/site-packages/aiosqlite/core.py:160: in _execute
+    return await future
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tx = <_queue.SimpleQueue object at 0x7fb74041af20>
+
+    def _connection_worker_thread(tx: _TxQueue):
+        """
+        Execute function calls on a separate thread.
+    
+        :meta private:
+        """
+        while True:
+            # Continues running until all queue items are processed,
+            # even after connection is closed (so we can finalize all
+            # futures)
+    
+            future, function = tx.get()
+    
+            try:
+                LOG.debug("executing %s", function)
+>               result = function()
+E               sqlite3.OperationalError: no such table: users
+
+/usr/local/lib/python3.10/site-packages/aiosqlite/core.py:63: OperationalError
+
+The above exception was the direct cause of the following exception:
+
+self = <memory_test.AsyncSQLAlchemyMemoryTest testMethod=test_concurrent_add>
+
+    async def test_concurrent_add(self) -> None:
+        """Test that concurrent add() calls don't cause IntegrityError.
+    
+        Reproduces the bug from GitHub issue #1381: when parallel_tool_calls
+        is True, multiple _acting coroutines call memory.add() concurrently,
+        causing duplicate primary key conflicts.
+        """
+        from sqlalchemy import select as sa_select
+    
+        messages = [
+            Msg("system", f"Tool result {i}", "system") for i in range(20)
+        ]
+    
+        # Add all messages concurrently (simulates parallel_tool_calls)
+>       await asyncio.gather(
+            *(self.memory.add(msg) for msg in messages),
+        )
+
+tests/memory_test.py:656: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/agentscope/memory/_working_memory/_sqlalchemy_memory.py:416: in add
+    await self._create_table()
+src/agentscope/memory/_working_memory/_sqlalchemy_memory.py:226: in _create_table
+    result = await self.session.execute(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py:449: in execute
+    result = await greenlet_spawn(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py:201: in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/session.py:2351: in execute
+    return self._execute_internal(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/session.py:2249: in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/context.py:306: in orm_execute_statement
+    result = conn.execute(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py:1419: in execute
+    return meth(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/sql/elements.py:527: in _execute_on_connection
+    return connection._execute_clauseelement(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py:1641: in _execute_clauseelement
+    ret = self._execute_context(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py:1846: in _execute_context
+    return self._exec_single_context(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py:1986: in _exec_single_context
+    self._handle_dbapi_exception(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py:2363: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py:1967: in _exec_single_context
+    self.dialect.do_execute(
+/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/default.py:952: in do_execute
+    cursor.execute(statement, parameters)
+/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/sqlite/aiosqlite.py:182: in execute
+    self._adapt_connection._handle_exception(error)
+/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/sqlite/aiosqlite.py:342: in _handle_exception
+    raise error
+/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/sqlite/aiosqlite.py:164: in execute
+    self.await_(_cursor.execute(operation, parameters))
+/usr/local/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py:132: in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+/usr/local/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py:196: in greenlet_spawn
+    value = await result
+/usr/local/lib/python3.10/site-packages/aiosqlite/cursor.py:40: in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+/usr/local/lib/python3.10/site-packages/aiosqlite/cursor.py:32: in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+/usr/local/lib/python3.10/site-packages/aiosqlite/core.py:160: in _execute
+    return await future
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tx = <_queue.SimpleQueue object at 0x7fb74041af20>
+
+    def _connection_worker_thread(tx: _TxQueue):
+        """
+        Execute function calls on a separate thread.
+    
+        :meta private:
+        """
+        while True:
+            # Continues running until all queue items are processed,
+            # even after connection is closed (so we can finalize all
+            # futures)
+    
+            future, function = tx.get()
+    
+            try:
+                LOG.debug("executing %s", function)
+>               result = function()
+E               sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+E               [SQL: SELECT users.id 
+E               FROM users 
+E               WHERE users.id = ?]
+E               [parameters: ('user_1',)]
+E               (Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+/usr/local/lib/python3.10/site-packages/aiosqlite/core.py:63: OperationalError
+=============================== warnings summary ===============================
+tests/rag_knowledge_test.py:19
+  /testbed/tests/rag_knowledge_test.py:19: PytestCollectionWarning: cannot collect test class 'TestTextEmbedding' because it has a __init__ constructor (from: tests/rag_knowledge_test.py)
+    class TestTextEmbedding(EmbeddingModelBase):
+
+tests/evaluation_test.py::EvaluatorTest::test_general_evaluator
+  /usr/local/lib/python3.10/site-packages/ray/_private/worker.py:2052: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+    warnings.warn(
+
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_embedded_content
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_embedded_content
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_streamable_http_stateless_client
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_streamable_http_stateless_client
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_streamable_http_stateless_client
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_streamable_http_stateless_client
+  /usr/local/lib/python3.10/contextlib.py:103: DeprecationWarning: Use `streamable_http_client` instead.
+    self.gen = func(*args, **kwds)
+
+tests/rag_store_test.py::RAGStoreTest::test_milvus_lite_store
+  /usr/local/lib/python3.10/site-packages/milvus_lite/__init__.py:15: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    from pkg_resources import DistributionNotFound, get_distribution
+
+tests/rag_store_test.py::RAGStoreTest::test_milvus_lite_store
+  /usr/local/lib/python3.10/site-packages/pkg_resources/__init__.py:3147: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sphinxcontrib')`.
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(pkg)
+
+tests/session_test.py::RedisSessionTest::test_redis_session_save_and_load
+  /testbed/src/agentscope/session/_redis_session.py:182: DeprecationWarning: Call to deprecated close. (Use aclose() instead) -- Deprecated since version 5.0.1.
+    await self._client.close()
+
+tests/session_test.py::RedisSessionTest::test_redis_session_save_and_load
+  /testbed/tests/session_test.py:163: DeprecationWarning: Call to deprecated close. (Use aclose() instead) -- Deprecated since version 5.0.1.
+    await self._redis.close()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/memory_test.py::AsyncSQLAlchemyMemoryTest::test_concurrent_add
+ERROR tests/memory_test.py::AsyncSQLAlchemyMemoryTest::test_concurrent_add - ...
+= 1 failed, 407 passed, 50 skipped, 12 warnings, 1 error in 126.00s (0:02:05) ==

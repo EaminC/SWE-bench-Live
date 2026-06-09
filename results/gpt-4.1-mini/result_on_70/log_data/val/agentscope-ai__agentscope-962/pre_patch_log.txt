@@ -1,0 +1,413 @@
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.12.13, pytest-9.0.1, pluggy-1.6.0 -- /usr/local/bin/python3.12
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+plugins: anyio-4.11.0, forked-1.6.0
+collecting ... collected 182 items
+
+tests/config_test.py::ConfigTest::test_config_attributes PASSED          [  0%]
+tests/embedding_cache_test.py::EmbeddingCacheTest::test_embedding_cache PASSED [  1%]
+tests/evaluation_test.py::EvaluatorTest::test_general_evaluator PASSED   [  1%]
+tests/evaluation_test.py::EvaluatorTest::test_ray_evaluator PASSED       [  2%]
+tests/formatter_anthropic_test.py::TestAnthropicChatFormatterFormatter::test_chat_formatter PASSED [  2%]
+tests/formatter_anthropic_test.py::TestAnthropicChatFormatterFormatter::test_multiagent_formater PASSED [  3%]
+tests/formatter_dashscope_test.py::TestDashScopeFormatter::test_chat_formatter PASSED [  3%]
+tests/formatter_dashscope_test.py::TestDashScopeFormatter::test_chat_formatter_with_extract_image_blocks PASSED [  4%]
+tests/formatter_dashscope_test.py::TestDashScopeFormatter::test_multiagent_formater PASSED [  4%]
+tests/formatter_dashscope_test.py::TestDashScopeFormatter::test_multiagent_formatter_with_promote_tool_result_images PASSED [  5%]
+tests/formatter_deepseek_test.py::TestDeepSeekFormatter::test_chat_formatter PASSED [  6%]
+tests/formatter_deepseek_test.py::TestDeepSeekFormatter::test_multi_agent_formatter PASSED [  6%]
+tests/formatter_gemini_test.py::TestGeminiFormatter::test_chat_formatter PASSED [  7%]
+tests/formatter_gemini_test.py::TestGeminiFormatter::test_chat_formatter_with_extract_image_blocks PASSED [  7%]
+tests/formatter_gemini_test.py::TestGeminiFormatter::test_multi_agent_formatter PASSED [  8%]
+tests/formatter_gemini_test.py::TestGeminiFormatter::test_multi_agent_formatter_with_promote_tool_result_images PASSED [  8%]
+tests/formatter_ollama_test.py::TestOllamaFormatter::test_chat_formatter PASSED [  9%]
+tests/formatter_ollama_test.py::TestOllamaFormatter::test_chat_formatter_with_extract_image_blocks PASSED [  9%]
+tests/formatter_ollama_test.py::TestOllamaFormatter::test_multi_agent_formatter PASSED [ 10%]
+tests/formatter_ollama_test.py::TestOllamaFormatter::test_multi_agent_formatter_with_promote_tool_result_images PASSED [ 10%]
+tests/formatter_openai_test.py::TestOpenAIFormatter::test_formatter PASSED [ 11%]
+tests/formatter_openai_test.py::TestOpenAIFormatter::test_formatter_with_extract_image_blocks PASSED [ 12%]
+tests/formatter_openai_test.py::TestOpenAIFormatter::test_multiagent_formatter PASSED [ 12%]
+tests/formatter_openai_test.py::TestOpenAIFormatter::test_multiagent_formatter_with_promote_tool_result_images PASSED [ 13%]
+tests/hook_test.py::HookTest::test_observe_hooks PASSED                  [ 13%]
+tests/hook_test.py::HookTest::test_print_hooks PASSED                    [ 14%]
+tests/hook_test.py::HookTest::test_reply_hooks PASSED                    [ 14%]
+tests/mcp_sse_client_test.py::SseMCPClientTest::test_stateful_client PASSED [ 15%]
+tests/mcp_sse_client_test.py::SseMCPClientTest::test_stateless_client PASSED [ 15%]
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_embedded_content PASSED [ 16%]
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_streamable_http_stateless_client PASSED [ 17%]
+tests/memory_reme_test.py::TestReMeMemory::test_context_manager_usage PASSED [ 17%]
+tests/memory_reme_test.py::TestReMeMemory::test_init_with_default_params PASSED [ 18%]
+tests/memory_reme_test.py::TestReMeMemory::test_integration_record_and_retrieve PASSED [ 18%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_direct_app_not_started PASSED [ 19%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_direct_filters_none_messages PASSED [ 19%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_direct_method_success PASSED [ 20%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_direct_with_empty_list PASSED [ 20%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_direct_with_single_message PASSED [ 21%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_to_memory_app_not_started PASSED [ 21%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_to_memory_error_handling PASSED [ 22%]
+tests/memory_reme_test.py::TestReMeMemory::test_record_to_memory_success PASSED [ 23%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_direct_app_not_started PASSED [ 23%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_direct_invalid_input PASSED [ 24%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_direct_method_success PASSED [ 24%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_direct_with_message_list PASSED [ 25%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_direct_with_none_message PASSED [ 25%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_from_memory_app_not_started PASSED [ 26%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_from_memory_no_results PASSED [ 26%]
+tests/memory_reme_test.py::TestReMeMemory::test_retrieve_from_memory_success PASSED [ 27%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_call_with_regular_messages PASSED [ 28%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_call_with_structured_model_integration PASSED [ 28%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_call_with_system_message PASSED [ 29%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_call_with_thinking_enabled PASSED [ 29%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_call_with_tools_integration PASSED [ 30%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_generate_kwargs_integration PASSED [ 30%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_init_default_params PASSED [ 31%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_init_with_custom_params PASSED [ 31%]
+tests/model_anthropic_test.py::TestAnthropicChatModel::test_streaming_response_processing PASSED [ 32%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_call_with_enable_thinking_streaming PASSED [ 32%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_call_with_regular_model PASSED [ 33%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_call_with_structured_model_integration PASSED [ 34%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_call_with_tools_integration PASSED [ 34%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_error_handling_scenarios PASSED [ 35%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_init_default_params PASSED [ 35%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_init_with_custom_params PASSED [ 36%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_init_with_enable_thinking_forces_stream PASSED [ 36%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_streaming_response_processing PASSED [ 37%]
+tests/model_dashscope_test.py::TestDashScopeChatModel::test_tools_schema_validation_through_api PASSED [ 37%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_call_with_regular_model PASSED [ 38%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_call_with_structured_model_integration PASSED [ 39%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_call_with_thinking_enabled PASSED [ 39%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_call_with_tools_integration PASSED [ 40%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_generate_kwargs_integration PASSED [ 40%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_init_default_params PASSED [ 41%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_init_with_custom_params PASSED [ 41%]
+tests/model_gemini_test.py::TestGeminiChatModel::test_streaming_response_processing PASSED [ 42%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_call_with_regular_model PASSED [ 42%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_call_with_structured_model_integration PASSED [ 43%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_call_with_thinking_enabled PASSED [ 43%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_call_with_tools_integration PASSED [ 44%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_init_default_params PASSED [ 45%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_init_with_custom_params PASSED [ 45%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_options_integration PASSED [ 46%]
+tests/model_ollama_test.py::TestOllamaChatModel::test_streaming_response_processing PASSED [ 46%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_call_with_reasoning_effort PASSED [ 47%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_call_with_regular_model PASSED [ 47%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_call_with_structured_model_integration PASSED [ 48%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_call_with_tools_integration PASSED [ 48%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_init_default_params PASSED [ 49%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_init_with_custom_params PASSED [ 50%]
+tests/model_openai_test.py::TestOpenAIChatModel::test_streaming_response_processing PASSED [ 50%]
+tests/model_trinity_test.py::TestTrinityModel::test_init_with_trinity_client PASSED [ 51%]
+tests/pipeline_test.py::PipelineTest::test_class_fanout_pipeline_concurrent PASSED [ 51%]
+tests/pipeline_test.py::PipelineTest::test_class_fanout_pipeline_sequential PASSED [ 52%]
+tests/pipeline_test.py::PipelineTest::test_class_sequential_pipeline PASSED [ 52%]
+tests/pipeline_test.py::PipelineTest::test_class_sequential_pipeline_with_none_message PASSED [ 53%]
+tests/pipeline_test.py::PipelineTest::test_empty_agent_list PASSED       [ 53%]
+tests/pipeline_test.py::PipelineTest::test_fanout_pipeline_empty_agents PASSED [ 54%]
+tests/pipeline_test.py::PipelineTest::test_fanout_pipeline_with_none_message PASSED [ 54%]
+tests/pipeline_test.py::PipelineTest::test_functional_fanout_pipeline_concurrent PASSED [ 55%]
+tests/pipeline_test.py::PipelineTest::test_functional_fanout_pipeline_sequential PASSED [ 56%]
+tests/pipeline_test.py::PipelineTest::test_functional_sequential_pipeline PASSED [ 56%]
+tests/pipeline_test.py::PipelineTest::test_functional_sequential_pipeline_with_none_message PASSED [ 57%]
+tests/pipeline_test.py::PipelineTest::test_single_agent_pipeline PASSED  [ 57%]
+tests/pipeline_test.py::PipelineTest::test_stream_printing_messages PASSED [ 58%]
+tests/plan_test.py::PlanTest::test_plan_model PASSED                     [ 58%]
+tests/plan_test.py::PlanTest::test_plan_subtasks PASSED                  [ 59%]
+tests/plan_test.py::PlanTest::test_serialization PASSED                  [ 59%]
+tests/rag_knowledge_test.py::RAGKnowledgeTest::test_simple_knowledge PASSED [ 60%]
+tests/rag_reader_test.py::RAGReaderText::test_pdf_reader PASSED          [ 60%]
+tests/rag_reader_test.py::RAGReaderText::test_text_reader PASSED         [ 61%]
+tests/rag_reader_test.py::RAGReaderText::test_word_reader_with_images_and_tables PASSED [ 62%]
+tests/rag_store_test.py::RAGStoreTest::test_milvus_lite_store PASSED     [ 62%]
+tests/rag_store_test.py::RAGStoreTest::test_qdrant_store PASSED          [ 63%]
+tests/react_agent_test.py::ReActAgentTest::test_react_agent PASSED       [ 63%]
+tests/session_test.py::SessionTest::test_session_base PASSED             [ 64%]
+tests/token_anthropic_test.py::AnthropicTokenCounterTest::test_anthropic_token_counter PASSED [ 64%]
+tests/token_openai_test.py::OpenAITokenCounterTest::test_openai_token_counter PASSED [ 65%]
+tests/tool_dashscope_test.py::TestDashScopeTextToImage::test_text_to_image_success_url_mode PASSED [ 65%]
+tests/tool_dashscope_test.py::TestDashScopeTextToImage::test_text_to_image_success_base64_mode PASSED [ 66%]
+tests/tool_dashscope_test.py::TestDashScopeTextToImage::test_text_to_image_empty_results PASSED [ 67%]
+tests/tool_dashscope_test.py::TestDashScopeTextToImage::test_text_to_image_none_results PASSED [ 67%]
+tests/tool_dashscope_test.py::TestDashScopeTextToImage::test_text_to_image_exception PASSED [ 68%]
+tests/tool_dashscope_test.py::TestDashScopeImageToText::test_image_to_text_single_url_success PASSED [ 68%]
+tests/tool_dashscope_test.py::TestDashScopeImageToText::test_image_to_text_multiple_urls_success PASSED [ 69%]
+tests/tool_dashscope_test.py::TestDashScopeImageToText::test_image_to_text_local_file_success PASSED [ 69%]
+tests/tool_dashscope_test.py::TestDashScopeImageToText::test_image_to_text_invalid_local_path PASSED [ 70%]
+tests/tool_dashscope_test.py::TestDashScopeImageToText::test_image_to_text_list_content_response PASSED [ 70%]
+tests/tool_dashscope_test.py::TestDashScopeImageToText::test_image_to_text_none_content PASSED [ 71%]
+tests/tool_dashscope_test.py::TestDashScopeImageToText::test_image_to_text_exception PASSED [ 71%]
+tests/tool_dashscope_test.py::TestDashScopeTextToAudio::test_text_to_audio_success PASSED [ 72%]
+tests/tool_dashscope_test.py::TestDashScopeTextToAudio::test_text_to_audio_no_data PASSED [ 73%]
+tests/tool_dashscope_test.py::TestDashScopeTextToAudio::test_text_to_audio_api_exception PASSED [ 73%]
+tests/tool_openai_test.py::TestOpenAITextToImage::test_text_to_image_success_url_mode PASSED [ 74%]
+tests/tool_openai_test.py::TestOpenAITextToImage::test_text_to_image_success_base64_mode PASSED [ 74%]
+tests/tool_openai_test.py::TestOpenAITextToImage::test_text_to_image_gpt_image_1_force_base64 PASSED [ 75%]
+tests/tool_openai_test.py::TestOpenAITextToImage::test_text_to_image_exception PASSED [ 75%]
+tests/tool_openai_test.py::TestOpenAIEditImage::test_edit_image_success_url_input PASSED [ 76%]
+tests/tool_openai_test.py::TestOpenAIEditImage::test_edit_image_success_local_file PASSED [ 76%]
+tests/tool_openai_test.py::TestOpenAIEditImage::test_edit_image_exception PASSED [ 77%]
+tests/tool_openai_test.py::TestOpenAIEditImage::test_edit_image_file_not_found PASSED [ 78%]
+tests/tool_openai_test.py::TestOpenAICreateImageVariation::test_create_variation_success_url_mode PASSED [ 78%]
+tests/tool_openai_test.py::TestOpenAICreateImageVariation::test_create_variation_success_base64_mode PASSED [ 79%]
+tests/tool_openai_test.py::TestOpenAICreateImageVariation::test_create_variation_exception PASSED [ 79%]
+tests/tool_openai_test.py::TestOpenAIImageToText::test_image_to_text_single_url_success PASSED [ 80%]
+tests/tool_openai_test.py::TestOpenAIImageToText::test_image_to_text_multiple_urls_success PASSED [ 80%]
+tests/tool_openai_test.py::TestOpenAIImageToText::test_image_to_text_exception PASSED [ 81%]
+tests/tool_openai_test.py::TestOpenAITextToAudio::test_text_to_audio_success PASSED [ 81%]
+tests/tool_openai_test.py::TestOpenAITextToAudio::test_text_to_audio_different_format PASSED [ 82%]
+tests/tool_openai_test.py::TestOpenAITextToAudio::test_text_to_audio_exception PASSED [ 82%]
+tests/tool_openai_test.py::TestOpenAIAudioToText::test_audio_to_text_local_file_success PASSED [ 83%]
+tests/tool_openai_test.py::TestOpenAIAudioToText::test_audio_to_text_url_success PASSED [ 84%]
+tests/tool_openai_test.py::TestOpenAIAudioToText::test_audio_to_text_file_not_found PASSED [ 84%]
+tests/tool_openai_test.py::TestOpenAIAudioToText::test_audio_to_text_api_exception PASSED [ 85%]
+tests/tool_test.py::ToolTest::test_execute_python_code PASSED            [ 85%]
+tests/tool_test.py::ToolTest::test_execute_shell_command PASSED          [ 86%]
+tests/tool_test.py::ToolTest::test_insert_text_file PASSED               [ 86%]
+tests/tool_test.py::ToolTest::test_view_text_file PASSED                 [ 87%]
+tests/tool_test.py::ToolTest::test_write_text_file PASSED                [ 87%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_async_func PASSED    [ 88%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_async_postprocess_func PASSED [ 89%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_basic_functionalities FAILED [ 89%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_create_tool_group FAILED [ 90%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_detailed_arguments FAILED [ 90%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_duplicate_tool_registration FAILED [ 91%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_extended_model_reusing_same_base_model PASSED [ 91%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_partial_function PASSED [ 92%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_postprocess_func PASSED [ 92%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_register_async_func_return_async_generator PASSED [ 93%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_register_async_func_return_sync_generator PASSED [ 93%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_register_async_generator_func PASSED [ 94%]
+tests/toolkit_basic_test.py::ToolkitBasicTest::test_register_sync_generator_func PASSED [ 95%]
+tests/toolkit_meta_tool_test.py::ToolkitMetaToolTest::test_meta_tool FAILED [ 95%]
+tests/tracer_test.py::TracingTest::test_trace PASSED                     [ 96%]
+tests/tracer_test.py::TracingTest::test_trace_embedding PASSED           [ 96%]
+tests/tracer_test.py::TracingTest::test_trace_format PASSED              [ 97%]
+tests/tracer_test.py::TracingTest::test_trace_llm PASSED                 [ 97%]
+tests/tracer_test.py::TracingTest::test_trace_reply PASSED               [ 98%]
+tests/tracer_test.py::TracingTest::test_trace_toolkit PASSED             [ 98%]
+tests/tune_test.py::AgentLearnTest::test_workflow_interface_validate PASSED [ 99%]
+tests/user_input_test.py::UserInputTest::test_user_terminal_input PASSED [100%]
+
+=================================== FAILURES ===================================
+_________________ ToolkitBasicTest.test_basic_functionalities __________________
+
+self = <toolkit_basic_test.ToolkitBasicTest testMethod=test_basic_functionalities>
+
+    async def test_basic_functionalities(self) -> None:
+        """Test sync function:
+        1. register tool function
+        2. set/cancel extended model
+        3. get JSON schemas
+        4. call tool function
+        """
+        self.toolkit.register_tool_function(
+            tool_func=sync_func,
+            preset_kwargs={"arg1": 55},
+        )
+        sync_func_schema = deepcopy(self.sync_func_schema)
+        sync_func_schema["function"]["parameters"]["properties"].pop("arg1")
+        sync_func_schema["function"]["parameters"].pop("required")
+>       self.assertListEqual(
+            [sync_func_schema],
+            self.toolkit.get_json_schemas(),
+        )
+E       AssertionError: Lists differ: [{'ty[280 chars]iption': 'A sync function for testing.\nLong description.'}}] != [{'ty[280 chars]iption': 'A sync function for testing.\n\nLong description.'}}]
+E       
+E       First differing element 0:
+E       {'typ[278 chars]ription': 'A sync function for testing.\nLong description.'}}
+E       {'typ[278 chars]ription': 'A sync function for testing.\n\nLong description.'}}
+E       
+E       Diff is 1138 characters long. Set self.maxDiff to None to see it.
+
+tests/toolkit_basic_test.py:348: AssertionError
+___________________ ToolkitBasicTest.test_create_tool_group ____________________
+
+self = <toolkit_basic_test.ToolkitBasicTest testMethod=test_create_tool_group>
+
+    async def test_create_tool_group(self) -> None:
+        """Test tool group functionalities."""
+    
+        with self.assertRaises(ValueError):
+            self.toolkit.register_tool_function(
+                sync_func,
+                group_name="my_group",
+            )
+    
+        self.toolkit.create_tool_group(
+            "my_group",
+            "Browser use related tools.",
+            active=False,
+        )
+    
+        self.toolkit.register_tool_function(
+            sync_func,
+            group_name="my_group",
+        )
+    
+        self.assertListEqual(
+            self.toolkit.get_json_schemas(),
+            [],
+        )
+    
+        # Activate the tool group
+        self.toolkit.update_tool_groups(["my_group"], True)
+>       self.assertListEqual(
+            self.toolkit.get_json_schemas(),
+            [self.sync_func_schema],
+        )
+E       AssertionError: Lists differ: [{'ty[366 chars]iption': 'A sync function for testing.\n\nLong description.'}}] != [{'ty[366 chars]iption': 'A sync function for testing.\nLong description.'}}]
+E       
+E       First differing element 0:
+E       {'typ[364 chars]ription': 'A sync function for testing.\n\nLong description.'}}
+E       {'typ[364 chars]ription': 'A sync function for testing.\nLong description.'}}
+E       
+E       Diff is 1507 characters long. Set self.maxDiff to None to see it.
+
+tests/toolkit_basic_test.py:814: AssertionError
+___________________ ToolkitBasicTest.test_detailed_arguments ___________________
+
+self = <toolkit_basic_test.ToolkitBasicTest testMethod=test_detailed_arguments>
+
+    async def test_detailed_arguments(self) -> None:
+        """Verify the arguments in `register_tool_function`."""
+    
+        def func(
+            *args: Any,  # pylint: disable=unused-argument
+            **kwargs: Any,
+        ) -> ToolResponse:
+            """A test function.
+    
+            Note this function is test.
+            """
+            return ToolResponse(content=[])
+    
+        # Test positional and keyword arguments
+        self.toolkit.register_tool_function(
+            func,
+            include_var_positional=False,
+            include_var_keyword=False,
+        )
+    
+>       self.assertListEqual(
+            [
+                {
+                    "type": "function",
+                    "function": {
+                        "name": "func",
+                        "parameters": {
+                            "properties": {},
+                            "type": "object",
+                        },
+                        "description": "A test function.\n"
+                        "Note this function is test.",
+                    },
+                },
+            ],
+            self.toolkit.get_json_schemas(),
+        )
+E       AssertionError: Lists differ: [{'ty[102 chars]cription': 'A test function.\nNote this function is test.'}}] != [{'ty[102 chars]cription': 'A test function.\n\nNote this function is test.'}}]
+E       
+E       First differing element 0:
+E       {'typ[100 chars]scription': 'A test function.\nNote this function is test.'}}
+E       {'typ[100 chars]scription': 'A test function.\n\nNote this function is test.'}}
+E       
+E       - [{'function': {'description': 'A test function.\nNote this function is test.',
+E       + [{'function': {'description': 'A test function.\n\nNote this function is test.',
+E       ?                                                  ++
+E       
+E                        'name': 'func',
+E                        'parameters': {'properties': {}, 'type': 'object'}},
+E           'type': 'function'}]
+
+tests/toolkit_basic_test.py:542: AssertionError
+______________ ToolkitBasicTest.test_duplicate_tool_registration _______________
+
+self = <toolkit_basic_test.ToolkitBasicTest testMethod=test_duplicate_tool_registration>
+
+    async def test_duplicate_tool_registration(self) -> None:
+        """Test duplicate tool function registration."""
+        tool_call = ToolUseBlock(
+            type="tool_use",
+            id="123",
+            name="sync_func",
+            input={
+                "arg1": 55,
+            },
+        )
+    
+        # Add a function
+        self.toolkit.register_tool_function(
+            sync_func,
+        )
+>       self.assertListEqual(
+            [self.sync_func_schema],
+            self.toolkit.get_json_schemas(),
+        )
+E       AssertionError: Lists differ: [{'ty[366 chars]iption': 'A sync function for testing.\nLong description.'}}] != [{'ty[366 chars]iption': 'A sync function for testing.\n\nLong description.'}}]
+E       
+E       First differing element 0:
+E       {'typ[364 chars]ription': 'A sync function for testing.\nLong description.'}}
+E       {'typ[364 chars]ription': 'A sync function for testing.\n\nLong description.'}}
+E       
+E       Diff is 1507 characters long. Set self.maxDiff to None to see it.
+
+tests/toolkit_basic_test.py:206: AssertionError
+______________________ ToolkitMetaToolTest.test_meta_tool ______________________
+
+self = <toolkit_meta_tool_test.ToolkitMetaToolTest testMethod=test_meta_tool>
+
+    async def test_meta_tool(self) -> None:
+        """Test the meta tool."""
+        self.toolkit.register_tool_function(
+            self.toolkit.reset_equipped_tools,
+        )
+    
+        # Test if the meta tool is registered correctly
+>       self.assertListEqual(
+            self.toolkit.get_json_schemas(),
+            [self.meta_tool_schema],
+        )
+E       AssertionError: Lists differ: [{'ty[125 chars]n': 'Choose appropriate tools to equip yoursel[489 chars].'}}] != [{'ty[125 chars]n': 'This function allows you to activate or d[676 chars].'}}]
+E       
+E       First differing element 0:
+E       {'typ[124 chars]n': 'Choose appropriate tools to equip yoursel[488 chars]t.'}}
+E       {'typ[124 chars]n': 'This function allows you to activate or d[675 chars]s.'}}
+E       
+E       Diff is 3467 characters long. Set self.maxDiff to None to see it.
+
+tests/toolkit_meta_tool_test.py:97: AssertionError
+=============================== warnings summary ===============================
+tests/rag_knowledge_test.py:19
+  /testbed/tests/rag_knowledge_test.py:19: PytestCollectionWarning: cannot collect test class 'TestTextEmbedding' because it has a __init__ constructor (from: tests/rag_knowledge_test.py)
+    class TestTextEmbedding(EmbeddingModelBase):
+
+tests/evaluation_test.py::EvaluatorTest::test_general_evaluator
+  /usr/local/lib/python3.12/site-packages/ray/_private/worker.py:2062: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+    warnings.warn(
+
+tests/mcp_sse_client_test.py::SseMCPClientTest::test_stateful_client
+tests/mcp_sse_client_test.py::SseMCPClientTest::test_stateless_client
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_embedded_content
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_streamable_http_stateless_client
+  /usr/local/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=33) is multi-threaded, use of fork() may lead to deadlocks in the child.
+    self.pid = os.fork()
+
+tests/rag_store_test.py::RAGStoreTest::test_milvus_lite_store
+  /usr/local/lib/python3.12/site-packages/milvus_lite/__init__.py:15: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+    from pkg_resources import DistributionNotFound, get_distribution
+
+tests/rag_store_test.py::RAGStoreTest::test_milvus_lite_store
+  /usr/local/lib/python3.12/site-packages/pkg_resources/__init__.py:3146: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sphinxcontrib')`.
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(pkg)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/toolkit_basic_test.py::ToolkitBasicTest::test_basic_functionalities
+FAILED tests/toolkit_basic_test.py::ToolkitBasicTest::test_create_tool_group
+FAILED tests/toolkit_basic_test.py::ToolkitBasicTest::test_detailed_arguments
+FAILED tests/toolkit_basic_test.py::ToolkitBasicTest::test_duplicate_tool_registration
+FAILED tests/toolkit_meta_tool_test.py::ToolkitMetaToolTest::test_meta_tool
+============ 5 failed, 177 passed, 8 warnings in 108.66s (0:01:48) =============

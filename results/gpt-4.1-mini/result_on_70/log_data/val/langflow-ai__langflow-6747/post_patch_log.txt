@@ -1,0 +1,24 @@
+eval No.0 
+
+========  
+
+cat test-output.log
+bash: uv: command not found
+ 
+
+eval No.1 
+
+========  
+
+cat test-output.log
+bash: uv: command not found
+ 
+
+eval No.2 
+
+========  
+
+cat test-output.log
+bash: uv: command not found
+ 
+

@@ -1,0 +1,479 @@
+cat cargo-test-output.log
+warning: struct `MockMigration` is never constructed
+   --> tensorzero-internal/src/clickhouse_migration_manager/mod.rs:142:12
+    |
+142 |     struct MockMigration {
+    |            ^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: struct `OpenAIBatchRequestCounts` is never constructed
+    --> tensorzero-internal/src/inference/providers/openai.rs:1964:8
+     |
+1964 | struct OpenAIBatchRequestCounts {
+     |        ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: struct `OpenAIRequestToolCall` is never constructed
+   --> tensorzero-internal/src/inference/providers/tgi.rs:411:8
+    |
+411 | struct OpenAIRequestToolCall<'a> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+
+warning: struct `OpenAIRequestFunctionCall` is never constructed
+   --> tensorzero-internal/src/inference/providers/tgi.rs:418:8
+    |
+418 | struct OpenAIRequestFunctionCall<'a> {
+    |        ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> tensorzero-internal/src/variant/best_of_n_sampling.rs:594:9
+    |
+594 |         &self,
+    |         ^^^^^ the lifetime is elided here
+...
+599 |     ) -> Result<(ModelInferenceRequest, Vec<usize>), Error> {
+    |                  --------------------- the same lifetime is hidden here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+    = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+    |
+599 |     ) -> Result<(ModelInferenceRequest<'_>, Vec<usize>), Error> {
+    |                                       ++++
+
+warning: `tensorzero-internal` (lib) generated 5 warnings
+   Compiling minijinja-bindings v0.1.0 (/testbed/ui/app/utils/minijinja)
+warning: struct `OpenAIBatchRequestCounts` is never constructed
+    --> tensorzero-internal/src/inference/providers/openai.rs:1964:8
+     |
+1964 | struct OpenAIBatchRequestCounts {
+     |        ^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: `#[warn(dead_code)]` on by default
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> tensorzero-internal/src/inference/providers/deepseek.rs:1118:32
+     |
+1118 |     fn system_message(content: &str) -> OpenAIRequestMessage {
+     |                                ^^^^     -------------------- the same lifetime is hidden here
+     |                                |
+     |                                the lifetime is elided here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+     = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+     |
+1118 |     fn system_message(content: &str) -> OpenAIRequestMessage<'_> {
+     |                                                             ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> tensorzero-internal/src/inference/providers/deepseek.rs:1123:30
+     |
+1123 |     fn user_message(content: &str) -> OpenAIRequestMessage {
+     |                              ^^^^     -------------------- the same lifetime is hidden here
+     |                              |
+     |                              the lifetime is elided here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+     |
+1123 |     fn user_message(content: &str) -> OpenAIRequestMessage<'_> {
+     |                                                           ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> tensorzero-internal/src/variant/best_of_n_sampling.rs:594:9
+    |
+594 |         &self,
+    |         ^^^^^ the lifetime is elided here
+...
+599 |     ) -> Result<(ModelInferenceRequest, Vec<usize>), Error> {
+    |                  --------------------- the same lifetime is hidden here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+599 |     ) -> Result<(ModelInferenceRequest<'_>, Vec<usize>), Error> {
+    |                                       ++++
+
+warning: `tensorzero-internal` (lib test) generated 6 warnings (2 duplicates)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.99s
+     Running unittests src/main.rs (target/debug/deps/gateway-1ac0326c2907d6dd)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/minijinja_bindings-daaf2ffce3ff73fa)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/mock_inference_provider-0803deee88c8b6ab)
+
+running 6 tests
+test tests::test_openai_completions_handler_json ... ok
+test tests::test_openai_completions_handler ... ok
+test tests::test_openai_completions_handler_function ... ok
+test tests::test_openai_completions_handler_stream_function ... ok
+test tests::test_openai_completions_handler_stream ... ok
+test tests::test_openai_completions_handler_stream_json ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running unittests src/lib.rs (target/debug/deps/provider_proxy-8ddbc74e7925a2bd)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/provider_proxy-460d231d09dda117)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/e2e/tests.rs (target/debug/deps/e2e-53b77a448d16939c)
+
+running 1 test
+2026-06-07T06:36:52.868090Z  INFO provider_proxy: HTTP Proxy is listening on http://127.0.0.1:45559 args=Args { cache_path: "/tmp/.tmpyJ73wz", port: 0, sanitize_bearer_auth: true, write: true }
+2026-06-07T06:36:52.892859Z  INFO provider_proxy: Cache miss: /tmp/.tmpyJ73wz/127.0.0.1-59574208f9179ddce91e2f25d9bd426590acfe7f6cee7d957fc59e3c9ebe739d
+2026-06-07T06:36:52.893913Z  INFO provider_proxy: Finished processing request path="/tmp/.tmpyJ73wz/127.0.0.1-59574208f9179ddce91e2f25d9bd426590acfe7f6cee7d957fc59e3c9ebe739d"
+2026-06-07T06:36:52.894281Z  INFO provider_proxy: Wrote response to cache path="/tmp/.tmpyJ73wz/127.0.0.1-59574208f9179ddce91e2f25d9bd426590acfe7f6cee7d957fc59e3c9ebe739d"
+2026-06-07T06:36:52.894490Z  INFO provider_proxy: Cache hit: /tmp/.tmpyJ73wz/127.0.0.1-59574208f9179ddce91e2f25d9bd426590acfe7f6cee7d957fc59e3c9ebe739d sanitized_header=false
+2026-06-07T06:36:52.895033Z  INFO e2e: first_local_response_body: Hello at Instant { tv_sec: 302981, tv_nsec: 251654214 } 2826821013
+2026-06-07T06:36:52.895050Z  INFO e2e: second_local_response_body: Hello at Instant { tv_sec: 302981, tv_nsec: 251654214 } 2826821013
+2026-06-07T06:36:52.895329Z  INFO provider_proxy: Cache miss: /tmp/.tmpyJ73wz/127.0.0.1-c6af164ae6c3a8c743ade7642fb3b67e3a1d7c734cb55c31f55b1c9097f5a196
+2026-06-07T06:36:52.895683Z  WARN provider_proxy: Skipping caching of non-success response: Response { status: 400, version: HTTP/1.1, headers: {"content-length": "70", "date": "Sun, 07 Jun 2026 06:36:52 GMT"}, body: BoxBody }
+2026-06-07T06:36:53.397830Z  INFO provider_proxy: Cache miss: /tmp/.tmpyJ73wz/127.0.0.1-c6af164ae6c3a8c743ade7642fb3b67e3a1d7c734cb55c31f55b1c9097f5a196
+2026-06-07T06:36:53.398887Z  WARN provider_proxy: Skipping caching of non-success response: Response { status: 400, version: HTTP/1.1, headers: {"content-length": "71", "date": "Sun, 07 Jun 2026 06:36:52 GMT"}, body: BoxBody }
+2026-06-07T06:36:53.400668Z  INFO provider_proxy: Cache miss: /tmp/.tmpyJ73wz/127.0.0.1-c6af164ae6c3a8c743ade7642fb3b67e3a1d7c734cb55c31f55b1c9097f5a196
+2026-06-07T06:36:53.401342Z ERROR provider_proxy: Failed to forward request e=error sending request for url (http://127.0.0.1:35121/timestamp-bad) e.sources=[client error (Connect), tcp connect error: Connection refused (os error 111), Connection refused (os error 111)]
+2026-06-07T06:36:53.401468Z  WARN provider_proxy: Skipping caching of non-success response: Response { status: 502, version: HTTP/1.1, headers: {}, body: BoxBody }
+test test_provider_proxy ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.58s
+
+     Running unittests src/lib.rs (target/debug/deps/tensorzero-84e8b76855484967)
+
+running 3 tests
+test tests::test_missing_clickhouse ... ignored
+test tests::test_log_no_clickhouse ... ok
+test tests::test_log_no_config ... ok
+
+test result: ok. 2 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running unittests src/lib.rs (target/debug/deps/tensorzero_internal-1c12cab141f4f54e)
+
+running 279 tests
+test cache::tests::test_get_cache_key ... ok
+test clickhouse::tests::test_set_clickhouse_format_settings ... ok
+test clickhouse::tests::test_validate_clickhouse_url ... ok
+test clickhouse_migration_manager::tests::test_run_migration_can_apply_fails ... ok
+test clickhouse_migration_manager::tests::test_run_migration_apply_fails ... ok
+test clickhouse_migration_manager::tests::test_run_migration_happy_path ... ok
+test clickhouse_migration_manager::tests::test_run_migration_should_apply_false ... ok
+test clickhouse_migration_manager::tests::test_run_migration_has_succeeded_false ... ok
+test config_parser::tests::test_bedrock_err_no_auto_detect_region ... ok
+test config_parser::tests::test_config_assistant_schema_does_not_exist ... ok
+test config_parser::tests::test_bedrock_region_and_allow_auto ... ok
+test config_parser::tests::test_config_assistant_schema_is_needed ... ok
+test config_parser::tests::test_config_best_of_n_candidate_not_found ... ok
+test config_parser::tests::test_config_from_toml_table_blacklisted_models ... ok
+test config_parser::tests::test_config_from_toml_table_extra_variables_functions ... ok
+test config_parser::tests::test_config_from_toml_table_extra_variables_models ... ok
+test config_parser::tests::test_config_from_toml_table_extra_variables_providers ... ok
+test config_parser::tests::test_config_from_toml_table_extra_variables_metrics ... ok
+test config_parser::tests::test_config_from_toml_table_extra_variables_variants ... ok
+test config_parser::tests::test_config_from_toml_table_extra_variables_root ... ok
+test config_parser::tests::test_config_from_toml_table_missing_credentials ... ok
+test config_parser::tests::test_config_from_toml_table_missing_functions ... ok
+test config_parser::tests::test_config_from_toml_table_missing_providers ... ok
+test config_parser::tests::test_config_from_toml_table_json_function_no_output_schema ... ok
+test config_parser::tests::test_config_from_toml_table_missing_variants ... ok
+test config_parser::tests::test_config_from_toml_table_missing_models ... ok
+test config_parser::tests::test_bedrock_err_auto_detect_region_no_aws_credentials ... ok
+test config_parser::tests::test_config_from_toml_table_valid ... ok
+test config_parser::tests::test_config_load_shorthand_models_only ... ok
+test config_parser::tests::test_config_load_no_config_file ... ok
+test config_parser::tests::test_config_system_schema_does_not_exist ... ok
+test config_parser::tests::test_config_gateway_bind_address ... ok
+test config_parser::tests::test_config_system_schema_is_needed ... ok
+test config_parser::tests::test_config_user_schema_does_not_exist ... ok
+test config_parser::tests::test_config_validate_chat_function_json_mode ... ok
+test config_parser::tests::test_config_validate_embedding_model_name_tensorzero_prefix ... ok
+test config_parser::tests::test_config_user_schema_is_needed ... ok
+test config_parser::tests::test_config_validate_eval_function_nonexistent ... ok
+test config_parser::tests::test_config_validate_eval_name_contains_double_colon ... ok
+test config_parser::tests::test_config_validate_function_name_tensorzero_prefix ... ok
+test config_parser::tests::test_config_validate_function_variant_negative_weight ... ok
+test config_parser::tests::test_config_validate_function_nonexistent_tool ... ok
+test config_parser::tests::test_config_validate_metric_name_tensorzero_prefix ... ok
+test config_parser::tests::test_config_validate_model_duplicate_routing_entry ... ok
+test config_parser::tests::test_config_validate_model_name_tensorzero_prefix ... ok
+test config_parser::tests::test_config_validate_model_empty_providers ... ok
+test config_parser::tests::test_config_validate_model_routing_entry_not_in_providers ... ok
+test config_parser::tests::test_config_validate_tool_name_tensorzero_prefix ... ok
+test config_parser::tests::test_config_validate_model_provider_name_tensorzero_prefix ... ok
+test config_parser::tests::test_config_validate_variant_model_not_in_models ... ok
+test config_parser::tests::test_config_validate_variant_name_tensorzero_prefix ... ok
+test config_parser::tests::test_deprecated_missing_json_mode ... ok
+test config_parser::tests::test_model_provider_unknown_field ... ok
+test config_parser::tests::test_config_validate_variant_template_nonexistent ... ok
+test endpoints::fallback::tests::test_handle_404_get ... ok
+test endpoints::fallback::tests::test_handle_404_post ... ok
+test config_parser::tests::test_get_all_templates ... ok
+test config_parser::tests::test_config_load_invalid_s3_creds ... ok
+test embeddings::tests::test_embedding_fallbacks ... ok
+test endpoints::feedback::tests::test_feedback_handler_boolean_inference_level ... ok
+test endpoints::feedback::tests::test_feedback_missing_metric ... ok
+test endpoints::feedback::tests::test_get_feedback_metadata ... ok
+test endpoints::feedback::tests::test_validate_parse_demonstration ... ok
+test endpoints::inference::tests::test_find_function_both_function_model ... ok
+test endpoints::inference::tests::test_find_function_model_and_variant ... ok
+test endpoints::inference::tests::test_find_function_no_function_model ... ok
+test endpoints::inference::tests::test_find_function_shorthand_missing_provider ... ok
+test endpoints::inference::tests::test_find_function_shorthand_model ... ok
+test endpoints::inference::tests::test_prepare_event ... ok
+test endpoints::openai_compatible::tests::test_convert_openai_message_content ... ok
+test endpoints::openai_compatible::tests::test_deprecated_custom_block ... ok
+test endpoints::openai_compatible::tests::test_parse_base64 ... ok
+test endpoints::openai_compatible::tests::test_process_chat_content ... ok
+test endpoints::openai_compatible::tests::test_process_chat_content_chunk ... ok
+test endpoints::openai_compatible::tests::test_try_from_openai_compatible_messages ... ok
+test endpoints::openai_compatible::tests::test_try_from_openai_compatible_params ... ok
+test endpoints::feedback::tests::test_feedback_handler_comment ... ok
+test endpoints::status::tests::test_status_handler ... ok
+test endpoints::tests::test_validate_tags ... ok
+test evals::tests::test_read_system_instructions ... ok
+test endpoints::feedback::tests::test_feedback_handler_float_episode_level ... ok
+test function::tests::test_get_uniform_value ... ok
+test endpoints::feedback::tests::test_feedback_handler_demonstration ... ok
+test evals::tests::test_uninitialized_eval_config_load ... ok
+test function::tests::test_validate_input_chat_all_schemas ... ok
+test function::tests::test_validate_input_chat_assistant_schema ... ok
+test function::tests::test_validate_input_chat_multiple_text_blocks ... ok
+test function::tests::test_validate_input_chat_no_schema ... ok
+test function::tests::test_prepare_response_json ... ok
+test function::tests::test_validate_input_chat_system_schema ... ok
+test function::tests::test_validate_input_chat_user_schema ... ok
+test function::tests::test_validate_input_json_assistant_schema ... ok
+test function::tests::test_validate_input_json_all_schemas ... ok
+test function::tests::test_validate_input_json_no_schema ... ok
+test function::tests::test_validate_input_json_system_schema ... ok
+test function::tests::test_validate_input_json_user_schema ... ok
+test function::tests::test_validate_input_raw_bypass_schemas ... ok
+test gateway_util::tests::test_setup_clickhouse ... ok
+test inference::providers::anthropic::tests::test_anthropic_base_url ... ok
+test inference::providers::anthropic::tests::test_anthropic_response_conversion ... ok
+test inference::providers::anthropic::tests::test_anthropic_to_tensorzero_stream_message ... ok
+test inference::providers::anthropic::tests::test_anthropic_usage_to_usage ... ok
+test inference::providers::anthropic::tests::test_credential_to_anthropic_credentials ... ok
+test inference::providers::anthropic::tests::test_from_tool ... ok
+test inference::providers::anthropic::tests::test_handle_anthropic_error ... ok
+test inference::providers::anthropic::tests::test_initialize_anthropic_request_body ... ok
+test inference::providers::anthropic::tests::test_parse_usage_info ... ok
+test inference::providers::anthropic::tests::test_prefill_json_chunk_response ... ok
+test inference::providers::anthropic::tests::test_prefill_json_message ... ok
+test inference::providers::anthropic::tests::test_prefill_json_response ... ok
+test inference::providers::anthropic::tests::test_prepare_messages ... ok
+test inference::providers::anthropic::tests::test_try_from_content_block ... ok
+test inference::providers::anthropic::tests::test_try_from_request_message ... ok
+test inference::providers::anthropic::tests::test_try_from_tool_call_config ... ok
+test endpoints::status::tests::test_health_handler ... ok
+test inference::providers::azure::tests::test_azure_request_new ... ok
+test inference::providers::azure::tests::test_azure_response_with_metadata_try_into ... ok
+test inference::providers::azure::tests::test_azure_tool_choice_from ... ok
+test inference::providers::azure::tests::test_credential_to_azure_credentials ... ok
+test inference::providers::deepseek::tests::test_coalesce_consecutive_messages ... ok
+test inference::providers::deepseek::tests::test_credential_to_deepseek_credentials ... ok
+test inference::providers::deepseek::tests::test_deepseek_api_base ... ok
+test inference::providers::deepseek::tests::test_deepseek_request_new ... ok
+test inference::providers::deepseek::tests::test_deepseek_response_with_metadata_try_into ... ok
+test inference::providers::deepseek::tests::test_prepare_deepseek_messages ... ok
+test inference::providers::fireworks::tests::test_credential_to_fireworks_credentials ... ok
+test inference::providers::fireworks::tests::test_fireworks_api_base ... ok
+test inference::providers::fireworks::tests::test_fireworks_request_new ... ok
+test inference::providers::fireworks::tests::test_fireworks_response_with_metadata_try_into ... ok
+test inference::providers::gcp_vertex_anthropic::tests::test_anthropic_response_conversion ... ok
+test inference::providers::gcp_vertex_anthropic::tests::test_anthropic_to_tensorzero_stream_message ... ok
+test inference::providers::gcp_vertex_anthropic::tests::test_anthropic_usage_to_usage ... ok
+test inference::providers::gcp_vertex_anthropic::tests::test_consolidate_messages ... ok
+test inference::providers::gcp_vertex_anthropic::tests::test_from_tool ... ok
+test inference::providers::gcp_vertex_anthropic::tests::test_handle_anthropic_error ... ok
+test inference::providers::gcp_vertex_anthropic::tests::test_initialize_anthropic_request_body ... ok
+test inference::providers::gcp_vertex_anthropic::tests::test_parse_usage_info ... ok
+test inference::providers::gcp_vertex_anthropic::tests::test_prefill_json_message ... ok
+test inference::providers::gcp_vertex_anthropic::tests::test_try_from_content_block ... ok
+test inference::providers::gcp_vertex_anthropic::tests::test_try_from_request_message ... ok
+test inference::providers::gcp_vertex_anthropic::tests::test_try_from_tool_choice ... ok
+test inference::providers::gcp_vertex_gemini::tests::test_credential_to_gcp_vertex_credentials ... ok
+test inference::providers::gcp_vertex_gemini::tests::test_from_tool_choice ... ok
+test inference::providers::gcp_vertex_gemini::tests::test_from_vec_tool ... ok
+test inference::providers::gcp_vertex_gemini::tests::test_gcp_to_t0_response ... ok
+test inference::providers::gcp_vertex_gemini::tests::test_gcp_vertex_content_try_from ... ok
+test inference::providers::gcp_vertex_gemini::tests::test_gcp_vertex_request_try_from ... ok
+test inference::providers::gcp_vertex_gemini::tests::test_prepare_tools ... ok
+test inference::providers::gcp_vertex_gemini::tests::test_process_output_schema ... ok
+test inference::providers::google_ai_studio_gemini::tests::test_credential_to_google_ai_studio_credentials ... ok
+test inference::providers::google_ai_studio_gemini::tests::test_from_tool_choice ... ok
+test inference::providers::google_ai_studio_gemini::tests::test_from_vec_tool ... ok
+test inference::providers::google_ai_studio_gemini::tests::test_google_ai_studio_gemini_content_try_from ... ok
+test inference::providers::google_ai_studio_gemini::tests::test_google_ai_studio_gemini_request_try_from ... ok
+test inference::providers::google_ai_studio_gemini::tests::test_google_ai_studio_gemini_to_t0_response ... ok
+test inference::providers::google_ai_studio_gemini::tests::test_prepare_tools ... ok
+test inference::providers::google_ai_studio_gemini::tests::test_process_output_schema ... ok
+test inference::providers::helpers::tests::test_inject_both ... ok
+test inference::providers::helpers::tests::test_inject_nothing ... ok
+test inference::providers::helpers::tests::test_inject_overwrite_object ... ok
+test inference::providers::helpers::tests::test_inject_to_non_map ... ok
+test inference::providers::helpers::tests::test_json_pointer_errors ... ok
+test inference::providers::helpers::tests::test_json_pointer_write_simple ... ok
+test inference::providers::helpers::tests::test_peek_empty ... ok
+test inference::providers::helpers::tests::test_peek_err ... ok
+test inference::providers::helpers::tests::test_peek_good ... ok
+test inference::providers::hyperbolic::tests::test_credential_to_hyperbolic_credentials ... ok
+test inference::providers::hyperbolic::tests::test_hyperbolic_api_base ... ok
+test inference::providers::hyperbolic::tests::test_hyperbolic_request_new ... ok
+test inference::providers::hyperbolic::tests::test_hyperbolic_response_with_metadata_try_into ... ok
+test inference::providers::mistral::tests::test_credential_to_mistral_credentials ... ok
+test inference::providers::mistral::tests::test_handle_mistral_error ... ok
+test inference::providers::mistral::tests::test_mistral_api_base ... ok
+test inference::providers::mistral::tests::test_mistral_request_new ... ok
+test inference::providers::mistral::tests::test_try_from_mistral_response ... ok
+test inference::providers::openai::tests::test_create_file_url ... ok
+test inference::providers::openai::tests::test_get_chat_url ... ok
+test inference::providers::openai::tests::test_handle_openai_error ... ok
+test inference::providers::openai::tests::test_new_openai_response_format ... ok
+test inference::providers::openai::tests::test_openai_api_base ... ok
+test inference::providers::openai::tests::test_openai_new_request_o1 ... ok
+test inference::providers::openai::tests::test_openai_request_new ... ok
+test inference::providers::openai::tests::test_openai_to_tensorzero_chunk ... ok
+test inference::providers::openai::tests::test_prepare_openai_tools ... ok
+test inference::providers::openai::tests::test_serialize_user_messages ... ok
+test inference::providers::openai::tests::test_tensorzero_to_openai_messages ... ok
+test inference::providers::openai::tests::test_tensorzero_to_openai_system_message ... ok
+test inference::providers::openai::tests::test_try_from_openai_credentials ... ok
+test inference::providers::openai::tests::test_try_from_openai_response ... ok
+test inference::providers::sglang::tests::test_sglang_request_new ... ok
+test inference::providers::sglang::tests::test_sglang_response_with_metadata_try_into ... ok
+test inference::providers::tgi::tests::test_tgi_request_new ... ok
+test inference::providers::tgi::tests::test_tgi_response_with_metadata_try_into ... ok
+test inference::providers::tgi::tests::test_tgi_to_tensorzero_chunk ... ok
+test inference::providers::together::tests::test_credential_to_together_credentials ... ok
+test inference::providers::together::tests::test_extra_closing_tag ... ok
+test inference::providers::together::tests::test_mismatched_tags ... ok
+test inference::providers::together::tests::test_multiple_thinking_blocks ... ok
+test inference::providers::together::tests::test_single_thinking ... ok
+test inference::providers::together::tests::test_thinking_state ... ok
+test inference::providers::together::tests::test_together_api_base ... ok
+test inference::providers::together::tests::test_together_request_new ... ok
+test inference::providers::together::tests::test_together_response_with_metadata_try_into ... ok
+test inference::providers::together::tests::test_together_to_tensorzero_chunk ... ok
+test inference::providers::together::tests::test_together_to_tensorzero_chunk_without_think_parsing ... ok
+test inference::providers::vllm::tests::test_credential_to_vllm_credentials ... ok
+test inference::providers::vllm::tests::test_vllm_request_new ... ok
+test inference::providers::vllm::tests::test_vllm_response_with_metadata_try_into ... ok
+test inference::providers::xai::tests::test_credential_to_xai_credentials ... ok
+test inference::providers::xai::tests::test_xai_api_base ... ok
+test inference::providers::xai::tests::test_xai_request_new ... ok
+test inference::providers::xai::tests::test_xai_response_with_metadata_try_into ... ok
+test inference::types::batch::tests::test_batch_inference_params_with_size ... ok
+test inference::types::batch::tests::test_batch_output_schemas_with_size ... ok
+test inference::types::batch::tests::test_try_from_batch_episode_ids_with_size ... ok
+test inference::types::image::tests::test_sanitize_input ... ok
+test inference::types::tests::test_collect_chunks ... ok
+test inference::types::tests::test_create_chat_inference_response ... ok
+test inference::types::tests::test_deserialize_input_message ... ok
+test inference::types::tests::test_handle_textual_content_block ... ok
+test inference::types::tests::test_json_inference_result_chunk_from_provider_chunk ... ok
+test jsonschema_util::tests::test_dynamic_schema ... ok
+test jsonschema_util::tests::test_invalid_schema ... ok
+test jsonschema_util::tests::test_nonexistent_file ... ok
+test jsonschema_util::tests::test_valid_schema ... ok
+test minijinja_util::tests::test_hardcoded_best_of_n_evaluator_candidates ... ok
+test minijinja_util::tests::test_hardcoded_best_of_n_evaluator_system ... ok
+test minijinja_util::tests::test_hardcoded_mixture_of_n_fuser_candidates ... ok
+test minijinja_util::tests::test_hardcoded_mixture_of_n_fuser_system ... ok
+test minijinja_util::tests::test_join_filter ... ok
+test inference::providers::aws_bedrock::tests::test_get_aws_bedrock_client_no_aws_credentials ... ok
+test minijinja_util::tests::test_template_good ... ok
+test minijinja_util::tests::test_template_malformed_template ... ok
+test model::tests::test_cache_default_creds ... ok
+test model::tests::test_dont_cache_non_default_creds ... ok
+test minijinja_util::tests::test_to_json_filter ... ok
+test model::tests::test_model_config_infer_routing ... ok
+test model::tests::test_dynamic_api_keys ... ok
+test model::tests::test_model_config_infer_routing_fallback ... ok
+test model::tests::test_model_config_infer_stream_routing_fallback ... ok
+test model::tests::test_racy_get_or_try_init ... ok
+test model::tests::test_shorthand_prefixes_subset_of_reserved ... ok
+test model::tests::test_validate_or_create_model_config ... ok
+test tool::tests::test_tool_call_config_new ... ok
+test tool::tests::test_tool_call_output_new ... ok
+test uuid_util::tests::test_uuid_elapsed ... ok
+test uuid_util::tests::test_validate_episode_id ... ok
+test variant::best_of_n_sampling::tests::test_map_evaluator_to_actual_index ... ok
+test variant::best_of_n_sampling::tests::test_prepare_candidate_message ... ok
+test variant::best_of_n_sampling::tests::test_prepare_candidate_message_json ... ok
+test variant::best_of_n_sampling::tests::test_prepare_system_message ... ok
+test model::tests::test_model_config_infer_stream_routing ... ok
+test variant::best_of_n_sampling::tests::test_static_schema ... ok
+test variant::best_of_n_sampling::tests::test_select_best_candidate ... ok
+test variant::chat_completion::tests::test_infer_chat_completion ... ok
+test variant::chat_completion::tests::test_prepare_request_message ... ok
+test variant::chat_completion::tests::test_prepare_request_params ... ok
+test variant::chat_completion::tests::test_prepare_system_message ... ok
+test variant::chat_completion::tests::test_validate_template_and_schema_both_none ... ok
+test variant::chat_completion::tests::test_validate_template_and_schema_both_some ... ok
+test variant::chat_completion::tests::test_validate_template_and_schema_schema_some_template_none ... ok
+test variant::chat_completion::tests::test_validate_template_and_schema_template_needs_variables ... ok
+test variant::chat_completion::tests::test_validate_template_and_schema_template_no_needs_variables ... ok
+test variant::dicl::tests::test_parse_raw_examples ... ok
+test variant::dicl::tests::test_prepare_input_message ... ok
+test variant::dicl::tests::test_prepare_message ... ok
+test variant::dicl::tests::test_reject_image_example ... ok
+test function::tests::test_sample_variant ... ok
+test variant::mixture_of_n::tests::test_prepare_candidate_message ... ok
+test variant::mixture_of_n::tests::test_prepare_candidate_message_json ... ok
+test variant::mixture_of_n::tests::test_prepare_system_message ... ok
+test variant::mixture_of_n::tests::test_fuse_candidates ... ok
+test variant::tests::test_infer_model_request ... ok
+test variant::tests::test_infer_model_request_errors ... ok
+test variant::chat_completion::tests::test_infer_chat_completion_stream ... ok
+test variant::tests::test_prepare_model_inference_request ... ok
+test variant::tests::test_infer_model_request_errors_stream ... ok
+test variant::tests::test_infer_model_request_stream ... ok
+test gateway_util::tests::test_unhealthy_clickhouse ... ok
+
+test result: ok. 279 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.85s
+
+     Running unittests src/lib.rs (target/debug/deps/tensorzero-c3de7dcb26497fce)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests minijinja_bindings
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests provider_proxy
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests tensorzero
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests tensorzero_internal
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s

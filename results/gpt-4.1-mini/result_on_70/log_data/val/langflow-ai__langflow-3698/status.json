@@ -1,0 +1,15 @@
+{
+ "instance_id": "langflow-ai__langflow-3698",
+ "pre_patch_status": {
+  "src/backend/tests/integration/components/astra/test_astra_component.py": "fail",
+  "src/backend/tests/integration/components/helpers/test_parse_json_data.py": "fail",
+  "../tests/integration/components/astra/test_astra_component.py": "fail"
+ },
+ "post_patch_status": {
+  "../tests/integration/components/astra/test_astra_component.py": "fail",
+  "src/backend/tests/integration/components/astra/test_astra_component.py": "fail",
+  "src/backend/tests/integration/components/helpers/test_parse_json_data.py": "fail"
+ },
+ "PASS_TO_PASS": [],
+ "FAIL_TO_PASS": []
+}
