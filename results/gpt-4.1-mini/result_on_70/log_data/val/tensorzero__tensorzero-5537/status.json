@@ -1,0 +1,50 @@
+{
+ "instance_id": "tensorzero__tensorzero-5537",
+ "pre_patch_status": {
+  "types::export_bindings_autopilotstatus": "pass",
+  "types::export_bindings_createeventresponse": "pass",
+  "types::export_bindings_listeventsparams": "pass",
+  "types::export_bindings_listsessionsparams": "pass",
+  "types::export_bindings_listsessionsresponse": "pass",
+  "types::export_bindings_session": "pass",
+  "types::export_bindings_statusupdate": "pass",
+  "types::export_bindings_streameventsparams": "pass",
+  "types::export_bindings_event": "pass",
+  "types::export_bindings_eventpayload": "pass",
+  "types::export_bindings_listeventsresponse": "pass",
+  "types::export_bindings_streamupdate": "pass",
+  "test_write_config_tool_sets_autopilot_tags": "fail",
+  "test_get_config_tool_with_hash": "fail"
+ },
+ "post_patch_status": {
+  "types::export_bindings_eventpayload": "pass",
+  "types::export_bindings_event": "pass",
+  "types::export_bindings_listeventsresponse": "pass",
+  "test_write_config_tool_sets_autopilot_tags": "fail",
+  "test_get_config_tool_with_hash": "fail",
+  "types::export_bindings_listsessionsparams": "pass",
+  "types::export_bindings_createeventresponse": "pass",
+  "types::export_bindings_listsessionsresponse": "pass",
+  "types::export_bindings_statusupdate": "pass",
+  "types::export_bindings_autopilotstatus": "pass",
+  "types::export_bindings_listeventsparams": "pass",
+  "types::export_bindings_streameventsparams": "pass",
+  "types::export_bindings_session": "pass",
+  "types::export_bindings_streamupdate": "pass"
+ },
+ "PASS_TO_PASS": [
+  "types::export_bindings_eventpayload",
+  "types::export_bindings_listsessionsresponse",
+  "types::export_bindings_statusupdate",
+  "types::export_bindings_createeventresponse",
+  "types::export_bindings_listsessionsparams",
+  "types::export_bindings_autopilotstatus",
+  "types::export_bindings_event",
+  "types::export_bindings_listeventsresponse",
+  "types::export_bindings_listeventsparams",
+  "types::export_bindings_streameventsparams",
+  "types::export_bindings_session",
+  "types::export_bindings_streamupdate"
+ ],
+ "FAIL_TO_PASS": []
+}

@@ -1,0 +1,2 @@
+cat test-output.log
+bash: uv: command not found

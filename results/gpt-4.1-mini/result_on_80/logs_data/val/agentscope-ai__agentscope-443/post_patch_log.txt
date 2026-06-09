@@ -1,0 +1,570 @@
+eval No.0 
+
+========  
+
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-8.3.3, pluggy-1.5.0 -- /usr/local/bin/python3.9
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+plugins: anyio-4.4.0, cov-5.0.0
+collecting ... collected 132 items
+
+tests/agent_test.py::BasicAgentTest::test_agent_init PASSED              [  0%]
+tests/dashscope_services_test.py::TestDashScopeServices::test_dashscope_image_to_text_failure PASSED [  1%]
+tests/dashscope_services_test.py::TestDashScopeServices::test_dashscope_image_to_text_success PASSED [  2%]
+tests/dashscope_services_test.py::TestDashScopeServices::test_dashscope_text_to_audio_success PASSED [  3%]
+tests/dashscope_services_test.py::TestDashScopeServices::test_dashscope_text_to_image PASSED [  3%]
+tests/dashscope_services_test.py::TestDashScopeServices::test_dashscope_text_to_image_failure PASSED [  4%]
+tests/dashscope_test.py::TestDashScopeChatWrapper::test_call_failure PASSED [  5%]
+tests/dashscope_test.py::TestDashScopeChatWrapper::test_call_success PASSED [  6%]
+tests/dashscope_test.py::TestDashScopeImageSynthesisWrapper::test_image_synthesis_wrapper_call_failure PASSED [  6%]
+tests/dashscope_test.py::TestDashScopeImageSynthesisWrapper::test_image_synthesis_wrapper_call_success PASSED [  7%]
+tests/dashscope_test.py::TestDashScopeTextEmbeddingWrapper::test_call_failure PASSED [  8%]
+tests/dashscope_test.py::TestDashScopeTextEmbeddingWrapper::test_call_success PASSED [  9%]
+tests/dashscope_test.py::TestDashScopeMultiModalWrapper::test_call_failure PASSED [  9%]
+tests/dashscope_test.py::TestDashScopeMultiModalWrapper::test_call_success PASSED [ 10%]
+tests/example_test.py::ExampleTest::test_dummy PASSED                    [ 11%]
+tests/execute_notebook_code_test.py::ExecuteNotebookCodeTest::test_basic_expression PASSED [ 12%]
+tests/execute_notebook_code_test.py::ExecuteNotebookCodeTest::test_no_input_code PASSED [ 12%]
+tests/execute_notebook_code_test.py::ExecuteNotebookCodeTest::test_no_print PASSED [ 13%]
+tests/execute_notebook_code_test.py::ExecuteNotebookCodeTest::test_using_external_libs PASSED [ 14%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_basic_expression PASSED [ 15%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_no_input_code PASSED [ 15%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_raising_exceptions PASSED [ 16%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_timeout PASSED [ 17%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_using_external_libs PASSED [ 18%]
+tests/execute_shell_command_test.py::ExecuteShellCommandTest::test PASSED [ 18%]
+tests/format_test.py::FormatTest::test_dashscope_chat PASSED             [ 19%]
+tests/format_test.py::FormatTest::test_dashscope_multimodal_audio PASSED [ 20%]
+tests/format_test.py::FormatTest::test_dashscope_multimodal_image PASSED [ 21%]
+tests/format_test.py::FormatTest::test_format_for_common_models PASSED   [ 21%]
+tests/format_test.py::FormatTest::test_gemini_chat PASSED                [ 22%]
+tests/format_test.py::FormatTest::test_litellm_chat PASSED               [ 23%]
+tests/format_test.py::FormatTest::test_ollama_chat PASSED                [ 24%]
+tests/format_test.py::FormatTest::test_ollama_generation PASSED          [ 25%]
+tests/format_test.py::FormatTest::test_openai_chat PASSED                [ 25%]
+tests/format_test.py::FormatTest::test_openai_chat_vision PASSED         [ 26%]
+tests/format_test.py::FormatTest::test_openai_chat_vision_with_wrong_model PASSED [ 27%]
+tests/format_test.py::FormatTest::test_openai_chat_with_other_models PASSED [ 28%]
+tests/format_test.py::FormatTest::test_zhipuai_chat PASSED               [ 28%]
+tests/gemini_test.py::GeminiModelWrapperTest::test_gemini_chat PASSED    [ 29%]
+tests/gemini_test.py::GeminiModelWrapperTest::test_gemini_embedding PASSED [ 30%]
+tests/knowledge_test.py::KnowledgeTest::test_llamaindexknowledge PASSED  [ 31%]
+tests/litellm_test.py::TestLiteLLMChatWrapper::test_chat PASSED          [ 31%]
+tests/logger_test.py::LoggerTest::test_logger_chat PASSED                [ 32%]
+tests/manager_test.py::ManagerTest::test_serialize PASSED                [ 33%]
+tests/memory_test.py::TemporaryMemoryTest::test_add PASSED               [ 34%]
+tests/memory_test.py::TemporaryMemoryTest::test_delete PASSED            [ 34%]
+tests/memory_test.py::TemporaryMemoryTest::test_invalid PASSED           [ 35%]
+tests/memory_test.py::TemporaryMemoryTest::test_load_export PASSED       [ 36%]
+tests/message_test.py::MessageTest::test_formatted_msg PASSED            [ 37%]
+tests/message_test.py::MessageTest::test_msg PASSED                      [ 37%]
+tests/message_test.py::MessageTest::test_serialize PASSED                [ 38%]
+tests/moa_test.py::TestMixtureOfAgents::test_mixture_of_agents_call PASSED [ 39%]
+tests/model_test.py::BasicModelTest::test_load_model_configs PASSED      [ 40%]
+tests/model_test.py::BasicModelTest::test_model_registry PASSED          [ 40%]
+tests/monitor_test.py::MonitorManagerTest::test_monitor PASSED           [ 41%]
+tests/monitor_test.py::DisableMonitorTest::test_disabled_monitor PASSED  [ 42%]
+tests/msghub_test.py::MsgHubTest::test_msghub PASSED                     [ 43%]
+tests/msghub_test.py::MsgHubTest::test_msghub_operation PASSED           [ 43%]
+tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_chat PASSED    [ 44%]
+tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_embedding PASSED [ 45%]
+tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_generate PASSED [ 46%]
+tests/openai_services_test.py::TestOpenAIServices::test_api_error_text_to_audio PASSED [ 46%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_audio_to_text_error PASSED [ 47%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_audio_to_text_success PASSED [ 48%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_create_image_variation_error PASSED [ 49%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_create_image_variation_success PASSED [ 50%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_edit_image_error PASSED [ 50%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_edit_image_success PASSED [ 51%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_image_to_text_error PASSED [ 52%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_image_to_text_success PASSED [ 53%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_text_to_image_api_error PASSED [ 53%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_text_to_image_service_error PASSED [ 54%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_text_to_image_success PASSED [ 55%]
+tests/openai_services_test.py::TestOpenAIServices::test_successful_audio_generation PASSED [ 56%]
+tests/operate_file_test.py::OperateFileTest::test_dir PASSED             [ 56%]
+tests/operate_file_test.py::OperateFileTest::test_file PASSED            [ 57%]
+tests/operate_file_test.py::OperateFileTest::test_json PASSED            [ 58%]
+tests/operate_file_test.py::OperateFileTest::test_txt PASSED             [ 59%]
+tests/parser_test.py::ModelResponseParserTest::test_DictFilterMixin_default_value PASSED [ 59%]
+tests/parser_test.py::ModelResponseParserTest::test_markdowncodeblockparser PASSED [ 60%]
+tests/parser_test.py::ModelResponseParserTest::test_markdowncodeblockparser_with_hint PASSED [ 61%]
+tests/parser_test.py::ModelResponseParserTest::test_markdownjsondictparser PASSED [ 62%]
+tests/parser_test.py::ModelResponseParserTest::test_markdownjsondictparser_with_schema PASSED [ 62%]
+tests/parser_test.py::ModelResponseParserTest::test_markdownjsonobjectparser PASSED [ 63%]
+tests/parser_test.py::ModelResponseParserTest::test_multitaggedcontentparser PASSED [ 64%]
+tests/pipeline_test.py::BasicPipelineTest::test_for_pipeline PASSED      [ 65%]
+tests/pipeline_test.py::BasicPipelineTest::test_if_else_pipeline PASSED  [ 65%]
+tests/pipeline_test.py::BasicPipelineTest::test_sequential_pipeline PASSED [ 66%]
+tests/pipeline_test.py::BasicPipelineTest::test_switch_pipeline PASSED   [ 67%]
+tests/pipeline_test.py::BasicPipelineTest::test_while_pipeline PASSED    [ 68%]
+tests/pipeline_test.py::FunctionalPipelineTest::test_if_else_pipeline PASSED [ 68%]
+tests/pipeline_test.py::FunctionalPipelineTest::test_sequential_pipeline PASSED [ 69%]
+tests/record_api_invocation_test.py::RecordApiInvocation::test_record_model_invocation_with_init PASSED [ 70%]
+tests/retrieval_from_list_test.py::TestRetrieval::test_retrieval_from_list PASSED [ 71%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_agent_nesting PASSED    [ 71%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_agent_server_management_funcs PASSED [ 72%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_clone_instances PASSED  [ 73%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_connect_to_an_existing_rpc_server PASSED [ 74%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_error_handling PASSED   [ 75%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_mix_rpc_agent_and_local_agent PASSED [ 75%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_msghub_compatibility PASSED [ 76%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_multi_agent_in_same_server PASSED [ 77%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_multi_rpc_agent PASSED  [ 78%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_server_auto_alloc PASSED [ 78%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_single_rpc_agent_server PASSED [ 79%]
+tests/serialize_test.py::SerializationTest::test_serialize PASSED        [ 80%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_bing_search PASSED [ 81%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_enum PASSED      [ 81%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_exec_python_code PASSED [ 82%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_multi_tagged_content PASSED [ 83%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_retrieval PASSED [ 84%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_service_toolkit PASSED [ 84%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_sql_query PASSED [ 85%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_summary PASSED   [ 86%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mongodb_failure PASSED [ 87%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mongodb_success PASSED [ 87%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mysql_failure PASSED [ 88%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mysql_success PASSED [ 89%]
+tests/sql_query_test.py::TestSQLQueries::test_query_sqlite_exception_handling PASSED [ 90%]
+tests/sql_query_test.py::TestSQLQueries::test_query_sqlite_success PASSED [ 90%]
+tests/token_utils_test.py::TokenUtilsTest::test_count_openai_token PASSED [ 91%]
+tests/token_utils_test.py::TokenUtilsTest::test_get_openai_max_length PASSED [ 92%]
+tests/web_digest_test.py::TestWebDigest::test_web_digest PASSED          [ 93%]
+tests/web_digest_test.py::TestWebDigest::test_web_load PASSED            [ 93%]
+tests/web_search_test.py::TestWebSearches::test_arxiv_query_format PASSED [ 94%]
+tests/web_search_test.py::TestWebSearches::test_arxiv_search PASSED      [ 95%]
+tests/web_search_test.py::TestWebSearches::test_search_bing PASSED       [ 96%]
+tests/web_search_test.py::TestWebSearches::test_search_google PASSED     [ 96%]
+tests/wiki_test.py::TestWikipedia::test_wikipedia_search PASSED          [ 97%]
+tests/wiki_test.py::TestWikipedia::test_wikipedia_search_categories PASSED [ 98%]
+tests/zhipu_test.py::TestZhipuAIChatWrapper::test_chat PASSED            [ 99%]
+tests/zhipu_test.py::TestZhipuAIEmbeddingWrapper::test_embedding PASSED  [100%]
+
+=============================== warnings summary ===============================
+src/agentscope/manager/_monitor.py:20
+  /testbed/src/agentscope/manager/_monitor.py:20: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    _Base: DeclarativeMeta = declarative_base()
+
+../usr/local/lib/python3.9/site-packages/jupyter_client/connect.py:22
+  /usr/local/lib/python3.9/site-packages/jupyter_client/connect.py:22: DeprecationWarning: Jupyter is migrating its paths to use standard platformdirs
+  given by the platformdirs library.  To remove this warning and
+  see the appropriate new directories, set the environment variable
+  `JUPYTER_PLATFORM_DIRS=1` and then run `jupyter --paths`.
+  The use of platformdirs will be the default in `jupyter_core` v6
+    from jupyter_core.paths import jupyter_data_dir, jupyter_runtime_dir, secure_write
+
+tests/agent_test.py:11
+  /testbed/tests/agent_test.py:11: PytestCollectionWarning: cannot collect test class 'TestAgent' because it has a __init__ constructor (from: tests/agent_test.py)
+    class TestAgent(AgentBase):
+
+tests/agent_test.py:32
+  /testbed/tests/agent_test.py:32: PytestCollectionWarning: cannot collect test class 'TestAgentCopy' because it has a __init__ constructor (from: tests/agent_test.py)
+    class TestAgentCopy(TestAgent):
+
+tests/model_test.py:19
+  /testbed/tests/model_test.py:19: PytestCollectionWarning: cannot collect test class 'TestModelWrapperSimple' because it has a __init__ constructor (from: tests/model_test.py)
+    class TestModelWrapperSimple(ModelWrapperBase):
+
+tests/msghub_test.py:11
+  /testbed/tests/msghub_test.py:11: PytestCollectionWarning: cannot collect test class 'TestAgent' because it has a __init__ constructor (from: tests/msghub_test.py)
+    class TestAgent(AgentBase):
+
+tests/litellm_test.py::TestLiteLLMChatWrapper::test_chat
+  /usr/local/lib/python3.9/site-packages/pydantic/_internal/_config.py:291: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.9/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+tests/manager_test.py: 1 warning
+tests/monitor_test.py: 1 warning
+tests/record_api_invocation_test.py: 1 warning
+tests/rpc_agent_test.py: 11 warnings
+  /testbed/src/agentscope/manager/_monitor.py:189: SADeprecationWarning: The Session.close_all() method is deprecated and will be removed in a future release.  Please refer to session.close_all_sessions(). (deprecated since: 1.3)
+    self.session.close_all()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================= 132 passed, 21 warnings in 65.72s (0:01:05) ==================
+ 
+
+eval No.1 
+
+========  
+
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-8.3.3, pluggy-1.5.0 -- /usr/local/bin/python3.9
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+plugins: anyio-4.4.0, cov-5.0.0
+collecting ... collected 132 items
+
+tests/agent_test.py::BasicAgentTest::test_agent_init PASSED              [  0%]
+tests/dashscope_services_test.py::TestDashScopeServices::test_dashscope_image_to_text_failure PASSED [  1%]
+tests/dashscope_services_test.py::TestDashScopeServices::test_dashscope_image_to_text_success PASSED [  2%]
+tests/dashscope_services_test.py::TestDashScopeServices::test_dashscope_text_to_audio_success PASSED [  3%]
+tests/dashscope_services_test.py::TestDashScopeServices::test_dashscope_text_to_image PASSED [  3%]
+tests/dashscope_services_test.py::TestDashScopeServices::test_dashscope_text_to_image_failure PASSED [  4%]
+tests/dashscope_test.py::TestDashScopeChatWrapper::test_call_failure PASSED [  5%]
+tests/dashscope_test.py::TestDashScopeChatWrapper::test_call_success PASSED [  6%]
+tests/dashscope_test.py::TestDashScopeImageSynthesisWrapper::test_image_synthesis_wrapper_call_failure PASSED [  6%]
+tests/dashscope_test.py::TestDashScopeImageSynthesisWrapper::test_image_synthesis_wrapper_call_success PASSED [  7%]
+tests/dashscope_test.py::TestDashScopeTextEmbeddingWrapper::test_call_failure PASSED [  8%]
+tests/dashscope_test.py::TestDashScopeTextEmbeddingWrapper::test_call_success PASSED [  9%]
+tests/dashscope_test.py::TestDashScopeMultiModalWrapper::test_call_failure PASSED [  9%]
+tests/dashscope_test.py::TestDashScopeMultiModalWrapper::test_call_success PASSED [ 10%]
+tests/example_test.py::ExampleTest::test_dummy PASSED                    [ 11%]
+tests/execute_notebook_code_test.py::ExecuteNotebookCodeTest::test_basic_expression PASSED [ 12%]
+tests/execute_notebook_code_test.py::ExecuteNotebookCodeTest::test_no_input_code PASSED [ 12%]
+tests/execute_notebook_code_test.py::ExecuteNotebookCodeTest::test_no_print PASSED [ 13%]
+tests/execute_notebook_code_test.py::ExecuteNotebookCodeTest::test_using_external_libs PASSED [ 14%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_basic_expression PASSED [ 15%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_no_input_code PASSED [ 15%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_raising_exceptions PASSED [ 16%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_timeout PASSED [ 17%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_using_external_libs PASSED [ 18%]
+tests/execute_shell_command_test.py::ExecuteShellCommandTest::test PASSED [ 18%]
+tests/format_test.py::FormatTest::test_dashscope_chat PASSED             [ 19%]
+tests/format_test.py::FormatTest::test_dashscope_multimodal_audio PASSED [ 20%]
+tests/format_test.py::FormatTest::test_dashscope_multimodal_image PASSED [ 21%]
+tests/format_test.py::FormatTest::test_format_for_common_models PASSED   [ 21%]
+tests/format_test.py::FormatTest::test_gemini_chat PASSED                [ 22%]
+tests/format_test.py::FormatTest::test_litellm_chat PASSED               [ 23%]
+tests/format_test.py::FormatTest::test_ollama_chat PASSED                [ 24%]
+tests/format_test.py::FormatTest::test_ollama_generation PASSED          [ 25%]
+tests/format_test.py::FormatTest::test_openai_chat PASSED                [ 25%]
+tests/format_test.py::FormatTest::test_openai_chat_vision PASSED         [ 26%]
+tests/format_test.py::FormatTest::test_openai_chat_vision_with_wrong_model PASSED [ 27%]
+tests/format_test.py::FormatTest::test_openai_chat_with_other_models PASSED [ 28%]
+tests/format_test.py::FormatTest::test_zhipuai_chat PASSED               [ 28%]
+tests/gemini_test.py::GeminiModelWrapperTest::test_gemini_chat PASSED    [ 29%]
+tests/gemini_test.py::GeminiModelWrapperTest::test_gemini_embedding PASSED [ 30%]
+tests/knowledge_test.py::KnowledgeTest::test_llamaindexknowledge PASSED  [ 31%]
+tests/litellm_test.py::TestLiteLLMChatWrapper::test_chat PASSED          [ 31%]
+tests/logger_test.py::LoggerTest::test_logger_chat PASSED                [ 32%]
+tests/manager_test.py::ManagerTest::test_serialize PASSED                [ 33%]
+tests/memory_test.py::TemporaryMemoryTest::test_add PASSED               [ 34%]
+tests/memory_test.py::TemporaryMemoryTest::test_delete PASSED            [ 34%]
+tests/memory_test.py::TemporaryMemoryTest::test_invalid PASSED           [ 35%]
+tests/memory_test.py::TemporaryMemoryTest::test_load_export PASSED       [ 36%]
+tests/message_test.py::MessageTest::test_formatted_msg PASSED            [ 37%]
+tests/message_test.py::MessageTest::test_msg PASSED                      [ 37%]
+tests/message_test.py::MessageTest::test_serialize PASSED                [ 38%]
+tests/moa_test.py::TestMixtureOfAgents::test_mixture_of_agents_call PASSED [ 39%]
+tests/model_test.py::BasicModelTest::test_load_model_configs PASSED      [ 40%]
+tests/model_test.py::BasicModelTest::test_model_registry PASSED          [ 40%]
+tests/monitor_test.py::MonitorManagerTest::test_monitor PASSED           [ 41%]
+tests/monitor_test.py::DisableMonitorTest::test_disabled_monitor PASSED  [ 42%]
+tests/msghub_test.py::MsgHubTest::test_msghub PASSED                     [ 43%]
+tests/msghub_test.py::MsgHubTest::test_msghub_operation PASSED           [ 43%]
+tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_chat PASSED    [ 44%]
+tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_embedding PASSED [ 45%]
+tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_generate PASSED [ 46%]
+tests/openai_services_test.py::TestOpenAIServices::test_api_error_text_to_audio PASSED [ 46%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_audio_to_text_error PASSED [ 47%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_audio_to_text_success PASSED [ 48%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_create_image_variation_error PASSED [ 49%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_create_image_variation_success PASSED [ 50%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_edit_image_error PASSED [ 50%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_edit_image_success PASSED [ 51%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_image_to_text_error PASSED [ 52%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_image_to_text_success PASSED [ 53%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_text_to_image_api_error PASSED [ 53%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_text_to_image_service_error PASSED [ 54%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_text_to_image_success PASSED [ 55%]
+tests/openai_services_test.py::TestOpenAIServices::test_successful_audio_generation PASSED [ 56%]
+tests/operate_file_test.py::OperateFileTest::test_dir PASSED             [ 56%]
+tests/operate_file_test.py::OperateFileTest::test_file PASSED            [ 57%]
+tests/operate_file_test.py::OperateFileTest::test_json PASSED            [ 58%]
+tests/operate_file_test.py::OperateFileTest::test_txt PASSED             [ 59%]
+tests/parser_test.py::ModelResponseParserTest::test_DictFilterMixin_default_value PASSED [ 59%]
+tests/parser_test.py::ModelResponseParserTest::test_markdowncodeblockparser PASSED [ 60%]
+tests/parser_test.py::ModelResponseParserTest::test_markdowncodeblockparser_with_hint PASSED [ 61%]
+tests/parser_test.py::ModelResponseParserTest::test_markdownjsondictparser PASSED [ 62%]
+tests/parser_test.py::ModelResponseParserTest::test_markdownjsondictparser_with_schema PASSED [ 62%]
+tests/parser_test.py::ModelResponseParserTest::test_markdownjsonobjectparser PASSED [ 63%]
+tests/parser_test.py::ModelResponseParserTest::test_multitaggedcontentparser PASSED [ 64%]
+tests/pipeline_test.py::BasicPipelineTest::test_for_pipeline PASSED      [ 65%]
+tests/pipeline_test.py::BasicPipelineTest::test_if_else_pipeline PASSED  [ 65%]
+tests/pipeline_test.py::BasicPipelineTest::test_sequential_pipeline PASSED [ 66%]
+tests/pipeline_test.py::BasicPipelineTest::test_switch_pipeline PASSED   [ 67%]
+tests/pipeline_test.py::BasicPipelineTest::test_while_pipeline PASSED    [ 68%]
+tests/pipeline_test.py::FunctionalPipelineTest::test_if_else_pipeline PASSED [ 68%]
+tests/pipeline_test.py::FunctionalPipelineTest::test_sequential_pipeline PASSED [ 69%]
+tests/record_api_invocation_test.py::RecordApiInvocation::test_record_model_invocation_with_init PASSED [ 70%]
+tests/retrieval_from_list_test.py::TestRetrieval::test_retrieval_from_list PASSED [ 71%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_agent_nesting PASSED    [ 71%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_agent_server_management_funcs PASSED [ 72%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_clone_instances PASSED  [ 73%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_connect_to_an_existing_rpc_server PASSED [ 74%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_error_handling PASSED   [ 75%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_mix_rpc_agent_and_local_agent PASSED [ 75%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_msghub_compatibility PASSED [ 76%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_multi_agent_in_same_server PASSED [ 77%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_multi_rpc_agent PASSED  [ 78%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_server_auto_alloc PASSED [ 78%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_single_rpc_agent_server PASSED [ 79%]
+tests/serialize_test.py::SerializationTest::test_serialize PASSED        [ 80%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_bing_search PASSED [ 81%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_enum PASSED      [ 81%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_exec_python_code PASSED [ 82%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_multi_tagged_content PASSED [ 83%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_retrieval PASSED [ 84%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_service_toolkit PASSED [ 84%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_sql_query PASSED [ 85%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_summary PASSED   [ 86%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mongodb_failure PASSED [ 87%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mongodb_success PASSED [ 87%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mysql_failure PASSED [ 88%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mysql_success PASSED [ 89%]
+tests/sql_query_test.py::TestSQLQueries::test_query_sqlite_exception_handling PASSED [ 90%]
+tests/sql_query_test.py::TestSQLQueries::test_query_sqlite_success PASSED [ 90%]
+tests/token_utils_test.py::TokenUtilsTest::test_count_openai_token PASSED [ 91%]
+tests/token_utils_test.py::TokenUtilsTest::test_get_openai_max_length PASSED [ 92%]
+tests/web_digest_test.py::TestWebDigest::test_web_digest PASSED          [ 93%]
+tests/web_digest_test.py::TestWebDigest::test_web_load PASSED            [ 93%]
+tests/web_search_test.py::TestWebSearches::test_arxiv_query_format PASSED [ 94%]
+tests/web_search_test.py::TestWebSearches::test_arxiv_search PASSED      [ 95%]
+tests/web_search_test.py::TestWebSearches::test_search_bing PASSED       [ 96%]
+tests/web_search_test.py::TestWebSearches::test_search_google PASSED     [ 96%]
+tests/wiki_test.py::TestWikipedia::test_wikipedia_search PASSED          [ 97%]
+tests/wiki_test.py::TestWikipedia::test_wikipedia_search_categories PASSED [ 98%]
+tests/zhipu_test.py::TestZhipuAIChatWrapper::test_chat PASSED            [ 99%]
+tests/zhipu_test.py::TestZhipuAIEmbeddingWrapper::test_embedding PASSED  [100%]
+
+=============================== warnings summary ===============================
+src/agentscope/manager/_monitor.py:20
+  /testbed/src/agentscope/manager/_monitor.py:20: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    _Base: DeclarativeMeta = declarative_base()
+
+../usr/local/lib/python3.9/site-packages/jupyter_client/connect.py:22
+  /usr/local/lib/python3.9/site-packages/jupyter_client/connect.py:22: DeprecationWarning: Jupyter is migrating its paths to use standard platformdirs
+  given by the platformdirs library.  To remove this warning and
+  see the appropriate new directories, set the environment variable
+  `JUPYTER_PLATFORM_DIRS=1` and then run `jupyter --paths`.
+  The use of platformdirs will be the default in `jupyter_core` v6
+    from jupyter_core.paths import jupyter_data_dir, jupyter_runtime_dir, secure_write
+
+tests/agent_test.py:11
+  /testbed/tests/agent_test.py:11: PytestCollectionWarning: cannot collect test class 'TestAgent' because it has a __init__ constructor (from: tests/agent_test.py)
+    class TestAgent(AgentBase):
+
+tests/agent_test.py:32
+  /testbed/tests/agent_test.py:32: PytestCollectionWarning: cannot collect test class 'TestAgentCopy' because it has a __init__ constructor (from: tests/agent_test.py)
+    class TestAgentCopy(TestAgent):
+
+tests/model_test.py:19
+  /testbed/tests/model_test.py:19: PytestCollectionWarning: cannot collect test class 'TestModelWrapperSimple' because it has a __init__ constructor (from: tests/model_test.py)
+    class TestModelWrapperSimple(ModelWrapperBase):
+
+tests/msghub_test.py:11
+  /testbed/tests/msghub_test.py:11: PytestCollectionWarning: cannot collect test class 'TestAgent' because it has a __init__ constructor (from: tests/msghub_test.py)
+    class TestAgent(AgentBase):
+
+tests/litellm_test.py::TestLiteLLMChatWrapper::test_chat
+  /usr/local/lib/python3.9/site-packages/pydantic/_internal/_config.py:291: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.9/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+tests/manager_test.py: 1 warning
+tests/monitor_test.py: 1 warning
+tests/record_api_invocation_test.py: 1 warning
+tests/rpc_agent_test.py: 11 warnings
+  /testbed/src/agentscope/manager/_monitor.py:189: SADeprecationWarning: The Session.close_all() method is deprecated and will be removed in a future release.  Please refer to session.close_all_sessions(). (deprecated since: 1.3)
+    self.session.close_all()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================= 132 passed, 21 warnings in 66.26s (0:01:06) ==================
+ 
+
+eval No.2 
+
+========  
+
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-8.3.3, pluggy-1.5.0 -- /usr/local/bin/python3.9
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+plugins: anyio-4.4.0, cov-5.0.0
+collecting ... collected 132 items
+
+tests/agent_test.py::BasicAgentTest::test_agent_init PASSED              [  0%]
+tests/dashscope_services_test.py::TestDashScopeServices::test_dashscope_image_to_text_failure PASSED [  1%]
+tests/dashscope_services_test.py::TestDashScopeServices::test_dashscope_image_to_text_success PASSED [  2%]
+tests/dashscope_services_test.py::TestDashScopeServices::test_dashscope_text_to_audio_success PASSED [  3%]
+tests/dashscope_services_test.py::TestDashScopeServices::test_dashscope_text_to_image PASSED [  3%]
+tests/dashscope_services_test.py::TestDashScopeServices::test_dashscope_text_to_image_failure PASSED [  4%]
+tests/dashscope_test.py::TestDashScopeChatWrapper::test_call_failure PASSED [  5%]
+tests/dashscope_test.py::TestDashScopeChatWrapper::test_call_success PASSED [  6%]
+tests/dashscope_test.py::TestDashScopeImageSynthesisWrapper::test_image_synthesis_wrapper_call_failure PASSED [  6%]
+tests/dashscope_test.py::TestDashScopeImageSynthesisWrapper::test_image_synthesis_wrapper_call_success PASSED [  7%]
+tests/dashscope_test.py::TestDashScopeTextEmbeddingWrapper::test_call_failure PASSED [  8%]
+tests/dashscope_test.py::TestDashScopeTextEmbeddingWrapper::test_call_success PASSED [  9%]
+tests/dashscope_test.py::TestDashScopeMultiModalWrapper::test_call_failure PASSED [  9%]
+tests/dashscope_test.py::TestDashScopeMultiModalWrapper::test_call_success PASSED [ 10%]
+tests/example_test.py::ExampleTest::test_dummy PASSED                    [ 11%]
+tests/execute_notebook_code_test.py::ExecuteNotebookCodeTest::test_basic_expression PASSED [ 12%]
+tests/execute_notebook_code_test.py::ExecuteNotebookCodeTest::test_no_input_code PASSED [ 12%]
+tests/execute_notebook_code_test.py::ExecuteNotebookCodeTest::test_no_print PASSED [ 13%]
+tests/execute_notebook_code_test.py::ExecuteNotebookCodeTest::test_using_external_libs PASSED [ 14%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_basic_expression PASSED [ 15%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_no_input_code PASSED [ 15%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_raising_exceptions PASSED [ 16%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_timeout PASSED [ 17%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_using_external_libs PASSED [ 18%]
+tests/execute_shell_command_test.py::ExecuteShellCommandTest::test PASSED [ 18%]
+tests/format_test.py::FormatTest::test_dashscope_chat PASSED             [ 19%]
+tests/format_test.py::FormatTest::test_dashscope_multimodal_audio PASSED [ 20%]
+tests/format_test.py::FormatTest::test_dashscope_multimodal_image PASSED [ 21%]
+tests/format_test.py::FormatTest::test_format_for_common_models PASSED   [ 21%]
+tests/format_test.py::FormatTest::test_gemini_chat PASSED                [ 22%]
+tests/format_test.py::FormatTest::test_litellm_chat PASSED               [ 23%]
+tests/format_test.py::FormatTest::test_ollama_chat PASSED                [ 24%]
+tests/format_test.py::FormatTest::test_ollama_generation PASSED          [ 25%]
+tests/format_test.py::FormatTest::test_openai_chat PASSED                [ 25%]
+tests/format_test.py::FormatTest::test_openai_chat_vision PASSED         [ 26%]
+tests/format_test.py::FormatTest::test_openai_chat_vision_with_wrong_model PASSED [ 27%]
+tests/format_test.py::FormatTest::test_openai_chat_with_other_models PASSED [ 28%]
+tests/format_test.py::FormatTest::test_zhipuai_chat PASSED               [ 28%]
+tests/gemini_test.py::GeminiModelWrapperTest::test_gemini_chat PASSED    [ 29%]
+tests/gemini_test.py::GeminiModelWrapperTest::test_gemini_embedding PASSED [ 30%]
+tests/knowledge_test.py::KnowledgeTest::test_llamaindexknowledge PASSED  [ 31%]
+tests/litellm_test.py::TestLiteLLMChatWrapper::test_chat PASSED          [ 31%]
+tests/logger_test.py::LoggerTest::test_logger_chat PASSED                [ 32%]
+tests/manager_test.py::ManagerTest::test_serialize PASSED                [ 33%]
+tests/memory_test.py::TemporaryMemoryTest::test_add PASSED               [ 34%]
+tests/memory_test.py::TemporaryMemoryTest::test_delete PASSED            [ 34%]
+tests/memory_test.py::TemporaryMemoryTest::test_invalid PASSED           [ 35%]
+tests/memory_test.py::TemporaryMemoryTest::test_load_export PASSED       [ 36%]
+tests/message_test.py::MessageTest::test_formatted_msg PASSED            [ 37%]
+tests/message_test.py::MessageTest::test_msg PASSED                      [ 37%]
+tests/message_test.py::MessageTest::test_serialize PASSED                [ 38%]
+tests/moa_test.py::TestMixtureOfAgents::test_mixture_of_agents_call PASSED [ 39%]
+tests/model_test.py::BasicModelTest::test_load_model_configs PASSED      [ 40%]
+tests/model_test.py::BasicModelTest::test_model_registry PASSED          [ 40%]
+tests/monitor_test.py::MonitorManagerTest::test_monitor PASSED           [ 41%]
+tests/monitor_test.py::DisableMonitorTest::test_disabled_monitor PASSED  [ 42%]
+tests/msghub_test.py::MsgHubTest::test_msghub PASSED                     [ 43%]
+tests/msghub_test.py::MsgHubTest::test_msghub_operation PASSED           [ 43%]
+tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_chat PASSED    [ 44%]
+tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_embedding PASSED [ 45%]
+tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_generate PASSED [ 46%]
+tests/openai_services_test.py::TestOpenAIServices::test_api_error_text_to_audio PASSED [ 46%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_audio_to_text_error PASSED [ 47%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_audio_to_text_success PASSED [ 48%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_create_image_variation_error PASSED [ 49%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_create_image_variation_success PASSED [ 50%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_edit_image_error PASSED [ 50%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_edit_image_success PASSED [ 51%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_image_to_text_error PASSED [ 52%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_image_to_text_success PASSED [ 53%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_text_to_image_api_error PASSED [ 53%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_text_to_image_service_error PASSED [ 54%]
+tests/openai_services_test.py::TestOpenAIServices::test_openai_text_to_image_success PASSED [ 55%]
+tests/openai_services_test.py::TestOpenAIServices::test_successful_audio_generation PASSED [ 56%]
+tests/operate_file_test.py::OperateFileTest::test_dir PASSED             [ 56%]
+tests/operate_file_test.py::OperateFileTest::test_file PASSED            [ 57%]
+tests/operate_file_test.py::OperateFileTest::test_json PASSED            [ 58%]
+tests/operate_file_test.py::OperateFileTest::test_txt PASSED             [ 59%]
+tests/parser_test.py::ModelResponseParserTest::test_DictFilterMixin_default_value PASSED [ 59%]
+tests/parser_test.py::ModelResponseParserTest::test_markdowncodeblockparser PASSED [ 60%]
+tests/parser_test.py::ModelResponseParserTest::test_markdowncodeblockparser_with_hint PASSED [ 61%]
+tests/parser_test.py::ModelResponseParserTest::test_markdownjsondictparser PASSED [ 62%]
+tests/parser_test.py::ModelResponseParserTest::test_markdownjsondictparser_with_schema PASSED [ 62%]
+tests/parser_test.py::ModelResponseParserTest::test_markdownjsonobjectparser PASSED [ 63%]
+tests/parser_test.py::ModelResponseParserTest::test_multitaggedcontentparser PASSED [ 64%]
+tests/pipeline_test.py::BasicPipelineTest::test_for_pipeline PASSED      [ 65%]
+tests/pipeline_test.py::BasicPipelineTest::test_if_else_pipeline PASSED  [ 65%]
+tests/pipeline_test.py::BasicPipelineTest::test_sequential_pipeline PASSED [ 66%]
+tests/pipeline_test.py::BasicPipelineTest::test_switch_pipeline PASSED   [ 67%]
+tests/pipeline_test.py::BasicPipelineTest::test_while_pipeline PASSED    [ 68%]
+tests/pipeline_test.py::FunctionalPipelineTest::test_if_else_pipeline PASSED [ 68%]
+tests/pipeline_test.py::FunctionalPipelineTest::test_sequential_pipeline PASSED [ 69%]
+tests/record_api_invocation_test.py::RecordApiInvocation::test_record_model_invocation_with_init PASSED [ 70%]
+tests/retrieval_from_list_test.py::TestRetrieval::test_retrieval_from_list PASSED [ 71%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_agent_nesting PASSED    [ 71%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_agent_server_management_funcs PASSED [ 72%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_clone_instances PASSED  [ 73%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_connect_to_an_existing_rpc_server PASSED [ 74%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_error_handling PASSED   [ 75%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_mix_rpc_agent_and_local_agent PASSED [ 75%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_msghub_compatibility PASSED [ 76%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_multi_agent_in_same_server PASSED [ 77%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_multi_rpc_agent PASSED  [ 78%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_server_auto_alloc PASSED [ 78%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_single_rpc_agent_server PASSED [ 79%]
+tests/serialize_test.py::SerializationTest::test_serialize PASSED        [ 80%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_bing_search PASSED [ 81%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_enum PASSED      [ 81%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_exec_python_code PASSED [ 82%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_multi_tagged_content PASSED [ 83%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_retrieval PASSED [ 84%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_service_toolkit PASSED [ 84%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_sql_query PASSED [ 85%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_summary PASSED   [ 86%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mongodb_failure PASSED [ 87%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mongodb_success PASSED [ 87%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mysql_failure PASSED [ 88%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mysql_success PASSED [ 89%]
+tests/sql_query_test.py::TestSQLQueries::test_query_sqlite_exception_handling PASSED [ 90%]
+tests/sql_query_test.py::TestSQLQueries::test_query_sqlite_success PASSED [ 90%]
+tests/token_utils_test.py::TokenUtilsTest::test_count_openai_token PASSED [ 91%]
+tests/token_utils_test.py::TokenUtilsTest::test_get_openai_max_length PASSED [ 92%]
+tests/web_digest_test.py::TestWebDigest::test_web_digest PASSED          [ 93%]
+tests/web_digest_test.py::TestWebDigest::test_web_load PASSED            [ 93%]
+tests/web_search_test.py::TestWebSearches::test_arxiv_query_format PASSED [ 94%]
+tests/web_search_test.py::TestWebSearches::test_arxiv_search PASSED      [ 95%]
+tests/web_search_test.py::TestWebSearches::test_search_bing PASSED       [ 96%]
+tests/web_search_test.py::TestWebSearches::test_search_google PASSED     [ 96%]
+tests/wiki_test.py::TestWikipedia::test_wikipedia_search PASSED          [ 97%]
+tests/wiki_test.py::TestWikipedia::test_wikipedia_search_categories PASSED [ 98%]
+tests/zhipu_test.py::TestZhipuAIChatWrapper::test_chat PASSED            [ 99%]
+tests/zhipu_test.py::TestZhipuAIEmbeddingWrapper::test_embedding PASSED  [100%]
+
+=============================== warnings summary ===============================
+src/agentscope/manager/_monitor.py:20
+  /testbed/src/agentscope/manager/_monitor.py:20: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    _Base: DeclarativeMeta = declarative_base()
+
+../usr/local/lib/python3.9/site-packages/jupyter_client/connect.py:22
+  /usr/local/lib/python3.9/site-packages/jupyter_client/connect.py:22: DeprecationWarning: Jupyter is migrating its paths to use standard platformdirs
+  given by the platformdirs library.  To remove this warning and
+  see the appropriate new directories, set the environment variable
+  `JUPYTER_PLATFORM_DIRS=1` and then run `jupyter --paths`.
+  The use of platformdirs will be the default in `jupyter_core` v6
+    from jupyter_core.paths import jupyter_data_dir, jupyter_runtime_dir, secure_write
+
+tests/agent_test.py:11
+  /testbed/tests/agent_test.py:11: PytestCollectionWarning: cannot collect test class 'TestAgent' because it has a __init__ constructor (from: tests/agent_test.py)
+    class TestAgent(AgentBase):
+
+tests/agent_test.py:32
+  /testbed/tests/agent_test.py:32: PytestCollectionWarning: cannot collect test class 'TestAgentCopy' because it has a __init__ constructor (from: tests/agent_test.py)
+    class TestAgentCopy(TestAgent):
+
+tests/model_test.py:19
+  /testbed/tests/model_test.py:19: PytestCollectionWarning: cannot collect test class 'TestModelWrapperSimple' because it has a __init__ constructor (from: tests/model_test.py)
+    class TestModelWrapperSimple(ModelWrapperBase):
+
+tests/msghub_test.py:11
+  /testbed/tests/msghub_test.py:11: PytestCollectionWarning: cannot collect test class 'TestAgent' because it has a __init__ constructor (from: tests/msghub_test.py)
+    class TestAgent(AgentBase):
+
+tests/litellm_test.py::TestLiteLLMChatWrapper::test_chat
+  /usr/local/lib/python3.9/site-packages/pydantic/_internal/_config.py:291: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.9/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+tests/manager_test.py: 1 warning
+tests/monitor_test.py: 1 warning
+tests/record_api_invocation_test.py: 1 warning
+tests/rpc_agent_test.py: 11 warnings
+  /testbed/src/agentscope/manager/_monitor.py:189: SADeprecationWarning: The Session.close_all() method is deprecated and will be removed in a future release.  Please refer to session.close_all_sessions(). (deprecated since: 1.3)
+    self.session.close_all()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================= 132 passed, 21 warnings in 66.59s (0:01:06) ==================
+ 
+

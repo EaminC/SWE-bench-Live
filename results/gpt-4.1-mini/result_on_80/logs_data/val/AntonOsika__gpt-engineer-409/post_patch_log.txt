@@ -1,0 +1,135 @@
+eval No.0 
+
+========  
+
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-7.3.1, pluggy-1.2.0 -- /usr/local/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /testbed
+collecting ... collected 18 items
+
+tests/test_ai.py::test_ai XPASS (Constructor assumes API access)         [  5%]
+tests/test_chat_to_files.py::test_to_files PASSED                        [ 11%]
+tests/test_chat_to_files.py::test_to_files_with_square_brackets PASSED   [ 16%]
+tests/test_chat_to_files.py::test_files_with_brackets_in_name PASSED     [ 22%]
+tests/test_chat_to_files.py::test_files_with_file_colon PASSED           [ 27%]
+tests/test_chat_to_files.py::test_files_with_back_tick PASSED            [ 33%]
+tests/test_chat_to_files.py::test_files_with_newline_between PASSED      [ 38%]
+tests/test_chat_to_files.py::test_files_with_newline_between_header PASSED [ 44%]
+tests/test_collect.py::test_collect_learnings PASSED                     [ 50%]
+tests/test_db.py::test_DB_operations PASSED                              [ 55%]
+tests/test_db.py::test_DBs_initialization PASSED                         [ 61%]
+tests/test_db.py::test_invalid_path FAILED                               [ 66%]
+tests/test_db.py::test_large_files PASSED                                [ 72%]
+tests/test_db.py::test_concurrent_access PASSED                          [ 77%]
+tests/test_db.py::test_error_messages PASSED                             [ 83%]
+tests/test_db.py::test_DBs_instantiation_with_wrong_number_of_arguments PASSED [ 88%]
+tests/test_db.py::test_DBs_dataclass_attributes PASSED                   [ 94%]
+tests/steps/test_archive.py::test_archive PASSED                         [100%]
+
+=================================== FAILURES ===================================
+______________________________ test_invalid_path _______________________________
+
+    def test_invalid_path():
+>       with pytest.raises((PermissionError, OSError)):
+E       Failed: DID NOT RAISE (<class 'PermissionError'>, <class 'OSError'>)
+
+tests/test_db.py:48: Failed
+=============================== warnings summary ===============================
+../usr/local/lib/python3.11/site-packages/deprecation.py:105
+  /usr/local/lib/python3.11/site-packages/deprecation.py:105: DeprecationWarning: invalid escape sequence '\s'
+    """Decorate a function to signify its deprecation
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_db.py::test_invalid_path - Failed: DID NOT RAISE (<class 'P...
+============== 1 failed, 16 passed, 1 xpassed, 1 warning in 1.99s ==============
+ 
+
+eval No.1 
+
+========  
+
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-7.3.1, pluggy-1.2.0 -- /usr/local/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /testbed
+collecting ... collected 18 items
+
+tests/test_ai.py::test_ai XPASS (Constructor assumes API access)         [  5%]
+tests/test_chat_to_files.py::test_to_files PASSED                        [ 11%]
+tests/test_chat_to_files.py::test_to_files_with_square_brackets PASSED   [ 16%]
+tests/test_chat_to_files.py::test_files_with_brackets_in_name PASSED     [ 22%]
+tests/test_chat_to_files.py::test_files_with_file_colon PASSED           [ 27%]
+tests/test_chat_to_files.py::test_files_with_back_tick PASSED            [ 33%]
+tests/test_chat_to_files.py::test_files_with_newline_between PASSED      [ 38%]
+tests/test_chat_to_files.py::test_files_with_newline_between_header PASSED [ 44%]
+tests/test_collect.py::test_collect_learnings PASSED                     [ 50%]
+tests/test_db.py::test_DB_operations PASSED                              [ 55%]
+tests/test_db.py::test_DBs_initialization PASSED                         [ 61%]
+tests/test_db.py::test_invalid_path FAILED                               [ 66%]
+tests/test_db.py::test_large_files PASSED                                [ 72%]
+tests/test_db.py::test_concurrent_access PASSED                          [ 77%]
+tests/test_db.py::test_error_messages PASSED                             [ 83%]
+tests/test_db.py::test_DBs_instantiation_with_wrong_number_of_arguments PASSED [ 88%]
+tests/test_db.py::test_DBs_dataclass_attributes PASSED                   [ 94%]
+tests/steps/test_archive.py::test_archive PASSED                         [100%]
+
+=================================== FAILURES ===================================
+______________________________ test_invalid_path _______________________________
+
+    def test_invalid_path():
+>       with pytest.raises((PermissionError, OSError)):
+E       Failed: DID NOT RAISE (<class 'PermissionError'>, <class 'OSError'>)
+
+tests/test_db.py:48: Failed
+=========================== short test summary info ============================
+FAILED tests/test_db.py::test_invalid_path - Failed: DID NOT RAISE (<class 'P...
+=================== 1 failed, 16 passed, 1 xpassed in 1.88s ====================
+ 
+
+eval No.2 
+
+========  
+
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-7.3.1, pluggy-1.2.0 -- /usr/local/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /testbed
+collecting ... collected 18 items
+
+tests/test_ai.py::test_ai XPASS (Constructor assumes API access)         [  5%]
+tests/test_chat_to_files.py::test_to_files PASSED                        [ 11%]
+tests/test_chat_to_files.py::test_to_files_with_square_brackets PASSED   [ 16%]
+tests/test_chat_to_files.py::test_files_with_brackets_in_name PASSED     [ 22%]
+tests/test_chat_to_files.py::test_files_with_file_colon PASSED           [ 27%]
+tests/test_chat_to_files.py::test_files_with_back_tick PASSED            [ 33%]
+tests/test_chat_to_files.py::test_files_with_newline_between PASSED      [ 38%]
+tests/test_chat_to_files.py::test_files_with_newline_between_header PASSED [ 44%]
+tests/test_collect.py::test_collect_learnings PASSED                     [ 50%]
+tests/test_db.py::test_DB_operations PASSED                              [ 55%]
+tests/test_db.py::test_DBs_initialization PASSED                         [ 61%]
+tests/test_db.py::test_invalid_path FAILED                               [ 66%]
+tests/test_db.py::test_large_files PASSED                                [ 72%]
+tests/test_db.py::test_concurrent_access PASSED                          [ 77%]
+tests/test_db.py::test_error_messages PASSED                             [ 83%]
+tests/test_db.py::test_DBs_instantiation_with_wrong_number_of_arguments PASSED [ 88%]
+tests/test_db.py::test_DBs_dataclass_attributes PASSED                   [ 94%]
+tests/steps/test_archive.py::test_archive PASSED                         [100%]
+
+=================================== FAILURES ===================================
+______________________________ test_invalid_path _______________________________
+
+    def test_invalid_path():
+>       with pytest.raises((PermissionError, OSError)):
+E       Failed: DID NOT RAISE (<class 'PermissionError'>, <class 'OSError'>)
+
+tests/test_db.py:48: Failed
+=========================== short test summary info ============================
+FAILED tests/test_db.py::test_invalid_path - Failed: DID NOT RAISE (<class 'P...
+=================== 1 failed, 16 passed, 1 xpassed in 2.01s ====================
+ 
+

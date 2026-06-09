@@ -1,0 +1,609 @@
+eval No.0 
+
+========  
+
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-8.2.1, pluggy-1.5.0 -- /usr/local/bin/python3.9
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+plugins: anyio-4.4.0, cov-5.0.0
+collecting ... collected 108 items
+
+tests/agent_test.py::BasicAgentTest::test_agent_init PASSED              [  0%]
+tests/dashscope_test.py::TestDashScopeChatWrapper::test_call_failure PASSED [  1%]
+tests/dashscope_test.py::TestDashScopeChatWrapper::test_call_success PASSED [  2%]
+tests/dashscope_test.py::TestDashScopeImageSynthesisWrapper::test_image_synthesis_wrapper_call_failure PASSED [  3%]
+tests/dashscope_test.py::TestDashScopeImageSynthesisWrapper::test_image_synthesis_wrapper_call_success PASSED [  4%]
+tests/dashscope_test.py::TestDashScopeTextEmbeddingWrapper::test_call_failure PASSED [  5%]
+tests/dashscope_test.py::TestDashScopeTextEmbeddingWrapper::test_call_success PASSED [  6%]
+tests/dashscope_test.py::TestDashScopeMultiModalWrapper::test_call_failure PASSED [  7%]
+tests/dashscope_test.py::TestDashScopeMultiModalWrapper::test_call_success PASSED [  8%]
+tests/example_test.py::ExampleTest::test_dummy PASSED                    [  9%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_basic_expression PASSED [ 10%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_no_input_code PASSED [ 11%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_raising_exceptions PASSED [ 12%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_timeout PASSED [ 12%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_using_external_libs PASSED [ 13%]
+tests/execute_shell_command_test.py::ExecuteShellCommandTest::test PASSED [ 14%]
+tests/format_test.py::ExampleTest::test_dashscope_chat PASSED            [ 15%]
+tests/format_test.py::ExampleTest::test_dashscope_multimodal_audio PASSED [ 16%]
+tests/format_test.py::ExampleTest::test_dashscope_multimodal_image PASSED [ 17%]
+tests/format_test.py::ExampleTest::test_gemini_chat PASSED               [ 18%]
+tests/format_test.py::ExampleTest::test_litellm_chat PASSED              [ 19%]
+tests/format_test.py::ExampleTest::test_ollama_chat PASSED               [ 20%]
+tests/format_test.py::ExampleTest::test_ollama_generation PASSED         [ 21%]
+tests/format_test.py::ExampleTest::test_openai_chat PASSED               [ 22%]
+tests/format_test.py::ExampleTest::test_openai_chat_vision PASSED        [ 23%]
+tests/format_test.py::ExampleTest::test_openai_chat_vision_with_wrong_model PASSED [ 24%]
+tests/format_test.py::ExampleTest::test_zhipuai_chat PASSED              [ 25%]
+tests/gemini_test.py::GeminiModelWrapperTest::test_gemini_chat PASSED    [ 25%]
+tests/gemini_test.py::GeminiModelWrapperTest::test_gemini_embedding PASSED [ 26%]
+tests/litellm_test.py::TestLiteLLMChatWrapper::test_chat PASSED          [ 27%]
+tests/logger_test.py::LoggerTest::test_logger_chat PASSED                [ 28%]
+tests/memory_test.py::TemporaryMemoryTest::test_add PASSED               [ 29%]
+tests/memory_test.py::TemporaryMemoryTest::test_delete PASSED            [ 30%]
+tests/memory_test.py::TemporaryMemoryTest::test_invalid PASSED           [ 31%]
+tests/memory_test.py::TemporaryMemoryTest::test_load_export PASSED       [ 32%]
+tests/memory_test.py::TemporaryMemoryTest::test_tht_memory PASSED        [ 33%]
+tests/model_test.py::BasicModelTest::test_load_model_configs PASSED      [ 34%]
+tests/model_test.py::BasicModelTest::test_model_registry PASSED          [ 35%]
+tests/monitor_test.py::MonitorFactoryTest::test_get_monitor PASSED       [ 36%]
+tests/monitor_test.py::MonitorFactoryTest::test_monitor_type PASSED      [ 37%]
+tests/monitor_test.py::DummyMonitorTest::test_dummy_monitor PASSED       [ 37%]
+tests/monitor_test.py::MonitorTestBase::test_add_clear_set_quota SKIPPED [ 38%]
+tests/monitor_test.py::MonitorTestBase::test_get SKIPPED (Base test ...) [ 39%]
+tests/monitor_test.py::MonitorTestBase::test_register_exists_remove SKIPPED [ 40%]
+tests/monitor_test.py::SqliteMonitorTest::test_add_clear_set_quota PASSED [ 41%]
+tests/monitor_test.py::SqliteMonitorTest::test_get PASSED                [ 42%]
+tests/monitor_test.py::SqliteMonitorTest::test_register_budget PASSED    [ 43%]
+tests/monitor_test.py::SqliteMonitorTest::test_register_exists_remove PASSED [ 44%]
+tests/msghub_test.py::MsgHubTest::test_msghub PASSED                     [ 45%]
+tests/msghub_test.py::MsgHubTest::test_msghub_operation PASSED           [ 46%]
+tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_chat PASSED    [ 47%]
+tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_embedding PASSED [ 48%]
+tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_generate PASSED [ 49%]
+tests/operate_file_test.py::OperateFileTest::test_dir PASSED             [ 50%]
+tests/operate_file_test.py::OperateFileTest::test_file PASSED            [ 50%]
+tests/operate_file_test.py::OperateFileTest::test_json PASSED            [ 51%]
+tests/operate_file_test.py::OperateFileTest::test_txt PASSED             [ 52%]
+tests/parser_test.py::ModelResponseParserTest::test_DictFilterMixin_default_value PASSED [ 53%]
+tests/parser_test.py::ModelResponseParserTest::test_markdowncodeblockparser PASSED [ 54%]
+tests/parser_test.py::ModelResponseParserTest::test_markdowncodeblockparser_with_hint PASSED [ 55%]
+tests/parser_test.py::ModelResponseParserTest::test_markdownjsondictparser PASSED [ 56%]
+tests/parser_test.py::ModelResponseParserTest::test_markdownjsonobjectparser PASSED [ 57%]
+tests/parser_test.py::ModelResponseParserTest::test_multitaggedcontentparser PASSED [ 58%]
+tests/pipeline_test.py::BasicPipelineTest::test_for_pipeline PASSED      [ 59%]
+tests/pipeline_test.py::BasicPipelineTest::test_if_else_pipeline PASSED  [ 60%]
+tests/pipeline_test.py::BasicPipelineTest::test_sequential_pipeline PASSED [ 61%]
+tests/pipeline_test.py::BasicPipelineTest::test_switch_pipeline PASSED   [ 62%]
+tests/pipeline_test.py::BasicPipelineTest::test_while_pipeline PASSED    [ 62%]
+tests/pipeline_test.py::FunctionalPipelineTest::test_if_else_pipeline PASSED [ 63%]
+tests/pipeline_test.py::FunctionalPipelineTest::test_sequential_pipeline PASSED [ 64%]
+tests/prompt_engine_test.py::PromptEngineTest::test_list_prompt PASSED   [ 65%]
+tests/prompt_engine_test.py::PromptEngineTest::test_str_prompt PASSED    [ 66%]
+tests/record_api_invocation_test.py::RecordApiInvocation::test_record_model_invocation_with_init PASSED [ 67%]
+tests/retrieval_from_list_test.py::TestRetrieval::test_retrieval_from_list PASSED [ 68%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_agent_nesting PASSED    [ 69%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_clone_instances PASSED  [ 70%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_connect_to_an_existing_rpc_server PASSED [ 71%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_error_handling PASSED   [ 72%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_mix_rpc_agent_and_local_agent PASSED [ 73%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_msghub_compatibility PASSED [ 74%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_multi_agent_in_same_server PASSED [ 75%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_multi_rpc_agent PASSED  [ 75%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_single_rpc_agent_server PASSED [ 76%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_standalone_multiprocess_init PASSED [ 77%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_bing_search PASSED [ 78%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_enum PASSED      [ 79%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_exec_python_code PASSED [ 80%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_multi_tagged_content PASSED [ 81%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_retrieval PASSED [ 82%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_service_toolkit PASSED [ 83%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_sql_query PASSED [ 84%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_summary PASSED   [ 85%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mongodb_failure PASSED [ 86%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mongodb_success PASSED [ 87%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mysql_failure PASSED [ 87%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mysql_success PASSED [ 88%]
+tests/sql_query_test.py::TestSQLQueries::test_query_sqlite_exception_handling PASSED [ 89%]
+tests/sql_query_test.py::TestSQLQueries::test_query_sqlite_success PASSED [ 90%]
+tests/token_utils_test.py::TokenUtilsTest::test_count_openai_token PASSED [ 91%]
+tests/token_utils_test.py::TokenUtilsTest::test_get_openai_max_length PASSED [ 92%]
+tests/web_digest_test.py::TestWebDigest::test_web_digest PASSED          [ 93%]
+tests/web_digest_test.py::TestWebDigest::test_web_load PASSED            [ 94%]
+tests/web_search_test.py::TestWebSearches::test_arxiv_query_format PASSED [ 95%]
+tests/web_search_test.py::TestWebSearches::test_arxiv_search PASSED      [ 96%]
+tests/web_search_test.py::TestWebSearches::test_search_bing PASSED       [ 97%]
+tests/web_search_test.py::TestWebSearches::test_search_google PASSED     [ 98%]
+tests/zhipu_test.py::TestZhipuAIChatWrapper::test_chat PASSED            [ 99%]
+tests/zhipu_test.py::TestZhipuAIEmbeddingWrapper::test_embedding PASSED  [100%]
+
+=============================== warnings summary ===============================
+../usr/local/lib/python3.9/site-packages/pydantic/_internal/_config.py:284: 26 warnings
+  /usr/local/lib/python3.9/site-packages/pydantic/_internal/_config.py:284: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:275
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:275: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:362
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:362: PydanticDeprecatedSince20: `pydantic.config.Extra` is deprecated, use literal values instead (e.g. `extra='allow'`). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    extra = Extra.allow  # Allow extra fields
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:365
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:365: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:399
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:399: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:446
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:446: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:515
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:515: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:535
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:535: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:548
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:548: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:598
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:598: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:667
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:667: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:1028
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:1028: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:1055
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:1055: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:1076
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:1076: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+tests/agent_test.py:11
+  /testbed/tests/agent_test.py:11: PytestCollectionWarning: cannot collect test class 'TestAgent' because it has a __init__ constructor (from: tests/agent_test.py)
+    class TestAgent(AgentBase):
+
+tests/agent_test.py:35
+  /testbed/tests/agent_test.py:35: PytestCollectionWarning: cannot collect test class 'TestAgentCopy' because it has a __init__ constructor (from: tests/agent_test.py)
+    class TestAgentCopy(TestAgent):
+
+tests/model_test.py:23
+  /testbed/tests/model_test.py:23: PytestCollectionWarning: cannot collect test class 'TestModelWrapperSimple' because it has a __init__ constructor (from: tests/model_test.py)
+    class TestModelWrapperSimple(ModelWrapperBase):
+
+tests/msghub_test.py:11
+  /testbed/tests/msghub_test.py:11: PytestCollectionWarning: cannot collect test class 'TestAgent' because it has a __init__ constructor (from: tests/msghub_test.py)
+    class TestAgent(AgentBase):
+
+tests/logger_test.py::LoggerTest::test_logger_chat
+  /usr/local/lib/python3.9/site-packages/loguru/_logger.py:2046: DeprecationWarning: The 'stop()' method is deprecated, please use 'remove()' instead
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+============ 105 passed, 3 skipped, 44 warnings in 60.23s (0:01:00) ============
+ 
+
+eval No.1 
+
+========  
+
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-8.2.1, pluggy-1.5.0 -- /usr/local/bin/python3.9
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+plugins: anyio-4.4.0, cov-5.0.0
+collecting ... collected 108 items
+
+tests/agent_test.py::BasicAgentTest::test_agent_init PASSED              [  0%]
+tests/dashscope_test.py::TestDashScopeChatWrapper::test_call_failure PASSED [  1%]
+tests/dashscope_test.py::TestDashScopeChatWrapper::test_call_success PASSED [  2%]
+tests/dashscope_test.py::TestDashScopeImageSynthesisWrapper::test_image_synthesis_wrapper_call_failure PASSED [  3%]
+tests/dashscope_test.py::TestDashScopeImageSynthesisWrapper::test_image_synthesis_wrapper_call_success PASSED [  4%]
+tests/dashscope_test.py::TestDashScopeTextEmbeddingWrapper::test_call_failure PASSED [  5%]
+tests/dashscope_test.py::TestDashScopeTextEmbeddingWrapper::test_call_success PASSED [  6%]
+tests/dashscope_test.py::TestDashScopeMultiModalWrapper::test_call_failure PASSED [  7%]
+tests/dashscope_test.py::TestDashScopeMultiModalWrapper::test_call_success PASSED [  8%]
+tests/example_test.py::ExampleTest::test_dummy PASSED                    [  9%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_basic_expression PASSED [ 10%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_no_input_code PASSED [ 11%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_raising_exceptions PASSED [ 12%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_timeout PASSED [ 12%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_using_external_libs PASSED [ 13%]
+tests/execute_shell_command_test.py::ExecuteShellCommandTest::test PASSED [ 14%]
+tests/format_test.py::ExampleTest::test_dashscope_chat PASSED            [ 15%]
+tests/format_test.py::ExampleTest::test_dashscope_multimodal_audio PASSED [ 16%]
+tests/format_test.py::ExampleTest::test_dashscope_multimodal_image PASSED [ 17%]
+tests/format_test.py::ExampleTest::test_gemini_chat PASSED               [ 18%]
+tests/format_test.py::ExampleTest::test_litellm_chat PASSED              [ 19%]
+tests/format_test.py::ExampleTest::test_ollama_chat PASSED               [ 20%]
+tests/format_test.py::ExampleTest::test_ollama_generation PASSED         [ 21%]
+tests/format_test.py::ExampleTest::test_openai_chat PASSED               [ 22%]
+tests/format_test.py::ExampleTest::test_openai_chat_vision PASSED        [ 23%]
+tests/format_test.py::ExampleTest::test_openai_chat_vision_with_wrong_model PASSED [ 24%]
+tests/format_test.py::ExampleTest::test_zhipuai_chat PASSED              [ 25%]
+tests/gemini_test.py::GeminiModelWrapperTest::test_gemini_chat PASSED    [ 25%]
+tests/gemini_test.py::GeminiModelWrapperTest::test_gemini_embedding PASSED [ 26%]
+tests/litellm_test.py::TestLiteLLMChatWrapper::test_chat PASSED          [ 27%]
+tests/logger_test.py::LoggerTest::test_logger_chat PASSED                [ 28%]
+tests/memory_test.py::TemporaryMemoryTest::test_add PASSED               [ 29%]
+tests/memory_test.py::TemporaryMemoryTest::test_delete PASSED            [ 30%]
+tests/memory_test.py::TemporaryMemoryTest::test_invalid PASSED           [ 31%]
+tests/memory_test.py::TemporaryMemoryTest::test_load_export PASSED       [ 32%]
+tests/memory_test.py::TemporaryMemoryTest::test_tht_memory PASSED        [ 33%]
+tests/model_test.py::BasicModelTest::test_load_model_configs PASSED      [ 34%]
+tests/model_test.py::BasicModelTest::test_model_registry PASSED          [ 35%]
+tests/monitor_test.py::MonitorFactoryTest::test_get_monitor PASSED       [ 36%]
+tests/monitor_test.py::MonitorFactoryTest::test_monitor_type PASSED      [ 37%]
+tests/monitor_test.py::DummyMonitorTest::test_dummy_monitor PASSED       [ 37%]
+tests/monitor_test.py::MonitorTestBase::test_add_clear_set_quota SKIPPED [ 38%]
+tests/monitor_test.py::MonitorTestBase::test_get SKIPPED (Base test ...) [ 39%]
+tests/monitor_test.py::MonitorTestBase::test_register_exists_remove SKIPPED [ 40%]
+tests/monitor_test.py::SqliteMonitorTest::test_add_clear_set_quota PASSED [ 41%]
+tests/monitor_test.py::SqliteMonitorTest::test_get PASSED                [ 42%]
+tests/monitor_test.py::SqliteMonitorTest::test_register_budget PASSED    [ 43%]
+tests/monitor_test.py::SqliteMonitorTest::test_register_exists_remove PASSED [ 44%]
+tests/msghub_test.py::MsgHubTest::test_msghub PASSED                     [ 45%]
+tests/msghub_test.py::MsgHubTest::test_msghub_operation PASSED           [ 46%]
+tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_chat PASSED    [ 47%]
+tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_embedding PASSED [ 48%]
+tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_generate PASSED [ 49%]
+tests/operate_file_test.py::OperateFileTest::test_dir PASSED             [ 50%]
+tests/operate_file_test.py::OperateFileTest::test_file PASSED            [ 50%]
+tests/operate_file_test.py::OperateFileTest::test_json PASSED            [ 51%]
+tests/operate_file_test.py::OperateFileTest::test_txt PASSED             [ 52%]
+tests/parser_test.py::ModelResponseParserTest::test_DictFilterMixin_default_value PASSED [ 53%]
+tests/parser_test.py::ModelResponseParserTest::test_markdowncodeblockparser PASSED [ 54%]
+tests/parser_test.py::ModelResponseParserTest::test_markdowncodeblockparser_with_hint PASSED [ 55%]
+tests/parser_test.py::ModelResponseParserTest::test_markdownjsondictparser PASSED [ 56%]
+tests/parser_test.py::ModelResponseParserTest::test_markdownjsonobjectparser PASSED [ 57%]
+tests/parser_test.py::ModelResponseParserTest::test_multitaggedcontentparser PASSED [ 58%]
+tests/pipeline_test.py::BasicPipelineTest::test_for_pipeline PASSED      [ 59%]
+tests/pipeline_test.py::BasicPipelineTest::test_if_else_pipeline PASSED  [ 60%]
+tests/pipeline_test.py::BasicPipelineTest::test_sequential_pipeline PASSED [ 61%]
+tests/pipeline_test.py::BasicPipelineTest::test_switch_pipeline PASSED   [ 62%]
+tests/pipeline_test.py::BasicPipelineTest::test_while_pipeline PASSED    [ 62%]
+tests/pipeline_test.py::FunctionalPipelineTest::test_if_else_pipeline PASSED [ 63%]
+tests/pipeline_test.py::FunctionalPipelineTest::test_sequential_pipeline PASSED [ 64%]
+tests/prompt_engine_test.py::PromptEngineTest::test_list_prompt PASSED   [ 65%]
+tests/prompt_engine_test.py::PromptEngineTest::test_str_prompt PASSED    [ 66%]
+tests/record_api_invocation_test.py::RecordApiInvocation::test_record_model_invocation_with_init PASSED [ 67%]
+tests/retrieval_from_list_test.py::TestRetrieval::test_retrieval_from_list PASSED [ 68%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_agent_nesting PASSED    [ 69%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_clone_instances PASSED  [ 70%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_connect_to_an_existing_rpc_server PASSED [ 71%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_error_handling PASSED   [ 72%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_mix_rpc_agent_and_local_agent PASSED [ 73%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_msghub_compatibility PASSED [ 74%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_multi_agent_in_same_server PASSED [ 75%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_multi_rpc_agent PASSED  [ 75%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_single_rpc_agent_server PASSED [ 76%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_standalone_multiprocess_init PASSED [ 77%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_bing_search PASSED [ 78%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_enum PASSED      [ 79%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_exec_python_code PASSED [ 80%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_multi_tagged_content PASSED [ 81%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_retrieval PASSED [ 82%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_service_toolkit PASSED [ 83%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_sql_query PASSED [ 84%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_summary PASSED   [ 85%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mongodb_failure PASSED [ 86%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mongodb_success PASSED [ 87%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mysql_failure PASSED [ 87%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mysql_success PASSED [ 88%]
+tests/sql_query_test.py::TestSQLQueries::test_query_sqlite_exception_handling PASSED [ 89%]
+tests/sql_query_test.py::TestSQLQueries::test_query_sqlite_success PASSED [ 90%]
+tests/token_utils_test.py::TokenUtilsTest::test_count_openai_token PASSED [ 91%]
+tests/token_utils_test.py::TokenUtilsTest::test_get_openai_max_length PASSED [ 92%]
+tests/web_digest_test.py::TestWebDigest::test_web_digest PASSED          [ 93%]
+tests/web_digest_test.py::TestWebDigest::test_web_load PASSED            [ 94%]
+tests/web_search_test.py::TestWebSearches::test_arxiv_query_format PASSED [ 95%]
+tests/web_search_test.py::TestWebSearches::test_arxiv_search PASSED      [ 96%]
+tests/web_search_test.py::TestWebSearches::test_search_bing PASSED       [ 97%]
+tests/web_search_test.py::TestWebSearches::test_search_google PASSED     [ 98%]
+tests/zhipu_test.py::TestZhipuAIChatWrapper::test_chat PASSED            [ 99%]
+tests/zhipu_test.py::TestZhipuAIEmbeddingWrapper::test_embedding PASSED  [100%]
+
+=============================== warnings summary ===============================
+../usr/local/lib/python3.9/site-packages/pydantic/_internal/_config.py:284: 26 warnings
+  /usr/local/lib/python3.9/site-packages/pydantic/_internal/_config.py:284: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:275
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:275: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:362
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:362: PydanticDeprecatedSince20: `pydantic.config.Extra` is deprecated, use literal values instead (e.g. `extra='allow'`). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    extra = Extra.allow  # Allow extra fields
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:365
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:365: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:399
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:399: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:446
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:446: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:515
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:515: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:535
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:535: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:548
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:548: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:598
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:598: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:667
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:667: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:1028
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:1028: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:1055
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:1055: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:1076
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:1076: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+tests/agent_test.py:11
+  /testbed/tests/agent_test.py:11: PytestCollectionWarning: cannot collect test class 'TestAgent' because it has a __init__ constructor (from: tests/agent_test.py)
+    class TestAgent(AgentBase):
+
+tests/agent_test.py:35
+  /testbed/tests/agent_test.py:35: PytestCollectionWarning: cannot collect test class 'TestAgentCopy' because it has a __init__ constructor (from: tests/agent_test.py)
+    class TestAgentCopy(TestAgent):
+
+tests/model_test.py:23
+  /testbed/tests/model_test.py:23: PytestCollectionWarning: cannot collect test class 'TestModelWrapperSimple' because it has a __init__ constructor (from: tests/model_test.py)
+    class TestModelWrapperSimple(ModelWrapperBase):
+
+tests/msghub_test.py:11
+  /testbed/tests/msghub_test.py:11: PytestCollectionWarning: cannot collect test class 'TestAgent' because it has a __init__ constructor (from: tests/msghub_test.py)
+    class TestAgent(AgentBase):
+
+tests/logger_test.py::LoggerTest::test_logger_chat
+  /usr/local/lib/python3.9/site-packages/loguru/_logger.py:2046: DeprecationWarning: The 'stop()' method is deprecated, please use 'remove()' instead
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+============ 105 passed, 3 skipped, 44 warnings in 60.13s (0:01:00) ============
+ 
+
+eval No.2 
+
+========  
+
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.9.25, pytest-8.2.1, pluggy-1.5.0 -- /usr/local/bin/python3.9
+cachedir: .pytest_cache
+rootdir: /testbed
+configfile: pyproject.toml
+plugins: anyio-4.4.0, cov-5.0.0
+collecting ... collected 108 items
+
+tests/agent_test.py::BasicAgentTest::test_agent_init PASSED              [  0%]
+tests/dashscope_test.py::TestDashScopeChatWrapper::test_call_failure PASSED [  1%]
+tests/dashscope_test.py::TestDashScopeChatWrapper::test_call_success PASSED [  2%]
+tests/dashscope_test.py::TestDashScopeImageSynthesisWrapper::test_image_synthesis_wrapper_call_failure PASSED [  3%]
+tests/dashscope_test.py::TestDashScopeImageSynthesisWrapper::test_image_synthesis_wrapper_call_success PASSED [  4%]
+tests/dashscope_test.py::TestDashScopeTextEmbeddingWrapper::test_call_failure PASSED [  5%]
+tests/dashscope_test.py::TestDashScopeTextEmbeddingWrapper::test_call_success PASSED [  6%]
+tests/dashscope_test.py::TestDashScopeMultiModalWrapper::test_call_failure PASSED [  7%]
+tests/dashscope_test.py::TestDashScopeMultiModalWrapper::test_call_success PASSED [  8%]
+tests/example_test.py::ExampleTest::test_dummy PASSED                    [  9%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_basic_expression PASSED [ 10%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_no_input_code PASSED [ 11%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_raising_exceptions PASSED [ 12%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_timeout PASSED [ 12%]
+tests/execute_python_code_test.py::ExecutePythonCodeTest::test_using_external_libs PASSED [ 13%]
+tests/execute_shell_command_test.py::ExecuteShellCommandTest::test PASSED [ 14%]
+tests/format_test.py::ExampleTest::test_dashscope_chat PASSED            [ 15%]
+tests/format_test.py::ExampleTest::test_dashscope_multimodal_audio PASSED [ 16%]
+tests/format_test.py::ExampleTest::test_dashscope_multimodal_image PASSED [ 17%]
+tests/format_test.py::ExampleTest::test_gemini_chat PASSED               [ 18%]
+tests/format_test.py::ExampleTest::test_litellm_chat PASSED              [ 19%]
+tests/format_test.py::ExampleTest::test_ollama_chat PASSED               [ 20%]
+tests/format_test.py::ExampleTest::test_ollama_generation PASSED         [ 21%]
+tests/format_test.py::ExampleTest::test_openai_chat PASSED               [ 22%]
+tests/format_test.py::ExampleTest::test_openai_chat_vision PASSED        [ 23%]
+tests/format_test.py::ExampleTest::test_openai_chat_vision_with_wrong_model PASSED [ 24%]
+tests/format_test.py::ExampleTest::test_zhipuai_chat PASSED              [ 25%]
+tests/gemini_test.py::GeminiModelWrapperTest::test_gemini_chat PASSED    [ 25%]
+tests/gemini_test.py::GeminiModelWrapperTest::test_gemini_embedding PASSED [ 26%]
+tests/litellm_test.py::TestLiteLLMChatWrapper::test_chat PASSED          [ 27%]
+tests/logger_test.py::LoggerTest::test_logger_chat PASSED                [ 28%]
+tests/memory_test.py::TemporaryMemoryTest::test_add PASSED               [ 29%]
+tests/memory_test.py::TemporaryMemoryTest::test_delete PASSED            [ 30%]
+tests/memory_test.py::TemporaryMemoryTest::test_invalid PASSED           [ 31%]
+tests/memory_test.py::TemporaryMemoryTest::test_load_export PASSED       [ 32%]
+tests/memory_test.py::TemporaryMemoryTest::test_tht_memory PASSED        [ 33%]
+tests/model_test.py::BasicModelTest::test_load_model_configs PASSED      [ 34%]
+tests/model_test.py::BasicModelTest::test_model_registry PASSED          [ 35%]
+tests/monitor_test.py::MonitorFactoryTest::test_get_monitor PASSED       [ 36%]
+tests/monitor_test.py::MonitorFactoryTest::test_monitor_type PASSED      [ 37%]
+tests/monitor_test.py::DummyMonitorTest::test_dummy_monitor PASSED       [ 37%]
+tests/monitor_test.py::MonitorTestBase::test_add_clear_set_quota SKIPPED [ 38%]
+tests/monitor_test.py::MonitorTestBase::test_get SKIPPED (Base test ...) [ 39%]
+tests/monitor_test.py::MonitorTestBase::test_register_exists_remove SKIPPED [ 40%]
+tests/monitor_test.py::SqliteMonitorTest::test_add_clear_set_quota PASSED [ 41%]
+tests/monitor_test.py::SqliteMonitorTest::test_get PASSED                [ 42%]
+tests/monitor_test.py::SqliteMonitorTest::test_register_budget PASSED    [ 43%]
+tests/monitor_test.py::SqliteMonitorTest::test_register_exists_remove PASSED [ 44%]
+tests/msghub_test.py::MsgHubTest::test_msghub PASSED                     [ 45%]
+tests/msghub_test.py::MsgHubTest::test_msghub_operation PASSED           [ 46%]
+tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_chat PASSED    [ 47%]
+tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_embedding PASSED [ 48%]
+tests/ollama_test.py::OllamaModelWrapperTest::test_ollama_generate PASSED [ 49%]
+tests/operate_file_test.py::OperateFileTest::test_dir PASSED             [ 50%]
+tests/operate_file_test.py::OperateFileTest::test_file PASSED            [ 50%]
+tests/operate_file_test.py::OperateFileTest::test_json PASSED            [ 51%]
+tests/operate_file_test.py::OperateFileTest::test_txt PASSED             [ 52%]
+tests/parser_test.py::ModelResponseParserTest::test_DictFilterMixin_default_value PASSED [ 53%]
+tests/parser_test.py::ModelResponseParserTest::test_markdowncodeblockparser PASSED [ 54%]
+tests/parser_test.py::ModelResponseParserTest::test_markdowncodeblockparser_with_hint PASSED [ 55%]
+tests/parser_test.py::ModelResponseParserTest::test_markdownjsondictparser PASSED [ 56%]
+tests/parser_test.py::ModelResponseParserTest::test_markdownjsonobjectparser PASSED [ 57%]
+tests/parser_test.py::ModelResponseParserTest::test_multitaggedcontentparser PASSED [ 58%]
+tests/pipeline_test.py::BasicPipelineTest::test_for_pipeline PASSED      [ 59%]
+tests/pipeline_test.py::BasicPipelineTest::test_if_else_pipeline PASSED  [ 60%]
+tests/pipeline_test.py::BasicPipelineTest::test_sequential_pipeline PASSED [ 61%]
+tests/pipeline_test.py::BasicPipelineTest::test_switch_pipeline PASSED   [ 62%]
+tests/pipeline_test.py::BasicPipelineTest::test_while_pipeline PASSED    [ 62%]
+tests/pipeline_test.py::FunctionalPipelineTest::test_if_else_pipeline PASSED [ 63%]
+tests/pipeline_test.py::FunctionalPipelineTest::test_sequential_pipeline PASSED [ 64%]
+tests/prompt_engine_test.py::PromptEngineTest::test_list_prompt PASSED   [ 65%]
+tests/prompt_engine_test.py::PromptEngineTest::test_str_prompt PASSED    [ 66%]
+tests/record_api_invocation_test.py::RecordApiInvocation::test_record_model_invocation_with_init PASSED [ 67%]
+tests/retrieval_from_list_test.py::TestRetrieval::test_retrieval_from_list PASSED [ 68%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_agent_nesting PASSED    [ 69%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_clone_instances PASSED  [ 70%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_connect_to_an_existing_rpc_server PASSED [ 71%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_error_handling PASSED   [ 72%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_mix_rpc_agent_and_local_agent PASSED [ 73%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_msghub_compatibility PASSED [ 74%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_multi_agent_in_same_server PASSED [ 75%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_multi_rpc_agent PASSED  [ 75%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_single_rpc_agent_server PASSED [ 76%]
+tests/rpc_agent_test.py::BasicRpcAgentTest::test_standalone_multiprocess_init PASSED [ 77%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_bing_search PASSED [ 78%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_enum PASSED      [ 79%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_exec_python_code PASSED [ 80%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_multi_tagged_content PASSED [ 81%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_retrieval PASSED [ 82%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_service_toolkit PASSED [ 83%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_sql_query PASSED [ 84%]
+tests/service_toolkit_test.py::ServiceToolkitTest::test_summary PASSED   [ 85%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mongodb_failure PASSED [ 86%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mongodb_success PASSED [ 87%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mysql_failure PASSED [ 87%]
+tests/sql_query_test.py::TestSQLQueries::test_query_mysql_success PASSED [ 88%]
+tests/sql_query_test.py::TestSQLQueries::test_query_sqlite_exception_handling PASSED [ 89%]
+tests/sql_query_test.py::TestSQLQueries::test_query_sqlite_success PASSED [ 90%]
+tests/token_utils_test.py::TokenUtilsTest::test_count_openai_token PASSED [ 91%]
+tests/token_utils_test.py::TokenUtilsTest::test_get_openai_max_length PASSED [ 92%]
+tests/web_digest_test.py::TestWebDigest::test_web_digest PASSED          [ 93%]
+tests/web_digest_test.py::TestWebDigest::test_web_load PASSED            [ 94%]
+tests/web_search_test.py::TestWebSearches::test_arxiv_query_format PASSED [ 95%]
+tests/web_search_test.py::TestWebSearches::test_arxiv_search PASSED      [ 96%]
+tests/web_search_test.py::TestWebSearches::test_search_bing PASSED       [ 97%]
+tests/web_search_test.py::TestWebSearches::test_search_google PASSED     [ 98%]
+tests/zhipu_test.py::TestZhipuAIChatWrapper::test_chat PASSED            [ 99%]
+tests/zhipu_test.py::TestZhipuAIEmbeddingWrapper::test_embedding PASSED  [100%]
+
+=============================== warnings summary ===============================
+../usr/local/lib/python3.9/site-packages/pydantic/_internal/_config.py:284: 26 warnings
+  /usr/local/lib/python3.9/site-packages/pydantic/_internal/_config.py:284: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:275
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:275: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:362
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:362: PydanticDeprecatedSince20: `pydantic.config.Extra` is deprecated, use literal values instead (e.g. `extra='allow'`). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    extra = Extra.allow  # Allow extra fields
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:365
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:365: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:399
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:399: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:446
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:446: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:515
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:515: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:535
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:535: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:548
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:548: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:598
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:598: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:667
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:667: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:1028
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:1028: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:1055
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:1055: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+../usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:1076
+  /usr/local/lib/python3.9/site-packages/litellm/proxy/_types.py:1076: PydanticDeprecatedSince20: Pydantic V1 style `@root_validator` validators are deprecated. You should migrate to Pydantic V2 style `@model_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.7/migration/
+    @root_validator(pre=True)
+
+tests/agent_test.py:11
+  /testbed/tests/agent_test.py:11: PytestCollectionWarning: cannot collect test class 'TestAgent' because it has a __init__ constructor (from: tests/agent_test.py)
+    class TestAgent(AgentBase):
+
+tests/agent_test.py:35
+  /testbed/tests/agent_test.py:35: PytestCollectionWarning: cannot collect test class 'TestAgentCopy' because it has a __init__ constructor (from: tests/agent_test.py)
+    class TestAgentCopy(TestAgent):
+
+tests/model_test.py:23
+  /testbed/tests/model_test.py:23: PytestCollectionWarning: cannot collect test class 'TestModelWrapperSimple' because it has a __init__ constructor (from: tests/model_test.py)
+    class TestModelWrapperSimple(ModelWrapperBase):
+
+tests/msghub_test.py:11
+  /testbed/tests/msghub_test.py:11: PytestCollectionWarning: cannot collect test class 'TestAgent' because it has a __init__ constructor (from: tests/msghub_test.py)
+    class TestAgent(AgentBase):
+
+tests/logger_test.py::LoggerTest::test_logger_chat
+  /usr/local/lib/python3.9/site-packages/loguru/_logger.py:2046: DeprecationWarning: The 'stop()' method is deprecated, please use 'remove()' instead
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+============ 105 passed, 3 skipped, 44 warnings in 60.19s (0:01:00) ============
+ 
+
