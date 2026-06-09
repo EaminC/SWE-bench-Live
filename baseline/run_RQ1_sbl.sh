@@ -7,7 +7,7 @@ set -euo pipefail
 # This allows 'conda activate' to work inside a bash script
 eval "$(conda shell.bash hook)"
 
-ENV_NAME="sbl-main"
+ENV_NAME="sbl"
 ENV_PATH="/home/cc/miniconda3/envs/$ENV_NAME"
 
 echo "============================================================"
@@ -27,11 +27,11 @@ conda activate "$ENV_NAME"
 echo "Installing core dependencies..."
 # Direct call to the env's python to run pip
 "$ENV_PATH/bin/python" -m pip install --upgrade pip
-"$ENV_PATH/bin/python" -m pip install openai requests
+"$ENV_PATH/bin/python" -m pip install openai requests python-dotenv python-dateutil
 
 # Install the editable package
 echo "Installing SWE-bench-Live in editable mode..."
-"$ENV_PATH/bin/python" -m pip install -e .
+"$ENV_PATH/bin/python" -m pip install -e . "chardet<6"
 
 # ==============================================================================
 # LOGGING, TELEMETRY, & PATH SETUP
@@ -41,6 +41,9 @@ INPUT_MAP="baseline/issue_pr_map.json"
 ORGANIZE_JSONL="launch/data/sbl_baseline/organize.jsonl"
 VALIDATED_JSONL="logs/val/validated_instances.jsonl"
 SUMMARY_JSON="baseline/sf_judge_f2p_summary.json"
+
+# Overall timeout for Step 9 (seconds). Can be overridden in environment.
+STEP9_TIMEOUT=${STEP9_TIMEOUT:-3600} # default 2 hours
 
 # Setup master logging directory
 LOG_DIR="$SBL_ROOT/logs/runs"
@@ -72,13 +75,13 @@ echo "============================================================"
 # ==============================================================================
 # Step 1: Activate conda environment
 # ==============================================================================
-echo -e "\n[1] Activating Conda environment (sbl-main)..."
-if ! conda info --envs | grep -q "^sbl-main "; then
-    echo "ERROR: Conda environment 'sbl-main' not found."
+echo -e "\n[1] Activating Conda environment (sbl)..."
+if ! conda info --envs | grep -q "^sbl "; then
+    echo "ERROR: Conda environment 'sbl' not found."
     echo "Please execute 'bash setup_env.sh' to provision the infrastructure before running the pipeline."
     exit 1
 fi
-conda activate sbl-main
+conda activate sbl
 
 # ==============================================================================
 # INITIALIZE TOKEN TRACKING
@@ -154,12 +157,17 @@ cd ..
 # Step 9: Prepare Judge Folder
 # ==============================================================================
 echo -e "\n[9] Preparing SWE-Factory Judge format..."
-"$ENV_PATH/bin/python" baseline/sf_make_judge_f2p_folder_from_organize_jsonl.py \
-  --input "$ORGANIZE_JSONL" \
-  --out-dir baseline/sf_judge_f2p_outputs \
-  --platform linux \
-  --workers 2 \
-  --overwrite 1
+if ! timeout --preserve-status --kill-after=60s "$STEP9_TIMEOUT" \
+    "$ENV_PATH/bin/python" baseline/sf_make_judge_f2p_folder_from_organize_jsonl.py \
+      --input "$ORGANIZE_JSONL" \
+      --out-dir baseline/sf_judge_f2p_outputs \
+      --platform linux \
+      --workers 2 \
+      --timeout-s 1200 \
+      --overwrite 1
+then
+  echo "Warning: Step 9 timed out or exited with non-zero status. Continuing pipeline." >&2
+fi
 
 # ==============================================================================
 # Step 10: Judge Fail2Pass
