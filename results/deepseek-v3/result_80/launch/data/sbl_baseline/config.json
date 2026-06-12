@@ -5,7 +5,7 @@
   },
   "llm_provider_name": "OpenAI",
   "model_config": {
-    "model_name": "tensorblock/gpt-4.1-mini",
+    "model_name": "tuzi/deepseek-v3",
     "temperature": 0.0
   },
   "workspace_root": "data/sbl_baseline/",
