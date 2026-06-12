@@ -1,0 +1,191 @@
+cat pytest-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.10.20, pytest-9.0.2, pluggy-1.6.0 -- /usr/local/bin/python3.10
+cachedir: .pytest_cache
+metadata: {'Python': '3.10.20', 'Platform': 'Linux-5.4.0-198-generic-x86_64-with-glibc2.41', 'Packages': {'pytest': '9.0.2', 'pluggy': '1.6.0'}, 'Plugins': {'json-report': '1.5.0', 'metadata': '3.1.1', 'anyio': '4.12.1', 'forked': '1.6.0'}}
+rootdir: /testbed
+configfile: pyproject.toml
+plugins: json-report-1.5.0, metadata-3.1.1, anyio-4.12.1, forked-1.6.0
+collecting ... collected 358 items
+
+a2a_agent_test.py::A2AAgentTest::test_observe_and_reply_merge PASSED     [  0%]
+a2a_agent_test.py::A2AAgentTest::test_observe_method PASSED              [  0%]
+a2a_agent_test.py::A2AAgentTest::test_reply_with_no_messages PASSED      [  0%]
+a2a_agent_test.py::A2AAgentTest::test_reply_with_only_observed_messages PASSED [  1%]
+a2a_agent_test.py::A2AAgentTest::test_reply_with_task PASSED             [  1%]
+a2a_resolver_test.py::A2AAgentCardResolverTest::test_file_card_resolver PASSED [  1%]
+config_test.py::ConfigTest::test_config_attributes PASSED                [  1%]
+embedding_cache_test.py::EmbeddingCacheTest::test_embedding_cache PASSED [  2%]
+evaluation_test.py::EvaluatorTest::test_general_evaluator PASSED         [  2%]
+evaluation_test.py::EvaluatorTest::test_ray_evaluator PASSED             [  2%]
+formatter_a2a_test.py::A2AFormatterTest::test_a2a_msg_to_as PASSED       [  3%]
+formatter_a2a_test.py::A2AFormatterTest::test_a2a_task_to_as PASSED      [  3%]
+formatter_a2a_test.py::A2AFormatterTest::test_as_to_a2a PASSED           [  3%]
+formatter_anthropic_test.py::TestAnthropicChatFormatterFormatter::test_chat_formatter PASSED [  3%]
+formatter_anthropic_test.py::TestAnthropicChatFormatterFormatter::test_multiagent_formater PASSED [  4%]
+formatter_dashscope_test.py::TestDashScopeFormatter::test_chat_formatter PASSED [  4%]
+formatter_dashscope_test.py::TestDashScopeFormatter::test_chat_formatter_with_extract_media_blocks PASSED [  4%]
+formatter_dashscope_test.py::TestDashScopeFormatter::test_multiagent_formater PASSED [  5%]
+formatter_dashscope_test.py::TestDashScopeFormatter::test_multiagent_formatter_with_promote_media_tool_result PASSED [  5%]
+formatter_deepseek_test.py::TestDeepSeekFormatter::test_chat_formatter PASSED [  5%]
+formatter_deepseek_test.py::TestDeepSeekFormatter::test_multi_agent_formatter PASSED [  5%]
+formatter_gemini_test.py::TestGeminiFormatter::test_chat_formatter PASSED [  6%]
+formatter_gemini_test.py::TestGeminiFormatter::test_chat_formatter_with_extract_image_blocks PASSED [  6%]
+formatter_gemini_test.py::TestGeminiFormatter::test_multi_agent_formatter PASSED [  6%]
+formatter_gemini_test.py::TestGeminiFormatter::test_multi_agent_formatter_with_promote_tool_result_images PASSED [  6%]
+formatter_ollama_test.py::TestOllamaFormatter::test_chat_formatter PASSED [  7%]
+formatter_ollama_test.py::TestOllamaFormatter::test_chat_formatter_with_extract_image_blocks PASSED [  7%]
+formatter_ollama_test.py::TestOllamaFormatter::test_multi_agent_formatter PASSED [  7%]
+formatter_ollama_test.py::TestOllamaFormatter::test_multi_agent_formatter_with_promote_tool_result_images PASSED [  8%]
+formatter_openai_test.py::TestOpenAIFormatter::test_formatter PASSED     [  8%]
+formatter_openai_test.py::TestOpenAIFormatter::test_formatter_with_extract_image_blocks PASSED [  8%]
+formatter_openai_test.py::TestOpenAIFormatter::test_multiagent_formatter PASSED [  8%]
+formatter_openai_test.py::TestOpenAIFormatter::test_multiagent_formatter_with_promote_tool_result_images PASSED [  9%]
+hook_test.py::HookTest::test_observe_hooks PASSED                        [  9%]
+hook_test.py::HookTest::test_print_hooks PASSED                          [  9%]
+hook_test.py::HookTest::test_reply_hooks PASSED                          [ 10%]
+mcp_sse_client_test.py::SseMCPClientTest::test_stateful_client PASSED    [ 10%]
+mcp_sse_client_test.py::SseMCPClientTest::test_stateless_client PASSED   [ 10%]
+mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_embedded_content PASSED [ 10%]
+mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_streamable_http_stateless_client PASSED [ 11%]
+mem0_utils_test.py::TestAgentScopeLLMWithOllama::test_agentscope_llm_async_gather_in_async_context PASSED [ 11%]
+mem0_utils_test.py::TestAgentScopeLLMWithOllama::test_agentscope_llm_parallel_calls_with_asyncio_gather PASSED [ 11%]
+memory_compression_test.py::MemoryCompressionTest::test_compression_above_threshold PASSED [ 12%]
+memory_compression_test.py::MemoryCompressionTest::test_no_compression_below_threshold PASSED [ 12%]
+memory_reme_test.py::TestReMeMemory::test_context_manager_usage SKIPPED  [ 12%]
+memory_reme_test.py::TestReMeMemory::test_init_with_default_params SKIPPED [ 12%]
+memory_reme_test.py::TestReMeMemory::test_integration_record_and_retrieve SKIPPED [ 13%]
+memory_reme_test.py::TestReMeMemory::test_record_direct_app_not_started SKIPPED [ 13%]
+memory_reme_test.py::TestReMeMemory::test_record_direct_filters_none_messages SKIPPED [ 13%]
+memory_reme_test.py::TestReMeMemory::test_record_direct_method_success SKIPPED [ 13%]
+memory_reme_test.py::TestReMeMemory::test_record_direct_with_empty_list SKIPPED [ 14%]
+memory_reme_test.py::TestReMeMemory::test_record_direct_with_single_message SKIPPED [ 14%]
+memory_reme_test.py::TestReMeMemory::test_record_to_memory_app_not_started SKIPPED [ 14%]
+memory_reme_test.py::TestReMeMemory::test_record_to_memory_error_handling SKIPPED [ 15%]
+memory_reme_test.py::TestReMeMemory::test_record_to_memory_success SKIPPED [ 15%]
+memory_reme_test.py::TestReMeMemory::test_retrieve_direct_app_not_started SKIPPED [ 15%]
+memory_reme_test.py::TestReMeMemory::test_retrieve_direct_invalid_input SKIPPED [ 15%]
+memory_reme_test.py::TestReMeMemory::test_retrieve_direct_method_success SKIPPED [ 16%]
+memory_reme_test.py::TestReMeMemory::test_retrieve_direct_with_message_list SKIPPED [ 16%]
+memory_reme_test.py::TestReMeMemory::test_retrieve_direct_with_none_message SKIPPED [ 16%]
+memory_reme_test.py::TestReMeMemory::test_retrieve_from_memory_app_not_started SKIPPED [ 17%]
+memory_reme_test.py::TestReMeMemory::test_retrieve_from_memory_no_results SKIPPED [ 17%]
+memory_reme_test.py::TestReMeMemory::test_retrieve_from_memory_success SKIPPED [ 17%]
+memory_test.py::InMemoryMemoryTest::test_memory PASSED                   [ 17%]
+memory_test.py::InMemoryMemoryTest::test_serialization PASSED            [ 18%]
+memory_test.py::AsyncSQLAlchemyMemoryTest::test_memory PASSED            [ 18%]
+memory_test.py::RedisMemoryTest::test_memory PASSED                      [ 18%]
+memory_test.py::RedisMemoryTest::test_ttl PASSED                         [ 18%]
+memory_test.py::RedisMemoryTestWithBytes::test_memory PASSED             [ 19%]
+memory_test.py::RedisMemoryTestWithBytes::test_ttl PASSED                [ 19%]
+model_anthropic_test.py::TestAnthropicChatModel::test_call_with_regular_messages PASSED [ 19%]
+model_anthropic_test.py::TestAnthropicChatModel::test_call_with_structured_model_integration PASSED [ 20%]
+model_anthropic_test.py::TestAnthropicChatModel::test_call_with_system_message PASSED [ 20%]
+model_anthropic_test.py::TestAnthropicChatModel::test_call_with_thinking_enabled PASSED [ 20%]
+model_anthropic_test.py::TestAnthropicChatModel::test_call_with_tools_integration PASSED [ 20%]
+model_anthropic_test.py::TestAnthropicChatModel::test_generate_kwargs_integration PASSED [ 21%]
+model_anthropic_test.py::TestAnthropicChatModel::test_init_default_params PASSED [ 21%]
+model_anthropic_test.py::TestAnthropicChatModel::test_init_with_custom_params PASSED [ 21%]
+model_anthropic_test.py::TestAnthropicChatModel::test_streaming_response_processing PASSED [ 22%]
+model_dashscope_test.py::TestDashScopeChatModel::test_call_with_enable_thinking_streaming PASSED [ 22%]
+model_dashscope_test.py::TestDashScopeChatModel::test_call_with_multimodal_model FAILED [ 22%]
+
+=================================== FAILURES ===================================
+____________ TestDashScopeChatModel.test_call_with_multimodal_model ____________
+
+self = <model_dashscope_test.TestDashScopeChatModel testMethod=test_call_with_multimodal_model>
+
+    async def test_call_with_multimodal_model(self) -> None:
+        """Test multimodal model uses AioMultiModalConversation (async)."""
+        model = DashScopeChatModel(
+            model_name="qwen-vl-plus",
+            api_key="test_key",
+            stream=False,
+            multimodality=True,
+        )
+        messages = [{"role": "user", "content": "Describe this image."}]
+        mock_response = self._create_mock_response("This is a test image.")
+        with patch(
+            "dashscope.AioMultiModalConversation.call",
+            new_callable=AsyncMock,
+        ) as mock_call:
+            mock_call.return_value = mock_response
+>           result = await model(messages)
+
+model_dashscope_test.py:400: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../src/agentscope/tracing/_trace.py:602: in async_wrapper
+    return await func(self, *args, **kwargs)
+../src/agentscope/model/_dashscope_model.py:291: in __call__
+    parsed_response = await self._parse_dashscope_generation_response(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <agentscope.model._dashscope_model.DashScopeChatModel object at 0x7feb7c22a260>
+start_datetime = datetime.datetime(2026, 6, 11, 19, 45, 40, 945849)
+response = MultiModalConversationResponse(status_code=401, request_id='54cdf3a2-ab19-97ca-a20a-b55876107ab9', code='InvalidApiKey', message='Invalid API-key provided.', output=None, usage=None)
+structured_model = None
+
+    async def _parse_dashscope_generation_response(
+        self,
+        start_datetime: datetime,
+        response: Union[
+            GenerationResponse,
+            MultiModalConversationResponse,
+        ],
+        structured_model: Type[BaseModel] | None = None,
+    ) -> ChatResponse:
+        """Given a DashScope GenerationResponse object, extract the content
+        blocks and usages from it.
+    
+        Args:
+            start_datetime (`datetime`):
+                The start datetime of the response generation.
+            response (
+                `Union[GenerationResponse, MultiModalConversationResponse]`
+            ):
+                Dashscope GenerationResponse | MultiModalConversationResponse
+                object to parse.
+            structured_model (`Type[BaseModel] | None`, default `None`):
+                A Pydantic BaseModel class that defines the expected structure
+                for the model's output.
+    
+        Returns:
+            ChatResponse (`ChatResponse`):
+                A ChatResponse object containing the content blocks and usage.
+    
+        .. note::
+            If `structured_model` is not `None`, the expected structured output
+            will be stored in the metadata of the `ChatResponse`.
+        """
+        # Collect the content blocks from the response.
+        if response.status_code != 200:
+>           raise RuntimeError(response)
+E           RuntimeError: {"status_code": 401, "request_id": "54cdf3a2-ab19-97ca-a20a-b55876107ab9", "code": "InvalidApiKey", "message": "Invalid API-key provided.", "output": null, "usage": null}
+
+../src/agentscope/model/_dashscope_model.py:514: RuntimeError
+------------------------------ Captured log call -------------------------------
+WARNING  asyncio:base_events.py:1904 Executing <Task pending name='Task-538' coro=<IsolatedAsyncioTestCase._asyncioLoopRunner() running at /usr/local/lib/python3.10/unittest/async_case.py:95> wait_for=<Future pending cb=[Task.task_wakeup()] created at /usr/local/lib/python3.10/asyncio/base_events.py:429> created at /usr/local/lib/python3.10/unittest/async_case.py:117> took 1.003 seconds
+=============================== warnings summary ===============================
+rag_knowledge_test.py:19
+  /testbed/tests/rag_knowledge_test.py:19: PytestCollectionWarning: cannot collect test class 'TestTextEmbedding' because it has a __init__ constructor (from: tests/rag_knowledge_test.py)
+    class TestTextEmbedding(EmbeddingModelBase):
+
+tests/evaluation_test.py::EvaluatorTest::test_general_evaluator
+  /usr/local/lib/python3.10/site-packages/ray/_private/worker.py:2052: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+    warnings.warn(
+
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_embedded_content
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_embedded_content
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_streamable_http_stateless_client
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_streamable_http_stateless_client
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_streamable_http_stateless_client
+tests/mcp_streamable_http_client_test.py::StreamableHttpMCPClientTest::test_streamable_http_stateless_client
+  /usr/local/lib/python3.10/contextlib.py:103: DeprecationWarning: Use `streamable_http_client` instead.
+    self.gen = func(*args, **kwds)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED model_dashscope_test.py::TestDashScopeChatModel::test_call_with_multimodal_model
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+======= 1 failed, 61 passed, 19 skipped, 8 warnings in 94.12s (0:01:34) ========
+echo OMNIGRIL_EXIT_CODE=1
