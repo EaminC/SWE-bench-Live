@@ -5,9 +5,55 @@ from launch.scripts.parser import run_parser
 import json
 from typing import Literal, TypedDict
 from fire import Fire
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import TimeoutError as FutureTimeoutError
+import multiprocessing
+import time
+import psutil
+import subprocess
 
-TIMEOUT = 90*60
+TIMEOUT = 20*60  # 20 minutes per instance (reduced from 90 minutes to skip stalled instances)
+
+def _kill_docker_containers():
+    """Kill any running docker containers that may be stuck."""
+    try:
+        result = subprocess.run(
+            ["docker", "ps", "-q"],
+            capture_output=True,
+            text=True,
+            timeout=5
+        )
+        if result.stdout.strip():
+            container_ids = result.stdout.strip().split('\n')
+            for container_id in container_ids:
+                try:
+                    subprocess.run(
+                        ["docker", "kill", container_id],
+                        capture_output=True,
+                        timeout=5
+                    )
+                except Exception:
+                    pass
+    except Exception:
+        pass
+
+def _kill_process_tree(pid):
+    """Recursively kill a process and all its children."""
+    try:
+        parent = psutil.Process(pid)
+        children = parent.children(recursive=True)
+        # Kill children first
+        for child in children:
+            try:
+                child.terminate()
+            except (psutil.NoSuchProcess, psutil.AccessDenied):
+                pass
+        # Kill parent
+        try:
+            parent.terminate()
+        except (psutil.NoSuchProcess, psutil.AccessDenied):
+            pass
+    except (psutil.NoSuchProcess, psutil.AccessDenied):
+        pass
 
 class ExecutionResult(TypedDict):
     instance_id: str
@@ -46,50 +92,68 @@ def validate_instance(
                     platform: Literal["windows", "linux"],
                     output_dir: str,
                     ) -> ValidationResult:
-    container: SetupRuntime = SetupRuntime.from_launch_image(image, instance_id, platform, command_timeout=TIMEOUT)
-    container.apply_patch(test_patch, verbose=True)
-    # Remember to rebuild after modifications to source codes !!!
-    container.send_command(rebuild_cmd)
-    container.send_command(test_cmd)
-    pre_patch_log: str = container.send_command(print_cmd).output
-    with open(os.path.join(output_dir, "pre_patch_log.txt"), "w", encoding="utf-8") as f:
-        f.write(pre_patch_log)
-    pre_patch_status: dict[str, Literal['pass', 'fail', 'skip']] = run_parser(parser, pre_patch_log)
-    container.cleanup()
-    del container
-
-    container: SetupRuntime = SetupRuntime.from_launch_image(image, instance_id, platform, command_timeout=TIMEOUT)
-    container.apply_patch(test_patch, verbose=True)
-    container.apply_patch(solution_patch, verbose=True)
-    container.send_command(rebuild_cmd)
-    post_patch_status: dict[str, Literal['pass', 'fail', 'skip']] = {}
-    post_patch_status_under_inspect: dict[int, dict[str, Literal['pass', 'fail', 'skip']]] = {}
-    post_patch_log_accumulate: str = ""
-    # 3 validation for stable states
-    for check in range(3):
+    container = None
+    try:
+        container = SetupRuntime.from_launch_image(image, instance_id, platform, command_timeout=TIMEOUT)
+        container.apply_patch(test_patch, verbose=True)
+        # Remember to rebuild after modifications to source codes !!!
+        container.send_command(rebuild_cmd)
         container.send_command(test_cmd)
-        post_patch_log: str = container.send_command(print_cmd).output
-        post_patch_log_accumulate += f"eval No.{check} \n\n========  \n\n{post_patch_log} \n\n"
-        post_patch_status_under_inspect[check] = run_parser(parser, post_patch_log)
-    all_tests = set(post_patch_status_under_inspect[0].keys()) | set(post_patch_status_under_inspect[1].keys()) | set(post_patch_status_under_inspect[2].keys())
-    for test in all_tests:
-        all_status = [
-            post_patch_status_under_inspect[0].get(test, "skip").lower(),
-            post_patch_status_under_inspect[1].get(test, "skip").lower(),
-            post_patch_status_under_inspect[2].get(test, "skip").lower(),
-        ]
-        assert all_status[0] in {'pass', 'fail', 'skip'}
-        assert all_status[1] in {'pass', 'fail', 'skip'}
-        assert all_status[2] in {'pass', 'fail', 'skip'}
-        if 'fail' in all_status:
-            post_patch_status[test] = 'fail'
-        elif 'skip' in all_status:
-            post_patch_status[test] = 'skip'
-        else:
-            post_patch_status[test] = 'pass'
-    with open(os.path.join(output_dir, "post_patch_log.txt"), "w", encoding="utf-8") as f:
-        f.write(post_patch_log_accumulate)
-    container.cleanup()
+        pre_patch_log: str = container.send_command(print_cmd).output
+        with open(os.path.join(output_dir, "pre_patch_log.txt"), "w", encoding="utf-8") as f:
+            f.write(pre_patch_log)
+        pre_patch_status: dict[str, Literal['pass', 'fail', 'skip']] = run_parser(parser, pre_patch_log)
+        container.cleanup()
+        container = None
+    except Exception as e:
+        if container:
+            try:
+                container.cleanup()
+            except Exception:
+                pass
+        raise e
+
+    try:
+        container = SetupRuntime.from_launch_image(image, instance_id, platform, command_timeout=TIMEOUT)
+        container.apply_patch(test_patch, verbose=True)
+        container.apply_patch(solution_patch, verbose=True)
+        container.send_command(rebuild_cmd)
+        post_patch_status: dict[str, Literal['pass', 'fail', 'skip']] = {}
+        post_patch_status_under_inspect: dict[int, dict[str, Literal['pass', 'fail', 'skip']]] = {}
+        post_patch_log_accumulate: str = ""
+        # 3 validation for stable states
+        for check in range(3):
+            container.send_command(test_cmd)
+            post_patch_log: str = container.send_command(print_cmd).output
+            post_patch_log_accumulate += f"eval No.{check} \n\n========  \n\n{post_patch_log} \n\n"
+            post_patch_status_under_inspect[check] = run_parser(parser, post_patch_log)
+        all_tests = set(post_patch_status_under_inspect[0].keys()) | set(post_patch_status_under_inspect[1].keys()) | set(post_patch_status_under_inspect[2].keys())
+        for test in all_tests:
+            all_status = [
+                post_patch_status_under_inspect[0].get(test, "skip").lower(),
+                post_patch_status_under_inspect[1].get(test, "skip").lower(),
+                post_patch_status_under_inspect[2].get(test, "skip").lower(),
+            ]
+            assert all_status[0] in {'pass', 'fail', 'skip'}
+            assert all_status[1] in {'pass', 'fail', 'skip'}
+            assert all_status[2] in {'pass', 'fail', 'skip'}
+            if 'fail' in all_status:
+                post_patch_status[test] = 'fail'
+            elif 'skip' in all_status:
+                post_patch_status[test] = 'skip'
+            else:
+                post_patch_status[test] = 'pass'
+        with open(os.path.join(output_dir, "post_patch_log.txt"), "w", encoding="utf-8") as f:
+            f.write(post_patch_log_accumulate)
+        container.cleanup()
+        container = None
+    except Exception as e:
+        if container:
+            try:
+                container.cleanup()
+            except Exception:
+                pass
+        raise e
     
     res: ValidationResult = compare({
         "instance_id": instance_id,
@@ -137,24 +201,73 @@ def run_instances(instances: list[dict[str, str]],
                     output_dir: str,
                     overwrite: bool) -> list[dict[str, str]]:
     results = []
-    with ThreadPoolExecutor(max_workers=workers) as executor:
-        # Submit tasks to the executor
-        future_to_instance = {
-            executor.submit(run_instance, instance, platform, output_dir, overwrite): instance
-            for instance in instances
-        }
+    INSTANCE_TIMEOUT = 20 * 60  # 20 minutes per instance
 
-        # Collect results as they complete
-        for future in as_completed(future_to_instance):
-            instance = future_to_instance[future]
+    def _proc_target(instance, platform, output_dir, overwrite, q):
+        try:
+            res = run_instance(instance, platform, output_dir, overwrite)
+            q.put((True, res))
+        except Exception as e:
+            q.put((False, str(e)))
+
+    running: list[tuple[multiprocessing.Process, multiprocessing.Queue, dict, float]] = []
+
+    for instance in instances:
+        # Wait until there's a free worker slot
+        while len(running) >= workers:
+            # check running processes and collect finished ones
+            new_running = []
+            for p, q, inst, start_ts in running:
+                if p.is_alive():
+                    new_running.append((p, q, inst, start_ts))
+                else:
+                    # finished; retrieve result
+                    try:
+                        ok, payload = q.get_nowait()
+                    except Exception:
+                        ok, payload = (False, "No result from worker")
+                    if ok:
+                        results.append({**inst, **payload})
+                    else:
+                        print(f"Error processing instance {inst.get('instance_id', '<unknown>')}: {payload}", flush=True)
+            running = new_running
+            if len(running) >= workers:
+                time.sleep(1)
+
+        q = multiprocessing.Queue()
+        p = multiprocessing.Process(target=_proc_target, args=(instance, platform, output_dir, overwrite, q))
+        p.start()
+        running.append((p, q, instance, time.time()))
+
+    # wait for remaining processes with timeout handling
+    for p, q, inst, start_ts in running:
+        elapsed = time.time() - start_ts
+        remaining = max(0, INSTANCE_TIMEOUT - int(elapsed))
+        p.join(timeout=remaining)
+        if p.is_alive():
             try:
-                result = future.result()
-                results.append({
-                    **instance,
-                    **result
-                })
+                p.terminate()
+            except Exception:
+                pass
+            try:
+                p.join(timeout=5)
+            except Exception:
+                pass
+            print(f"TIMEOUT: Instance {inst.get('instance_id')} exceeded {INSTANCE_TIMEOUT} seconds. Skipping...", flush=True)
+            try:
+                _kill_docker_containers()
             except Exception as e:
-                print(f"Error processing instance {instance['instance_id']}: {e}", flush = True)
+                print(f"Error during cleanup: {e}", flush=True)
+        else:
+            try:
+                ok, payload = q.get_nowait()
+            except Exception:
+                ok, payload = (False, "No result from worker")
+            if ok:
+                results.append({**inst, **payload})
+            else:
+                print(f"Error processing instance {inst.get('instance_id', '<unknown>')}: {payload}", flush=True)
+
     return results
 
 

@@ -9,9 +9,12 @@ import os
 import shutil
 import threading
 import time
+import signal
+import psutil
 from concurrent.futures import ThreadPoolExecutor, as_completed, TimeoutError
 from pathlib import Path
 import traceback
+from contextlib import contextmanager
 
 from rich.console import Console
 from rich.progress import (
@@ -28,7 +31,50 @@ from launch.utilities.utils import prepare_workspace, safe_read_result
 from launch.scripts import collect
 
 lock = threading.Lock()
-GLOBAL_TIMEOUT = 36000 # 10 hr limit, if it cannot finish in 10 hrs the program must be stuck
+GLOBAL_TIMEOUT = 1200 # 20 min limit per instance, move to next if it exceeds 20 minutes
+
+# Track child processes for timeout cleanup
+_active_processes = {}
+_process_lock = threading.Lock()
+
+def _kill_process_tree(pid):
+    """Recursively kill a process and all its children."""
+    try:
+        parent = psutil.Process(pid)
+        children = parent.children(recursive=True)
+        # Kill children first
+        for child in children:
+            try:
+                child.terminate()
+            except (psutil.NoSuchProcess, psutil.AccessDenied):
+                pass
+        # Kill parent
+        try:
+            parent.terminate()
+        except (psutil.NoSuchProcess, psutil.AccessDenied):
+            pass
+    except (psutil.NoSuchProcess, psutil.AccessDenied):
+        pass
+
+@contextmanager
+def _track_process(instance_id):
+    """Context manager to track and cleanup child processes."""
+    current_pid = os.getpid()
+    with _process_lock:
+        _active_processes[instance_id] = current_pid
+    try:
+        yield
+    finally:
+        with _process_lock:
+            _active_processes.pop(instance_id, None)
+
+
+def _format_elapsed(seconds: float) -> str:
+    """Format elapsed seconds into HH:MM:SS."""
+    total = int(seconds)
+    m, s = divmod(total, 60)
+    h, m = divmod(m, 60)
+    return f"{h:02d}:{m:02d}:{s:02d}"
 
 def setup_instance(instance, config, workspace_root):
     """
@@ -65,16 +111,17 @@ def setup_instance(instance, config, workspace_root):
                 return "fail", instance["instance_id"], "Launch failed"
 
     try:
-        workspace = prepare_workspace(workspace_root, instance, config)
-        result = safe_read_result(setup(instance, workspace), result_path, lock)
-        if result["completed"]:
-            return "success", instance["instance_id"], None
-        else:
-            return (
-                "fail",
-                instance["instance_id"],
-                result.get("exception", "Unknown error"),
-            )
+        with _track_process(instance["instance_id"]):
+            workspace = prepare_workspace(workspace_root, instance, config)
+            result = safe_read_result(setup(instance, workspace), result_path, lock)
+            if result["completed"]:
+                return "success", instance["instance_id"], None
+            else:
+                return (
+                    "fail",
+                    instance["instance_id"],
+                    result.get("exception", "Unknown error"),
+                )
     except Exception as e:
         # in case unexpected error escapes previous clean-up
         # workspace may not exist if prepare_workspace() failed early
@@ -122,16 +169,17 @@ def organize_instance(instance, config, workspace_root):
                 return "fail", instance["instance_id"], "Organize failed"
 
     try:
-        workspace = prepare_workspace(workspace_root, instance, config, log_file="organize.log")
-        result = safe_read_result(organize(instance, workspace), result_path, lock)
-        if result["organize_completed"]:
-            return "success", instance["instance_id"], None
-        else:
-            return (
-                "fail",
-                instance["instance_id"],
-                result.get("exception", "Unknown error"),
-            )
+        with _track_process(instance["instance_id"]):
+            workspace = prepare_workspace(workspace_root, instance, config, log_file="organize.log")
+            result = safe_read_result(organize(instance, workspace), result_path, lock)
+            if result["organize_completed"]:
+                return "success", instance["instance_id"], None
+            else:
+                return (
+                    "fail",
+                    instance["instance_id"],
+                    result.get("exception", "Unknown error"),
+                )
     except Exception as e:
         # in case unexpected error escapes previous clean-up
         if os.path.exists(instance_path / "repo"):
@@ -182,26 +230,32 @@ def run_setup(config: Config, dataset: list):
         )
 
         with ThreadPoolExecutor(max_workers=config.max_workers) as executor:
-            futures = {
-                executor.submit(
-                    setup_instance, instance, config, workspace_root
-                ): instance
-                for instance in dataset
-            }
+            futures = {}
+            start_times = {}
+            for instance in dataset:
+                console.print(f"[cyan]Processing[/cyan] {instance['instance_id']} ({instance.get('repo','unknown')})")
+                fut = executor.submit(setup_instance, instance, config, workspace_root)
+                futures[fut] = instance
+                start_times[fut] = time.time()
 
             for future in as_completed(futures): 
+                started = start_times.get(future, time.time())
+                # announce which instance is about to be awaited
+                _inst = futures.get(future, {})
+                _inst_id = _inst.get("instance_id", "unknown")
+                _inst_repo = _inst.get("repo", "unknown")
+                console.print(f"[magenta]Now Processing[/magenta] {_inst_id} ({_inst_repo})")
                 try:
                     status, instance_id, error = future.result(timeout=GLOBAL_TIMEOUT) 
+                    elapsed = time.time() - started
                     if status == "skip":
-                        console.print(
-                            f"[yellow]Skipped[/yellow] {instance_id}: {error or ''}"
-                        )
+                        console.print(f"[yellow]Skipped[/yellow] {instance_id}: {error or ''} (Elapsed: {_format_elapsed(elapsed)})")
                     elif status == "fail":
                         with lock:
                             progress.update(
                                 task, advance=0, fail=progress.tasks[0].fields["fail"] + 1
                             )
-                        console.print(f"[red]Failed[/red] {instance_id}: {error}")
+                        console.print(f"[red]Failed[/red] {instance_id}: {error} (Elapsed: {_format_elapsed(elapsed)})")
                     elif status == "success":
                         with lock:
                             progress.update(
@@ -209,16 +263,22 @@ def run_setup(config: Config, dataset: list):
                                 advance=0,
                                 success=progress.tasks[0].fields["success"] + 1,
                             )
-                        console.print(f"[green]Success![/green] {instance_id}")
+                        console.print(f"[green]Success![/green] {instance_id} (Elapsed: {_format_elapsed(elapsed)})")
                 except TimeoutError:
                     # Find the instance_id for this future
                     instance_id = futures.get(future, {}).get("instance_id", "unknown")
+                    elapsed = time.time() - started
                     with lock:
                         progress.update(
                             task, advance=0, fail=progress.tasks[0].fields["fail"] + 1
                         )
-                    console.print(f"[red]Timeout[/red] {instance_id}: Task exceeded {GLOBAL_TIMEOUT/3600} hour global timeout")
-                    future.cancel()  # Cancel the timed-out task
+                    console.print(f"[red]Timeout[/red] {instance_id}: Task exceeded {GLOBAL_TIMEOUT/60} minute global timeout (Elapsed: {_format_elapsed(elapsed)})")
+                    # Kill any child processes spawned by this instance
+                    try:
+                        _kill_process_tree(os.getpid())
+                    except Exception:
+                        pass
+                    time.sleep(0.5)  # Brief pause for cleanup
                 progress.update(task, advance=1)
 
     console.rule("[bold green] Finished setting up all instances!")
@@ -272,26 +332,32 @@ def run_organize(config: Config, dataset: list):
         )
 
         with ThreadPoolExecutor(max_workers=config.max_workers) as executor:
-            futures = {
-                executor.submit(
-                    organize_instance, instance, config, workspace_root
-                ): instance
-                for instance in dataset
-            }
+            futures = {}
+            start_times = {}
+            for instance in dataset:
+                console.print(f"[cyan]Processing-1[/cyan] {instance['instance_id']} ({instance.get('repo','unknown')})")
+                fut = executor.submit(organize_instance, instance, config, workspace_root)
+                futures[fut] = instance
+                start_times[fut] = time.time()
 
             for future in as_completed(futures): 
+                started = start_times.get(future, time.time())
+                # announce which instance is about to be awaited
+                _inst = futures.get(future, {})
+                _inst_id = _inst.get("instance_id", "unknown")
+                _inst_repo = _inst.get("repo", "unknown")
+                console.print(f"[magenta]Now Processing[/magenta] {_inst_id} ({_inst_repo})")
                 try:
                     status, instance_id, error = future.result(timeout=GLOBAL_TIMEOUT)  
+                    elapsed = time.time() - started
                     if status == "skip":
-                        console.print(
-                            f"[yellow]Skipped[/yellow] {instance_id}: {error or ''}"
-                        )
+                        console.print(f"[yellow]Skipped[/yellow] {instance_id}: {error or ''} (Elapsed: {_format_elapsed(elapsed)})")
                     elif status == "fail":
                         with lock:
                             progress.update(
                                 task, advance=0, fail=progress.tasks[0].fields["fail"] + 1
                             )
-                        console.print(f"[red]Failed[/red] {instance_id}: {error}")
+                        console.print(f"[red]Failed[/red] {instance_id}: {error} (Elapsed: {_format_elapsed(elapsed)})")
                     elif status == "success":
                         with lock:
                             progress.update(
@@ -299,16 +365,22 @@ def run_organize(config: Config, dataset: list):
                                 advance=0,
                                 success=progress.tasks[0].fields["success"] + 1,
                             )
-                        console.print(f"[green]Success![/green] {instance_id}")
+                        console.print(f"[green]Success![/green] {instance_id} (Elapsed: {_format_elapsed(elapsed)})")
                 except TimeoutError:
                     # Find the instance_id for this future
                     instance_id = futures.get(future, {}).get("instance_id", "unknown")
+                    elapsed = time.time() - started
                     with lock:
                         progress.update(
                             task, advance=0, fail=progress.tasks[0].fields["fail"] + 1
                         )
-                    console.print(f"[red]Timeout[/red] {instance_id}: Task exceeded {GLOBAL_TIMEOUT/3600} hour global timeout")
-                    future.cancel()  # Cancel the timed-out task
+                    console.print(f"[red]Timeout[/red] {instance_id}: Task exceeded {GLOBAL_TIMEOUT/60} minute global timeout (Elapsed: {_format_elapsed(elapsed)})")
+                    # Kill any child processes spawned by this instance
+                    try:
+                        _kill_process_tree(os.getpid())
+                    except Exception:
+                        pass
+                    time.sleep(0.5)  # Brief pause for cleanup
                 progress.update(task, advance=1)
 
     console.rule("[bold green] Finished organizing all instances!")

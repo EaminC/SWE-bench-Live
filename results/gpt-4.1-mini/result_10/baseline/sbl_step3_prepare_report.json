@@ -1,0 +1,128 @@
+{
+  "task_files_total": 1,
+  "task_files_non_empty": 1,
+  "instances_merged": 10,
+  "merged_output": "baseline/sbl_task_instances_with_tests.jsonl",
+  "launch_dataset": "launch/data/sbl_baseline/dataset.jsonl",
+  "launch_config": "launch/data/sbl_baseline/config.json",
+  "instances": [
+    {
+      "instance_id": "openclaw__openclaw-51329",
+      "repo": "openclaw/openclaw",
+      "pull_number": 51329,
+      "language": "JS/TS",
+      "ext_counts": {
+        ".md": 1,
+        ".ts": 2
+      },
+      "source_file": "baseline/sbl_inputs/openclaw__openclaw/tasks/openclaw-task-instances.jsonl"
+    },
+    {
+      "instance_id": "openclaw__openclaw-77033",
+      "repo": "openclaw/openclaw",
+      "pull_number": 77033,
+      "language": "JS/TS",
+      "ext_counts": {
+        ".md": 1,
+        ".ts": 3
+      },
+      "source_file": "baseline/sbl_inputs/openclaw__openclaw/tasks/openclaw-task-instances.jsonl"
+    },
+    {
+      "instance_id": "openclaw__openclaw-77621",
+      "repo": "openclaw/openclaw",
+      "pull_number": 77621,
+      "language": "JS/TS",
+      "ext_counts": {
+        ".md": 1,
+        ".ts": 2
+      },
+      "source_file": "baseline/sbl_inputs/openclaw__openclaw/tasks/openclaw-task-instances.jsonl"
+    },
+    {
+      "instance_id": "openclaw__openclaw-77777",
+      "repo": "openclaw/openclaw",
+      "pull_number": 77777,
+      "language": "JS/TS",
+      "ext_counts": {
+        ".md": 1,
+        ".ts": 2
+      },
+      "source_file": "baseline/sbl_inputs/openclaw__openclaw/tasks/openclaw-task-instances.jsonl"
+    },
+    {
+      "instance_id": "openclaw__openclaw-77839",
+      "repo": "openclaw/openclaw",
+      "pull_number": 77839,
+      "language": "JS/TS",
+      "ext_counts": {
+        ".md": 1,
+        ".ts": 5
+      },
+      "source_file": "baseline/sbl_inputs/openclaw__openclaw/tasks/openclaw-task-instances.jsonl"
+    },
+    {
+      "instance_id": "openclaw__openclaw-77840",
+      "repo": "openclaw/openclaw",
+      "pull_number": 77840,
+      "language": "JS/TS",
+      "ext_counts": {
+        ".md": 1,
+        ".ts": 2
+      },
+      "source_file": "baseline/sbl_inputs/openclaw__openclaw/tasks/openclaw-task-instances.jsonl"
+    },
+    {
+      "instance_id": "openclaw__openclaw-77851",
+      "repo": "openclaw/openclaw",
+      "pull_number": 77851,
+      "language": "JS/TS",
+      "ext_counts": {
+        ".md": 1,
+        ".ts": 3
+      },
+      "source_file": "baseline/sbl_inputs/openclaw__openclaw/tasks/openclaw-task-instances.jsonl"
+    },
+    {
+      "instance_id": "openclaw__openclaw-78152",
+      "repo": "openclaw/openclaw",
+      "pull_number": 78152,
+      "language": "JS/TS",
+      "ext_counts": {
+        ".md": 1,
+        ".ts": 7
+      },
+      "source_file": "baseline/sbl_inputs/openclaw__openclaw/tasks/openclaw-task-instances.jsonl"
+    },
+    {
+      "instance_id": "openclaw__openclaw-80278",
+      "repo": "openclaw/openclaw",
+      "pull_number": 80278,
+      "language": "JS/TS",
+      "ext_counts": {
+        ".md": 2,
+        ".json": 1,
+        ".yaml": 1,
+        ".ts": 10
+      },
+      "source_file": "baseline/sbl_inputs/openclaw__openclaw/tasks/openclaw-task-instances.jsonl"
+    },
+    {
+      "instance_id": "openclaw__openclaw-83979",
+      "repo": "openclaw/openclaw",
+      "pull_number": 83979,
+      "language": "JS/TS",
+      "ext_counts": {
+        ".md": 1,
+        ".ts": 3
+      },
+      "source_file": "baseline/sbl_inputs/openclaw__openclaw/tasks/openclaw-task-instances.jsonl"
+    }
+  ],
+  "next_commands": [
+    "cd launch",
+    "export OPENAI_API_KEY=...  # required by RepoLaunch",
+    "export TAVILY_API_KEY=...  # required by RepoLaunch",
+    "python -m launch.run --config-path data/sbl_baseline/config.json"
+  ]
+}
