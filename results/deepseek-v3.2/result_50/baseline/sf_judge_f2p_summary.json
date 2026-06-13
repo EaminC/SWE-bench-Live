@@ -1,0 +1,13 @@
+{
+  "total": 2,
+  "categories": {
+    "fail2pass": [],
+    "fail2fail": [],
+    "pass2pass": [
+      "agentscope-ai__agentscope-1356",
+      "Significant-Gravitas__AutoGPT-4567"
+    ],
+    "pass2fail": [],
+    "error": []
+  }
+}

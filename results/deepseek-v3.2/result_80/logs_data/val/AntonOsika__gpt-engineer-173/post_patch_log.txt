@@ -1,0 +1,63 @@
+eval No.0 
+
+========  
+
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-7.3.2, pluggy-1.0.0 -- /usr/local/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /testbed
+plugins: cov-4.1.0
+collecting ... collected 5 items
+
+tests/test_ai.py::test_ai XFAIL (Constructor assumes API access)         [ 20%]
+tests/test_chat_to_files.py::test_to_files PASSED                        [ 40%]
+tests/test_chat_to_files.py::test_to_files_with_square_brackets PASSED   [ 60%]
+tests/test_chat_to_files.py::test_files_with_brackets_in_name PASSED     [ 80%]
+tests/test_db.py::test_db PASSED                                         [100%]
+
+========================= 4 passed, 1 xfailed in 0.20s =========================
+ 
+
+eval No.1 
+
+========  
+
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-7.3.2, pluggy-1.0.0 -- /usr/local/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /testbed
+plugins: cov-4.1.0
+collecting ... collected 5 items
+
+tests/test_ai.py::test_ai XFAIL (Constructor assumes API access)         [ 20%]
+tests/test_chat_to_files.py::test_to_files PASSED                        [ 40%]
+tests/test_chat_to_files.py::test_to_files_with_square_brackets PASSED   [ 60%]
+tests/test_chat_to_files.py::test_files_with_brackets_in_name PASSED     [ 80%]
+tests/test_db.py::test_db PASSED                                         [100%]
+
+========================= 4 passed, 1 xfailed in 0.20s =========================
+ 
+
+eval No.2 
+
+========  
+
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-7.3.2, pluggy-1.0.0 -- /usr/local/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /testbed
+plugins: cov-4.1.0
+collecting ... collected 5 items
+
+tests/test_ai.py::test_ai XFAIL (Constructor assumes API access)         [ 20%]
+tests/test_chat_to_files.py::test_to_files PASSED                        [ 40%]
+tests/test_chat_to_files.py::test_to_files_with_square_brackets PASSED   [ 60%]
+tests/test_chat_to_files.py::test_files_with_brackets_in_name PASSED     [ 80%]
+tests/test_db.py::test_db PASSED                                         [100%]
+
+========================= 4 passed, 1 xfailed in 0.20s =========================
+ 
+

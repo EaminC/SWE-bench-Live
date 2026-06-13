@@ -1,0 +1,303 @@
+============================================================
+ Starting SWE-bench-Live Pipeline
+ Master Log File: /home/cc/SWE-bench-Live/logs/runs/pipeline_20260612_205939.log
+============================================================
+
+[1] Activating Conda environment (sbl)...
+
+[Telemetry] Starting token and cost tracker...
+Recording session start stats...
+
+[2] Preparing Pull2Issue from Map...
+Prepared pull2issue files:
+- AntonOsika/gpt-engineer: /home/cc/SWE-bench-Live/baseline/sbl_inputs/AntonOsika__gpt-engineer/prs/gpt-engineer-pull2issue-20090101.jsonl
+- MLSysOps/MLE-agent: /home/cc/SWE-bench-Live/baseline/sbl_inputs/MLSysOps__MLE-agent/prs/MLE-agent-pull2issue-20090101.jsonl
+- Significant-Gravitas/AutoGPT: /home/cc/SWE-bench-Live/baseline/sbl_inputs/Significant-Gravitas__AutoGPT/prs/AutoGPT-pull2issue-20090101.jsonl
+- agentscope-ai/agentscope: /home/cc/SWE-bench-Live/baseline/sbl_inputs/agentscope-ai__agentscope/prs/agentscope-pull2issue-20090101.jsonl
+- crewAIInc/crewAI: /home/cc/SWE-bench-Live/baseline/sbl_inputs/crewAIInc__crewAI/prs/crewAI-pull2issue-20090101.jsonl
+
+Next: run SWE-bench-Live task crawling (per repo):
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos AntonOsika/gpt-engineer --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/AntonOsika__gpt-engineer/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/AntonOsika__gpt-engineer/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos MLSysOps/MLE-agent --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/MLSysOps__MLE-agent/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/MLSysOps__MLE-agent/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos Significant-Gravitas/AutoGPT --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/Significant-Gravitas__AutoGPT/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/Significant-Gravitas__AutoGPT/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos agentscope-ai/agentscope --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/agentscope-ai__agentscope/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/agentscope-ai__agentscope/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos crewAIInc/crewAI --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/crewAIInc__crewAI/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/crewAIInc__crewAI/tasks --cutoff_date 20090101
+
+[3] Go back to root SWE-bench-Live...
+
+[4] Running Curation Pipeline (setup.sh)...
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/AntonOsika__gpt-engineer/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/AntonOsika__gpt-engineer/tasks
+Received following number of repos to create task instances for: 1
+Found 3 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-12 20:59:41,302 - INFO - [AntonOsika/gpt-engineer] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-12 20:59:41,303 - INFO - [AntonOsika/gpt-engineer] 📁 pull2issue file already exists, skipping...
+2026-06-12 20:59:41,304 - INFO - [AntonOsika/gpt-engineer] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/AntonOsika__gpt-engineer/prs/gpt-engineer-prs-20090101.jsonl using issue-first approach
+2026-06-12 20:59:41,306 - INFO - Will skip 5 pull requests that have already been inspected
+2026-06-12 20:59:41,306 - INFO - [AntonOsika/gpt-engineer] (Up to 0 checked) 5 valid, 1 with tests.
+2026-06-12 20:59:41,307 - INFO - [] 🎤 Total instances: 5, completed: 5, with tests: 1
+2026-06-12 20:59:41,307 - INFO - [] 🎤 Skipped 5 pull requests that have already been inspected
+2026-06-12 20:59:41,307 - INFO - [AntonOsika/gpt-engineer] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/AntonOsika__gpt-engineer/tasks/gpt-engineer-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/MLSysOps__MLE-agent/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/MLSysOps__MLE-agent/tasks
+Received following number of repos to create task instances for: 1
+Found 3 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-12 20:59:41,591 - INFO - [MLSysOps/MLE-agent] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-12 20:59:41,591 - INFO - [MLSysOps/MLE-agent] 📁 pull2issue file already exists, skipping...
+2026-06-12 20:59:41,592 - INFO - [MLSysOps/MLE-agent] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/MLSysOps__MLE-agent/prs/MLE-agent-prs-20090101.jsonl using issue-first approach
+2026-06-12 20:59:41,593 - INFO - Will skip 1 pull requests that have already been inspected
+2026-06-12 20:59:41,594 - INFO - [MLSysOps/MLE-agent] (Up to 0 checked) 1 valid, 0 with tests.
+2026-06-12 20:59:41,594 - INFO - [] 🎤 Total instances: 1, completed: 1, with tests: 0
+2026-06-12 20:59:41,594 - INFO - [] 🎤 Skipped 1 pull requests that have already been inspected
+2026-06-12 20:59:41,594 - INFO - [MLSysOps/MLE-agent] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/MLSysOps__MLE-agent/tasks/MLE-agent-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/Significant-Gravitas__AutoGPT/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/Significant-Gravitas__AutoGPT/tasks
+Received following number of repos to create task instances for: 1
+Found 3 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-12 20:59:41,843 - INFO - [Significant-Gravitas/AutoGPT] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-12 20:59:41,844 - INFO - [Significant-Gravitas/AutoGPT] 📁 pull2issue file already exists, skipping...
+2026-06-12 20:59:41,846 - INFO - [Significant-Gravitas/AutoGPT] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/Significant-Gravitas__AutoGPT/prs/AutoGPT-prs-20090101.jsonl using issue-first approach
+2026-06-12 20:59:41,848 - INFO - Will skip 7 pull requests that have already been inspected
+2026-06-12 20:59:41,849 - INFO - [Significant-Gravitas/AutoGPT] (Up to 0 checked) 7 valid, 5 with tests.
+2026-06-12 20:59:43,068 - INFO - [Significant-Gravitas/AutoGPT] 🎤 Total instances: 8, completed: 7, with tests: 5
+2026-06-12 20:59:43,068 - INFO - [Significant-Gravitas/AutoGPT] 🎤 Skipped 7 pull requests that have already been inspected
+2026-06-12 20:59:43,068 - INFO - [Significant-Gravitas/AutoGPT] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/Significant-Gravitas__AutoGPT/tasks/AutoGPT-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/agentscope-ai__agentscope/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/agentscope-ai__agentscope/tasks
+Received following number of repos to create task instances for: 1
+Found 3 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-12 20:59:43,343 - INFO - [agentscope-ai/agentscope] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-12 20:59:43,344 - INFO - [agentscope-ai/agentscope] 📁 pull2issue file already exists, skipping...
+2026-06-12 20:59:43,345 - INFO - [agentscope-ai/agentscope] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/agentscope-ai__agentscope/prs/agentscope-prs-20090101.jsonl using issue-first approach
+2026-06-12 20:59:43,348 - INFO - Will skip 10 pull requests that have already been inspected
+2026-06-12 20:59:43,349 - INFO - [agentscope-ai/agentscope] (Up to 0 checked) 10 valid, 5 with tests.
+2026-06-12 20:59:43,350 - INFO - [] 🎤 Total instances: 10, completed: 10, with tests: 5
+2026-06-12 20:59:43,350 - INFO - [] 🎤 Skipped 10 pull requests that have already been inspected
+2026-06-12 20:59:43,350 - INFO - [agentscope-ai/agentscope] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/agentscope-ai__agentscope/tasks/agentscope-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/crewAIInc__crewAI/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/crewAIInc__crewAI/tasks
+Received following number of repos to create task instances for: 1
+Found 3 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-12 20:59:43,599 - INFO - [crewAIInc/crewAI] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-12 20:59:43,599 - INFO - [crewAIInc/crewAI] 📁 pull2issue file already exists, skipping...
+2026-06-12 20:59:43,602 - INFO - [crewAIInc/crewAI] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/crewAIInc__crewAI/prs/crewAI-prs-20090101.jsonl using issue-first approach
+2026-06-12 20:59:43,607 - INFO - Will skip 26 pull requests that have already been inspected
+2026-06-12 20:59:43,607 - INFO - [crewAIInc/crewAI] (Up to 0 checked) 26 valid, 26 with tests.
+2026-06-12 20:59:43,608 - INFO - [] 🎤 Total instances: 26, completed: 26, with tests: 26
+2026-06-12 20:59:43,608 - INFO - [] 🎤 Skipped 26 pull requests that have already been inspected
+2026-06-12 20:59:43,609 - INFO - [crewAIInc/crewAI] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl
+
+[5] Merging Task Instances & Preparing Launch Config...
+Merged 37 instances -> /home/cc/SWE-bench-Live/baseline/sbl_task_instances_with_tests.jsonl
+Next (RepoLaunch / step3):
+cd launch
+export OPENAI_API_KEY=...  # required by RepoLaunch
+export TAVILY_API_KEY=...  # required by RepoLaunch
+python -m launch.run --config-path data/sbl_baseline/config.json
+
+[6] Exporting API Keys...
+
+[7] Executing RepoLaunch (Generating testable containers)...
+Obtaining file:///home/cc/SWE-bench-Live/launch
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: beautifulsoup4>=4.13.4 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (4.14.3)
+Requirement already satisfied: docker>=7.1.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (7.1.0)
+Requirement already satisfied: fire>=0.7.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (0.7.1)
+Requirement already satisfied: gitpython>=3.1.44 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (3.1.50)
+Requirement already satisfied: langchain==0.3.26 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (0.3.26)
+Requirement already satisfied: langchain-community==0.3.27 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (0.3.27)
+Requirement already satisfied: langchain-core==0.3.68 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (0.3.68)
+Requirement already satisfied: langchain-openai==0.3.27 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (0.3.27)
+Requirement already satisfied: langchain-anthropic in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (0.3.17)
+Requirement already satisfied: langgraph==0.5.2 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (0.5.2)
+Requirement already satisfied: pydantic==2.11.7 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (2.11.7)
+Requirement already satisfied: requests>=2.32.4 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (2.34.2)
+Requirement already satisfied: rich>=14.0.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (15.0.0)
+Requirement already satisfied: tenacity>=9.1.2 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (9.1.4)
+Requirement already satisfied: tornado>=6.5.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (6.5.6)
+Requirement already satisfied: typing-extensions>=4.14.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (4.15.0)
+Requirement already satisfied: pygithub in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (2.9.1)
+Requirement already satisfied: openai in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (1.109.1)
+Requirement already satisfied: azure-identity-broker in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (1.3.0)
+Requirement already satisfied: langchain-text-splitters<1.0.0,>=0.3.8 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain==0.3.26->launch==0.1.0) (0.3.8)
+Requirement already satisfied: langsmith>=0.1.17 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain==0.3.26->launch==0.1.0) (0.8.9)
+Requirement already satisfied: SQLAlchemy<3,>=1.4 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain==0.3.26->launch==0.1.0) (2.0.50)
+Requirement already satisfied: PyYAML>=5.3 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain==0.3.26->launch==0.1.0) (6.0.3)
+Requirement already satisfied: jsonpatch<2.0,>=1.33 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-core==0.3.68->launch==0.1.0) (1.33)
+Requirement already satisfied: packaging<25,>=23.2 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-core==0.3.68->launch==0.1.0) (24.2)
+Requirement already satisfied: annotated-types>=0.6.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from pydantic==2.11.7->launch==0.1.0) (0.7.0)
+Requirement already satisfied: pydantic-core==2.33.2 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from pydantic==2.11.7->launch==0.1.0) (2.33.2)
+Requirement already satisfied: typing-inspection>=0.4.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from pydantic==2.11.7->launch==0.1.0) (0.4.2)
+Requirement already satisfied: aiohttp<4.0.0,>=3.8.3 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-community==0.3.27->launch==0.1.0) (3.14.0)
+Requirement already satisfied: dataclasses-json<0.7,>=0.5.7 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-community==0.3.27->launch==0.1.0) (0.6.7)
+Requirement already satisfied: pydantic-settings<3.0.0,>=2.4.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-community==0.3.27->launch==0.1.0) (2.14.1)
+Requirement already satisfied: httpx-sse<1.0.0,>=0.4.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-community==0.3.27->launch==0.1.0) (0.4.3)
+Requirement already satisfied: numpy>=1.26.2 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-community==0.3.27->launch==0.1.0) (2.4.6)
+Requirement already satisfied: tiktoken<1,>=0.7 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-openai==0.3.27->launch==0.1.0) (0.13.0)
+Requirement already satisfied: langgraph-checkpoint<3.0.0,>=2.1.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langgraph==0.5.2->launch==0.1.0) (2.1.2)
+Requirement already satisfied: langgraph-prebuilt<0.6.0,>=0.5.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langgraph==0.5.2->launch==0.1.0) (0.5.2)
+Requirement already satisfied: langgraph-sdk<0.2.0,>=0.1.42 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langgraph==0.5.2->launch==0.1.0) (0.1.74)
+Requirement already satisfied: xxhash>=3.5.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langgraph==0.5.2->launch==0.1.0) (3.7.0)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.27->launch==0.1.0) (2.6.2)
+Requirement already satisfied: aiosignal>=1.4.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.27->launch==0.1.0) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.27->launch==0.1.0) (26.1.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.27->launch==0.1.0) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.27->launch==0.1.0) (6.7.1)
+Requirement already satisfied: propcache>=0.2.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.27->launch==0.1.0) (0.5.2)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.27->launch==0.1.0) (1.24.2)
+Requirement already satisfied: marshmallow<4.0.0,>=3.18.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from dataclasses-json<0.7,>=0.5.7->langchain-community==0.3.27->launch==0.1.0) (3.26.2)
+Requirement already satisfied: typing-inspect<1,>=0.4.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from dataclasses-json<0.7,>=0.5.7->langchain-community==0.3.27->launch==0.1.0) (0.9.0)
+Requirement already satisfied: jsonpointer>=1.9 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from jsonpatch<2.0,>=1.33->langchain-core==0.3.68->launch==0.1.0) (3.1.1)
+Requirement already satisfied: ormsgpack>=1.10.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langgraph-checkpoint<3.0.0,>=2.1.0->langgraph==0.5.2->launch==0.1.0) (1.12.2)
+Requirement already satisfied: httpx>=0.25.2 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langgraph-sdk<0.2.0,>=0.1.42->langgraph==0.5.2->launch==0.1.0) (0.28.1)
+Requirement already satisfied: orjson>=3.10.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langgraph-sdk<0.2.0,>=0.1.42->langgraph==0.5.2->launch==0.1.0) (3.11.9)
+Requirement already satisfied: anyio<5,>=3.5.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from openai->launch==0.1.0) (4.13.0)
+Requirement already satisfied: distro<2,>=1.7.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from openai->launch==0.1.0) (1.9.0)
+Requirement already satisfied: jiter<1,>=0.4.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from openai->launch==0.1.0) (0.15.0)
+Requirement already satisfied: sniffio in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from openai->launch==0.1.0) (1.3.1)
+Requirement already satisfied: tqdm>4 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from openai->launch==0.1.0) (4.67.3)
+Requirement already satisfied: idna>=2.8 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from anyio<5,>=3.5.0->openai->launch==0.1.0) (3.18)
+Requirement already satisfied: certifi in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from httpx>=0.25.2->langgraph-sdk<0.2.0,>=0.1.42->langgraph==0.5.2->launch==0.1.0) (2026.5.20)
+Requirement already satisfied: httpcore==1.* in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from httpx>=0.25.2->langgraph-sdk<0.2.0,>=0.1.42->langgraph==0.5.2->launch==0.1.0) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from httpcore==1.*->httpx>=0.25.2->langgraph-sdk<0.2.0,>=0.1.42->langgraph==0.5.2->launch==0.1.0) (0.16.0)
+Requirement already satisfied: python-dotenv>=0.21.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from pydantic-settings<3.0.0,>=2.4.0->langchain-community==0.3.27->launch==0.1.0) (1.2.2)
+Requirement already satisfied: charset_normalizer<4,>=2 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from requests>=2.32.4->launch==0.1.0) (3.4.7)
+Requirement already satisfied: urllib3<3,>=1.26 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from requests>=2.32.4->launch==0.1.0) (2.7.0)
+Requirement already satisfied: greenlet>=1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from SQLAlchemy<3,>=1.4->langchain==0.3.26->launch==0.1.0) (3.5.1)
+Requirement already satisfied: regex in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from tiktoken<1,>=0.7->langchain-openai==0.3.27->launch==0.1.0) (2026.5.9)
+Requirement already satisfied: mypy-extensions>=0.3.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from typing-inspect<1,>=0.4.0->dataclasses-json<0.7,>=0.5.7->langchain-community==0.3.27->launch==0.1.0) (1.1.0)
+Requirement already satisfied: soupsieve>=1.6.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from beautifulsoup4>=4.13.4->launch==0.1.0) (2.8.4)
+Requirement already satisfied: termcolor in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from fire>=0.7.0->launch==0.1.0) (3.3.0)
+Requirement already satisfied: gitdb<5,>=4.0.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from gitpython>=3.1.44->launch==0.1.0) (4.0.12)
+Requirement already satisfied: smmap<6,>=3.0.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from gitdb<5,>=4.0.1->gitpython>=3.1.44->launch==0.1.0) (5.0.3)
+Requirement already satisfied: requests-toolbelt>=1.0.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langsmith>=0.1.17->langchain==0.3.26->launch==0.1.0) (1.0.0)
+Requirement already satisfied: uuid-utils<1.0,>=0.12.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langsmith>=0.1.17->langchain==0.3.26->launch==0.1.0) (0.16.0)
+Requirement already satisfied: websockets>=15.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langsmith>=0.1.17->langchain==0.3.26->launch==0.1.0) (16.0)
+Requirement already satisfied: zstandard>=0.23.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langsmith>=0.1.17->langchain==0.3.26->launch==0.1.0) (0.25.0)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from rich>=14.0.0->launch==0.1.0) (4.2.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from rich>=14.0.0->launch==0.1.0) (2.20.0)
+Requirement already satisfied: mdurl~=0.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from markdown-it-py>=2.2.0->rich>=14.0.0->launch==0.1.0) (0.1.2)
+Requirement already satisfied: azure-identity<2.0.0,>=1.18.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from azure-identity-broker->launch==0.1.0) (1.25.3)
+Requirement already satisfied: msal<2,>=1.33.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from msal[broker]<2,>=1.33.0->azure-identity-broker->launch==0.1.0) (1.37.0)
+Requirement already satisfied: azure-core>=1.31.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from azure-identity<2.0.0,>=1.18.0->azure-identity-broker->launch==0.1.0) (1.41.0)
+Requirement already satisfied: cryptography>=2.5 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from azure-identity<2.0.0,>=1.18.0->azure-identity-broker->launch==0.1.0) (48.0.0)
+Requirement already satisfied: msal-extensions>=1.2.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from azure-identity<2.0.0,>=1.18.0->azure-identity-broker->launch==0.1.0) (1.3.1)
+Requirement already satisfied: PyJWT<3,>=1.0.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from PyJWT[crypto]<3,>=1.0.0->msal<2,>=1.33.0->msal[broker]<2,>=1.33.0->azure-identity-broker->launch==0.1.0) (2.13.0)
+Requirement already satisfied: cffi>=2.0.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from cryptography>=2.5->azure-identity<2.0.0,>=1.18.0->azure-identity-broker->launch==0.1.0) (2.0.0)
+Requirement already satisfied: pymsalruntime<0.21,>=0.20 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from msal[broker]<2,>=1.33.0->azure-identity-broker->launch==0.1.0) (0.20.6)
+Requirement already satisfied: pycparser in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from cffi>=2.0.0->cryptography>=2.5->azure-identity<2.0.0,>=1.18.0->azure-identity-broker->launch==0.1.0) (3.0)
+Requirement already satisfied: anthropic<1,>=0.57.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-anthropic->launch==0.1.0) (0.105.2)
+Requirement already satisfied: docstring-parser<1,>=0.15 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from anthropic<1,>=0.57.0->langchain-anthropic->launch==0.1.0) (0.18.0)
+Requirement already satisfied: pynacl>=1.4.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from pygithub->launch==0.1.0) (1.6.2)
+Building wheels for collected packages: launch
+  Building editable for launch (pyproject.toml): started
+  Building editable for launch (pyproject.toml): finished with status 'done'
+  Created wheel for launch: filename=launch-0.1.0-0.editable-py3-none-any.whl size=4955 sha256=26234011bf62e9c6d8d3f183445d53e2d0b706d7ba65b4cc3c0aaa72c3d5236b
+  Stored in directory: /tmp/pip-ephem-wheel-cache-uq_lhq57/wheels/1f/8d/f8/94f3e6313eee10f9e7c49ee63f93584cf1584eb89c7ead3108
+Successfully built launch
+Installing collected packages: launch
+  Attempting uninstall: launch
+    Found existing installation: launch 0.1.0
+    Uninstalling launch-0.1.0:
+      Successfully uninstalled launch-0.1.0
+Successfully installed launch-0.1.0
+Processing first 50 repositories only
+──────────────────────────────────────────────────────────────────────  Starting Launching Repositories... ───────────────────────────────────────────────────────────────────────
+Processing AntonOsika__gpt-engineer-1118 (AntonOsika/gpt-engineer)
+Processing Significant-Gravitas__AutoGPT-3250 (Significant-Gravitas/AutoGPT)
+Processing Significant-Gravitas__AutoGPT-3375 (Significant-Gravitas/AutoGPT)
+Processing Significant-Gravitas__AutoGPT-4383 (Significant-Gravitas/AutoGPT)
+Processing Significant-Gravitas__AutoGPT-4567 (Significant-Gravitas/AutoGPT)
+Processing Significant-Gravitas__AutoGPT-4875 (Significant-Gravitas/AutoGPT)
+Processing agentscope-ai__agentscope-2 (agentscope-ai/agentscope)
+Processing agentscope-ai__agentscope-197 (agentscope-ai/agentscope)
+Processing agentscope-ai__agentscope-1097 (agentscope-ai/agentscope)
+Processing agentscope-ai__agentscope-1356 (agentscope-ai/agentscope)
+Processing agentscope-ai__agentscope-1390 (agentscope-ai/agentscope)
+Processing crewAIInc__crewAI-1818 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-1820 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-2063 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-2071 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-2192 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-2231 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-2265 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-2336 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-2408 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-2423 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-2552 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-2553 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-2562 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-2570 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-2588 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-2594 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-2793 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-2893 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-3057 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-3072 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-3120 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-3187 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-3390 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-3465 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-3839 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-3904 (crewAIInc/crewAI)
+Now Processing agentscope-ai__agentscope-1390 (agentscope-ai/agentscope)
+Success! agentscope-ai__agentscope-1390 (Elapsed: 00:00:00)
+Now Processing Significant-Gravitas__AutoGPT-3375 (Significant-Gravitas/AutoGPT)
+Success! Significant-Gravitas__AutoGPT-3375 (Elapsed: 00:00:00)
+Now Processing Significant-Gravitas__AutoGPT-4383 (Significant-Gravitas/AutoGPT)
+Success! Significant-Gravitas__AutoGPT-4383 (Elapsed: 00:00:00)
+Now Processing crewAIInc__crewAI-2562 (crewAIInc/crewAI)
+Success! crewAIInc__crewAI-2562 (Elapsed: 00:00:00)
+Now Processing Significant-Gravitas__AutoGPT-4567 (Significant-Gravitas/AutoGPT)
+Success! Significant-Gravitas__AutoGPT-4567 (Elapsed: 00:00:00)
+Now Processing crewAIInc__crewAI-2336 (crewAIInc/crewAI)
+Success! crewAIInc__crewAI-2336 (Elapsed: 00:00:00)
+Now Processing crewAIInc__crewAI-2071 (crewAIInc/crewAI)
+Success! crewAIInc__crewAI-2071 (Elapsed: 00:00:00)
+Now Processing Significant-Gravitas__AutoGPT-4875 (Significant-Gravitas/AutoGPT)
+Success! Significant-Gravitas__AutoGPT-4875 (Elapsed: 00:00:00)
+Now Processing Significant-Gravitas__AutoGPT-3250 (Significant-Gravitas/AutoGPT)
+Success! Significant-Gravitas__AutoGPT-3250 (Elapsed: 00:00:00)
+Now Processing agentscope-ai__agentscope-2 (agentscope-ai/agentscope)
+Success! agentscope-ai__agentscope-2 (Elapsed: 00:00:00)
+Now Processing crewAIInc__crewAI-1818 (crewAIInc/crewAI)
+Success! crewAIInc__crewAI-1818 (Elapsed: 00:00:00)
+Now Processing crewAIInc__crewAI-1820 (crewAIInc/crewAI)
+Success! crewAIInc__crewAI-1820 (Elapsed: 00:00:00)
+Now Processing crewAIInc__crewAI-2265 (crewAIInc/crewAI)
+Success! crewAIInc__crewAI-2265 (Elapsed: 00:00:00)
+Now Processing agentscope-ai__agentscope-197 (agentscope-ai/agentscope)
+Success! agentscope-ai__agentscope-197 (Elapsed: 00:00:00)
+Now Processing agentscope-ai__agentscope-1097 (agentscope-ai/agentscope)
+Success! agentscope-ai__agentscope-1097 (Elapsed: 00:00:00)
+Now Processing crewAIInc__crewAI-2192 (crewAIInc/crewAI)
+Failed crewAIInc__crewAI-2192: Launch failed (Elapsed: 00:00:00)
+Now Processing agentscope-ai__agentscope-1356 (agentscope-ai/agentscope)
+Success! agentscope-ai__agentscope-1356 (Elapsed: 00:00:00)
+Now Processing AntonOsika__gpt-engineer-1118 (AntonOsika/gpt-engineer)
+Success! AntonOsika__gpt-engineer-1118 (Elapsed: 00:00:00)
+/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain/__init__.py:30: UserWarning: Importing verbose from langchain root module is no longer supported. Please use langchain.globals.set_verbose() / langchain.globals.get_verbose() instead.
+  warnings.warn(
+/home/cc/SWE-bench-Live/launch/launch/agent/state.py:133: LangChainDeprecationWarning: The class `TavilySearchResults` was deprecated in LangChain 0.3.25 and will be removed in 1.0. An updated version of the class exists in the :class:`~langchain-tavily package and should be used instead. To use it run `pip install -U :class:`~langchain-tavily` and import as `from :class:`~langchain_tavily import TavilySearch``.
+  search_tool=TavilySearchResults(max_results=max_search_results),
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/logging/__init__.py", line 1164, in emit
+    self.flush()
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/logging/__init__.py", line 1144, in flush
+    self.stream.flush()
+OSError: [Errno 28] No space left on device
+Call stack:
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/threading.py", line 1032, i

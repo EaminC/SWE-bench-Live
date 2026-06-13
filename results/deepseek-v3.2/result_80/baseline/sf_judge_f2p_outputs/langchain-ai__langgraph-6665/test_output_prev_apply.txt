@@ -1,0 +1,698 @@
+cat reports/test-output.log
+Running test in libs/checkpoint
+make[1]: Entering directory '/testbed/libs/checkpoint'
+uv run pytest .
+warning: `VIRTUAL_ENV=/testbed/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-8.4.2, pluggy-1.6.0 -- /testbed/libs/checkpoint/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed/libs/checkpoint
+configfile: pyproject.toml
+plugins: mock-3.15.1, asyncio-1.2.0, langsmith-0.4.40, anyio-4.11.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 111 items
+
+tests/test_jsonplus.py::test_serde_jsonplus PASSED                       [  0%]
+tests/test_jsonplus.py::test_serde_jsonplus_json_mode PASSED             [  1%]
+tests/test_jsonplus.py::test_serde_jsonplus_bytes PASSED                 [  2%]
+tests/test_jsonplus.py::test_deserde_invalid_module PASSED               [  3%]
+tests/test_jsonplus.py::test_serde_jsonplus_bytearray PASSED             [  4%]
+tests/test_jsonplus.py::test_serde_jsonplus_numpy_array[arr0] PASSED     [  5%]
+tests/test_jsonplus.py::test_serde_jsonplus_numpy_array[arr1] PASSED     [  6%]
+tests/test_jsonplus.py::test_serde_jsonplus_numpy_array[arr2] PASSED     [  7%]
+tests/test_jsonplus.py::test_serde_jsonplus_numpy_array_json_hook[arr0] PASSED [  8%]
+tests/test_jsonplus.py::test_serde_jsonplus_numpy_array_json_hook[arr1] PASSED [  9%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df0] PASSED [  9%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df1] PASSED [ 10%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df2] PASSED [ 11%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df3] PASSED [ 12%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df4] PASSED [ 13%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df5] PASSED [ 14%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df6] PASSED [ 15%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df7] PASSED [ 16%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df8] PASSED [ 17%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df9] PASSED [ 18%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df10] PASSED [ 18%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df11] PASSED [ 19%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df12] PASSED [ 20%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df13] PASSED [ 21%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df14] PASSED [ 22%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df15] PASSED [ 23%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df16] PASSED [ 24%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df17] PASSED [ 25%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df18] PASSED [ 26%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df19] PASSED [ 27%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df20] PASSED [ 27%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df21] PASSED [ 28%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df22] PASSED [ 29%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df23] PASSED [ 30%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df24] PASSED [ 31%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series0] PASSED [ 32%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series1] PASSED [ 33%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series2] PASSED [ 34%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series3] PASSED [ 35%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series4] PASSED [ 36%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series5] PASSED [ 36%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series6] PASSED [ 37%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series7] PASSED [ 38%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series8] PASSED [ 39%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series9] PASSED [ 40%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series10] PASSED [ 41%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series11] PASSED [ 42%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series12] PASSED [ 43%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series13] PASSED [ 44%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series14] PASSED [ 45%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series15] PASSED [ 45%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series16] PASSED [ 46%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series17] PASSED [ 47%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series18] PASSED [ 48%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series19] PASSED [ 49%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series20] PASSED [ 50%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series21] PASSED [ 51%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series22] PASSED [ 52%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series23] PASSED [ 53%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series24] PASSED [ 54%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series25] PASSED [ 54%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series26] PASSED [ 55%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series27] PASSED [ 56%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series28] PASSED [ 57%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series29] PASSED [ 58%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series30] PASSED [ 59%]
+tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series31] PASSED [ 60%]
+tests/test_memory.py::TestMemorySaver::test_combined_metadata PASSED     [ 61%]
+tests/test_memory.py::TestMemorySaver::test_search PASSED                [ 62%]
+tests/test_memory.py::TestMemorySaver::test_asearch PASSED               [ 63%]
+tests/test_memory.py::test_memory_saver PASSED                           [ 63%]
+tests/test_redis_cache.py::TestRedisCache::test_basic_set_and_get SKIPPED [ 64%]
+tests/test_redis_cache.py::TestRedisCache::test_batch_operations SKIPPED [ 65%]
+tests/test_redis_cache.py::TestRedisCache::test_ttl_behavior SKIPPED     [ 66%]
+tests/test_redis_cache.py::TestRedisCache::test_namespace_isolation SKIPPED [ 67%]
+tests/test_redis_cache.py::TestRedisCache::test_clear_all SKIPPED (Redis
+server not available)                                                    [ 68%]
+tests/test_redis_cache.py::TestRedisCache::test_clear_by_namespace SKIPPED [ 69%]
+tests/test_redis_cache.py::TestRedisCache::test_empty_operations SKIPPED [ 70%]
+tests/test_redis_cache.py::TestRedisCache::test_nonexistent_keys SKIPPED [ 71%]
+tests/test_redis_cache.py::TestRedisCache::test_async_operations SKIPPED [ 72%]
+tests/test_redis_cache.py::TestRedisCache::test_async_clear SKIPPED      [ 72%]
+tests/test_redis_cache.py::TestRedisCache::test_redis_unavailable_get SKIPPED [ 73%]
+tests/test_redis_cache.py::TestRedisCache::test_redis_unavailable_set SKIPPED [ 74%]
+tests/test_redis_cache.py::TestRedisCache::test_redis_unavailable_async SKIPPED [ 75%]
+tests/test_redis_cache.py::TestRedisCache::test_corrupted_data_handling SKIPPED [ 76%]
+tests/test_redis_cache.py::TestRedisCache::test_key_parsing_edge_cases SKIPPED [ 77%]
+tests/test_redis_cache.py::TestRedisCache::test_large_data_serialization SKIPPED [ 78%]
+tests/test_store.py::test_async_batch_store_resilience PASSED            [ 79%]
+tests/test_store.py::test_get_text_at_path PASSED                        [ 80%]
+tests/test_store.py::test_async_batch_store PASSED                       [ 81%]
+tests/test_store.py::test_async_batch_store_handles_cancellation PASSED  [ 81%]
+tests/test_store.py::test_list_namespaces_basic PASSED                   [ 82%]
+tests/test_store.py::test_list_namespaces_with_wildcards PASSED          [ 83%]
+tests/test_store.py::test_list_namespaces_pagination PASSED              [ 84%]
+tests/test_store.py::test_list_namespaces_max_depth PASSED               [ 85%]
+tests/test_store.py::test_list_namespaces_no_conditions PASSED           [ 86%]
+tests/test_store.py::test_list_namespaces_empty_store PASSED             [ 87%]
+tests/test_store.py::test_cannot_put_empty_namespace PASSED              [ 88%]
+tests/test_store.py::test_async_batch_store_deduplication PASSED         [ 89%]
+tests/test_store.py::test_vector_store_initialization PASSED             [ 90%]
+tests/test_store.py::test_vector_insert_with_auto_embedding PASSED       [ 90%]
+tests/test_store.py::test_async_vector_insert_with_auto_embedding PASSED [ 91%]
+tests/test_store.py::test_vector_update_with_embedding PASSED            [ 92%]
+tests/test_store.py::test_async_vector_update_with_embedding PASSED      [ 93%]
+tests/test_store.py::test_vector_search_with_filters PASSED              [ 94%]
+tests/test_store.py::test_async_vector_search_with_filters PASSED        [ 95%]
+tests/test_store.py::test_async_batched_vector_search_concurrent PASSED  [ 96%]
+tests/test_store.py::test_vector_search_pagination PASSED                [ 97%]
+tests/test_store.py::test_async_vector_search_pagination PASSED          [ 98%]
+tests/test_store.py::test_embed_with_path PASSED                         [ 99%]
+tests/test_store.py::test_non_ascii PASSED                               [100%]
+
+============================= slowest 5 durations ==============================
+0.07s call     tests/test_store.py::test_async_batched_vector_search_concurrent
+0.04s call     tests/test_store.py::test_non_ascii
+0.03s call     tests/test_store.py::test_async_vector_update_with_embedding
+0.03s call     tests/test_store.py::test_async_vector_search_with_filters
+0.03s call     tests/test_store.py::test_vector_search_with_filters
+======================== 95 passed, 16 skipped in 1.08s ========================
+make[1]: Leaving directory '/testbed/libs/checkpoint'
+Running test in libs/checkpoint-postgres
+make[1]: Entering directory '/testbed/libs/checkpoint-postgres'
+make[2]: Entering directory '/testbed/libs/checkpoint-postgres'
+Testing PostgreSQL 15
+make[3]: Entering directory '/testbed/libs/checkpoint-postgres'
+POSTGRES_VERSION= docker compose -f tests/compose-postgres.yml up -V --force-recreate --wait || ( \
+	echo "Failed to start PostgreSQL, printing logs..."; \
+	docker compose -f tests/compose-postgres.yml logs; \
+	exit 1 \
+)
+/bin/sh: 1: docker: not found
+Failed to start PostgreSQL, printing logs...
+/bin/sh: 3: docker: not found
+make[3]: *** [Makefile:8: start-postgres] Error 1
+make[3]: Leaving directory '/testbed/libs/checkpoint-postgres'
+make[2]: *** [Makefile:20: test_pg_version] Error 2
+make[2]: Leaving directory '/testbed/libs/checkpoint-postgres'
+Test failed for PostgreSQL 15
+make[1]: *** [Makefile:28: test] Error 1
+make[1]: Leaving directory '/testbed/libs/checkpoint-postgres'
+Running test in libs/checkpoint-sqlite
+make[1]: Entering directory '/testbed/libs/checkpoint-sqlite'
+uv run pytest .
+warning: `VIRTUAL_ENV=/testbed/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-8.4.2, pluggy-1.6.0 -- /testbed/libs/checkpoint-sqlite/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed/libs/checkpoint-sqlite
+configfile: pyproject.toml
+plugins: langsmith-0.4.31, mock-3.15.1, asyncio-1.2.0, retry-1.7.0, anyio-4.11.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 98 items
+
+tests/test_aiosqlite.py::TestAsyncSqliteSaver::test_combined_metadata PASSED [  1%]
+tests/test_aiosqlite.py::TestAsyncSqliteSaver::test_asearch PASSED       [  2%]
+tests/test_aiosqlite.py::TestAsyncSqliteSaver::test_limit_parameter_sql_injection_prevention PASSED [  3%]
+tests/test_async_store.py::test_no_running_loop[memory] PASSED           [  4%]
+tests/test_async_store.py::test_no_running_loop[file] PASSED             [  5%]
+tests/test_async_store.py::test_large_batches_async[memory] PASSED       [  6%]
+tests/test_async_store.py::test_large_batches_async[file] PASSED         [  7%]
+tests/test_async_store.py::test_abatch_order[memory] PASSED              [  8%]
+tests/test_async_store.py::test_abatch_order[file] PASSED                [  9%]
+tests/test_async_store.py::test_batch_get_ops[memory] PASSED             [ 10%]
+tests/test_async_store.py::test_batch_get_ops[file] PASSED               [ 11%]
+tests/test_async_store.py::test_batch_put_ops[memory] PASSED             [ 12%]
+tests/test_async_store.py::test_batch_put_ops[file] PASSED               [ 13%]
+tests/test_async_store.py::test_batch_search_ops[memory] PASSED          [ 14%]
+tests/test_async_store.py::test_batch_search_ops[file] PASSED            [ 15%]
+tests/test_async_store.py::test_batch_list_namespaces_ops[memory] PASSED [ 16%]
+tests/test_async_store.py::test_batch_list_namespaces_ops[file] PASSED   [ 17%]
+tests/test_async_store.py::test_vector_store_initialization PASSED       [ 18%]
+tests/test_async_store.py::test_vector_insert_with_auto_embedding[memory] PASSED [ 19%]
+tests/test_async_store.py::test_vector_insert_with_auto_embedding[file] PASSED [ 20%]
+tests/test_async_store.py::test_vector_update_with_embedding[memory] PASSED [ 21%]
+tests/test_async_store.py::test_vector_update_with_embedding[file] PASSED [ 22%]
+tests/test_async_store.py::test_vector_search_with_filters[memory] PASSED [ 23%]
+tests/test_async_store.py::test_vector_search_with_filters[file] PASSED  [ 24%]
+tests/test_async_store.py::test_vector_search_pagination PASSED          [ 25%]
+tests/test_async_store.py::test_vector_search_edge_cases PASSED          [ 26%]
+tests/test_async_store.py::test_embed_with_path PASSED                   [ 27%]
+tests/test_async_store.py::test_basic_store_ops PASSED                   [ 28%]
+tests/test_async_store.py::test_list_namespaces PASSED                   [ 29%]
+tests/test_async_store.py::test_search_items PASSED                      [ 30%]
+tests/test_sqlite.py::TestSqliteSaver::test_combined_metadata PASSED     [ 31%]
+tests/test_sqlite.py::TestSqliteSaver::test_search PASSED                [ 32%]
+tests/test_sqlite.py::TestSqliteSaver::test_search_where PASSED          [ 33%]
+tests/test_sqlite.py::TestSqliteSaver::test_metadata_predicate PASSED    [ 34%]
+tests/test_sqlite.py::TestSqliteSaver::test_informative_async_errors PASSED [ 35%]
+tests/test_sqlite.py::TestSqliteSaver::test_metadata_predicate_sql_injection_prevention PASSED [ 36%]
+tests/test_sqlite.py::TestSqliteSaver::test_checkpoint_search_sql_injection_prevention PASSED [ 37%]
+tests/test_sqlite.py::TestSqliteSaver::test_limit_parameter_sql_injection_prevention PASSED [ 38%]
+tests/test_sqlite.py::TestSqliteSaver::test_metadata_filter_keys_with_hyphens_and_digits PASSED [ 39%]
+tests/test_store.py::test_batch_order[memory] PASSED                     [ 40%]
+tests/test_store.py::test_batch_order[file] PASSED                       [ 41%]
+tests/test_store.py::test_batch_get_ops[memory] PASSED                   [ 42%]
+tests/test_store.py::test_batch_get_ops[file] PASSED                     [ 43%]
+tests/test_store.py::test_batch_put_ops[memory] PASSED                   [ 44%]
+tests/test_store.py::test_batch_put_ops[file] PASSED                     [ 45%]
+tests/test_store.py::test_batch_search_ops[memory] PASSED                [ 46%]
+tests/test_store.py::test_batch_search_ops[file] PASSED                  [ 47%]
+tests/test_store.py::test_batch_list_namespaces_ops[memory] PASSED       [ 48%]
+tests/test_store.py::test_batch_list_namespaces_ops[file] PASSED         [ 50%]
+tests/test_store.py::TestSqliteStore::test_basic_store_ops PASSED        [ 51%]
+tests/test_store.py::TestSqliteStore::test_list_namespaces PASSED        [ 52%]
+tests/test_store.py::TestSqliteStore::test_search PASSED                 [ 53%]
+tests/test_store.py::test_vector_store_initialization PASSED             [ 54%]
+tests/test_store.py::test_vector_insert_with_auto_embedding[memory-cosine] PASSED [ 55%]
+tests/test_store.py::test_vector_insert_with_auto_embedding[file-cosine] PASSED [ 56%]
+tests/test_store.py::test_vector_update_with_embedding[memory-cosine] PASSED [ 57%]
+tests/test_store.py::test_vector_update_with_embedding[file-cosine] PASSED [ 58%]
+tests/test_store.py::test_vector_search_with_filters[cosine] PASSED      [ 59%]
+tests/test_store.py::test_vector_search_pagination[cosine] PASSED        [ 60%]
+tests/test_store.py::test_vector_search_edge_cases[cosine] PASSED        [ 61%]
+tests/test_store.py::test_embed_with_path[cosine] PASSED                 [ 62%]
+tests/test_store.py::test_embed_with_path_operation_config[cosine] PASSED [ 63%]
+tests/test_store.py::test_scores[memory-aaa] PASSED                      [ 64%]
+tests/test_store.py::test_scores[memory-bbb] PASSED                      [ 65%]
+tests/test_store.py::test_scores[memory-ccc] PASSED                      [ 66%]
+tests/test_store.py::test_scores[memory-abcd] PASSED                     [ 67%]
+tests/test_store.py::test_scores[memory-poisson] PASSED                  [ 68%]
+tests/test_store.py::test_scores[file-aaa] PASSED                        [ 69%]
+tests/test_store.py::test_scores[file-bbb] PASSED                        [ 70%]
+tests/test_store.py::test_scores[file-ccc] PASSED                        [ 71%]
+tests/test_store.py::test_scores[file-abcd] PASSED                       [ 72%]
+tests/test_store.py::test_scores[file-poisson] PASSED                    [ 73%]
+tests/test_store.py::test_nonnull_migrations PASSED                      [ 74%]
+tests/test_store.py::test_basic_store_operations PASSED                  [ 75%]
+tests/test_store.py::test_list_namespaces_operations PASSED              [ 76%]
+tests/test_store.py::test_search_items PASSED                            [ 77%]
+tests/test_store.py::test_sql_injection_vulnerability[memory] PASSED     [ 78%]
+tests/test_store.py::test_sql_injection_vulnerability[file] PASSED       [ 79%]
+tests/test_store.py::test_sql_injection_filter_values[memory] PASSED     [ 80%]
+tests/test_store.py::test_sql_injection_filter_values[file] PASSED       [ 81%]
+tests/test_store.py::test_numeric_filter_safety[memory] PASSED           [ 82%]
+tests/test_store.py::test_numeric_filter_safety[file] PASSED             [ 83%]
+tests/test_store.py::test_boolean_filter_safety[memory] PASSED           [ 84%]
+tests/test_store.py::test_boolean_filter_safety[file] PASSED             [ 85%]
+tests/test_store.py::test_filter_keys_with_hyphens_and_digits[memory] PASSED [ 86%]
+tests/test_store.py::test_filter_keys_with_hyphens_and_digits[file] PASSED [ 87%]
+tests/test_store.py::test_non_ascii[cosine] PASSED                       [ 88%]
+tests/test_ttl.py::test_ttl_basic PASSED                                 [ 89%]
+tests/test_ttl.py::test_ttl_refresh PASSED                               [ 90%]
+tests/test_ttl.py::test_ttl_sweeper PASSED                               [ 91%]
+tests/test_ttl.py::test_ttl_custom_value PASSED                          [ 92%]
+tests/test_ttl.py::test_ttl_override_default PASSED                      [ 93%]
+tests/test_ttl.py::test_search_with_ttl PASSED                           [ 94%]
+tests/test_ttl.py::test_async_ttl_basic PASSED                           [ 95%]
+tests/test_ttl.py::test_async_ttl_refresh PASSED                         [ 96%]
+tests/test_ttl.py::test_async_ttl_sweeper PASSED                         [ 97%]
+tests/test_ttl.py::test_async_search_with_ttl PASSED                     [ 98%]
+tests/test_ttl.py::test_async_asearch_refresh_ttl PASSED                 [100%]
+
+============================= slowest 5 durations ==============================
+7.54s call     tests/test_ttl.py::test_async_asearch_refresh_ttl
+6.02s call     tests/test_ttl.py::test_ttl_custom_value
+6.02s call     tests/test_ttl.py::test_ttl_override_default
+3.53s call     tests/test_ttl.py::test_ttl_sweeper
+3.52s call     tests/test_ttl.py::test_async_ttl_sweeper
+============================= 98 passed in 43.19s ==============================
+make[1]: Leaving directory '/testbed/libs/checkpoint-sqlite'
+Running test in libs/cli
+make[1]: Entering directory '/testbed/libs/cli'
+uv run pytest "tests/unit_tests"
+warning: `VIRTUAL_ENV=/testbed/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.0.2, pluggy-1.6.0 -- /testbed/libs/cli/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed/libs/cli
+configfile: pyproject.toml
+plugins: mock-3.15.1, anyio-4.12.0, asyncio-1.3.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 85 items
+
+tests/unit_tests/cli/test_cli.py::test_prepare_args_and_stdin PASSED     [  1%]
+tests/unit_tests/cli/test_cli.py::test_prepare_args_and_stdin_with_image PASSED [  2%]
+tests/unit_tests/cli/test_cli.py::test_version_option PASSED             [  3%]
+tests/unit_tests/cli/test_cli.py::test_dockerfile_command_basic PASSED   [  4%]
+tests/unit_tests/cli/test_cli.py::test_dockerfile_command_new_style_config PASSED [  5%]
+tests/unit_tests/cli/test_cli.py::test_dockerfile_command_with_base_image PASSED [  7%]
+tests/unit_tests/cli/test_cli.py::test_dockerfile_command_with_docker_compose FAILED [  8%]
+tests/unit_tests/cli/test_cli.py::test_dockerfile_command_with_bad_config PASSED [  9%]
+tests/unit_tests/cli/test_cli.py::test_dockerfile_command_shows_wolfi_warning PASSED [ 10%]
+tests/unit_tests/cli/test_cli.py::test_dockerfile_command_no_wolfi_warning_when_wolfi_set PASSED [ 11%]
+tests/unit_tests/cli/test_cli.py::test_build_command_shows_wolfi_warning FAILED [ 12%]
+tests/unit_tests/cli/test_cli.py::test_build_generate_proper_build_context FAILED [ 14%]
+tests/unit_tests/cli/test_cli.py::test_dockerfile_command_with_api_version PASSED [ 15%]
+tests/unit_tests/cli/test_cli.py::test_dockerfile_command_with_api_version_and_base_image PASSED [ 16%]
+tests/unit_tests/cli/test_cli.py::test_dockerfile_command_with_api_version_nodejs PASSED [ 17%]
+tests/unit_tests/cli/test_cli.py::test_build_command_with_api_version FAILED [ 18%]
+tests/unit_tests/cli/test_cli.py::test_build_command_with_api_version_and_base_image FAILED [ 20%]
+tests/unit_tests/cli/test_cli.py::test_prepare_args_and_stdin_with_api_version PASSED [ 21%]
+tests/unit_tests/cli/test_cli.py::test_prepare_args_and_stdin_with_api_version_and_image PASSED [ 22%]
+tests/unit_tests/cli/test_templates.py::test_create_new_with_mocked_download PASSED [ 23%]
+tests/unit_tests/cli/test_templates.py::test_invalid_template_id PASSED  [ 24%]
+tests/unit_tests/test_config.py::test_validate_config PASSED             [ 25%]
+tests/unit_tests/test_config.py::test_validate_config_image_distro PASSED [ 27%]
+tests/unit_tests/test_config.py::test_validate_config_pip_installer PASSED [ 28%]
+tests/unit_tests/test_config.py::test_validate_config_file PASSED        [ 29%]
+tests/unit_tests/test_config.py::test_validate_config_multiplatform PASSED [ 30%]
+tests/unit_tests/test_config.py::test_config_to_docker_simple PASSED     [ 31%]
+tests/unit_tests/test_config.py::test_config_to_docker_outside_path PASSED [ 32%]
+tests/unit_tests/test_config.py::test_config_to_docker_pipconfig PASSED  [ 34%]
+tests/unit_tests/test_config.py::test_config_to_docker_invalid_inputs PASSED [ 35%]
+tests/unit_tests/test_config.py::test_config_to_docker_local_deps PASSED [ 36%]
+tests/unit_tests/test_config.py::test_config_to_docker_pyproject PASSED  [ 37%]
+tests/unit_tests/test_config.py::test_config_to_docker_end_to_end PASSED [ 38%]
+tests/unit_tests/test_config.py::test_config_to_docker_nodejs PASSED     [ 40%]
+tests/unit_tests/test_config.py::test_config_to_docker_python_encryption PASSED [ 41%]
+tests/unit_tests/test_config.py::test_config_to_docker_python_encryption_bad_path PASSED [ 42%]
+tests/unit_tests/test_config.py::test_config_to_docker_python_encryption_formatted PASSED [ 43%]
+tests/unit_tests/test_config.py::test_config_to_docker_nodejs_internal_docker_tag PASSED [ 44%]
+tests/unit_tests/test_config.py::test_config_to_docker_webhooks_python PASSED [ 45%]
+tests/unit_tests/test_config.py::test_config_to_docker_webhooks_node PASSED [ 47%]
+tests/unit_tests/test_config.py::test_config_to_docker_no_webhooks PASSED [ 48%]
+tests/unit_tests/test_config.py::test_config_to_docker_gen_ui_python PASSED [ 49%]
+tests/unit_tests/test_config.py::test_config_to_docker_multiplatform PASSED [ 50%]
+tests/unit_tests/test_config.py::test_config_to_docker_pip_installer PASSED [ 51%]
+tests/unit_tests/test_config.py::test_config_retain_build_tools PASSED   [ 52%]
+tests/unit_tests/test_config.py::test_config_to_compose_simple_config PASSED [ 54%]
+tests/unit_tests/test_config.py::test_config_to_compose_env_vars PASSED  [ 55%]
+tests/unit_tests/test_config.py::test_config_to_compose_env_file PASSED  [ 56%]
+tests/unit_tests/test_config.py::test_config_to_compose_watch PASSED     [ 57%]
+tests/unit_tests/test_config.py::test_config_to_compose_end_to_end PASSED [ 58%]
+tests/unit_tests/test_config.py::test_docker_tag_image_distro PASSED     [ 60%]
+tests/unit_tests/test_config.py::test_docker_tag_multiplatform_with_distro PASSED [ 61%]
+tests/unit_tests/test_config.py::test_docker_tag_different_python_versions_with_distro PASSED [ 62%]
+tests/unit_tests/test_config.py::test_docker_tag_different_node_versions_with_distro PASSED [ 63%]
+tests/unit_tests/test_config.py::test_docker_tag_with_api_version[False] PASSED [ 64%]
+tests/unit_tests/test_config.py::test_docker_tag_with_api_version[True] PASSED [ 65%]
+tests/unit_tests/test_config.py::test_config_to_docker_with_api_version PASSED [ 67%]
+tests/unit_tests/test_config.py::test_config_to_compose_with_api_version PASSED [ 68%]
+tests/unit_tests/test_docker.py::test_compose_with_no_debugger_and_custom_db PASSED [ 69%]
+tests/unit_tests/test_docker.py::test_compose_with_no_debugger_and_custom_db_with_healthcheck PASSED [ 70%]
+tests/unit_tests/test_docker.py::test_compose_with_debugger_and_custom_db PASSED [ 71%]
+tests/unit_tests/test_docker.py::test_compose_with_debugger_and_default_db PASSED [ 72%]
+tests/unit_tests/test_docker.py::test_compose_with_api_version PASSED    [ 74%]
+tests/unit_tests/test_docker.py::test_compose_with_api_version_and_base_image PASSED [ 75%]
+tests/unit_tests/test_docker.py::test_compose_with_api_version_and_custom_postgres PASSED [ 76%]
+tests/unit_tests/test_docker.py::test_compose_with_api_version_and_debugger PASSED [ 77%]
+tests/unit_tests/test_docker.py::test_parse_version_w_edge_cases[1.2.3-expected0] PASSED [ 78%]
+tests/unit_tests/test_docker.py::test_parse_version_w_edge_cases[v1.2.3-expected1] PASSED [ 80%]
+tests/unit_tests/test_docker.py::test_parse_version_w_edge_cases[1.2.3-alpha-expected2] PASSED [ 81%]
+tests/unit_tests/test_docker.py::test_parse_version_w_edge_cases[1.2.3+1-expected3] PASSED [ 82%]
+tests/unit_tests/test_docker.py::test_parse_version_w_edge_cases[1.2.3-alpha+build-expected4] PASSED [ 83%]
+tests/unit_tests/test_docker.py::test_parse_version_w_edge_cases[1.2-expected5] PASSED [ 84%]
+tests/unit_tests/test_docker.py::test_parse_version_w_edge_cases[1-expected6] PASSED [ 85%]
+tests/unit_tests/test_docker.py::test_parse_version_w_edge_cases[v28.1.1+1-expected7] PASSED [ 87%]
+tests/unit_tests/test_docker.py::test_parse_version_w_edge_cases[2.0.0-beta.1+exp.sha.5114f85-expected8] PASSED [ 88%]
+tests/unit_tests/test_docker.py::test_parse_version_w_edge_cases[v3.4.5-rc1+build.123-expected9] PASSED [ 89%]
+tests/unit_tests/test_util.py::test_clean_empty_lines PASSED             [ 90%]
+tests/unit_tests/test_util.py::test_warn_non_wolfi_distro_with_debian PASSED [ 91%]
+tests/unit_tests/test_util.py::test_warn_non_wolfi_distro_with_default_debian PASSED [ 92%]
+tests/unit_tests/test_util.py::test_warn_non_wolfi_distro_with_wolfi PASSED [ 94%]
+tests/unit_tests/test_util.py::test_warn_non_wolfi_distro_with_other_distro PASSED [ 95%]
+tests/unit_tests/test_util.py::test_warn_non_wolfi_distro_output_formatting PASSED [ 96%]
+tests/unit_tests/test_util.py::test_warn_non_wolfi_distro_various_configs PASSED [ 97%]
+tests/unit_tests/test_util.py::test_warn_non_wolfi_distro_return_value PASSED [ 98%]
+tests/unit_tests/test_util.py::test_warn_non_wolfi_distro_does_not_modify_config PASSED [100%]
+
+=================================== FAILURES ===================================
+_________________ test_dockerfile_command_with_docker_compose __________________
+
+    def test_dockerfile_command_with_docker_compose() -> None:
+        """Test the 'dockerfile' command with Docker Compose configuration."""
+        runner = CliRunner()
+        config_content = {
+            "dependencies": ["./my_agent"],
+            "graphs": {"agent": "./my_agent/agent.py:graph"},
+            "env": ".env",
+        }
+        with temporary_config_folder(config_content) as temp_dir:
+            save_path = temp_dir / "Dockerfile"
+            # Add agent.py file
+            agent_path = temp_dir / "my_agent" / "agent.py"
+            agent_path.parent.mkdir(parents=True, exist_ok=True)
+            agent_path.touch()
+    
+            result = runner.invoke(
+                cli,
+                [
+                    "dockerfile",
+                    str(save_path),
+                    "--config",
+                    str(temp_dir / "config.json"),
+                    "--add-docker-compose",
+                ],
+            )
+    
+            # Assert command was successful
+>           assert result.exit_code == 0
+E           assert 2 == 0
+E            +  where 2 = <Result SystemExit(2)>.exit_code
+
+tests/unit_tests/cli/test_cli.py:417: AssertionError
+____________________ test_build_command_shows_wolfi_warning ____________________
+
+    def test_build_command_shows_wolfi_warning() -> None:
+        """Test the 'build' command shows warning when image_distro is not wolfi."""
+        runner = CliRunner()
+        config_content = {
+            "python_version": "3.11",
+            "graphs": {"agent": "agent.py:graph"},
+            "dependencies": ["."],
+            # No image_distro specified - should default to debian and show warning
+        }
+    
+        with temporary_config_folder(config_content) as temp_dir:
+            agent_path = temp_dir / "agent.py"
+            agent_path.touch()
+    
+            # Mock docker command since we don't want to actually build
+            with runner.isolated_filesystem():
+                result = runner.invoke(
+                    cli,
+                    [
+                        "build",
+                        "--tag",
+                        "test-image",
+                        "--config",
+                        str(temp_dir / "config.json"),
+                    ],
+                    catch_exceptions=True,
+                )
+    
+            # The command will fail because docker isn't available or we're mocking,
+            # but we should still see the warning before it fails
+>           assert "Security Recommendation" in result.output
+E           assert 'Security Recommendation' in "Usage: cli build [OPTIONS] [DOCKER_BUILD_ARGS]...\nTry 'cli build --help' for help.\n\nError: Docker not installed\n"
+E            +  where "Usage: cli build [OPTIONS] [DOCKER_BUILD_ARGS]...\nTry 'cli build --help' for help.\n\nError: Docker not installed\n" = <Result SystemExit(2)>.output
+
+tests/unit_tests/cli/test_cli.py:541: AssertionError
+___________________ test_build_generate_proper_build_context ___________________
+
+    def test_build_generate_proper_build_context():
+        runner = CliRunner()
+        config_content = {
+            "python_version": "3.11",
+            "graphs": {"agent": "agent.py:graph"},
+            "dependencies": [".", "../../..", "../.."],
+            "image_distro": "wolfi",
+        }
+    
+        with temporary_config_folder(config_content, levels=3) as temp_dir:
+            agent_path = temp_dir / "agent.py"
+            agent_path.touch()
+    
+            # Mock docker command since we don't want to actually build
+            with runner.isolated_filesystem():
+                result = runner.invoke(
+                    cli,
+                    [
+                        "build",
+                        "--tag",
+                        "test-image",
+                        "--config",
+                        str(temp_dir / "config.json"),
+                    ],
+                    catch_exceptions=True,
+                )
+    
+            build_context_pattern = re.compile(r"--build-context\s+([\w-]+)=([^\s]+)")
+    
+            build_contexts = re.findall(build_context_pattern, result.output)
+>           assert len(build_contexts) == 2, (
+                f"Expected 2 build contexts, but found {len(build_contexts)}"
+            )
+E           AssertionError: Expected 2 build contexts, but found 0
+E           assert 0 == 2
+E            +  where 0 = len([])
+
+tests/unit_tests/cli/test_cli.py:577: AssertionError
+_____________________ test_build_command_with_api_version ______________________
+
+    def test_build_command_with_api_version() -> None:
+        """Test the 'build' command with --api-version flag."""
+        runner = CliRunner()
+        config_content = {
+            "python_version": "3.11",
+            "graphs": {"agent": "agent.py:graph"},
+            "dependencies": ["."],
+            "image_distro": "wolfi",  # Use wolfi to avoid warning messages
+        }
+    
+        with temporary_config_folder(config_content) as temp_dir:
+            agent_path = temp_dir / "agent.py"
+            agent_path.touch()
+    
+            # Mock docker command since we don't want to actually build
+            with runner.isolated_filesystem():
+                result = runner.invoke(
+                    cli,
+                    [
+                        "build",
+                        "--tag",
+                        "test-image",
+                        "--config",
+                        str(temp_dir / "config.json"),
+                        "--api-version",
+                        "0.2.74",
+                        "--no-pull",  # Avoid pulling non-existent images
+                    ],
+                    catch_exceptions=True,
+                )
+    
+            # Check that the build command is called with the correct tag
+            # The output should contain the docker build command with the api_version tag
+>           assert "langchain/langgraph-api:0.2.74-py3.11-wolfi" in result.output
+E           assert 'langchain/langgraph-api:0.2.74-py3.11-wolfi' in "Usage: cli build [OPTIONS] [DOCKER_BUILD_ARGS]...\nTry 'cli build --help' for help.\n\nError: Docker not installed\n"
+E            +  where "Usage: cli build [OPTIONS] [DOCKER_BUILD_ARGS]...\nTry 'cli build --help' for help.\n\nError: Docker not installed\n" = <Result SystemExit(2)>.output
+
+tests/unit_tests/cli/test_cli.py:728: AssertionError
+______________ test_build_command_with_api_version_and_base_image ______________
+
+    def test_build_command_with_api_version_and_base_image() -> None:
+        """Test the 'build' command with both --api-version and --base-image flags."""
+        runner = CliRunner()
+        config_content = {
+            "python_version": "3.12",
+            "graphs": {"agent": "agent.py:graph"},
+            "dependencies": ["."],
+            "image_distro": "wolfi",  # Use wolfi to avoid warning messages
+        }
+    
+        with temporary_config_folder(config_content) as temp_dir:
+            agent_path = temp_dir / "agent.py"
+            agent_path.touch()
+    
+            # Mock docker command since we don't want to actually build
+            with runner.isolated_filesystem():
+                result = runner.invoke(
+                    cli,
+                    [
+                        "build",
+                        "--tag",
+                        "test-image",
+                        "--config",
+                        str(temp_dir / "config.json"),
+                        "--api-version",
+                        "1.0.0",
+                        "--base-image",
+                        "my-registry/custom-api",
+                        "--no-pull",  # Avoid pulling non-existent images
+                    ],
+                    catch_exceptions=True,
+                )
+    
+            # Check that the build command includes the api_version
+>           assert "my-registry/custom-api:1.0.0-py3.12-wolfi" in result.output
+E           assert 'my-registry/custom-api:1.0.0-py3.12-wolfi' in "Usage: cli build [OPTIONS] [DOCKER_BUILD_ARGS]...\nTry 'cli build --help' for help.\n\nError: Docker not installed\n"
+E            +  where "Usage: cli build [OPTIONS] [DOCKER_BUILD_ARGS]...\nTry 'cli build --help' for help.\n\nError: Docker not installed\n" = <Result SystemExit(2)>.output
+
+tests/unit_tests/cli/test_cli.py:765: AssertionError
+============================= slowest 5 durations ==============================
+0.00s call     tests/unit_tests/cli/test_templates.py::test_create_new_with_mocked_download
+0.00s call     tests/unit_tests/cli/test_cli.py::test_dockerfile_command_basic
+0.00s call     tests/unit_tests/cli/test_cli.py::test_dockerfile_command_with_docker_compose
+0.00s teardown tests/unit_tests/test_docker.py::test_compose_with_api_version_and_custom_postgres
+0.00s call     tests/unit_tests/cli/test_cli.py::test_build_generate_proper_build_context
+=========================== short test summary info ============================
+FAILED tests/unit_tests/cli/test_cli.py::test_dockerfile_command_with_docker_compose - assert 2 == 0
+ +  where 2 = <Result SystemExit(2)>.exit_code
+FAILED tests/unit_tests/cli/test_cli.py::test_build_command_shows_wolfi_warning - assert 'Security Recommendation' in "Usage: cli build [OPTIONS] [DOCKER_BUILD_ARGS]...\nTry 'cli build --help' for help.\n\nError: Docker not installed\n"
+ +  where "Usage: cli build [OPTIONS] [DOCKER_BUILD_ARGS]...\nTry 'cli build --help' for help.\n\nError: Docker not installed\n" = <Result SystemExit(2)>.output
+FAILED tests/unit_tests/cli/test_cli.py::test_build_generate_proper_build_context - AssertionError: Expected 2 build contexts, but found 0
+assert 0 == 2
+ +  where 0 = len([])
+FAILED tests/unit_tests/cli/test_cli.py::test_build_command_with_api_version - assert 'langchain/langgraph-api:0.2.74-py3.11-wolfi' in "Usage: cli build [OPTIONS] [DOCKER_BUILD_ARGS]...\nTry 'cli build --help' for help.\n\nError: Docker not installed\n"
+ +  where "Usage: cli build [OPTIONS] [DOCKER_BUILD_ARGS]...\nTry 'cli build --help' for help.\n\nError: Docker not installed\n" = <Result SystemExit(2)>.output
+FAILED tests/unit_tests/cli/test_cli.py::test_build_command_with_api_version_and_base_image - assert 'my-registry/custom-api:1.0.0-py3.12-wolfi' in "Usage: cli build [OPTIONS] [DOCKER_BUILD_ARGS]...\nTry 'cli build --help' for help.\n\nError: Docker not installed\n"
+ +  where "Usage: cli build [OPTIONS] [DOCKER_BUILD_ARGS]...\nTry 'cli build --help' for help.\n\nError: Docker not installed\n" = <Result SystemExit(2)>.output
+========================= 5 failed, 80 passed in 0.25s =========================
+make[1]: *** [Makefile:9: test] Error 1
+make[1]: Leaving directory '/testbed/libs/cli'
+Running test in libs/langgraph
+make[1]: Entering directory '/testbed/libs/langgraph'
+if [ "" = "false" ]; then \
+	make start-services &&\
+	make start-dev-server &&\
+	uv run pytest --json-report --json-report-file=../../reports/pytest-results.json .(TEST); \
+	EXIT_CODE=$?; \
+	make stop-services; \
+	make stop-dev-server; \
+	exit $EXIT_CODE; \
+else \
+	NO_DOCKER=true uv run pytest --json-report --json-report-file=../../reports/pytest-results.json .(TEST) ; \
+	EXIT_CODE=$?; \
+	exit $EXIT_CODE; \
+fi
+/bin/sh: 4: Syntax error: "(" unexpected (expecting "fi")
+make[1]: *** [Makefile:62: test] Error 2
+make[1]: Leaving directory '/testbed/libs/langgraph'
+Running test in libs/prebuilt
+make[1]: Entering directory '/testbed/libs/prebuilt'
+make start-services && LANGGRAPH_TEST_FAST=0 uv run --active pytest .; \
+EXIT_CODE=$?; \
+make stop-services; \
+exit $EXIT_CODE
+make[2]: Entering directory '/testbed/libs/prebuilt'
+docker compose -f tests/compose-postgres.yml -f tests/compose-redis.yml up -V --force-recreate --wait --remove-orphans
+make[2]: docker: No such file or directory
+make[2]: *** [Makefile:11: start-services] Error 127
+make[2]: Leaving directory '/testbed/libs/prebuilt'
+make[2]: Entering directory '/testbed/libs/prebuilt'
+docker compose -f tests/compose-postgres.yml -f tests/compose-redis.yml down -v
+make[2]: docker: No such file or directory
+make[2]: *** [Makefile:14: stop-services] Error 127
+make[2]: Leaving directory '/testbed/libs/prebuilt'
+make[1]: *** [Makefile:22: test] Error 2
+make[1]: Leaving directory '/testbed/libs/prebuilt'
+Running test in libs/sdk-py
+make[1]: Entering directory '/testbed/libs/sdk-py'
+uv run pytest tests
+warning: `VIRTUAL_ENV=/testbed/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+============================= test session starts ==============================
+platform linux -- Python 3.11.15, pytest-9.0.1, pluggy-1.6.0 -- /testbed/libs/sdk-py/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /testbed/libs/sdk-py
+configfile: pyproject.toml
+plugins: mock-3.15.1, anyio-4.12.0, asyncio-1.3.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 45 items
+
+tests/test_api_parity.py::test_sync_api_matches_async[AssistantsClient-SyncAssistantsClient] PASSED [  2%]
+tests/test_api_parity.py::test_sync_api_matches_async[ThreadsClient-SyncThreadsClient] PASSED [  4%]
+tests/test_api_parity.py::test_sync_api_matches_async[RunsClient-SyncRunsClient] PASSED [  6%]
+tests/test_api_parity.py::test_sync_api_matches_async[CronClient-SyncCronClient] PASSED [  8%]
+tests/test_api_parity.py::test_sync_api_matches_async[StoreClient-SyncStoreClient] PASSED [ 11%]
+tests/test_assistants_client.py::test_assistants_search_returns_list_by_default PASSED [ 13%]
+tests/test_assistants_client.py::test_assistants_search_can_return_object_with_pagination_metadata PASSED [ 15%]
+tests/test_assistants_client.py::test_sync_assistants_search_can_return_object_with_pagination_metadata PASSED [ 17%]
+tests/test_client_stream.py::test_stream_sse PASSED                      [ 20%]
+tests/test_client_stream.py::test_http_client_stream_flushes_trailing_event PASSED [ 22%]
+tests/test_client_stream.py::test_sync_http_client_stream_recovers_after_disconnect PASSED [ 24%]
+tests/test_client_stream.py::test_http_client_stream_recovers_after_disconnect PASSED [ 26%]
+tests/test_client_stream.py::test_sync_http_client_stream_flushes_trailing_event PASSED [ 28%]
+tests/test_encryption.py::TestHandlerValidation::test_duplicate_handlers_raise_error PASSED [ 31%]
+tests/test_encryption.py::TestHandlerValidation::test_handlers_must_be_async PASSED [ 33%]
+tests/test_encryption.py::TestHandlerValidation::test_handlers_must_have_two_params PASSED [ 35%]
+tests/test_errors.py::test_raise_for_status_typed_maps_exceptions_and_sets_status_code[400-BadRequestError] PASSED [ 37%]
+tests/test_errors.py::test_raise_for_status_typed_maps_exceptions_and_sets_status_code[401-AuthenticationError] PASSED [ 40%]
+tests/test_errors.py::test_raise_for_status_typed_maps_exceptions_and_sets_status_code[403-PermissionDeniedError] PASSED [ 42%]
+tests/test_errors.py::test_raise_for_status_typed_maps_exceptions_and_sets_status_code[404-NotFoundError] PASSED [ 44%]
+tests/test_errors.py::test_raise_for_status_typed_maps_exceptions_and_sets_status_code[409-ConflictError] PASSED [ 46%]
+tests/test_errors.py::test_raise_for_status_typed_maps_exceptions_and_sets_status_code[422-UnprocessableEntityError] PASSED [ 48%]
+tests/test_errors.py::test_raise_for_status_typed_maps_exceptions_and_sets_status_code[429-RateLimitError] PASSED [ 51%]
+tests/test_errors.py::test_raise_for_status_typed_maps_exceptions_and_sets_status_code[500-InternalServerError] PASSED [ 53%]
+tests/test_errors.py::test_raise_for_status_typed_maps_exceptions_and_sets_status_code[503-InternalServerError] PASSED [ 55%]
+tests/test_errors.py::test_raise_for_status_typed_maps_exceptions_and_sets_status_code[418-APIStatusError] PASSED [ 57%]
+tests/test_errors.py::test_request_id_is_extracted_when_present PASSED   [ 60%]
+tests/test_errors.py::test_non_json_body_does_not_break_mapping PASSED   [ 62%]
+tests/test_errors.py::test_field_extraction_from_json_body PASSED        [ 64%]
+tests/test_select_fields_sync.py::test_assistants_select_enum_matches_sdk PASSED [ 66%]
+tests/test_select_fields_sync.py::test_threads_select_enum_matches_sdk PASSED [ 68%]
+tests/test_select_fields_sync.py::test_runs_select_enum_matches_sdk PASSED [ 71%]
+tests/test_select_fields_sync.py::test_crons_select_enum_matches_sdk PASSED [ 73%]
+tests/test_serde.py::test_serde_basic PASSED                             [ 75%]
+tests/test_serde.py::test_serde_pydantic PASSED                          [ 77%]
+tests/test_serde.py::test_serde_dataclass PASSED                         [ 80%]
+tests/test_serde.py::test_serde_pydantic_cls_fails PASSED                [ 82%]
+tests/test_serde_schema.py::test_base_model_like PASSED                  [ 84%]
+tests/test_serde_schema.py::test_dataclass_like PASSED                   [ 86%]
+tests/test_skip_auto_load_api_key.py::TestSkipAutoLoadApiKey::test_get_client_loads_from_env_by_default PASSED [ 88%]
+tests/test_skip_auto_load_api_key.py::TestSkipAutoLoadApiKey::test_get_client_skips_env_when_sentinel_used PASSED [ 91%]
+tests/test_skip_auto_load_api_key.py::TestSkipAutoLoadApiKey::test_get_client_uses_explicit_key_when_provided PASSED [ 93%]
+tests/test_skip_auto_load_api_key.py::TestSkipAutoLoadApiKey::test_get_sync_client_loads_from_env_by_default PASSED [ 95%]
+tests/test_skip_auto_load_api_key.py::TestSkipAutoLoadApiKey::test_get_sync_client_skips_env_when_sentinel_used PASSED [ 97%]
+tests/test_skip_auto_load_api_key.py::TestSkipAutoLoadApiKey::test_get_sync_client_uses_explicit_key_when_provided PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/test_encryption.py::TestHandlerValidation::test_duplicate_handlers_raise_error
+  /testbed/libs/sdk-py/.venv/lib/python3.11/site-packages/_pytest/python.py:166: LangGraphBetaWarning: The Encryption API is in beta and may change in future versions.
+    result = testfunction(**testargs)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+============================= slowest 5 durations ==============================
+0.03s call     tests/test_skip_auto_load_api_key.py::TestSkipAutoLoadApiKey::test_get_client_loads_from_env_by_default
+0.01s call     tests/test_skip_auto_load_api_key.py::TestSkipAutoLoadApiKey::test_get_client_skips_env_when_sentinel_used
+0.01s call     tests/test_skip_auto_load_api_key.py::TestSkipAutoLoadApiKey::test_get_sync_client_uses_explicit_key_when_provided
+0.01s call     tests/test_skip_auto_load_api_key.py::TestSkipAutoLoadApiKey::test_get_sync_client_loads_from_env_by_default
+0.01s call     tests/test_skip_auto_load_api_key.py::TestSkipAutoLoadApiKey::test_get_client_uses_explicit_key_when_provided
+======================== 45 passed, 1 warning in 0.26s =========================
+make[1]: Leaving directory '/testbed/libs/sdk-py'
+echo OMNIGRIL_EXIT_CODE=1

@@ -1,0 +1,1622 @@
+============================================================
+ Starting SWE-bench-Live Pipeline
+ Master Log File: /home/cc/SWE-bench-Live/logs/runs/pipeline_20260612_114039.log
+============================================================
+
+[1] Activating Conda environment (sbl)...
+
+[Telemetry] Starting token and cost tracker...
+Recording session start stats...
+
+[2] Preparing Pull2Issue from Map...
+Prepared pull2issue files:
+- AntonOsika/gpt-engineer: /home/cc/SWE-bench-Live/baseline/sbl_inputs/AntonOsika__gpt-engineer/prs/gpt-engineer-pull2issue-20090101.jsonl
+- FoundationAgents/MetaGPT: /home/cc/SWE-bench-Live/baseline/sbl_inputs/FoundationAgents__MetaGPT/prs/MetaGPT-pull2issue-20090101.jsonl
+- MLSysOps/MLE-agent: /home/cc/SWE-bench-Live/baseline/sbl_inputs/MLSysOps__MLE-agent/prs/MLE-agent-pull2issue-20090101.jsonl
+- ValueCell-ai/valuecell: /home/cc/SWE-bench-Live/baseline/sbl_inputs/ValueCell-ai__valuecell/prs/valuecell-pull2issue-20090101.jsonl
+- agentscope-ai/agentscope: /home/cc/SWE-bench-Live/baseline/sbl_inputs/agentscope-ai__agentscope/prs/agentscope-pull2issue-20090101.jsonl
+- langflow-ai/langflow: /home/cc/SWE-bench-Live/baseline/sbl_inputs/langflow-ai__langflow/prs/langflow-pull2issue-20090101.jsonl
+- lobehub/lobehub: /home/cc/SWE-bench-Live/baseline/sbl_inputs/lobehub__lobehub/prs/lobehub-pull2issue-20090101.jsonl
+- openinterpreter/open-interpreter: /home/cc/SWE-bench-Live/baseline/sbl_inputs/openinterpreter__open-interpreter/prs/open-interpreter-pull2issue-20090101.jsonl
+- tensorzero/tensorzero: /home/cc/SWE-bench-Live/baseline/sbl_inputs/tensorzero__tensorzero/prs/tensorzero-pull2issue-20090101.jsonl
+
+Next: run SWE-bench-Live task crawling (per repo):
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos AntonOsika/gpt-engineer --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/AntonOsika__gpt-engineer/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/AntonOsika__gpt-engineer/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos FoundationAgents/MetaGPT --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/FoundationAgents__MetaGPT/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/FoundationAgents__MetaGPT/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos MLSysOps/MLE-agent --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/MLSysOps__MLE-agent/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/MLSysOps__MLE-agent/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos ValueCell-ai/valuecell --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/ValueCell-ai__valuecell/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/ValueCell-ai__valuecell/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos agentscope-ai/agentscope --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/agentscope-ai__agentscope/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/agentscope-ai__agentscope/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos langflow-ai/langflow --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/langflow-ai__langflow/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/langflow-ai__langflow/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos lobehub/lobehub --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/lobehub__lobehub/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/lobehub__lobehub/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos openinterpreter/open-interpreter --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/openinterpreter__open-interpreter/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/openinterpreter__open-interpreter/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos tensorzero/tensorzero --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/tensorzero__tensorzero/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/tensorzero__tensorzero/tasks --cutoff_date 20090101
+
+[3] Go back to root SWE-bench-Live...
+
+[4] Running Curation Pipeline (setup.sh)...
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/AntonOsika__gpt-engineer/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/AntonOsika__gpt-engineer/tasks
+Received following number of repos to create task instances for: 1
+Found 3 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-12 11:40:40,888 - INFO - [AntonOsika/gpt-engineer] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-12 11:40:40,888 - INFO - [AntonOsika/gpt-engineer] 📁 pull2issue file already exists, skipping...
+2026-06-12 11:40:42,484 - INFO - [AntonOsika/gpt-engineer] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/AntonOsika__gpt-engineer/prs/gpt-engineer-prs-20090101.jsonl using issue-first approach
+2026-06-12 11:40:42,485 - INFO - Will skip 0 pull requests that have already been inspected
+2026-06-12 11:40:42,485 - INFO - [AntonOsika/gpt-engineer] (Up to 0 checked) 0 valid, 0 with tests.
+2026-06-12 11:40:50,801 - INFO - [AntonOsika/gpt-engineer] 🎤 Total instances: 7, completed: 7, with tests: 4
+2026-06-12 11:40:50,801 - INFO - [AntonOsika/gpt-engineer] 🎤 Skipped 0 pull requests that have already been inspected
+2026-06-12 11:40:50,801 - INFO - [AntonOsika/gpt-engineer] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/AntonOsika__gpt-engineer/tasks/gpt-engineer-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/FoundationAgents__MetaGPT/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/FoundationAgents__MetaGPT/tasks
+Received following number of repos to create task instances for: 1
+Found 3 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-12 11:40:51,081 - INFO - [FoundationAgents/MetaGPT] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-12 11:40:51,081 - INFO - [FoundationAgents/MetaGPT] 📁 pull2issue file already exists, skipping...
+2026-06-12 11:40:53,448 - INFO - [FoundationAgents/MetaGPT] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/FoundationAgents__MetaGPT/prs/MetaGPT-prs-20090101.jsonl using issue-first approach
+2026-06-12 11:40:53,448 - INFO - Will skip 0 pull requests that have already been inspected
+2026-06-12 11:40:53,449 - INFO - [FoundationAgents/MetaGPT] (Up to 0 checked) 0 valid, 0 with tests.
+2026-06-12 11:41:06,467 - INFO - [FoundationAgents/MetaGPT] 🎤 Total instances: 11, completed: 11, with tests: 6
+2026-06-12 11:41:06,467 - INFO - [FoundationAgents/MetaGPT] 🎤 Skipped 0 pull requests that have already been inspected
+2026-06-12 11:41:06,468 - INFO - [FoundationAgents/MetaGPT] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/FoundationAgents__MetaGPT/tasks/MetaGPT-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/MLSysOps__MLE-agent/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/MLSysOps__MLE-agent/tasks
+Received following number of repos to create task instances for: 1
+Found 3 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-12 11:41:06,747 - INFO - [MLSysOps/MLE-agent] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-12 11:41:06,747 - INFO - [MLSysOps/MLE-agent] 📁 pull2issue file already exists, skipping...
+2026-06-12 11:41:08,518 - INFO - [MLSysOps/MLE-agent] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/MLSysOps__MLE-agent/prs/MLE-agent-prs-20090101.jsonl using issue-first approach
+2026-06-12 11:41:08,519 - INFO - Will skip 0 pull requests that have already been inspected
+2026-06-12 11:41:08,519 - INFO - [MLSysOps/MLE-agent] (Up to 0 checked) 0 valid, 0 with tests.
+2026-06-12 11:41:17,190 - INFO - [MLSysOps/MLE-agent] 🎤 Total instances: 8, completed: 8, with tests: 0
+2026-06-12 11:41:17,190 - INFO - [MLSysOps/MLE-agent] 🎤 Skipped 0 pull requests that have already been inspected
+2026-06-12 11:41:17,190 - INFO - [MLSysOps/MLE-agent] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/MLSysOps__MLE-agent/tasks/MLE-agent-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/ValueCell-ai__valuecell/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/ValueCell-ai__valuecell/tasks
+Received following number of repos to create task instances for: 1
+Found 3 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-12 11:41:17,480 - INFO - [ValueCell-ai/valuecell] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-12 11:41:17,481 - INFO - [ValueCell-ai/valuecell] 📁 pull2issue file already exists, skipping...
+2026-06-12 11:41:17,802 - INFO - [ValueCell-ai/valuecell] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/ValueCell-ai__valuecell/prs/valuecell-prs-20090101.jsonl using issue-first approach
+2026-06-12 11:41:17,802 - INFO - Will skip 0 pull requests that have already been inspected
+2026-06-12 11:41:17,802 - INFO - [ValueCell-ai/valuecell] (Up to 0 checked) 0 valid, 0 with tests.
+2026-06-12 11:41:19,038 - INFO - [ValueCell-ai/valuecell] 🎤 Total instances: 1, completed: 1, with tests: 0
+2026-06-12 11:41:19,039 - INFO - [ValueCell-ai/valuecell] 🎤 Skipped 0 pull requests that have already been inspected
+2026-06-12 11:41:19,039 - INFO - [ValueCell-ai/valuecell] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/ValueCell-ai__valuecell/tasks/valuecell-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/agentscope-ai__agentscope/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/agentscope-ai__agentscope/tasks
+Received following number of repos to create task instances for: 1
+Found 3 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-12 11:41:19,334 - INFO - [agentscope-ai/agentscope] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-12 11:41:19,335 - INFO - [agentscope-ai/agentscope] 📁 pull2issue file already exists, skipping...
+2026-06-12 11:41:19,815 - INFO - [agentscope-ai/agentscope] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/agentscope-ai__agentscope/prs/agentscope-prs-20090101.jsonl using issue-first approach
+2026-06-12 11:41:19,815 - INFO - Will skip 0 pull requests that have already been inspected
+2026-06-12 11:41:19,816 - INFO - [agentscope-ai/agentscope] (Up to 0 checked) 0 valid, 0 with tests.
+2026-06-12 11:41:22,250 - INFO - [agentscope-ai/agentscope] 🎤 Total instances: 2, completed: 2, with tests: 2
+2026-06-12 11:41:22,250 - INFO - [agentscope-ai/agentscope] 🎤 Skipped 0 pull requests that have already been inspected
+2026-06-12 11:41:22,250 - INFO - [agentscope-ai/agentscope] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/agentscope-ai__agentscope/tasks/agentscope-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/langflow-ai__langflow/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/langflow-ai__langflow/tasks
+Received following number of repos to create task instances for: 1
+Found 3 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-12 11:41:22,526 - INFO - [langflow-ai/langflow] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-12 11:41:22,526 - INFO - [langflow-ai/langflow] 📁 pull2issue file already exists, skipping...
+2026-06-12 11:41:24,937 - INFO - [langflow-ai/langflow] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/langflow-ai__langflow/prs/langflow-prs-20090101.jsonl using issue-first approach
+2026-06-12 11:41:24,938 - INFO - Will skip 0 pull requests that have already been inspected
+2026-06-12 11:41:24,938 - INFO - [langflow-ai/langflow] (Up to 0 checked) 0 valid, 0 with tests.
+2026-06-12 11:41:38,337 - INFO - [langflow-ai/langflow] 🎤 Total instances: 11, completed: 11, with tests: 9
+2026-06-12 11:41:38,338 - INFO - [langflow-ai/langflow] 🎤 Skipped 0 pull requests that have already been inspected
+2026-06-12 11:41:38,338 - INFO - [langflow-ai/langflow] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/langflow-ai__langflow/tasks/langflow-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/lobehub__lobehub/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/lobehub__lobehub/tasks
+Received following number of repos to create task instances for: 1
+Found 3 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-12 11:41:38,610 - INFO - [lobehub/lobehub] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-12 11:41:38,611 - INFO - [lobehub/lobehub] 📁 pull2issue file already exists, skipping...
+2026-06-12 11:41:40,220 - INFO - [lobehub/lobehub] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/lobehub__lobehub/prs/lobehub-prs-20090101.jsonl using issue-first approach
+2026-06-12 11:41:40,221 - INFO - Will skip 0 pull requests that have already been inspected
+2026-06-12 11:41:40,221 - INFO - [lobehub/lobehub] (Up to 0 checked) 0 valid, 0 with tests.
+2026-06-12 11:41:48,734 - INFO - [lobehub/lobehub] 🎤 Total instances: 7, completed: 7, with tests: 7
+2026-06-12 11:41:48,734 - INFO - [lobehub/lobehub] 🎤 Skipped 0 pull requests that have already been inspected
+2026-06-12 11:41:48,734 - INFO - [lobehub/lobehub] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/lobehub__lobehub/tasks/lobehub-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/openinterpreter__open-interpreter/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/openinterpreter__open-interpreter/tasks
+Received following number of repos to create task instances for: 1
+Found 3 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-12 11:41:49,010 - INFO - [openinterpreter/open-interpreter] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-12 11:41:49,010 - INFO - [openinterpreter/open-interpreter] 📁 pull2issue file already exists, skipping...
+2026-06-12 11:41:51,947 - INFO - [openinterpreter/open-interpreter] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/openinterpreter__open-interpreter/prs/open-interpreter-prs-20090101.jsonl using issue-first approach
+2026-06-12 11:41:51,947 - INFO - Will skip 0 pull requests that have already been inspected
+2026-06-12 11:41:51,948 - INFO - [openinterpreter/openinterpreter] (Up to 0 checked) 0 valid, 0 with tests.
+2026-06-12 11:42:06,956 - INFO - [openinterpreter/openinterpreter] 🎤 Total instances: 12, completed: 12, with tests: 0
+2026-06-12 11:42:06,956 - INFO - [openinterpreter/openinterpreter] 🎤 Skipped 0 pull requests that have already been inspected
+2026-06-12 11:42:06,956 - INFO - [openinterpreter/open-interpreter] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/openinterpreter__open-interpreter/tasks/open-interpreter-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/tensorzero__tensorzero/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/tensorzero__tensorzero/tasks
+Received following number of repos to create task instances for: 1
+Found 3 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-12 11:42:07,231 - INFO - [tensorzero/tensorzero] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-12 11:42:07,232 - INFO - [tensorzero/tensorzero] 📁 pull2issue file already exists, skipping...
+2026-06-12 11:42:07,463 - ERROR - [tensorzero/tensorzero] Error processing pull 195: 'NoneType' object is not subscriptable
+2026-06-12 11:42:07,669 - ERROR - [tensorzero/tensorzero] Error processing pull 544: 'NoneType' object is not subscriptable
+2026-06-12 11:42:07,884 - ERROR - [tensorzero/tensorzero] Error processing pull 936: 'NoneType' object is not subscriptable
+2026-06-12 11:42:08,112 - ERROR - [tensorzero/tensorzero] Error processing pull 1276: 'NoneType' object is not subscriptable
+2026-06-12 11:42:08,355 - ERROR - [tensorzero/tensorzero] Error processing pull 3006: 'NoneType' object is not subscriptable
+2026-06-12 11:42:08,572 - ERROR - [tensorzero/tensorzero] Error processing pull 3417: 'NoneType' object is not subscriptable
+2026-06-12 11:42:08,762 - ERROR - [tensorzero/tensorzero] Error processing pull 3681: 'NoneType' object is not subscriptable
+2026-06-12 11:42:09,055 - ERROR - [tensorzero/tensorzero] Error processing pull 3737: 'NoneType' object is not subscriptable
+2026-06-12 11:42:09,300 - ERROR - [tensorzero/tensorzero] Error processing pull 4335: 'NoneType' object is not subscriptable
+2026-06-12 11:42:09,521 - ERROR - [tensorzero/tensorzero] Error processing pull 5535: 'NoneType' object is not subscriptable
+2026-06-12 11:42:09,714 - ERROR - [tensorzero/tensorzero] Error processing pull 5537: 'NoneType' object is not subscriptable
+2026-06-12 11:42:09,714 - INFO - [tensorzero/tensorzero] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/tensorzero__tensorzero/prs/tensorzero-prs-20090101.jsonl using issue-first approach
+2026-06-12 11:42:09,715 - INFO - Will skip 0 pull requests that have already been inspected
+2026-06-12 11:42:09,715 - INFO - [] 🎤 Total instances: 0, completed: 0, with tests: 0
+2026-06-12 11:42:09,715 - INFO - [] 🎤 Skipped 0 pull requests that have already been inspected
+2026-06-12 11:42:09,715 - INFO - [tensorzero/tensorzero] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/tensorzero__tensorzero/tasks/tensorzero-task-instances.jsonl
+
+[5] Merging Task Instances & Preparing Launch Config...
+Merged 28 instances -> /home/cc/SWE-bench-Live/baseline/sbl_task_instances_with_tests.jsonl
+Next (RepoLaunch / step3):
+cd launch
+export OPENAI_API_KEY=...  # required by RepoLaunch
+export TAVILY_API_KEY=...  # required by RepoLaunch
+python -m launch.run --config-path data/sbl_baseline/config.json
+
+[6] Exporting API Keys...
+
+[7] Executing RepoLaunch (Generating testable containers)...
+Obtaining file:///home/cc/SWE-bench-Live/launch
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: beautifulsoup4>=4.13.4 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (4.14.3)
+Requirement already satisfied: docker>=7.1.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (7.1.0)
+Requirement already satisfied: fire>=0.7.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (0.7.1)
+Requirement already satisfied: gitpython>=3.1.44 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (3.1.50)
+Requirement already satisfied: langchain==0.3.26 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (0.3.26)
+Requirement already satisfied: langchain-community==0.3.27 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (0.3.27)
+Requirement already satisfied: langchain-core==0.3.68 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (0.3.68)
+Requirement already satisfied: langchain-openai==0.3.27 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (0.3.27)
+Requirement already satisfied: langchain-anthropic in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (0.3.17)
+Requirement already satisfied: langgraph==0.5.2 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (0.5.2)
+Requirement already satisfied: pydantic==2.11.7 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (2.11.7)
+Requirement already satisfied: requests>=2.32.4 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (2.34.2)
+Requirement already satisfied: rich>=14.0.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (15.0.0)
+Requirement already satisfied: tenacity>=9.1.2 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (9.1.4)
+Requirement already satisfied: tornado>=6.5.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (6.5.6)
+Requirement already satisfied: typing-extensions>=4.14.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (4.15.0)
+Requirement already satisfied: pygithub in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (2.9.1)
+Requirement already satisfied: openai in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (1.109.1)
+Requirement already satisfied: azure-identity-broker in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (1.3.0)
+Requirement already satisfied: langchain-text-splitters<1.0.0,>=0.3.8 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain==0.3.26->launch==0.1.0) (0.3.8)
+Requirement already satisfied: langsmith>=0.1.17 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain==0.3.26->launch==0.1.0) (0.8.9)
+Requirement already satisfied: SQLAlchemy<3,>=1.4 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain==0.3.26->launch==0.1.0) (2.0.50)
+Requirement already satisfied: PyYAML>=5.3 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain==0.3.26->launch==0.1.0) (6.0.3)
+Requirement already satisfied: jsonpatch<2.0,>=1.33 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-core==0.3.68->launch==0.1.0) (1.33)
+Requirement already satisfied: packaging<25,>=23.2 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-core==0.3.68->launch==0.1.0) (24.2)
+Requirement already satisfied: annotated-types>=0.6.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from pydantic==2.11.7->launch==0.1.0) (0.7.0)
+Requirement already satisfied: pydantic-core==2.33.2 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from pydantic==2.11.7->launch==0.1.0) (2.33.2)
+Requirement already satisfied: typing-inspection>=0.4.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from pydantic==2.11.7->launch==0.1.0) (0.4.2)
+Requirement already satisfied: aiohttp<4.0.0,>=3.8.3 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-community==0.3.27->launch==0.1.0) (3.14.0)
+Requirement already satisfied: dataclasses-json<0.7,>=0.5.7 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-community==0.3.27->launch==0.1.0) (0.6.7)
+Requirement already satisfied: pydantic-settings<3.0.0,>=2.4.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-community==0.3.27->launch==0.1.0) (2.14.1)
+Requirement already satisfied: httpx-sse<1.0.0,>=0.4.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-community==0.3.27->launch==0.1.0) (0.4.3)
+Requirement already satisfied: numpy>=1.26.2 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-community==0.3.27->launch==0.1.0) (2.4.6)
+Requirement already satisfied: tiktoken<1,>=0.7 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-openai==0.3.27->launch==0.1.0) (0.13.0)
+Requirement already satisfied: langgraph-checkpoint<3.0.0,>=2.1.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langgraph==0.5.2->launch==0.1.0) (2.1.2)
+Requirement already satisfied: langgraph-prebuilt<0.6.0,>=0.5.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langgraph==0.5.2->launch==0.1.0) (0.5.2)
+Requirement already satisfied: langgraph-sdk<0.2.0,>=0.1.42 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langgraph==0.5.2->launch==0.1.0) (0.1.74)
+Requirement already satisfied: xxhash>=3.5.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langgraph==0.5.2->launch==0.1.0) (3.7.0)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.27->launch==0.1.0) (2.6.2)
+Requirement already satisfied: aiosignal>=1.4.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.27->launch==0.1.0) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.27->launch==0.1.0) (26.1.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.27->launch==0.1.0) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.27->launch==0.1.0) (6.7.1)
+Requirement already satisfied: propcache>=0.2.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.27->launch==0.1.0) (0.5.2)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.27->launch==0.1.0) (1.24.2)
+Requirement already satisfied: marshmallow<4.0.0,>=3.18.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from dataclasses-json<0.7,>=0.5.7->langchain-community==0.3.27->launch==0.1.0) (3.26.2)
+Requirement already satisfied: typing-inspect<1,>=0.4.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from dataclasses-json<0.7,>=0.5.7->langchain-community==0.3.27->launch==0.1.0) (0.9.0)
+Requirement already satisfied: jsonpointer>=1.9 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from jsonpatch<2.0,>=1.33->langchain-core==0.3.68->launch==0.1.0) (3.1.1)
+Requirement already satisfied: ormsgpack>=1.10.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langgraph-checkpoint<3.0.0,>=2.1.0->langgraph==0.5.2->launch==0.1.0) (1.12.2)
+Requirement already satisfied: httpx>=0.25.2 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langgraph-sdk<0.2.0,>=0.1.42->langgraph==0.5.2->launch==0.1.0) (0.28.1)
+Requirement already satisfied: orjson>=3.10.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langgraph-sdk<0.2.0,>=0.1.42->langgraph==0.5.2->launch==0.1.0) (3.11.9)
+Requirement already satisfied: anyio<5,>=3.5.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from openai->launch==0.1.0) (4.13.0)
+Requirement already satisfied: distro<2,>=1.7.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from openai->launch==0.1.0) (1.9.0)
+Requirement already satisfied: jiter<1,>=0.4.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from openai->launch==0.1.0) (0.15.0)
+Requirement already satisfied: sniffio in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from openai->launch==0.1.0) (1.3.1)
+Requirement already satisfied: tqdm>4 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from openai->launch==0.1.0) (4.67.3)
+Requirement already satisfied: idna>=2.8 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from anyio<5,>=3.5.0->openai->launch==0.1.0) (3.18)
+Requirement already satisfied: certifi in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from httpx>=0.25.2->langgraph-sdk<0.2.0,>=0.1.42->langgraph==0.5.2->launch==0.1.0) (2026.5.20)
+Requirement already satisfied: httpcore==1.* in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from httpx>=0.25.2->langgraph-sdk<0.2.0,>=0.1.42->langgraph==0.5.2->launch==0.1.0) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from httpcore==1.*->httpx>=0.25.2->langgraph-sdk<0.2.0,>=0.1.42->langgraph==0.5.2->launch==0.1.0) (0.16.0)
+Requirement already satisfied: python-dotenv>=0.21.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from pydantic-settings<3.0.0,>=2.4.0->langchain-community==0.3.27->launch==0.1.0) (1.2.2)
+Requirement already satisfied: charset_normalizer<4,>=2 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from requests>=2.32.4->launch==0.1.0) (3.4.7)
+Requirement already satisfied: urllib3<3,>=1.26 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from requests>=2.32.4->launch==0.1.0) (2.7.0)
+Requirement already satisfied: greenlet>=1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from SQLAlchemy<3,>=1.4->langchain==0.3.26->launch==0.1.0) (3.5.1)
+Requirement already satisfied: regex in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from tiktoken<1,>=0.7->langchain-openai==0.3.27->launch==0.1.0) (2026.5.9)
+Requirement already satisfied: mypy-extensions>=0.3.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from typing-inspect<1,>=0.4.0->dataclasses-json<0.7,>=0.5.7->langchain-community==0.3.27->launch==0.1.0) (1.1.0)
+Requirement already satisfied: soupsieve>=1.6.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from beautifulsoup4>=4.13.4->launch==0.1.0) (2.8.4)
+Requirement already satisfied: termcolor in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from fire>=0.7.0->launch==0.1.0) (3.3.0)
+Requirement already satisfied: gitdb<5,>=4.0.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from gitpython>=3.1.44->launch==0.1.0) (4.0.12)
+Requirement already satisfied: smmap<6,>=3.0.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from gitdb<5,>=4.0.1->gitpython>=3.1.44->launch==0.1.0) (5.0.3)
+Requirement already satisfied: requests-toolbelt>=1.0.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langsmith>=0.1.17->langchain==0.3.26->launch==0.1.0) (1.0.0)
+Requirement already satisfied: uuid-utils<1.0,>=0.12.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langsmith>=0.1.17->langchain==0.3.26->launch==0.1.0) (0.16.0)
+Requirement already satisfied: websockets>=15.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langsmith>=0.1.17->langchain==0.3.26->launch==0.1.0) (16.0)
+Requirement already satisfied: zstandard>=0.23.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langsmith>=0.1.17->langchain==0.3.26->launch==0.1.0) (0.25.0)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from rich>=14.0.0->launch==0.1.0) (4.2.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from rich>=14.0.0->launch==0.1.0) (2.20.0)
+Requirement already satisfied: mdurl~=0.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from markdown-it-py>=2.2.0->rich>=14.0.0->launch==0.1.0) (0.1.2)
+Requirement already satisfied: azure-identity<2.0.0,>=1.18.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from azure-identity-broker->launch==0.1.0) (1.25.3)
+Requirement already satisfied: msal<2,>=1.33.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from msal[broker]<2,>=1.33.0->azure-identity-broker->launch==0.1.0) (1.37.0)
+Requirement already satisfied: azure-core>=1.31.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from azure-identity<2.0.0,>=1.18.0->azure-identity-broker->launch==0.1.0) (1.41.0)
+Requirement already satisfied: cryptography>=2.5 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from azure-identity<2.0.0,>=1.18.0->azure-identity-broker->launch==0.1.0) (48.0.0)
+Requirement already satisfied: msal-extensions>=1.2.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from azure-identity<2.0.0,>=1.18.0->azure-identity-broker->launch==0.1.0) (1.3.1)
+Requirement already satisfied: PyJWT<3,>=1.0.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from PyJWT[crypto]<3,>=1.0.0->msal<2,>=1.33.0->msal[broker]<2,>=1.33.0->azure-identity-broker->launch==0.1.0) (2.13.0)
+Requirement already satisfied: cffi>=2.0.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from cryptography>=2.5->azure-identity<2.0.0,>=1.18.0->azure-identity-broker->launch==0.1.0) (2.0.0)
+Requirement already satisfied: pymsalruntime<0.21,>=0.20 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from msal[broker]<2,>=1.33.0->azure-identity-broker->launch==0.1.0) (0.20.6)
+Requirement already satisfied: pycparser in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from cffi>=2.0.0->cryptography>=2.5->azure-identity<2.0.0,>=1.18.0->azure-identity-broker->launch==0.1.0) (3.0)
+Requirement already satisfied: anthropic<1,>=0.57.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-anthropic->launch==0.1.0) (0.105.2)
+Requirement already satisfied: docstring-parser<1,>=0.15 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from anthropic<1,>=0.57.0->langchain-anthropic->launch==0.1.0) (0.18.0)
+Requirement already satisfied: pynacl>=1.4.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from pygithub->launch==0.1.0) (1.6.2)
+Building wheels for collected packages: launch
+  Building editable for launch (pyproject.toml): started
+  Building editable for launch (pyproject.toml): finished with status 'done'
+  Created wheel for launch: filename=launch-0.1.0-0.editable-py3-none-any.whl size=4955 sha256=5816a85c6364c49ba24dc9fcef23bc30edcd1ad42d0b6e8af9f07b483f95a1bb
+  Stored in directory: /tmp/pip-ephem-wheel-cache-q0ik03s3/wheels/1f/8d/f8/94f3e6313eee10f9e7c49ee63f93584cf1584eb89c7ead3108
+Successfully built launch
+Installing collected packages: launch
+  Attempting uninstall: launch
+    Found existing installation: launch 0.1.0
+    Uninstalling launch-0.1.0:
+      Successfully uninstalled launch-0.1.0
+Successfully installed launch-0.1.0
+Processing first 50 repositories only
+────────────────────────────────────────────────────────────────  Starting Launching Repositories... ────────────────────────────────────────────────────────────────
+Processing AntonOsika__gpt-engineer-720 (AntonOsika/gpt-engineer)
+Processing AntonOsika__gpt-engineer-721 (AntonOsika/gpt-engineer)
+Processing AntonOsika__gpt-engineer-930 (AntonOsika/gpt-engineer)
+Processing AntonOsika__gpt-engineer-1120 (AntonOsika/gpt-engineer)
+Processing FoundationAgents__MetaGPT-799 (FoundationAgents/MetaGPT)
+Processing FoundationAgents__MetaGPT-1058 (FoundationAgents/MetaGPT)
+Processing FoundationAgents__MetaGPT-1431 (FoundationAgents/MetaGPT)
+Processing FoundationAgents__MetaGPT-1450 (FoundationAgents/MetaGPT)
+Processing FoundationAgents__MetaGPT-1500 (FoundationAgents/MetaGPT)
+Processing FoundationAgents__MetaGPT-1544 (FoundationAgents/MetaGPT)
+Processing agentscope-ai__agentscope-263 (agentscope-ai/agentscope)
+Processing agentscope-ai__agentscope-962 (agentscope-ai/agentscope)
+Processing langflow-ai__langflow-2602 (langflow-ai/langflow)
+Processing langflow-ai__langflow-3698 (langflow-ai/langflow)
+Processing langflow-ai__langflow-3862 (langflow-ai/langflow)
+Processing langflow-ai__langflow-4291 (langflow-ai/langflow)
+Processing langflow-ai__langflow-5272 (langflow-ai/langflow)
+Processing langflow-ai__langflow-6747 (langflow-ai/langflow)
+Processing langflow-ai__langflow-10103 (langflow-ai/langflow)
+Processing langflow-ai__langflow-10201 (langflow-ai/langflow)
+Processing langflow-ai__langflow-11370 (langflow-ai/langflow)
+Processing lobehub__lobehub-5391 (lobehub/lobehub)
+Processing lobehub__lobehub-5429 (lobehub/lobehub)
+Processing lobehub__lobehub-5454 (lobehub/lobehub)
+Processing lobehub__lobehub-5671 (lobehub/lobehub)
+Processing lobehub__lobehub-5739 (lobehub/lobehub)
+Processing lobehub__lobehub-5824 (lobehub/lobehub)
+Processing lobehub__lobehub-6186 (lobehub/lobehub)
+/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain/__init__.py:30: UserWarning: Importing verbose from langchain root module is no longer supported. Please use langchain.globals.set_verbose() / langchain.globals.get_verbose() instead.
+  warnings.warn(
+/home/cc/SWE-bench-Live/launch/launch/agent/state.py:133: LangChainDeprecationWarning: The class `TavilySearchResults` was deprecated in LangChain 0.3.25 and will be removed in 1.0. An updated version of the class exists in the :class:`~langchain-tavily package and should be used instead. To use it run `pip install -U :class:`~langchain-tavily` and import as `from :class:`~langchain_tavily import TavilySearch``.
+  search_tool=TavilySearchResults(max_results=max_search_results),
+Setting up environment for language: python
+Setting up environment for language: python
+Setting up environment for language: python
+Setting up environment for language: python
+Setting up environment for language: python
+Setting up environment for language: python
+Image repolaunch/dev:AntonOsika__gpt-engineer-720_linux created successfully.
+Now Processing AntonOsika__gpt-engineer-720 (AntonOsika/gpt-engineer)
+Success! AntonOsika__gpt-engineer-720 (Elapsed: 00:04:19)
+404 GET /browsers/ (172.17.0.7) 127.68ms
+Setting up environment for language: python
+Image repolaunch/dev:AntonOsika__gpt-engineer-721_linux created successfully.
+Warning! Result not found!
+Now Processing FoundationAgents__MetaGPT-799 (FoundationAgents/MetaGPT)
+Failed FoundationAgents__MetaGPT-799: Result Empty Error! (Elapsed: 00:08:10)
+Now Processing AntonOsika__gpt-engineer-721 (AntonOsika/gpt-engineer)
+Success! AntonOsika__gpt-engineer-721 (Elapsed: 00:08:21)
+Setting up environment for language: python
+Setting up environment for language: python
+Setting up environment for language: python
+Image repolaunch/dev:agentscope-ai__agentscope-263_linux created successfully.
+Now Processing agentscope-ai__agentscope-263 (agentscope-ai/agentscope)
+Success! agentscope-ai__agentscope-263 (Elapsed: 00:14:33)
+Setting up environment for language: python
+Setting up environment for language: python
+Image repolaunch/dev:FoundationAgents__MetaGPT-1058_linux created successfully.
+Now Processing FoundationAgents__MetaGPT-1058 (FoundationAgents/MetaGPT)
+Success! FoundationAgents__MetaGPT-1058 (Elapsed: 00:16:17)
+Image repolaunch/dev:AntonOsika__gpt-engineer-1120_linux created successfully.
+Image repolaunch/dev:FoundationAgents__MetaGPT-1431_linux created successfully.
+Now Processing AntonOsika__gpt-engineer-1120 (AntonOsika/gpt-engineer)
+Success! AntonOsika__gpt-engineer-1120 (Elapsed: 00:17:35)
+Now Processing FoundationAgents__MetaGPT-1431 (FoundationAgents/MetaGPT)
+Success! FoundationAgents__MetaGPT-1431 (Elapsed: 00:17:48)
+Image repolaunch/dev:FoundationAgents__MetaGPT-1450_linux created successfully.
+Image repolaunch/dev:AntonOsika__gpt-engineer-930_linux created successfully.
+Now Processing FoundationAgents__MetaGPT-1450 (FoundationAgents/MetaGPT)
+Success! FoundationAgents__MetaGPT-1450 (Elapsed: 00:19:49)
+Now Processing AntonOsika__gpt-engineer-930 (AntonOsika/gpt-engineer)
+Success! AntonOsika__gpt-engineer-930 (Elapsed: 00:20:11)
+Image repolaunch/dev:FoundationAgents__MetaGPT-1544_linux created successfully.
+Now Processing FoundationAgents__MetaGPT-1544 (FoundationAgents/MetaGPT)
+Success! FoundationAgents__MetaGPT-1544 (Elapsed: 00:22:54)
+Image repolaunch/dev:FoundationAgents__MetaGPT-1500_linux created successfully.
+Image repolaunch/dev:agentscope-ai__agentscope-962_linux created successfully.
+Now Processing FoundationAgents__MetaGPT-1500 (FoundationAgents/MetaGPT)
+Success! FoundationAgents__MetaGPT-1500 (Elapsed: 00:24:46)
+Now Processing agentscope-ai__agentscope-962 (agentscope-ai/agentscope)
+Success! agentscope-ai__agentscope-962 (Elapsed: 00:24:47)
+Setting up environment for language: python
+Setting up environment for language: python
+Setting up environment for language: python
+Setting up environment for language: python
+Setting up environment for language: python
+Now Processing langflow-ai__langflow-3698 (langflow-ai/langflow)
+Failed langflow-ai__langflow-3698: RetryError[<Future at 0x7faa66abebd0 state=finished raised BadRequestError>]
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 94, in invoke
+    return self.llm_instance.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 129, in invoke
+    return self.llm.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 378, in invoke
+    self.generate_prompt(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 963, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 782, in generate
+    self._generate_with_cache(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1028, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1130, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'The configured provider rejected the request. Please check your model name and request parameters.',
+'type': 'provider_error', 'code': 400, 'request_id': '1f1b20a7-a137-4b1f-96d2-2459ffef483d'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/setup.py", line 285, in setup
+    response = llm.invoke(input_messages)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 40, in wrapper
+    response: BaseMessage = invoke_func(self, messages)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 414, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x7faa66abebd0 state=finished raised BadRequestError>]
+
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/verify.py", line 136, in verify
+    raise state["exception"]
+Exception: RetryError[<Future at 0x7faa66abebd0 state=finished raised BadRequestError>]
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 94, in invoke
+    return self.llm_instance.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 129, in invoke
+    return self.llm.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 378, in invoke
+    self.generate_prompt(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 963, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 782, in generate
+    self._generate_with_cache(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1028, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1130, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'The configured provider rejected the request. Please check your model name and request parameters.',
+'type': 'provider_error', 'code': 400, 'request_id': '1f1b20a7-a137-4b1f-96d2-2459ffef483d'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/setup.py", line 285, in setup
+    response = llm.invoke(input_messages)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 40, in wrapper
+    response: BaseMessage = invoke_func(self, messages)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 414, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x7faa66abebd0 state=finished raised BadRequestError>]
+
+ (Elapsed: 00:44:05)
+Now Processing langflow-ai__langflow-3862 (langflow-ai/langflow)
+Failed langflow-ai__langflow-3862: RetryError[<Future at 0x7fa9f421c7d0 state=finished raised BadRequestError>]
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 94, in invoke
+    return self.llm_instance.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 129, in invoke
+    return self.llm.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 378, in invoke
+    self.generate_prompt(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 963, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 782, in generate
+    self._generate_with_cache(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1028, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1130, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'The configured provider rejected the request. Please check your model name and request parameters.',
+'type': 'provider_error', 'code': 400, 'request_id': 'aa112020-b677-41a0-ae43-7dee319b1a00'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/setup.py", line 285, in setup
+    response = llm.invoke(input_messages)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 40, in wrapper
+    response: BaseMessage = invoke_func(self, messages)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 414, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x7fa9f421c7d0 state=finished raised BadRequestError>]
+
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/verify.py", line 136, in verify
+    raise state["exception"]
+Exception: RetryError[<Future at 0x7fa9f421c7d0 state=finished raised BadRequestError>]
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 94, in invoke
+    return self.llm_instance.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 129, in invoke
+    return self.llm.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 378, in invoke
+    self.generate_prompt(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 963, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 782, in generate
+    self._generate_with_cache(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1028, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1130, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'The configured provider rejected the request. Please check your model name and request parameters.',
+'type': 'provider_error', 'code': 400, 'request_id': 'aa112020-b677-41a0-ae43-7dee319b1a00'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/setup.py", line 285, in setup
+    response = llm.invoke(input_messages)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 40, in wrapper
+    response: BaseMessage = invoke_func(self, messages)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 414, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x7fa9f421c7d0 state=finished raised BadRequestError>]
+
+ (Elapsed: 00:45:32)
+Now Processing langflow-ai__langflow-5272 (langflow-ai/langflow)
+Failed langflow-ai__langflow-5272: RetryError[<Future at 0x7faa246a4380 state=finished raised BadRequestError>]
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 94, in invoke
+    return self.llm_instance.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 129, in invoke
+    return self.llm.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 378, in invoke
+    self.generate_prompt(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 963, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 782, in generate
+    self._generate_with_cache(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1028, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1130, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'The configured provider rejected the request. Please check your model name and request parameters.',
+'type': 'provider_error', 'code': 400, 'request_id': '96c8c135-8e43-4d44-a6c5-1c3d13f6a51b'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/setup.py", line 285, in setup
+    response = llm.invoke(input_messages)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 40, in wrapper
+    response: BaseMessage = invoke_func(self, messages)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 414, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x7faa246a4380 state=finished raised BadRequestError>]
+
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/verify.py", line 136, in verify
+    raise state["exception"]
+Exception: RetryError[<Future at 0x7faa246a4380 state=finished raised BadRequestError>]
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 94, in invoke
+    return self.llm_instance.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 129, in invoke
+    return self.llm.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 378, in invoke
+    self.generate_prompt(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 963, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 782, in generate
+    self._generate_with_cache(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1028, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1130, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'The configured provider rejected the request. Please check your model name and request parameters.',
+'type': 'provider_error', 'code': 400, 'request_id': '96c8c135-8e43-4d44-a6c5-1c3d13f6a51b'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/setup.py", line 285, in setup
+    response = llm.invoke(input_messages)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 40, in wrapper
+    response: BaseMessage = invoke_func(self, messages)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 414, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x7faa246a4380 state=finished raised BadRequestError>]
+
+ (Elapsed: 00:46:51)
+Now Processing langflow-ai__langflow-4291 (langflow-ai/langflow)
+Failed langflow-ai__langflow-4291: RetryError[<Future at 0x7faa04220f50 state=finished raised BadRequestError>]
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 94, in invoke
+    return self.llm_instance.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 129, in invoke
+    return self.llm.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 378, in invoke
+    self.generate_prompt(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 963, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 782, in generate
+    self._generate_with_cache(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1028, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1130, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'The configured provider rejected the request. Please check your model name and request parameters.',
+'type': 'provider_error', 'code': 400, 'request_id': '298d143a-3045-47b1-9071-c25a9b56fede'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/setup.py", line 285, in setup
+    response = llm.invoke(input_messages)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 40, in wrapper
+    response: BaseMessage = invoke_func(self, messages)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 414, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x7faa04220f50 state=finished raised BadRequestError>]
+
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/verify.py", line 136, in verify
+    raise state["exception"]
+Exception: RetryError[<Future at 0x7faa04220f50 state=finished raised BadRequestError>]
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 94, in invoke
+    return self.llm_instance.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 129, in invoke
+    return self.llm.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 378, in invoke
+    self.generate_prompt(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 963, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 782, in generate
+    self._generate_with_cache(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1028, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1130, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'The configured provider rejected the request. Please check your model name and request parameters.',
+'type': 'provider_error', 'code': 400, 'request_id': '298d143a-3045-47b1-9071-c25a9b56fede'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/setup.py", line 285, in setup
+    response = llm.invoke(input_messages)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 40, in wrapper
+    response: BaseMessage = invoke_func(self, messages)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 414, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x7faa04220f50 state=finished raised BadRequestError>]
+
+ (Elapsed: 00:46:53)
+Setting up environment for language: python
+Setting up environment for language: python
+Setting up environment for language: python
+Now Processing langflow-ai__langflow-6747 (langflow-ai/langflow)
+Failed langflow-ai__langflow-6747: RetryError[<Future at 0x7faa047e1af0 state=finished raised BadRequestError>]
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 94, in invoke
+    return self.llm_instance.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 129, in invoke
+    return self.llm.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 378, in invoke
+    self.generate_prompt(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 963, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 782, in generate
+    self._generate_with_cache(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1028, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1130, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'The configured provider rejected the request. Please check your model name and request parameters.',
+'type': 'provider_error', 'code': 400, 'request_id': 'b974dbbc-7a36-4225-b70a-a3d16b011647'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/setup.py", line 285, in setup
+    response = llm.invoke(input_messages)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 40, in wrapper
+    response: BaseMessage = invoke_func(self, messages)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 414, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x7faa047e1af0 state=finished raised BadRequestError>]
+
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/verify.py", line 136, in verify
+    raise state["exception"]
+Exception: RetryError[<Future at 0x7faa047e1af0 state=finished raised BadRequestError>]
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 94, in invoke
+    return self.llm_instance.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 129, in invoke
+    return self.llm.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 378, in invoke
+    self.generate_prompt(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 963, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 782, in generate
+    self._generate_with_cache(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1028, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1130, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'The configured provider rejected the request. Please check your model name and request parameters.',
+'type': 'provider_error', 'code': 400, 'request_id': 'b974dbbc-7a36-4225-b70a-a3d16b011647'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/setup.py", line 285, in setup
+    response = llm.invoke(input_messages)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 40, in wrapper
+    response: BaseMessage = invoke_func(self, messages)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 414, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x7faa047e1af0 state=finished raised BadRequestError>]
+
+ (Elapsed: 01:06:38)
+Now Processing langflow-ai__langflow-10201 (langflow-ai/langflow)
+Failed langflow-ai__langflow-10201: RetryError[<Future at 0x7faa041028a0 state=finished raised BadRequestError>]
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 94, in invoke
+    return self.llm_instance.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 129, in invoke
+    return self.llm.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 378, in invoke
+    self.generate_prompt(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 963, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 782, in generate
+    self._generate_with_cache(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1028, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1130, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'The configured provider rejected the request. Please check your model name and request parameters.',
+'type': 'provider_error', 'code': 400, 'request_id': '153573b9-6cda-45db-b39c-73d617ca12be'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/setup.py", line 285, in setup
+    response = llm.invoke(input_messages)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 40, in wrapper
+    response: BaseMessage = invoke_func(self, messages)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 414, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x7faa041028a0 state=finished raised BadRequestError>]
+
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/verify.py", line 136, in verify
+    raise state["exception"]
+Exception: RetryError[<Future at 0x7faa041028a0 state=finished raised BadRequestError>]
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 94, in invoke
+    return self.llm_instance.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 129, in invoke
+    return self.llm.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 378, in invoke
+    self.generate_prompt(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 963, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 782, in generate
+    self._generate_with_cache(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1028, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1130, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'The configured provider rejected the request. Please check your model name and request parameters.',
+'type': 'provider_error', 'code': 400, 'request_id': '153573b9-6cda-45db-b39c-73d617ca12be'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/setup.py", line 285, in setup
+    response = llm.invoke(input_messages)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 40, in wrapper
+    response: BaseMessage = invoke_func(self, messages)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 414, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x7faa041028a0 state=finished raised BadRequestError>]
+
+ (Elapsed: 01:06:50)
+Now Processing langflow-ai__langflow-10103 (langflow-ai/langflow)
+Failed langflow-ai__langflow-10103: RetryError[<Future at 0x7faa045d42f0 state=finished raised BadRequestError>]
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 94, in invoke
+    return self.llm_instance.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 129, in invoke
+    return self.llm.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 378, in invoke
+    self.generate_prompt(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 963, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 782, in generate
+    self._generate_with_cache(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1028, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1130, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'The configured provider rejected the request. Please check your model name and request parameters.',
+'type': 'provider_error', 'code': 400, 'request_id': '3f320f05-bc8e-4036-b01b-0b7477be1c03'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/setup.py", line 285, in setup
+    response = llm.invoke(input_messages)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 40, in wrapper
+    response: BaseMessage = invoke_func(self, messages)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 414, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x7faa045d42f0 state=finished raised BadRequestError>]
+
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/verify.py", line 136, in verify
+    raise state["exception"]
+Exception: RetryError[<Future at 0x7faa045d42f0 state=finished raised BadRequestError>]
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 94, in invoke
+    return self.llm_instance.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 129, in invoke
+    return self.llm.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 378, in invoke
+    self.generate_prompt(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 963, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 782, in generate
+    self._generate_with_cache(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1028, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1130, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'The configured provider rejected the request. Please check your model name and request parameters.',
+'type': 'provider_error', 'code': 400, 'request_id': '3f320f05-bc8e-4036-b01b-0b7477be1c03'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/setup.py", line 285, in setup
+    response = llm.invoke(input_messages)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 40, in wrapper
+    response: BaseMessage = invoke_func(self, messages)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 414, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x7faa045d42f0 state=finished raised BadRequestError>]
+
+ (Elapsed: 01:06:52)
+Warning! Result not found!
+Now Processing lobehub__lobehub-5429 (lobehub/lobehub)
+Failed lobehub__lobehub-5429: Result Empty Error! (Elapsed: 01:07:16)
+Warning! Result not found!
+Now Processing lobehub__lobehub-5391 (lobehub/lobehub)
+Failed lobehub__lobehub-5391: Result Empty Error! (Elapsed: 01:07:28)
+Warning! Result not found!
+Now Processing lobehub__lobehub-5454 (lobehub/lobehub)
+Failed lobehub__lobehub-5454: Result Empty Error! (Elapsed: 01:07:40)
+Setting up environment for language: python
+Warning! Result not found!
+Now Processing lobehub__lobehub-5671 (lobehub/lobehub)
+Failed lobehub__lobehub-5671: Result Empty Error! (Elapsed: 01:18:58)
+Warning! Result not found!
+Now Processing lobehub__lobehub-5739 (lobehub/lobehub)
+Failed lobehub__lobehub-5739: Result Empty Error! (Elapsed: 01:19:16)
+Warning! Result not found!
+Now Processing lobehub__lobehub-5824 (lobehub/lobehub)
+Failed lobehub__lobehub-5824: Result Empty Error! (Elapsed: 01:19:17)
+Image repolaunch/dev:langflow-ai__langflow-2602_linux created successfully.
+Now Processing langflow-ai__langflow-11370 (langflow-ai/langflow)
+Failed langflow-ai__langflow-11370: RetryError[<Future at 0x7fa9f4323ef0 state=finished raised BadRequestError>]
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 94, in invoke
+    return self.llm_instance.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 129, in invoke
+    return self.llm.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 378, in invoke
+    self.generate_prompt(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 963, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 782, in generate
+    self._generate_with_cache(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1028, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1130, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'The configured provider rejected the request. Please check your model name and request parameters.',
+'type': 'provider_error', 'code': 400, 'request_id': '5e6bfea4-eaa9-485b-aead-6a26da1542ce'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/setup.py", line 285, in setup
+    response = llm.invoke(input_messages)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 40, in wrapper
+    response: BaseMessage = invoke_func(self, messages)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 414, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x7fa9f4323ef0 state=finished raised BadRequestError>]
+
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/verify.py", line 136, in verify
+    raise state["exception"]
+Exception: RetryError[<Future at 0x7fa9f4323ef0 state=finished raised BadRequestError>]
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 94, in invoke
+    return self.llm_instance.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 129, in invoke
+    return self.llm.invoke(messages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 378, in invoke
+    self.generate_prompt(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 963, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 782, in generate
+    self._generate_with_cache(
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1028, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1130, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'The configured provider rejected the request. Please check your model name and request parameters.',
+'type': 'provider_error', 'code': 400, 'request_id': '5e6bfea4-eaa9-485b-aead-6a26da1542ce'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/state.py", line 181, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/agent/setup/setup.py", line 285, in setup
+    response = llm.invoke(input_messages)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/SWE-bench-Live/launch/launch/utilities/llm.py", line 40, in wrapper
+    response: BaseMessage = invoke_func(self, messages)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/tenacity/__init__.py", line 414, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0x7fa9f4323ef0 state=finished raised BadRequestError>]
+
+ (Elapsed: 01:19:39)
+Now Processing langflow-ai__langflow-2602 (langflow-ai/langflow)
+Success! langflow-ai__langflow-2602 (Elapsed: 01:19:46)
+Warning! Result not found!
+Now Processing lobehub__lobehub-6186 (lobehub/lobehub)
+Failed lobehub__lobehub-6186: Result Empty Error! (Elapsed: 01:19:49)
+  Success: 12 | Fail: 16 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Total: 28 100% 1:19:49
+────────────────────────────────────────────────────────────────  Finished setting up all instances! ────────────────────────────────────────────────────────────────
+Processed repositories (5):
+  1. AntonOsika/gpt-engineer
+  2. FoundationAgents/MetaGPT
+  3. agentscope-ai/agentscope
+  4. langflow-ai/langflow
+  5. lobehub/lobehub
+Total instances processed: 28
+Saved 12 instances to data/sbl_baseline/setup.jsonl
+Processing first 50 repositories only
+────────────────────────────────────────────────────────────────  Starting Organizing Launch Info... ────────────────────────────────────────────────────────────────
+Processing-1 FoundationAgents__MetaGPT-1450 (FoundationAgents/MetaGPT)
+Processing-1 FoundationAgents__MetaGPT-1058 (FoundationAgents/MetaGPT)
+Processing-1 AntonOsika__gpt-engineer-1120 (AntonOsika/gpt-engineer)
+Processing-1 agentscope-ai__agentscope-962 (agentscope-ai/agentscope)
+Processing-1 agentscope-ai__agentscope-263 (agentscope-ai/agentscope)
+Processing-1 FoundationAgents__MetaGPT-1500 (FoundationAgents/MetaGPT)
+Processing-1 FoundationAgents__MetaGPT-1544 (FoundationAgents/MetaGPT)
+Processing-1 AntonOsika__gpt-engineer-930 (AntonOsika/gpt-engineer)
+Processing-1 AntonOsika__gpt-engineer-720 (AntonOsika/gpt-engineer)
+Processing-1 FoundationAgents__MetaGPT-1431 (FoundationAgents/MetaGPT)
+Processing-1 AntonOsika__gpt-engineer-721 (AntonOsika/gpt-engineer)
+Processing-1 langflow-ai__langflow-2602 (langflow-ai/langflow)
+Now Processing FoundationAgents__MetaGPT-1544 (FoundationAgents/MetaGPT)
+Failed FoundationAgents__MetaGPT-1544: Organize failed (Elapsed: 00:02:26)
+Now Processing AntonOsika__gpt-engineer-1120 (AntonOsika/gpt-engineer)
+Failed AntonOsika__gpt-engineer-1120: Organize failed (Elapsed: 00:02:42)
+Now Processing agentscope-ai__agentscope-962 (agentscope-ai/agentscope)
+Failed agentscope-ai__agentscope-962: Organize failed (Elapsed: 00:03:48)
+Now Processing AntonOsika__gpt-engineer-720 (AntonOsika/gpt-engineer)
+Failed AntonOsika__gpt-engineer-720: Organize failed (Elapsed: 00:03:49)
+Now Processing agentscope-ai__agentscope-263 (agentscope-ai/agentscope)
+Failed agentscope-ai__agentscope-263: Organize failed (Elapsed: 00:04:16)
+Image repolaunch/dev:AntonOsika__gpt-engineer-930_linux created successfully.
+Now Processing AntonOsika__gpt-engineer-930 (AntonOsika/gpt-engineer)
+Success! AntonOsika__gpt-engineer-930 (Elapsed: 00:05:27)
+Now Processing AntonOsika__gpt-engineer-721 (AntonOsika/gpt-engineer)
+Failed AntonOsika__gpt-engineer-721: Organize failed (Elapsed: 00:05:54)
+Now Processing FoundationAgents__MetaGPT-1450 (FoundationAgents/MetaGPT)
+Failed FoundationAgents__MetaGPT-1450: Organize failed (Elapsed: 00:06:51)
+Now Processing FoundationAgents__MetaGPT-1058 (FoundationAgents/MetaGPT)
+Failed FoundationAgents__MetaGPT-1058: Organize failed (Elapsed: 00:09:16)
+Now Processing FoundationAgents__MetaGPT-1431 (FoundationAgents/MetaGPT)
+Failed FoundationAgents__MetaGPT-1431: Organize failed (Elapsed: 00:10:26)
+Now Processing langflow-ai__langflow-2602 (langflow-ai/langflow)
+Failed langflow-ai__langflow-2602: Organize failed (Elapsed: 00:22:09)
+Image repolaunch/dev:FoundationAgents__MetaGPT-1500_linux created successfully.
+Now Processing FoundationAgents__MetaGPT-1500 (FoundationAgents/MetaGPT)
+Success! FoundationAgents__MetaGPT-1500 (Elapsed: 00:40:12)
+  Success: 2 | Fail: 10 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Total: 12 100% 0:40:12
+────────────────────────────────────────────────────────────────  Finished organizing all instances! ────────────────────────────────────────────────────────────────
+Processed repositories (12):
+  1. AntonOsika__gpt-engineer-1120
+  2. AntonOsika__gpt-engineer-720
+  3. AntonOsika__gpt-engineer-721
+  4. AntonOsika__gpt-engineer-930
+  5. FoundationAgents__MetaGPT-1058
+  6. FoundationAgents__MetaGPT-1431
+  7. FoundationAgents__MetaGPT-1450
+  8. FoundationAgents__MetaGPT-1500
+  9. FoundationAgents__MetaGPT-1544
+  10. agentscope-ai__agentscope-263
+  11. agentscope-ai__agentscope-962
+  12. langflow-ai__langflow-2602
+Saved 2 instances to data/sbl_baseline/organize.jsonl
+
+[8] Building F2P Dataset (Validation)...
+Loaded 2 instances.
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/cf60a32a-f50d-4b14-a92d-d063a0e5934f.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/aad3b1b3-a086-4dab-af85-55da37e71d83.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/20b6cec6-a960-46f0-9d11-a3a9eaa4e8c9.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/94d1d4ff-b8e2-442f-bd2e-19b4eedf47a1.diff  ---- Patch applied Successfully!
+AntonOsika__gpt-engineer-930 : num of fail_to_pass: 0
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/a2f95523-9b9c-4734-874c-3032b9f49a68.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/cda6c3b0-6ced-434a-a82d-39aa1647b279.diff  ---- Patch applied Successfully!
+TIMEOUT: Instance FoundationAgents__MetaGPT-1500 exceeded 1200 seconds. Skipping...
+Saved 0 valid instances.
+
+[9] Preparing SWE-Factory Judge format...
+Loaded 2 instances from /home/cc/SWE-bench-Live/launch/data/sbl_baseline/organize.jsonl
+Writing judge-compatible outputs to /home/cc/SWE-bench-Live/baseline/sf_judge_f2p_outputs
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/7d84130f-a786-4368-821e-82a62a422d83.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/6f4aca39-7f1b-43d3-9a88-0a615e71b1cb.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/3e3d9eb5-17ab-4b21-8c19-e30c6deee048.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/38c778a8-5293-4473-b648-f7f0bef70e1a.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/51bc32e8-b0a5-4f4d-bbf7-99a5b53a3b9f.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/ad0579f2-461b-4322-99e4-411f5ba6fa98.diff  ---- Patch applied Successfully!
+Done. ok=2 skip=0 error=0
+
+[10] Classifying Fail2Pass Status (SWE-Factory)...
+Classifying:   0%|          | 0/2 [00:00<?, ?it/s]Classifying: 100%|██████████| 2/2 [00:00<00:00, 24.27it/s]
+Classification summary:
+  fail2pass: 0
+  fail2fail: 1
+  pass2pass: 1
+  pass2fail: 0
+  error: 0
+Summary JSON written to '/home/cc/SWE-bench-Live/baseline/sf_judge_f2p_summary.json'
+
+[Telemetry] Waiting 5 seconds for API metrics to sync...
+Ending cost tracker...
+Recording session end stats...
+Session usage summary (from 2026-06-12T11:40:40.582026+00:00 to 2026-06-12T14:19:35.428537+00:00):
+  - Total requests: 10
+  - Input tokens: 52,578
+  - Output tokens: 3,867
+  - Total tokens: 56,445
+  - Cost: $0.077572
+
+==============================================
+       SBL PIPELINE FUNNEL REPORT             
+==============================================
+1. Initial JSON map        : 70 items
+2. RepoLaunch Generated    : 2 instances (organize.jsonl)
+3. Validated F2P/P2P       : 0 instances
+==============================================
+Pipeline Duration : 02:38:56 (9536 total seconds)
+Master Log File   : /home/cc/SWE-bench-Live/logs/runs/pipeline_20260612_114039.log
+SWE-Factory Judge : /home/cc/SWE-bench-Live/baseline/sf_judge_f2p_summary.json
+==============================================
+
+============================================================
+ ✓ Pipeline Completed Successfully!
+============================================================

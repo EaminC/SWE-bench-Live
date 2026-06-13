@@ -1,0 +1,14 @@
+{
+  "total": 2,
+  "categories": {
+    "fail2pass": [],
+    "fail2fail": [
+      "FoundationAgents__MetaGPT-1500"
+    ],
+    "pass2pass": [
+      "AntonOsika__gpt-engineer-930"
+    ],
+    "pass2fail": [],
+    "error": []
+  }
+}
