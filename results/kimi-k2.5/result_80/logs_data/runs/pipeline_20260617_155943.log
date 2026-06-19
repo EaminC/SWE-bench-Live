@@ -1,0 +1,825 @@
+============================================================
+ Starting SWE-bench-Live Pipeline
+ Master Log File: /home/cc/SWE-bench-Live/logs/runs/pipeline_20260616_155949.log
+============================================================
+
+[1] Activating Conda environment (sbl)...
+
+[Telemetry] Starting token and cost tracker...
+Recording session start stats...
+
+[2] Preparing Pull2Issue from Map...
+Prepared pull2issue files:
+- Aider-AI/aider: /home/cc/SWE-bench-Live/baseline/sbl_inputs/Aider-AI__aider/prs/aider-pull2issue-20090101.jsonl
+- AntonOsika/gpt-engineer: /home/cc/SWE-bench-Live/baseline/sbl_inputs/AntonOsika__gpt-engineer/prs/gpt-engineer-pull2issue-20090101.jsonl
+- Canner/WrenAI: /home/cc/SWE-bench-Live/baseline/sbl_inputs/Canner__WrenAI/prs/WrenAI-pull2issue-20090101.jsonl
+- FoundationAgents/MetaGPT: /home/cc/SWE-bench-Live/baseline/sbl_inputs/FoundationAgents__MetaGPT/prs/MetaGPT-pull2issue-20090101.jsonl
+- MLSysOps/MLE-agent: /home/cc/SWE-bench-Live/baseline/sbl_inputs/MLSysOps__MLE-agent/prs/MLE-agent-pull2issue-20090101.jsonl
+- Significant-Gravitas/AutoGPT: /home/cc/SWE-bench-Live/baseline/sbl_inputs/Significant-Gravitas__AutoGPT/prs/AutoGPT-pull2issue-20090101.jsonl
+- ValueCell-ai/valuecell: /home/cc/SWE-bench-Live/baseline/sbl_inputs/ValueCell-ai__valuecell/prs/valuecell-pull2issue-20090101.jsonl
+- VoltAgent/voltagent: /home/cc/SWE-bench-Live/baseline/sbl_inputs/VoltAgent__voltagent/prs/voltagent-pull2issue-20090101.jsonl
+- agentscope-ai/agentscope: /home/cc/SWE-bench-Live/baseline/sbl_inputs/agentscope-ai__agentscope/prs/agentscope-pull2issue-20090101.jsonl
+- always-further/AgentUp: /home/cc/SWE-bench-Live/baseline/sbl_inputs/always-further__AgentUp/prs/AgentUp-pull2issue-20090101.jsonl
+- crewAIInc/crewAI: /home/cc/SWE-bench-Live/baseline/sbl_inputs/crewAIInc__crewAI/prs/crewAI-pull2issue-20090101.jsonl
+- dapr/dapr-agents: /home/cc/SWE-bench-Live/baseline/sbl_inputs/dapr__dapr-agents/prs/dapr-agents-pull2issue-20090101.jsonl
+- langchain-ai/langgraph: /home/cc/SWE-bench-Live/baseline/sbl_inputs/langchain-ai__langgraph/prs/langgraph-pull2issue-20090101.jsonl
+- mastra-ai/mastra: /home/cc/SWE-bench-Live/baseline/sbl_inputs/mastra-ai__mastra/prs/mastra-pull2issue-20090101.jsonl
+- reworkd/AgentGPT: /home/cc/SWE-bench-Live/baseline/sbl_inputs/reworkd__AgentGPT/prs/AgentGPT-pull2issue-20090101.jsonl
+- strands-agents/sdk-python: /home/cc/SWE-bench-Live/baseline/sbl_inputs/strands-agents__sdk-python/prs/sdk-python-pull2issue-20090101.jsonl
+
+Next: run SWE-bench-Live task crawling (per repo):
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos Aider-AI/aider --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/Aider-AI__aider/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/Aider-AI__aider/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos AntonOsika/gpt-engineer --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/AntonOsika__gpt-engineer/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/AntonOsika__gpt-engineer/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos Canner/WrenAI --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/Canner__WrenAI/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/Canner__WrenAI/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos FoundationAgents/MetaGPT --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/FoundationAgents__MetaGPT/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/FoundationAgents__MetaGPT/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos MLSysOps/MLE-agent --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/MLSysOps__MLE-agent/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/MLSysOps__MLE-agent/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos Significant-Gravitas/AutoGPT --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/Significant-Gravitas__AutoGPT/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/Significant-Gravitas__AutoGPT/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos ValueCell-ai/valuecell --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/ValueCell-ai__valuecell/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/ValueCell-ai__valuecell/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos VoltAgent/voltagent --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/VoltAgent__voltagent/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/VoltAgent__voltagent/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos agentscope-ai/agentscope --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/agentscope-ai__agentscope/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/agentscope-ai__agentscope/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos always-further/AgentUp --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/always-further__AgentUp/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/always-further__AgentUp/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos crewAIInc/crewAI --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/crewAIInc__crewAI/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/crewAIInc__crewAI/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos dapr/dapr-agents --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/dapr__dapr-agents/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/dapr__dapr-agents/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos langchain-ai/langgraph --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/langchain-ai__langgraph/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/langchain-ai__langgraph/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos mastra-ai/mastra --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/mastra-ai__mastra/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/mastra-ai__mastra/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos reworkd/AgentGPT --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/reworkd__AgentGPT/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/reworkd__AgentGPT/tasks --cutoff_date 20090101
+python /home/cc/SWE-bench-Live/curation/swe_task_crawling/get_tasks_pipeline.py --repos strands-agents/sdk-python --gh_token_file tokens.txt --token_ids 0 --path_prs /home/cc/SWE-bench-Live/baseline/sbl_inputs/strands-agents__sdk-python/prs --path_tasks /home/cc/SWE-bench-Live/baseline/sbl_inputs/strands-agents__sdk-python/tasks --cutoff_date 20090101
+
+[3] Go back to root SWE-bench-Live...
+
+[4] Running Curation Pipeline (setup.sh)...
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/Aider-AI__aider/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/Aider-AI__aider/tasks
+Received following number of repos to create task instances for: 1
+Found 2 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-16 15:59:50,509 - INFO - [Aider-AI/aider] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-16 15:59:50,509 - INFO - [Aider-AI/aider] 📁 pull2issue file already exists, skipping...
+2026-06-16 15:59:50,511 - INFO - [Aider-AI/aider] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/Aider-AI__aider/prs/aider-prs-20090101.jsonl using issue-first approach
+2026-06-16 15:59:50,515 - INFO - Will skip 7 pull requests that have already been inspected
+2026-06-16 15:59:50,515 - INFO - [Aider-AI/aider] (Up to 0 checked) 7 valid, 1 with tests.
+2026-06-16 15:59:50,516 - INFO - [] 🎤 Total instances: 7, completed: 7, with tests: 1
+2026-06-16 15:59:50,516 - INFO - [] 🎤 Skipped 7 pull requests that have already been inspected
+2026-06-16 15:59:50,516 - INFO - [Aider-AI/aider] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/Aider-AI__aider/tasks/aider-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/AntonOsika__gpt-engineer/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/AntonOsika__gpt-engineer/tasks
+Received following number of repos to create task instances for: 1
+Found 2 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-16 15:59:50,754 - INFO - [AntonOsika/gpt-engineer] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-16 15:59:50,755 - INFO - [AntonOsika/gpt-engineer] 📁 pull2issue file already exists, skipping...
+2026-06-16 15:59:50,757 - INFO - [AntonOsika/gpt-engineer] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/AntonOsika__gpt-engineer/prs/gpt-engineer-prs-20090101.jsonl using issue-first approach
+2026-06-16 15:59:50,765 - INFO - Will skip 7 pull requests that have already been inspected
+2026-06-16 15:59:50,766 - INFO - [AntonOsika/gpt-engineer] (Up to 0 checked) 7 valid, 4 with tests.
+2026-06-16 15:59:50,766 - INFO - [] 🎤 Total instances: 7, completed: 7, with tests: 4
+2026-06-16 15:59:50,766 - INFO - [] 🎤 Skipped 7 pull requests that have already been inspected
+2026-06-16 15:59:50,766 - INFO - [AntonOsika/gpt-engineer] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/AntonOsika__gpt-engineer/tasks/gpt-engineer-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/Canner__WrenAI/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/Canner__WrenAI/tasks
+Received following number of repos to create task instances for: 1
+Found 2 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-16 15:59:51,004 - INFO - [Canner/WrenAI] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-16 15:59:51,004 - INFO - [Canner/WrenAI] 📁 pull2issue file already exists, skipping...
+2026-06-16 15:59:51,006 - INFO - [Canner/WrenAI] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/Canner__WrenAI/prs/WrenAI-prs-20090101.jsonl using issue-first approach
+2026-06-16 15:59:51,007 - INFO - Will skip 1 pull requests that have already been inspected
+2026-06-16 15:59:51,007 - INFO - [Canner/WrenAI] (Up to 0 checked) 1 valid, 0 with tests.
+2026-06-16 15:59:51,007 - INFO - [] 🎤 Total instances: 1, completed: 1, with tests: 0
+2026-06-16 15:59:51,007 - INFO - [] 🎤 Skipped 1 pull requests that have already been inspected
+2026-06-16 15:59:51,008 - INFO - [Canner/WrenAI] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/Canner__WrenAI/tasks/WrenAI-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/FoundationAgents__MetaGPT/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/FoundationAgents__MetaGPT/tasks
+Received following number of repos to create task instances for: 1
+Found 2 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-16 15:59:51,262 - INFO - [FoundationAgents/MetaGPT] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-16 15:59:51,263 - INFO - [FoundationAgents/MetaGPT] 📁 pull2issue file already exists, skipping...
+2026-06-16 15:59:51,264 - INFO - [FoundationAgents/MetaGPT] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/FoundationAgents__MetaGPT/prs/MetaGPT-prs-20090101.jsonl using issue-first approach
+2026-06-16 15:59:51,265 - INFO - Will skip 1 pull requests that have already been inspected
+2026-06-16 15:59:51,265 - INFO - [FoundationAgents/MetaGPT] (Up to 0 checked) 1 valid, 1 with tests.
+2026-06-16 15:59:51,266 - INFO - [] 🎤 Total instances: 1, completed: 1, with tests: 1
+2026-06-16 15:59:51,266 - INFO - [] 🎤 Skipped 1 pull requests that have already been inspected
+2026-06-16 15:59:51,266 - INFO - [FoundationAgents/MetaGPT] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/FoundationAgents__MetaGPT/tasks/MetaGPT-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/MLSysOps__MLE-agent/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/MLSysOps__MLE-agent/tasks
+Received following number of repos to create task instances for: 1
+Found 2 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-16 15:59:51,500 - INFO - [MLSysOps/MLE-agent] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-16 15:59:51,501 - INFO - [MLSysOps/MLE-agent] 📁 pull2issue file already exists, skipping...
+2026-06-16 15:59:51,503 - INFO - [MLSysOps/MLE-agent] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/MLSysOps__MLE-agent/prs/MLE-agent-prs-20090101.jsonl using issue-first approach
+2026-06-16 15:59:51,505 - INFO - Will skip 9 pull requests that have already been inspected
+2026-06-16 15:59:51,506 - INFO - [MLSysOps/MLE-agent] (Up to 0 checked) 9 valid, 0 with tests.
+2026-06-16 15:59:51,506 - INFO - [] 🎤 Total instances: 9, completed: 9, with tests: 0
+2026-06-16 15:59:51,506 - INFO - [] 🎤 Skipped 9 pull requests that have already been inspected
+2026-06-16 15:59:51,506 - INFO - [MLSysOps/MLE-agent] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/MLSysOps__MLE-agent/tasks/MLE-agent-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/Significant-Gravitas__AutoGPT/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/Significant-Gravitas__AutoGPT/tasks
+Received following number of repos to create task instances for: 1
+Found 2 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-16 15:59:51,740 - INFO - [Significant-Gravitas/AutoGPT] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-16 15:59:51,741 - INFO - [Significant-Gravitas/AutoGPT] 📁 pull2issue file already exists, skipping...
+2026-06-16 15:59:51,743 - INFO - [Significant-Gravitas/AutoGPT] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/Significant-Gravitas__AutoGPT/prs/AutoGPT-prs-20090101.jsonl using issue-first approach
+2026-06-16 15:59:51,745 - INFO - Will skip 5 pull requests that have already been inspected
+2026-06-16 15:59:51,745 - INFO - [Significant-Gravitas/AutoGPT] (Up to 0 checked) 5 valid, 4 with tests.
+2026-06-16 15:59:51,746 - INFO - [] 🎤 Total instances: 5, completed: 5, with tests: 4
+2026-06-16 15:59:51,746 - INFO - [] 🎤 Skipped 5 pull requests that have already been inspected
+2026-06-16 15:59:51,746 - INFO - [Significant-Gravitas/AutoGPT] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/Significant-Gravitas__AutoGPT/tasks/AutoGPT-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/ValueCell-ai__valuecell/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/ValueCell-ai__valuecell/tasks
+Received following number of repos to create task instances for: 1
+Found 2 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-16 15:59:51,983 - INFO - [ValueCell-ai/valuecell] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-16 15:59:51,984 - INFO - [ValueCell-ai/valuecell] 📁 pull2issue file already exists, skipping...
+2026-06-16 15:59:51,986 - INFO - [ValueCell-ai/valuecell] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/ValueCell-ai__valuecell/prs/valuecell-prs-20090101.jsonl using issue-first approach
+2026-06-16 15:59:51,987 - INFO - Will skip 4 pull requests that have already been inspected
+2026-06-16 15:59:51,987 - INFO - [ValueCell-ai/valuecell] (Up to 0 checked) 4 valid, 0 with tests.
+2026-06-16 15:59:51,988 - INFO - [] 🎤 Total instances: 4, completed: 4, with tests: 0
+2026-06-16 15:59:51,988 - INFO - [] 🎤 Skipped 4 pull requests that have already been inspected
+2026-06-16 15:59:51,988 - INFO - [ValueCell-ai/valuecell] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/ValueCell-ai__valuecell/tasks/valuecell-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/VoltAgent__voltagent/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/VoltAgent__voltagent/tasks
+Received following number of repos to create task instances for: 1
+Found 2 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-16 15:59:52,223 - INFO - [VoltAgent/voltagent] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-16 15:59:52,224 - INFO - [VoltAgent/voltagent] 📁 pull2issue file already exists, skipping...
+2026-06-16 15:59:52,225 - INFO - [VoltAgent/voltagent] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/VoltAgent__voltagent/prs/voltagent-prs-20090101.jsonl using issue-first approach
+2026-06-16 15:59:52,226 - INFO - Will skip 1 pull requests that have already been inspected
+2026-06-16 15:59:52,226 - INFO - [VoltAgent/voltagent] (Up to 0 checked) 1 valid, 0 with tests.
+2026-06-16 15:59:52,227 - INFO - [] 🎤 Total instances: 1, completed: 1, with tests: 0
+2026-06-16 15:59:52,227 - INFO - [] 🎤 Skipped 1 pull requests that have already been inspected
+2026-06-16 15:59:52,227 - INFO - [VoltAgent/voltagent] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/VoltAgent__voltagent/tasks/voltagent-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/agentscope-ai__agentscope/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/agentscope-ai__agentscope/tasks
+Received following number of repos to create task instances for: 1
+Found 2 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-16 15:59:52,462 - INFO - [agentscope-ai/agentscope] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-16 15:59:52,463 - INFO - [agentscope-ai/agentscope] 📁 pull2issue file already exists, skipping...
+2026-06-16 15:59:52,465 - INFO - [agentscope-ai/agentscope] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/agentscope-ai__agentscope/prs/agentscope-prs-20090101.jsonl using issue-first approach
+2026-06-16 15:59:52,468 - INFO - Will skip 12 pull requests that have already been inspected
+2026-06-16 15:59:52,468 - INFO - [agentscope-ai/agentscope] (Up to 0 checked) 12 valid, 4 with tests.
+2026-06-16 15:59:52,469 - INFO - [] 🎤 Total instances: 12, completed: 12, with tests: 4
+2026-06-16 15:59:52,469 - INFO - [] 🎤 Skipped 12 pull requests that have already been inspected
+2026-06-16 15:59:52,469 - INFO - [agentscope-ai/agentscope] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/agentscope-ai__agentscope/tasks/agentscope-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/always-further__AgentUp/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/always-further__AgentUp/tasks
+Received following number of repos to create task instances for: 1
+Found 2 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-16 15:59:52,705 - INFO - [always-further/AgentUp] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-16 15:59:52,706 - INFO - [always-further/AgentUp] 📁 pull2issue file already exists, skipping...
+2026-06-16 15:59:52,707 - INFO - [always-further/AgentUp] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/always-further__AgentUp/prs/AgentUp-prs-20090101.jsonl using issue-first approach
+2026-06-16 15:59:52,708 - INFO - Will skip 2 pull requests that have already been inspected
+2026-06-16 15:59:52,708 - INFO - [always-further/AgentUp] (Up to 0 checked) 2 valid, 0 with tests.
+2026-06-16 15:59:52,709 - INFO - [] 🎤 Total instances: 2, completed: 2, with tests: 0
+2026-06-16 15:59:52,709 - INFO - [] 🎤 Skipped 2 pull requests that have already been inspected
+2026-06-16 15:59:52,709 - INFO - [always-further/AgentUp] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/always-further__AgentUp/tasks/AgentUp-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/crewAIInc__crewAI/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/crewAIInc__crewAI/tasks
+Received following number of repos to create task instances for: 1
+Found 2 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-16 15:59:52,944 - INFO - [crewAIInc/crewAI] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-16 15:59:52,945 - INFO - [crewAIInc/crewAI] 📁 pull2issue file already exists, skipping...
+2026-06-16 15:59:52,947 - INFO - [crewAIInc/crewAI] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/crewAIInc__crewAI/prs/crewAI-prs-20090101.jsonl using issue-first approach
+2026-06-16 15:59:52,948 - INFO - Will skip 7 pull requests that have already been inspected
+2026-06-16 15:59:52,948 - INFO - [crewAIInc/crewAI] (Up to 0 checked) 7 valid, 2 with tests.
+2026-06-16 15:59:52,949 - INFO - [] 🎤 Total instances: 7, completed: 7, with tests: 2
+2026-06-16 15:59:52,949 - INFO - [] 🎤 Skipped 7 pull requests that have already been inspected
+2026-06-16 15:59:52,949 - INFO - [crewAIInc/crewAI] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/dapr__dapr-agents/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/dapr__dapr-agents/tasks
+Received following number of repos to create task instances for: 1
+Found 2 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-16 15:59:53,201 - INFO - [dapr/dapr-agents] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-16 15:59:53,202 - INFO - [dapr/dapr-agents] 📁 pull2issue file already exists, skipping...
+2026-06-16 15:59:53,204 - INFO - [dapr/dapr-agents] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/dapr__dapr-agents/prs/dapr-agents-prs-20090101.jsonl using issue-first approach
+2026-06-16 15:59:53,205 - INFO - Will skip 3 pull requests that have already been inspected
+2026-06-16 15:59:53,205 - INFO - [dapr/dapr-agents] (Up to 0 checked) 3 valid, 1 with tests.
+2026-06-16 15:59:53,205 - INFO - [] 🎤 Total instances: 3, completed: 3, with tests: 1
+2026-06-16 15:59:53,206 - INFO - [] 🎤 Skipped 3 pull requests that have already been inspected
+2026-06-16 15:59:53,206 - INFO - [dapr/dapr-agents] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/dapr__dapr-agents/tasks/dapr-agents-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/langchain-ai__langgraph/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/langchain-ai__langgraph/tasks
+Received following number of repos to create task instances for: 1
+Found 2 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-16 15:59:53,443 - INFO - [langchain-ai/langgraph] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-16 15:59:53,444 - INFO - [langchain-ai/langgraph] 📁 pull2issue file already exists, skipping...
+2026-06-16 15:59:53,446 - INFO - [langchain-ai/langgraph] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/langchain-ai__langgraph/prs/langgraph-prs-20090101.jsonl using issue-first approach
+2026-06-16 15:59:53,449 - INFO - Will skip 13 pull requests that have already been inspected
+2026-06-16 15:59:53,450 - INFO - [langchain-ai/langgraph] (Up to 0 checked) 13 valid, 11 with tests.
+2026-06-16 15:59:53,450 - INFO - [] 🎤 Total instances: 13, completed: 13, with tests: 11
+2026-06-16 15:59:53,450 - INFO - [] 🎤 Skipped 13 pull requests that have already been inspected
+2026-06-16 15:59:53,451 - INFO - [langchain-ai/langgraph] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/langchain-ai__langgraph/tasks/langgraph-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/mastra-ai__mastra/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/mastra-ai__mastra/tasks
+Received following number of repos to create task instances for: 1
+Found 2 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-16 15:59:53,703 - INFO - [mastra-ai/mastra] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-16 15:59:53,703 - INFO - [mastra-ai/mastra] 📁 pull2issue file already exists, skipping...
+2026-06-16 15:59:53,705 - INFO - [mastra-ai/mastra] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/mastra-ai__mastra/prs/mastra-prs-20090101.jsonl using issue-first approach
+2026-06-16 15:59:53,706 - INFO - Will skip 2 pull requests that have already been inspected
+2026-06-16 15:59:53,706 - INFO - [mastra-ai/mastra] (Up to 0 checked) 2 valid, 2 with tests.
+2026-06-16 15:59:53,707 - INFO - [] 🎤 Total instances: 2, completed: 2, with tests: 2
+2026-06-16 15:59:53,707 - INFO - [] 🎤 Skipped 2 pull requests that have already been inspected
+2026-06-16 15:59:53,707 - INFO - [mastra-ai/mastra] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/mastra-ai__mastra/tasks/mastra-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/reworkd__AgentGPT/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/reworkd__AgentGPT/tasks
+Received following number of repos to create task instances for: 1
+Found 2 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-16 15:59:53,957 - INFO - [reworkd/AgentGPT] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-16 15:59:53,957 - INFO - [reworkd/AgentGPT] 📁 pull2issue file already exists, skipping...
+2026-06-16 15:59:53,959 - INFO - [reworkd/AgentGPT] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/reworkd__AgentGPT/prs/AgentGPT-prs-20090101.jsonl using issue-first approach
+2026-06-16 15:59:53,960 - INFO - Will skip 5 pull requests that have already been inspected
+2026-06-16 15:59:53,960 - INFO - [reworkd/AgentGPT] (Up to 0 checked) 5 valid, 1 with tests.
+2026-06-16 15:59:53,961 - INFO - [] 🎤 Total instances: 5, completed: 5, with tests: 1
+2026-06-16 15:59:53,961 - INFO - [] 🎤 Skipped 5 pull requests that have already been inspected
+2026-06-16 15:59:53,961 - INFO - [reworkd/AgentGPT] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/reworkd__AgentGPT/tasks/AgentGPT-task-instances.jsonl
+Will save PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/strands-agents__sdk-python/prs
+Will save task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/strands-agents__sdk-python/tasks
+Received following number of repos to create task instances for: 1
+Found 2 tokens in baseline/tokens.txt
+Will use 1 tokens for creating task instances.
+2026-06-16 15:59:54,196 - INFO - [strands-agents/sdk-python] 🎾 Start the job using token ghp_TfsSUYmDM13xWQlE****
+2026-06-16 15:59:54,197 - INFO - [strands-agents/sdk-python] 📁 pull2issue file already exists, skipping...
+2026-06-16 15:59:54,198 - INFO - [strands-agents/sdk-python] ✅ Successfully saved PR data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/strands-agents__sdk-python/prs/sdk-python-prs-20090101.jsonl using issue-first approach
+2026-06-16 15:59:54,199 - INFO - Will skip 1 pull requests that have already been inspected
+2026-06-16 15:59:54,199 - INFO - [strands-agents/harness-sdk] (Up to 0 checked) 1 valid, 1 with tests.
+2026-06-16 15:59:54,200 - INFO - [] 🎤 Total instances: 1, completed: 1, with tests: 1
+2026-06-16 15:59:54,200 - INFO - [] 🎤 Skipped 1 pull requests that have already been inspected
+2026-06-16 15:59:54,200 - INFO - [strands-agents/sdk-python] ✅ Successfully saved task instance data to /home/cc/SWE-bench-Live/baseline/sbl_inputs/strands-agents__sdk-python/tasks/sdk-python-task-instances.jsonl
+
+[5] Merging Task Instances & Preparing Launch Config...
+Merged 32 instances -> /home/cc/SWE-bench-Live/baseline/sbl_task_instances_with_tests.jsonl
+Next (RepoLaunch / step3):
+cd launch
+export OPENAI_API_KEY=...  # required by RepoLaunch
+export TAVILY_API_KEY=...  # required by RepoLaunch
+python -m launch.run --config-path data/sbl_baseline/config.json
+
+[6] Exporting API Keys...
+
+[7] Executing RepoLaunch (Generating testable containers)...
+Obtaining file:///home/cc/SWE-bench-Live/launch
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: beautifulsoup4>=4.13.4 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (4.15.0)
+Requirement already satisfied: docker>=7.1.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (7.1.0)
+Requirement already satisfied: fire>=0.7.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (0.7.1)
+Requirement already satisfied: gitpython>=3.1.44 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (3.1.50)
+Requirement already satisfied: langchain==0.3.26 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (0.3.26)
+Requirement already satisfied: langchain-community==0.3.27 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (0.3.27)
+Requirement already satisfied: langchain-core==0.3.68 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (0.3.68)
+Requirement already satisfied: langchain-openai==0.3.27 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (0.3.27)
+Requirement already satisfied: langchain-anthropic in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (0.3.17)
+Requirement already satisfied: langgraph==0.5.2 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (0.5.2)
+Requirement already satisfied: pydantic==2.11.7 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (2.11.7)
+Requirement already satisfied: requests>=2.32.4 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (2.34.2)
+Requirement already satisfied: rich>=14.0.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (15.0.0)
+Requirement already satisfied: tenacity>=9.1.2 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (9.1.4)
+Requirement already satisfied: tornado>=6.5.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (6.5.7)
+Requirement already satisfied: typing-extensions>=4.14.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (4.15.0)
+Requirement already satisfied: pygithub in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (2.9.1)
+Requirement already satisfied: openai in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (1.109.1)
+Requirement already satisfied: azure-identity-broker in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from launch==0.1.0) (1.3.0)
+Requirement already satisfied: langchain-text-splitters<1.0.0,>=0.3.8 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain==0.3.26->launch==0.1.0) (0.3.8)
+Requirement already satisfied: langsmith>=0.1.17 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain==0.3.26->launch==0.1.0) (0.8.16)
+Requirement already satisfied: SQLAlchemy<3,>=1.4 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain==0.3.26->launch==0.1.0) (2.0.51)
+Requirement already satisfied: PyYAML>=5.3 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain==0.3.26->launch==0.1.0) (6.0.3)
+Requirement already satisfied: jsonpatch<2.0,>=1.33 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-core==0.3.68->launch==0.1.0) (1.33)
+Requirement already satisfied: packaging<25,>=23.2 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-core==0.3.68->launch==0.1.0) (24.2)
+Requirement already satisfied: annotated-types>=0.6.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from pydantic==2.11.7->launch==0.1.0) (0.7.0)
+Requirement already satisfied: pydantic-core==2.33.2 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from pydantic==2.11.7->launch==0.1.0) (2.33.2)
+Requirement already satisfied: typing-inspection>=0.4.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from pydantic==2.11.7->launch==0.1.0) (0.4.2)
+Requirement already satisfied: aiohttp<4.0.0,>=3.8.3 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-community==0.3.27->launch==0.1.0) (3.14.1)
+Requirement already satisfied: dataclasses-json<0.7,>=0.5.7 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-community==0.3.27->launch==0.1.0) (0.6.7)
+Requirement already satisfied: pydantic-settings<3.0.0,>=2.4.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-community==0.3.27->launch==0.1.0) (2.14.1)
+Requirement already satisfied: httpx-sse<1.0.0,>=0.4.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-community==0.3.27->launch==0.1.0) (0.4.3)
+Requirement already satisfied: numpy>=1.26.2 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-community==0.3.27->launch==0.1.0) (2.4.6)
+Requirement already satisfied: tiktoken<1,>=0.7 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-openai==0.3.27->launch==0.1.0) (0.13.0)
+Requirement already satisfied: langgraph-checkpoint<3.0.0,>=2.1.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langgraph==0.5.2->launch==0.1.0) (2.1.2)
+Requirement already satisfied: langgraph-prebuilt<0.6.0,>=0.5.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langgraph==0.5.2->launch==0.1.0) (0.5.2)
+Requirement already satisfied: langgraph-sdk<0.2.0,>=0.1.42 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langgraph==0.5.2->launch==0.1.0) (0.1.74)
+Requirement already satisfied: xxhash>=3.5.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langgraph==0.5.2->launch==0.1.0) (3.7.0)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.27->launch==0.1.0) (2.6.2)
+Requirement already satisfied: aiosignal>=1.4.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.27->launch==0.1.0) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.27->launch==0.1.0) (26.1.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.27->launch==0.1.0) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.27->launch==0.1.0) (6.7.1)
+Requirement already satisfied: propcache>=0.2.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.27->launch==0.1.0) (0.5.2)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from aiohttp<4.0.0,>=3.8.3->langchain-community==0.3.27->launch==0.1.0) (1.24.2)
+Requirement already satisfied: marshmallow<4.0.0,>=3.18.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from dataclasses-json<0.7,>=0.5.7->langchain-community==0.3.27->launch==0.1.0) (3.26.2)
+Requirement already satisfied: typing-inspect<1,>=0.4.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from dataclasses-json<0.7,>=0.5.7->langchain-community==0.3.27->launch==0.1.0) (0.9.0)
+Requirement already satisfied: jsonpointer>=1.9 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from jsonpatch<2.0,>=1.33->langchain-core==0.3.68->launch==0.1.0) (3.1.1)
+Requirement already satisfied: ormsgpack>=1.10.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langgraph-checkpoint<3.0.0,>=2.1.0->langgraph==0.5.2->launch==0.1.0) (1.12.2)
+Requirement already satisfied: httpx>=0.25.2 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langgraph-sdk<0.2.0,>=0.1.42->langgraph==0.5.2->launch==0.1.0) (0.28.1)
+Requirement already satisfied: orjson>=3.10.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langgraph-sdk<0.2.0,>=0.1.42->langgraph==0.5.2->launch==0.1.0) (3.11.9)
+Requirement already satisfied: anyio<5,>=3.5.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from openai->launch==0.1.0) (4.14.0)
+Requirement already satisfied: distro<2,>=1.7.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from openai->launch==0.1.0) (1.9.0)
+Requirement already satisfied: jiter<1,>=0.4.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from openai->launch==0.1.0) (0.15.0)
+Requirement already satisfied: sniffio in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from openai->launch==0.1.0) (1.3.1)
+Requirement already satisfied: tqdm>4 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from openai->launch==0.1.0) (4.68.2)
+Requirement already satisfied: idna>=2.8 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from anyio<5,>=3.5.0->openai->launch==0.1.0) (3.18)
+Requirement already satisfied: certifi in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from httpx>=0.25.2->langgraph-sdk<0.2.0,>=0.1.42->langgraph==0.5.2->launch==0.1.0) (2026.5.20)
+Requirement already satisfied: httpcore==1.* in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from httpx>=0.25.2->langgraph-sdk<0.2.0,>=0.1.42->langgraph==0.5.2->launch==0.1.0) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from httpcore==1.*->httpx>=0.25.2->langgraph-sdk<0.2.0,>=0.1.42->langgraph==0.5.2->launch==0.1.0) (0.16.0)
+Requirement already satisfied: python-dotenv>=0.21.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from pydantic-settings<3.0.0,>=2.4.0->langchain-community==0.3.27->launch==0.1.0) (1.2.2)
+Requirement already satisfied: charset_normalizer<4,>=2 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from requests>=2.32.4->launch==0.1.0) (3.4.7)
+Requirement already satisfied: urllib3<3,>=1.26 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from requests>=2.32.4->launch==0.1.0) (2.7.0)
+Requirement already satisfied: greenlet>=1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from SQLAlchemy<3,>=1.4->langchain==0.3.26->launch==0.1.0) (3.5.1)
+Requirement already satisfied: regex in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from tiktoken<1,>=0.7->langchain-openai==0.3.27->launch==0.1.0) (2026.5.9)
+Requirement already satisfied: mypy-extensions>=0.3.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from typing-inspect<1,>=0.4.0->dataclasses-json<0.7,>=0.5.7->langchain-community==0.3.27->launch==0.1.0) (1.1.0)
+Requirement already satisfied: soupsieve>=1.6.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from beautifulsoup4>=4.13.4->launch==0.1.0) (2.8.4)
+Requirement already satisfied: termcolor in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from fire>=0.7.0->launch==0.1.0) (3.3.0)
+Requirement already satisfied: gitdb<5,>=4.0.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from gitpython>=3.1.44->launch==0.1.0) (4.0.12)
+Requirement already satisfied: smmap<6,>=3.0.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from gitdb<5,>=4.0.1->gitpython>=3.1.44->launch==0.1.0) (5.0.3)
+Requirement already satisfied: requests-toolbelt>=1.0.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langsmith>=0.1.17->langchain==0.3.26->launch==0.1.0) (1.0.0)
+Requirement already satisfied: uuid-utils<1.0,>=0.12.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langsmith>=0.1.17->langchain==0.3.26->launch==0.1.0) (0.16.1)
+Requirement already satisfied: websockets>=15.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langsmith>=0.1.17->langchain==0.3.26->launch==0.1.0) (16.0)
+Requirement already satisfied: zstandard>=0.23.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langsmith>=0.1.17->langchain==0.3.26->launch==0.1.0) (0.25.0)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from rich>=14.0.0->launch==0.1.0) (4.2.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from rich>=14.0.0->launch==0.1.0) (2.20.0)
+Requirement already satisfied: mdurl~=0.1 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from markdown-it-py>=2.2.0->rich>=14.0.0->launch==0.1.0) (0.1.2)
+Requirement already satisfied: azure-identity<2.0.0,>=1.18.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from azure-identity-broker->launch==0.1.0) (1.25.3)
+Requirement already satisfied: msal<2,>=1.33.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from msal[broker]<2,>=1.33.0->azure-identity-broker->launch==0.1.0) (1.37.0)
+Requirement already satisfied: azure-core>=1.31.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from azure-identity<2.0.0,>=1.18.0->azure-identity-broker->launch==0.1.0) (1.41.0)
+Requirement already satisfied: cryptography>=2.5 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from azure-identity<2.0.0,>=1.18.0->azure-identity-broker->launch==0.1.0) (49.0.0)
+Requirement already satisfied: msal-extensions>=1.2.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from azure-identity<2.0.0,>=1.18.0->azure-identity-broker->launch==0.1.0) (1.3.1)
+Requirement already satisfied: PyJWT<3,>=1.0.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from PyJWT[crypto]<3,>=1.0.0->msal<2,>=1.33.0->msal[broker]<2,>=1.33.0->azure-identity-broker->launch==0.1.0) (2.13.0)
+Requirement already satisfied: cffi>=2.0.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from cryptography>=2.5->azure-identity<2.0.0,>=1.18.0->azure-identity-broker->launch==0.1.0) (2.0.0)
+Requirement already satisfied: pymsalruntime<0.21,>=0.20 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from msal[broker]<2,>=1.33.0->azure-identity-broker->launch==0.1.0) (0.20.6)
+Requirement already satisfied: pycparser in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from cffi>=2.0.0->cryptography>=2.5->azure-identity<2.0.0,>=1.18.0->azure-identity-broker->launch==0.1.0) (3.0)
+Requirement already satisfied: anthropic<1,>=0.57.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from langchain-anthropic->launch==0.1.0) (0.109.2)
+Requirement already satisfied: docstring-parser<1,>=0.15 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from anthropic<1,>=0.57.0->langchain-anthropic->launch==0.1.0) (0.18.0)
+Requirement already satisfied: pynacl>=1.4.0 in /home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages (from pygithub->launch==0.1.0) (1.6.2)
+Building wheels for collected packages: launch
+  Building editable for launch (pyproject.toml): started
+  Building editable for launch (pyproject.toml): finished with status 'done'
+  Created wheel for launch: filename=launch-0.1.0-0.editable-py3-none-any.whl size=4955 sha256=701096881fcd0716578470fdfa70a84063d01465732c0f9af74932df6910f6c8
+  Stored in directory: /tmp/pip-ephem-wheel-cache-w1482bx8/wheels/1f/8d/f8/94f3e6313eee10f9e7c49ee63f93584cf1584eb89c7ead3108
+Successfully built launch
+Installing collected packages: launch
+  Attempting uninstall: launch
+    Found existing installation: launch 0.1.0
+    Uninstalling launch-0.1.0:
+      Successfully uninstalled launch-0.1.0
+Successfully installed launch-0.1.0
+/home/cc/SWE-bench-Live/launch/launch/agent/organize/testall.py:144: SyntaxWarning: invalid escape sequence '\S'
+  m = re.search(r'(\S+::\S+)\s+(PASSED|FAILED|SKIPPED|XFAIL|XPASS)', line)
+────────────────────────────────────────────────────────────────  Starting Launching Repositories... ────────────────────────────────────────────────────────────────
+Processing Aider-AI__aider-1239 (Aider-AI/aider)
+Processing AntonOsika__gpt-engineer-173 (AntonOsika/gpt-engineer)
+Processing AntonOsika__gpt-engineer-409 (AntonOsika/gpt-engineer)
+Processing AntonOsika__gpt-engineer-930 (AntonOsika/gpt-engineer)
+Processing AntonOsika__gpt-engineer-1198 (AntonOsika/gpt-engineer)
+Processing FoundationAgents__MetaGPT-1459 (FoundationAgents/MetaGPT)
+Processing Significant-Gravitas__AutoGPT-2616 (Significant-Gravitas/AutoGPT)
+Processing Significant-Gravitas__AutoGPT-3144 (Significant-Gravitas/AutoGPT)
+Processing Significant-Gravitas__AutoGPT-4278 (Significant-Gravitas/AutoGPT)
+Processing Significant-Gravitas__AutoGPT-4652 (Significant-Gravitas/AutoGPT)
+Processing agentscope-ai__agentscope-443 (agentscope-ai/agentscope)
+Processing agentscope-ai__agentscope-1141 (agentscope-ai/agentscope)
+Processing agentscope-ai__agentscope-1279 (agentscope-ai/agentscope)
+Processing agentscope-ai__agentscope-1290 (agentscope-ai/agentscope)
+Processing crewAIInc__crewAI-3994 (crewAIInc/crewAI)
+Processing crewAIInc__crewAI-4073 (crewAIInc/crewAI)
+Processing dapr__dapr-agents-152 (dapr/dapr-agents)
+Processing langchain-ai__langgraph-4842 (langchain-ai/langgraph)
+Processing langchain-ai__langgraph-5707 (langchain-ai/langgraph)
+Processing langchain-ai__langgraph-5771 (langchain-ai/langgraph)
+Processing langchain-ai__langgraph-5798 (langchain-ai/langgraph)
+Processing langchain-ai__langgraph-5801 (langchain-ai/langgraph)
+Processing langchain-ai__langgraph-6106 (langchain-ai/langgraph)
+Processing langchain-ai__langgraph-6161 (langchain-ai/langgraph)
+Processing langchain-ai__langgraph-6236 (langchain-ai/langgraph)
+Processing langchain-ai__langgraph-6509 (langchain-ai/langgraph)
+Processing langchain-ai__langgraph-6586 (langchain-ai/langgraph)
+Processing langchain-ai__langgraph-6665 (langchain-ai/langgraph)
+Processing mastra-ai__mastra-6241 (mastra-ai/mastra)
+Processing mastra-ai__mastra-6612 (mastra-ai/mastra)
+Processing reworkd__AgentGPT-302 (reworkd/AgentGPT)
+Processing strands-agents__harness-sdk-994 (strands-agents/harness-sdk)
+/home/cc/miniconda3/envs/sbl/lib/python3.12/site-packages/langchain/__init__.py:30: UserWarning: Importing verbose from langchain root module is no longer supported. Please use langchain.globals.set_verbose() / langchain.globals.get_verbose() instead.
+  warnings.warn(
+/home/cc/SWE-bench-Live/launch/launch/agent/state.py:133: LangChainDeprecationWarning: The class `TavilySearchResults` was deprecated in LangChain 0.3.25 and will be removed in 1.0. An updated version of the class exists in the :class:`~langchain-tavily package and should be used instead. To use it run `pip install -U :class:`~langchain-tavily` and import as `from :class:`~langchain_tavily import TavilySearch``.
+  search_tool=TavilySearchResults(max_results=max_search_results),
+Setting up environment for language: python
+Setting up environment for language: python
+Image repolaunch/dev:AntonOsika__gpt-engineer-173_linux created successfully.
+Now Processing AntonOsika__gpt-engineer-173 (AntonOsika/gpt-engineer)
+Success! AntonOsika__gpt-engineer-173 (Elapsed: 00:04:52)
+Image repolaunch/dev:AntonOsika__gpt-engineer-409_linux created successfully.
+Now Processing AntonOsika__gpt-engineer-409 (AntonOsika/gpt-engineer)
+Success! AntonOsika__gpt-engineer-409 (Elapsed: 00:05:28)
+Setting up environment for language: python
+Setting up environment for language: python
+Image repolaunch/dev:AntonOsika__gpt-engineer-930_linux created successfully.
+Setting up environment for language: python
+Now Processing AntonOsika__gpt-engineer-930 (AntonOsika/gpt-engineer)
+Success! AntonOsika__gpt-engineer-930 (Elapsed: 00:10:32)
+Setting up environment for language: python
+Image repolaunch/dev:AntonOsika__gpt-engineer-1198_linux created successfully.
+Image repolaunch/dev:Aider-AI__aider-1239_linux created successfully.
+Now Processing AntonOsika__gpt-engineer-1198 (AntonOsika/gpt-engineer)
+Success! AntonOsika__gpt-engineer-1198 (Elapsed: 00:15:34)
+Now Processing Aider-AI__aider-1239 (Aider-AI/aider)
+Success! Aider-AI__aider-1239 (Elapsed: 00:15:50)
+Setting up environment for language: python
+Image repolaunch/dev:Significant-Gravitas__AutoGPT-2616_linux created successfully.
+Now Processing Significant-Gravitas__AutoGPT-2616 (Significant-Gravitas/AutoGPT)
+Success! Significant-Gravitas__AutoGPT-2616 (Elapsed: 00:19:54)
+Setting up environment for language: python
+Setting up environment for language: python
+Setting up environment for language: python
+Image repolaunch/dev:Significant-Gravitas__AutoGPT-4278_linux created successfully.
+Now Processing Significant-Gravitas__AutoGPT-4278 (Significant-Gravitas/AutoGPT)
+Success! Significant-Gravitas__AutoGPT-4278 (Elapsed: 00:27:10)
+Image repolaunch/dev:Significant-Gravitas__AutoGPT-4652_linux created successfully.
+Now Processing Significant-Gravitas__AutoGPT-4652 (Significant-Gravitas/AutoGPT)
+Success! Significant-Gravitas__AutoGPT-4652 (Elapsed: 00:28:40)
+Setting up environment for language: python
+Setting up environment for language: python
+Image repolaunch/dev:FoundationAgents__MetaGPT-1459_linux created successfully.
+Now Processing FoundationAgents__MetaGPT-1459 (FoundationAgents/MetaGPT)
+Success! FoundationAgents__MetaGPT-1459 (Elapsed: 00:34:17)
+Setting up environment for language: python
+Image repolaunch/dev:agentscope-ai__agentscope-1141_linux created successfully.
+Now Processing agentscope-ai__agentscope-1141 (agentscope-ai/agentscope)
+Success! agentscope-ai__agentscope-1141 (Elapsed: 00:45:37)
+Image repolaunch/dev:agentscope-ai__agentscope-443_linux created successfully.
+Now Processing agentscope-ai__agentscope-443 (agentscope-ai/agentscope)
+Success! agentscope-ai__agentscope-443 (Elapsed: 00:46:22)
+Image repolaunch/dev:agentscope-ai__agentscope-1279_linux created successfully.
+Image repolaunch/dev:Significant-Gravitas__AutoGPT-3144_linux created successfully.
+Now Processing Significant-Gravitas__AutoGPT-3144 (Significant-Gravitas/AutoGPT)
+Success! Significant-Gravitas__AutoGPT-3144 (Elapsed: 00:48:13)
+Now Processing agentscope-ai__agentscope-1279 (agentscope-ai/agentscope)
+Success! agentscope-ai__agentscope-1279 (Elapsed: 00:48:14)
+Setting up environment for language: python
+Setting up environment for language: python
+Setting up environment for language: python
+Setting up environment for language: python
+Image repolaunch/dev:dapr__dapr-agents-152_linux created successfully.
+Now Processing dapr__dapr-agents-152 (dapr/dapr-agents)
+Success! dapr__dapr-agents-152 (Elapsed: 01:00:51)
+Image repolaunch/dev:agentscope-ai__agentscope-1290_linux created successfully.
+Now Processing agentscope-ai__agentscope-1290 (agentscope-ai/agentscope)
+Success! agentscope-ai__agentscope-1290 (Elapsed: 01:04:08)
+Setting up environment for language: python
+Setting up environment for language: python
+Image repolaunch/dev:crewAIInc__crewAI-3994_linux created successfully.
+Now Processing crewAIInc__crewAI-3994 (crewAIInc/crewAI)
+Success! crewAIInc__crewAI-3994 (Elapsed: 01:10:00)
+Image repolaunch/dev:langchain-ai__langgraph-4842_linux created successfully.
+Now Processing langchain-ai__langgraph-4842 (langchain-ai/langgraph)
+Success! langchain-ai__langgraph-4842 (Elapsed: 01:11:06)
+Setting up environment for language: python
+Setting up environment for language: python
+Image repolaunch/dev:crewAIInc__crewAI-4073_linux created successfully.
+Now Processing crewAIInc__crewAI-4073 (crewAIInc/crewAI)
+Success! crewAIInc__crewAI-4073 (Elapsed: 01:23:39)
+Setting up environment for language: python
+Image repolaunch/dev:langchain-ai__langgraph-5707_linux created successfully.
+Now Processing langchain-ai__langgraph-5707 (langchain-ai/langgraph)
+Success! langchain-ai__langgraph-5707 (Elapsed: 01:36:15)
+Image repolaunch/dev:langchain-ai__langgraph-5771_linux created successfully.
+Now Processing langchain-ai__langgraph-5771 (langchain-ai/langgraph)
+Success! langchain-ai__langgraph-5771 (Elapsed: 01:36:55)
+Image repolaunch/dev:langchain-ai__langgraph-5801_linux created successfully.
+Setting up environment for language: python
+Setting up environment for language: python
+Now Processing langchain-ai__langgraph-5801 (langchain-ai/langgraph)
+Success! langchain-ai__langgraph-5801 (Elapsed: 01:41:08)
+Setting up environment for language: python
+Image repolaunch/dev:langchain-ai__langgraph-6106_linux created successfully.
+Now Processing langchain-ai__langgraph-6106 (langchain-ai/langgraph)
+Success! langchain-ai__langgraph-6106 (Elapsed: 01:52:17)
+Image repolaunch/dev:langchain-ai__langgraph-6161_linux created successfully.
+Now Processing langchain-ai__langgraph-6161 (langchain-ai/langgraph)
+Success! langchain-ai__langgraph-6161 (Elapsed: 01:52:44)
+Image repolaunch/dev:langchain-ai__langgraph-6236_linux created successfully.
+Now Processing langchain-ai__langgraph-6236 (langchain-ai/langgraph)
+Success! langchain-ai__langgraph-6236 (Elapsed: 01:57:16)
+Setting up environment for language: python
+Setting up environment for language: python
+Setting up environment for language: python
+Image repolaunch/dev:langchain-ai__langgraph-6665_linux created successfully.
+Now Processing langchain-ai__langgraph-6665 (langchain-ai/langgraph)
+Success! langchain-ai__langgraph-6665 (Elapsed: 02:07:22)
+Image repolaunch/dev:langchain-ai__langgraph-6509_linux created successfully.
+Now Processing langchain-ai__langgraph-6509 (langchain-ai/langgraph)
+Success! langchain-ai__langgraph-6509 (Elapsed: 02:08:03)
+Warning! Result not found!
+Now Processing mastra-ai__mastra-6241 (mastra-ai/mastra)
+Failed mastra-ai__mastra-6241: Result Empty Error! (Elapsed: 02:13:09)
+Warning! Result not found!
+Now Processing mastra-ai__mastra-6612 (mastra-ai/mastra)
+Failed mastra-ai__mastra-6612: Result Empty Error! (Elapsed: 02:14:26)
+Warning! Result not found!
+Now Processing reworkd__AgentGPT-302 (reworkd/AgentGPT)
+Failed reworkd__AgentGPT-302: Result Empty Error! (Elapsed: 02:15:46)
+Setting up environment for language: python
+Image repolaunch/dev:langchain-ai__langgraph-6586_linux created successfully.
+Now Processing langchain-ai__langgraph-6586 (langchain-ai/langgraph)
+Success! langchain-ai__langgraph-6586 (Elapsed: 02:21:16)
+Image repolaunch/dev:langchain-ai__langgraph-5798_linux created successfully.
+Now Processing langchain-ai__langgraph-5798 (langchain-ai/langgraph)
+Success! langchain-ai__langgraph-5798 (Elapsed: 02:29:37)
+Image repolaunch/dev:strands-agents__harness-sdk-994_linux created successfully.
+Now Processing strands-agents__harness-sdk-994 (strands-agents/harness-sdk)
+Success! strands-agents__harness-sdk-994 (Elapsed: 03:22:18)
+  Success: 29 | Fail: 3 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Total: 32 100% 3:22:18
+────────────────────────────────────────────────────────────────  Finished setting up all instances! ────────────────────────────────────────────────────────────────
+Saved 29 instances to data/sbl_baseline/setup.jsonl
+────────────────────────────────────────────────────────────────  Starting Organizing Launch Info... ────────────────────────────────────────────────────────────────
+Processing-1 AntonOsika__gpt-engineer-1198 (AntonOsika/gpt-engineer)
+Processing-1 crewAIInc__crewAI-3994 (crewAIInc/crewAI)
+Processing-1 agentscope-ai__agentscope-1290 (agentscope-ai/agentscope)
+Processing-1 agentscope-ai__agentscope-443 (agentscope-ai/agentscope)
+Processing-1 FoundationAgents__MetaGPT-1459 (FoundationAgents/MetaGPT)
+Processing-1 langchain-ai__langgraph-6161 (langchain-ai/langgraph)
+Processing-1 langchain-ai__langgraph-6509 (langchain-ai/langgraph)
+Processing-1 Significant-Gravitas__AutoGPT-4652 (Significant-Gravitas/AutoGPT)
+Processing-1 AntonOsika__gpt-engineer-409 (AntonOsika/gpt-engineer)
+Processing-1 langchain-ai__langgraph-5707 (langchain-ai/langgraph)
+Processing-1 Significant-Gravitas__AutoGPT-4278 (Significant-Gravitas/AutoGPT)
+Processing-1 strands-agents__harness-sdk-994 (strands-agents/harness-sdk)
+Processing-1 agentscope-ai__agentscope-1141 (agentscope-ai/agentscope)
+Processing-1 agentscope-ai__agentscope-1279 (agentscope-ai/agentscope)
+Processing-1 langchain-ai__langgraph-6586 (langchain-ai/langgraph)
+Processing-1 langchain-ai__langgraph-5801 (langchain-ai/langgraph)
+Processing-1 dapr__dapr-agents-152 (dapr/dapr-agents)
+Processing-1 crewAIInc__crewAI-4073 (crewAIInc/crewAI)
+Processing-1 Significant-Gravitas__AutoGPT-3144 (Significant-Gravitas/AutoGPT)
+Processing-1 AntonOsika__gpt-engineer-173 (AntonOsika/gpt-engineer)
+Processing-1 AntonOsika__gpt-engineer-930 (AntonOsika/gpt-engineer)
+Processing-1 langchain-ai__langgraph-5798 (langchain-ai/langgraph)
+Processing-1 langchain-ai__langgraph-6236 (langchain-ai/langgraph)
+Processing-1 Significant-Gravitas__AutoGPT-2616 (Significant-Gravitas/AutoGPT)
+Processing-1 langchain-ai__langgraph-5771 (langchain-ai/langgraph)
+Processing-1 langchain-ai__langgraph-6106 (langchain-ai/langgraph)
+Processing-1 Aider-AI__aider-1239 (Aider-AI/aider)
+Processing-1 langchain-ai__langgraph-6665 (langchain-ai/langgraph)
+Processing-1 langchain-ai__langgraph-4842 (langchain-ai/langgraph)
+Image repolaunch/dev:AntonOsika__gpt-engineer-1198_linux created successfully.
+Now Processing AntonOsika__gpt-engineer-1198 (AntonOsika/gpt-engineer)
+Success! AntonOsika__gpt-engineer-1198 (Elapsed: 00:08:02)
+Image repolaunch/dev:agentscope-ai__agentscope-443_linux created successfully.
+Now Processing agentscope-ai__agentscope-443 (agentscope-ai/agentscope)
+Success! agentscope-ai__agentscope-443 (Elapsed: 00:11:56)
+Image repolaunch/dev:langchain-ai__langgraph-6161_linux created successfully.
+Now Processing langchain-ai__langgraph-6161 (langchain-ai/langgraph)
+Success! langchain-ai__langgraph-6161 (Elapsed: 00:25:30)
+Image repolaunch/dev:FoundationAgents__MetaGPT-1459_linux created successfully.
+Now Processing FoundationAgents__MetaGPT-1459 (FoundationAgents/MetaGPT)
+Success! FoundationAgents__MetaGPT-1459 (Elapsed: 00:29:49)
+Image repolaunch/dev:agentscope-ai__agentscope-1290_linux created successfully.
+Now Processing agentscope-ai__agentscope-1290 (agentscope-ai/agentscope)
+Success! agentscope-ai__agentscope-1290 (Elapsed: 00:33:09)
+Now Processing langchain-ai__langgraph-6509 (langchain-ai/langgraph)
+Failed langchain-ai__langgraph-6509: Organize failed (Elapsed: 00:35:58)
+Now Processing Significant-Gravitas__AutoGPT-4652 (Significant-Gravitas/AutoGPT)
+Failed Significant-Gravitas__AutoGPT-4652: Organize failed (Elapsed: 00:40:26)
+Image repolaunch/dev:AntonOsika__gpt-engineer-409_linux created successfully.
+Now Processing AntonOsika__gpt-engineer-409 (AntonOsika/gpt-engineer)
+Success! AntonOsika__gpt-engineer-409 (Elapsed: 00:40:52)
+Now Processing langchain-ai__langgraph-5707 (langchain-ai/langgraph)
+Failed langchain-ai__langgraph-5707: Organize failed (Elapsed: 00:43:54)
+Image repolaunch/dev:strands-agents__harness-sdk-994_linux created successfully.
+Now Processing strands-agents__harness-sdk-994 (strands-agents/harness-sdk)
+Success! strands-agents__harness-sdk-994 (Elapsed: 00:48:03)
+Now Processing agentscope-ai__agentscope-1141 (agentscope-ai/agentscope)
+Failed agentscope-ai__agentscope-1141: Organize failed (Elapsed: 00:48:23)
+Now Processing agentscope-ai__agentscope-1279 (agentscope-ai/agentscope)
+Failed agentscope-ai__agentscope-1279: Organize failed (Elapsed: 00:52:41)
+404 GET /pytest-flaky/ (172.17.0.3) 306.75ms
+Image repolaunch/dev:Significant-Gravitas__AutoGPT-4278_linux created successfully.
+Now Processing Significant-Gravitas__AutoGPT-4278 (Significant-Gravitas/AutoGPT)
+Success! Significant-Gravitas__AutoGPT-4278 (Elapsed: 00:56:37)
+Now Processing langchain-ai__langgraph-5801 (langchain-ai/langgraph)
+Failed langchain-ai__langgraph-5801: Organize failed (Elapsed: 01:03:48)
+Now Processing dapr__dapr-agents-152 (dapr/dapr-agents)
+Failed dapr__dapr-agents-152: Organize failed (Elapsed: 01:05:31)
+Image repolaunch/dev:langchain-ai__langgraph-6586_linux created successfully.
+Now Processing langchain-ai__langgraph-6586 (langchain-ai/langgraph)
+Success! langchain-ai__langgraph-6586 (Elapsed: 01:07:28)
+Now Processing crewAIInc__crewAI-3994 (crewAIInc/crewAI)
+Failed crewAIInc__crewAI-3994: Organize failed (Elapsed: 01:09:30)
+Now Processing FoundationAgents__MetaGPT-1459 (FoundationAgents/MetaGPT)
+Success! FoundationAgents__MetaGPT-1459 (Elapsed: 00:00:00)
+Now Processing AntonOsika__gpt-engineer-1198 (AntonOsika/gpt-engineer)
+Success! AntonOsika__gpt-engineer-1198 (Elapsed: 00:00:00)
+Now Processing agentscope-ai__agentscope-443 (agentscope-ai/agentscope)
+Success! agentscope-ai__agentscope-443 (Elapsed: 00:00:00)
+Now Processing dapr__dapr-agents-152 (dapr/dapr-agents)
+Failed dapr__dapr-agents-152: Organize failed (Elapsed: 00:00:00)
+Now Processing langchain-ai__langgraph-6509 (langchain-ai/langgraph)
+Failed langchain-ai__langgraph-6509: Organize failed (Elapsed: 00:00:00)
+Now Processing langchain-ai__langgraph-5801 (langchain-ai/langgraph)
+Failed langchain-ai__langgraph-5801: Organize failed (Elapsed: 00:00:00)
+Now Processing crewAIInc__crewAI-4073 (crewAIInc/crewAI)
+Success! crewAIInc__crewAI-4073 (Elapsed: 00:00:00)
+Now Processing AntonOsika__gpt-engineer-930 (AntonOsika/gpt-engineer)
+Success! AntonOsika__gpt-engineer-930 (Elapsed: 00:00:00)
+Now Processing AntonOsika__gpt-engineer-173 (AntonOsika/gpt-engineer)
+Success! AntonOsika__gpt-engineer-173 (Elapsed: 00:00:00)
+Now Processing langchain-ai__langgraph-5798 (langchain-ai/langgraph)
+Failed langchain-ai__langgraph-5798: Organize failed (Elapsed: 00:00:00)
+Now Processing langchain-ai__langgraph-6236 (langchain-ai/langgraph)
+Success! langchain-ai__langgraph-6236 (Elapsed: 00:00:00)
+Now Processing langchain-ai__langgraph-5771 (langchain-ai/langgraph)
+Failed langchain-ai__langgraph-5771: Organize failed (Elapsed: 00:00:00)
+Now Processing Significant-Gravitas__AutoGPT-2616 (Significant-Gravitas/AutoGPT)
+Failed Significant-Gravitas__AutoGPT-2616: Organize failed (Elapsed: 00:00:00)
+Now Processing langchain-ai__langgraph-6106 (langchain-ai/langgraph)
+Failed langchain-ai__langgraph-6106: Organize failed (Elapsed: 00:00:00)
+Now Processing langchain-ai__langgraph-6665 (langchain-ai/langgraph)
+Success! langchain-ai__langgraph-6665 (Elapsed: 00:00:00)
+Now Processing langchain-ai__langgraph-4842 (langchain-ai/langgraph)
+Failed langchain-ai__langgraph-4842: Organize failed (Elapsed: 00:00:00)
+Now Processing Aider-AI__aider-1239 (Aider-AI/aider)
+Success! Aider-AI__aider-1239 (Elapsed: 00:00:00)
+Image repolaunch/dev:Significant-Gravitas__AutoGPT-3144_linux created successfully.
+Now Processing Significant-Gravitas__AutoGPT-3144 (Significant-Gravitas/AutoGPT)
+Success! Significant-Gravitas__AutoGPT-3144 (Elapsed: 00:15:23)
+  Success: 16 | Fail: 13 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Total: 29 100% 0:15:23
+────────────────────────────────────────────────────────  Finished organizing all instances! ─────────────────────────────────────────────────────────
+Saved 16 instances to data/sbl_baseline/organize.jsonl
+
+[8] Building F2P Dataset (Validation)...
+Loaded 16 instances.
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/7e21c184-47af-41d7-9df9-e4f0b3aba4a1.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/5af54f41-e00c-4b56-a99e-4cb06568d6bd.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/71e8aa67-6ff9-4252-a72b-fbf35b716a51.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/a1fc9e34-9d86-4d29-b9d2-748f1a053f41.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/a353a326-7d05-4468-9e3c-6d4a7cd5c089.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/7a3ef49b-b71e-4131-a2ca-99e767d8966d.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/1189caa6-97ea-4352-8ce1-c7b6ffe4c753.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/6ad1c3db-792c-445c-9d6a-14065c374ac3.diff  ---- Patch applied Successfully!
+AntonOsika__gpt-engineer-1198 : num of fail_to_pass: 1
+Find one valid instance: AntonOsika__gpt-engineer-1198
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/bc24d24e-d644-4220-b6c6-1d84e8cab17c.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/b302b478-54d3-4443-9bc9-f0d19d69db5b.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/733b264c-1333-405c-b07f-520e1515e442.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/e4b710da-7537-4800-b53f-b79257fe76dc.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/e7453f2a-8e33-43e0-89da-6d49df51b102.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/a2a4163f-3165-4d92-acd3-b932890960c3.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/79db28c0-8d86-4d35-a1ae-d82991e5bbdb.diff  ---- Patch applied Successfully!
+agentscope-ai__agentscope-443 : num of fail_to_pass: 0
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/36d40712-c1f8-420c-b965-a119d719801d.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/bed473ba-8d24-4b35-abd4-ee855b474760.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/cc6e4674-6968-4744-b0b8-04f2e080723b.diff  ---- Patch applied Successfully!
+AntonOsika__gpt-engineer-409 : num of fail_to_pass: 16
+Find one valid instance: AntonOsika__gpt-engineer-409
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/2b16caa7-3d8b-404e-b3e0-a3c28899f638.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/f37ff695-b72e-4046-a8f1-12685de9edb7.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/04c1a920-9736-4774-9f85-40a68eb4ef7b.diff  ---- Patch applied Successfully!
+Significant-Gravitas__AutoGPT-4278 : num of fail_to_pass: 0
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/cf881f6a-dadf-4b47-b9bd-e70d6ade6996.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/ad476e2c-2496-491a-b239-14cd60bb388e.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/212468a9-63ae-486b-80db-622b0e27c2f1.diff  ---- Patch applied Successfully!
+langchain-ai__langgraph-6161 : num of fail_to_pass: 3
+Find one valid instance: langchain-ai__langgraph-6161
+strands-agents__harness-sdk-994 : num of fail_to_pass: 1
+Find one valid instance: strands-agents__harness-sdk-994
+FoundationAgents__MetaGPT-1459 : num of fail_to_pass: 0
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/33708aae-fb94-4063-8002-71fa8f8c5c51.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/772e9a69-b3e4-4874-a870-03c5743bd905.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/01867a4a-3ff8-4527-8d89-108a5a22283c.diff  ---- Patch applied Successfully!
+langchain-ai__langgraph-6586 : num of fail_to_pass: 0
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/cdc8c240-f16b-4445-a04d-8b37de0ecab9.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/e91582c0-30ca-4d3f-bac7-bd3bf81c8715.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/94cc8524-f333-40dc-862c-727a725477be.diff  ---- Patch applied Successfully!
+agentscope-ai__agentscope-1290 : num of fail_to_pass: 1
+Find one valid instance: agentscope-ai__agentscope-1290
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/7e6c8f6e-f784-4a2f-be2c-894bdd545b35.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/0120a8a7-cfa6-4e0b-bf4c-896dd8171f16.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/2665da7a-e7af-4b47-bffa-7083ae0a6da4.diff  ---- Patch applied Successfully!
+crewAIInc__crewAI-4073 : num of fail_to_pass: 1
+Find one valid instance: crewAIInc__crewAI-4073
+Significant-Gravitas__AutoGPT-3144 : num of fail_to_pass: 313
+Find one valid instance: Significant-Gravitas__AutoGPT-3144
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/a9d02dd5-bed2-4288-ba91-e6276d59e11d.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/bde650cf-2448-4780-be4b-cf6dc4d4aa19.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/eaeac697-7934-4c73-9f12-13438e3223ba.diff  ---- Patch applied Successfully!
+AntonOsika__gpt-engineer-173 : num of fail_to_pass: 1
+Find one valid instance: AntonOsika__gpt-engineer-173
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/be3b7a4c-241b-4990-9594-89338d8ba25c.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/9822f6b7-fbb1-4ec6-af27-cb7938cab06f.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/fefcf34b-308f-4e24-8eb0-a0d991c94072.diff  ---- Patch applied Successfully!
+AntonOsika__gpt-engineer-930 : num of fail_to_pass: 0
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/177cc33c-6575-428a-973f-db3978152bb7.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/a4eac1ea-7f28-4154-8bf3-fdbeb7a49011.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/51fc631c-0ecf-4af2-b171-a88a602c8614.diff  ---- Patch applied Successfully!
+langchain-ai__langgraph-6236 : num of fail_to_pass: 0
+FoundationAgents__MetaGPT-1459 : num of fail_to_pass: 0
+TIMEOUT: Instance langchain-ai__langgraph-6161 exceeded 1200 seconds. Skipping...
+TIMEOUT: Instance strands-agents__harness-sdk-994 exceeded 1200 seconds. Skipping...
+TIMEOUT: Instance crewAIInc__crewAI-4073 exceeded 1200 seconds. Skipping...
+TIMEOUT: Instance langchain-ai__langgraph-6236 exceeded 1200 seconds. Skipping...
+Saved 5 valid instances.
+
+[9] Preparing SWE-Factory Judge format...
+Loaded 16 instances from /home/cc/SWE-bench-Live/launch/data/sbl_baseline/organize.jsonl
+Writing judge-compatible outputs to /home/cc/SWE-bench-Live/baseline/sf_judge_f2p_outputs
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/3a8aec96-0ca3-47f5-a140-ff9d2ad240af.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/b9b73ad0-ffc8-46eb-9442-f5e04cc9b2e6.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/2f3365b0-e109-4c13-9f45-fc8929c15721.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/f9dab51b-3b34-4ecd-b8bb-980d72b4f241.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/2f4fa1e5-8755-4061-b04a-5fbfaa828d7b.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/ecda2f04-12e5-4270-8c4a-ccba6e8216d7.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/f56fd4f1-2174-4bcf-b5cd-1e3b9ab1b4a5.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/c0b854f0-bb0f-4e99-88ab-7440165af090.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/2757cefc-e759-49a4-8e01-49115dbe41c0.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/c9d2059f-3a3b-4c62-a881-78c87523258b.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/05dbde4a-6e32-4f0d-92c3-03515f593d35.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/ec8a062d-00d0-49fa-9667-424985a9bd9d.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/54ff885c-7630-4d59-9138-63058daf12a4.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/39e726c8-4f70-4b2d-a50d-086686dc57d1.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/9f1ce189-b369-47ab-a41d-fdd4ed4e2d14.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/51b255f2-60a2-4b3b-970b-f2525055b567.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/379ca51f-695f-4fbd-8e38-0259ceb1bfe2.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/099e6bbb-6d48-46bf-b56e-f0adac700f4c.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/487ef6a7-1531-4aef-9b61-6218fd82343b.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/8ec1e0e9-be7f-4b77-9197-ea358b2914c4.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/f3b4988c-dda8-430e-ab12-5d7cd8130238.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/4d2068f1-b4c6-410e-bddc-098b53abd3d3.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/b3322bd9-7bfe-485b-9728-7d7bca927f98.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/4cd4ef63-9325-4cd7-b5e4-42ad73f60d12.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/da90718a-94c8-474a-9764-70b012d77306.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/37fd7485-bbc3-4442-b81f-345d55b2784d.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/1049a82d-1e1c-41d8-9a1c-90dcb8a22ea6.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/28a8546a-7777-4e03-ac0e-931b51199f47.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/d38d7171-bf84-4c4b-841c-797d84922889.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/0b325e6e-139e-4ef3-b8c0-bbddc81e67e0.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/25591db0-d68f-4e16-8ff0-edbb7961fc98.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/0a401990-853b-441c-85d2-3951d0e5072b.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/5a5c49a9-4354-4472-8bfb-c1892024d863.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/dc5ca456-9a85-448b-b75f-259d76dc1627.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/f57204ef-5796-4354-9ccb-2789eacbb553.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/52f60e8c-f90c-4b99-a3d9-87fb5dbda793.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/c339b6a6-6096-40fd-ab5b-80943ff6094c.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/164b6ae3-e3d4-46d0-b532-0e542219e34f.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/21be5835-c934-4de2-96ea-9b729009f9f1.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/e4b2c5a1-7f6e-45f5-aeab-cee4e226f4e0.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/2820734c-413d-4d99-b1bb-0aaca4fa4cc9.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/757a466b-22b7-4100-84b8-ac5bc5ca868f.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/bd8001aa-302e-4124-8819-16f2b550db75.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/b1bf03ea-1f60-4554-8a5f-b02c834490ab.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/a84c8cdc-572c-44d7-8ea1-c95265b6201b.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/0a316f17-d833-4589-9f4b-da1f417d836e.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/927d855c-ede5-4977-bb8b-b75a93e66e7b.diff  ---- Patch applied Successfully!
+git apply --reject  --whitespace=nowarn  /testbed/mnt_tmp/df5fdb65-370c-46d9-a039-e98b03f14141.diff  ---- Patch applied Successfully!
+Done. ok=16 skip=0 error=0
+
+[10] Classifying Fail2Pass Status (SWE-Factory)...
+
+Classifying:   0%|          | 0/16 [00:00<?, ?it/s]
+Classifying: 100%|██████████| 16/16 [00:00<00:00, 453.93it/s]
+Classification summary:
+  fail2pass: 5
+  fail2fail: 2
+  pass2pass: 7
+  pass2fail: 2
+  error: 0
+Summary JSON written to '/home/cc/SWE-bench-Live/baseline/sf_judge_f2p_summary.json'
+
+[Telemetry] Waiting 5 seconds for API metrics to sync...
+Ending cost tracker...
+Recording session end stats...
+Session usage summary (from 2026-06-16T22:59:42.270671+00:00 to 2026-06-17T16:37:11.601737+00:00):
+  - Total requests: 10
+  - Input tokens: 10,834
+  - Output tokens: 4,501
+  - Total tokens: 15,335
+  - Cost: $0.121685
+
+==============================================
+       SBL PIPELINE FUNNEL REPORT             
+==============================================
+1. Initial JSON map        : 80 items
+2. RepoLaunch Generated    : 16 instances (organize.jsonl)
+3. Validated F2P/P2P       : 5 instances
+==============================================
+Pipeline Duration : 17:37:29 (63449 total seconds)
+Master Log File   : /home/cc/SWE-bench-Live/logs/runs/pipeline_20260617_155943.log
+SWE-Factory Judge : /home/cc/SWE-bench-Live/baseline/sf_judge_f2p_summary.json
+==============================================
+
+============================================================
+ ✓ Pipeline Completed Successfully!
+============================================================

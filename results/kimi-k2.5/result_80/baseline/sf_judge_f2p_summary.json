@@ -1,0 +1,30 @@
+{
+  "total": 16,
+  "categories": {
+    "fail2pass": [
+      "AntonOsika__gpt-engineer-1198",
+      "agentscope-ai__agentscope-1290",
+      "langchain-ai__langgraph-6161",
+      "strands-agents__harness-sdk-994",
+      "AntonOsika__gpt-engineer-173"
+    ],
+    "fail2fail": [
+      "crewAIInc__crewAI-4073",
+      "langchain-ai__langgraph-6236"
+    ],
+    "pass2pass": [
+      "agentscope-ai__agentscope-443",
+      "FoundationAgents__MetaGPT-1459",
+      "Significant-Gravitas__AutoGPT-4278",
+      "langchain-ai__langgraph-6586",
+      "AntonOsika__gpt-engineer-930",
+      "Aider-AI__aider-1239",
+      "langchain-ai__langgraph-6665"
+    ],
+    "pass2fail": [
+      "AntonOsika__gpt-engineer-409",
+      "Significant-Gravitas__AutoGPT-3144"
+    ],
+    "error": []
+  }
+}

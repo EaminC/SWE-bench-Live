@@ -1,0 +1,26 @@
+{
+  "total": 12,
+  "categories": {
+    "fail2pass": [
+      "agentscope-ai__agentscope-962"
+    ],
+    "fail2fail": [
+      "AntonOsika__gpt-engineer-720"
+    ],
+    "pass2pass": [
+      "FoundationAgents__MetaGPT-1450",
+      "langflow-ai__langflow-6747",
+      "FoundationAgents__MetaGPT-1058",
+      "AntonOsika__gpt-engineer-1120",
+      "agentscope-ai__agentscope-263",
+      "FoundationAgents__MetaGPT-1500",
+      "AntonOsika__gpt-engineer-930",
+      "AntonOsika__gpt-engineer-721"
+    ],
+    "pass2fail": [
+      "langflow-ai__langflow-3862",
+      "FoundationAgents__MetaGPT-1544"
+    ],
+    "error": []
+  }
+}

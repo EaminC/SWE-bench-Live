@@ -1,0 +1,143 @@
+cat test-output.log
+============================= test session starts ==============================
+platform linux -- Python 3.10.20, pytest-7.3.1, pluggy-1.3.0 -- /usr/local/bin/python3.10
+cachedir: .pytest_cache
+metadata: {'Python': '3.10.20', 'Platform': 'Linux-5.4.0-198-generic-x86_64-with-glibc2.41', 'Packages': {'pytest': '7.3.1', 'pluggy': '1.3.0'}, 'Plugins': {'json-report': '1.5.0', 'metadata': '3.0.0'}}
+rootdir: /testbed
+plugins: json-report-1.5.0, metadata-3.0.0
+collecting ... collected 17 items
+
+tests/test_ai.py::test_ai XFAIL (Constructor assumes API access)         [  5%]
+tests/test_chat_to_files.py::test_to_files PASSED                        [ 11%]
+tests/test_chat_to_files.py::test_to_files_with_square_brackets PASSED   [ 17%]
+tests/test_chat_to_files.py::test_files_with_brackets_in_name PASSED     [ 23%]
+tests/test_chat_to_files.py::test_files_with_file_colon PASSED           [ 29%]
+tests/test_chat_to_files.py::test_files_with_back_tick PASSED            [ 35%]
+tests/test_chat_to_files.py::test_files_with_newline_between PASSED      [ 41%]
+tests/test_chat_to_files.py::test_files_with_newline_between_header PASSED [ 47%]
+tests/test_collect.py::test_collect_learnings FAILED                     [ 52%]
+tests/test_db.py::test_DB_operations PASSED                              [ 58%]
+tests/test_db.py::test_DBs_initialization FAILED                         [ 64%]
+tests/test_db.py::test_invalid_path FAILED                               [ 70%]
+tests/test_db.py::test_large_files PASSED                                [ 76%]
+tests/test_db.py::test_concurrent_access PASSED                          [ 82%]
+tests/test_db.py::test_error_messages PASSED                             [ 88%]
+tests/test_db.py::test_DBs_dataclass_attributes FAILED                   [ 94%]
+tests/steps/test_archive.py::test_archive FAILED                         [100%]
+
+=================================== FAILURES ===================================
+____________________________ test_collect_learnings ____________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f28f040bb20>
+
+    def test_collect_learnings(monkeypatch):
+        monkeypatch.setattr(os, "environ", {"COLLECT_LEARNINGS_OPT_IN": "true"})
+        monkeypatch.setattr(rudder_analytics, "track", MagicMock())
+    
+        model = "test_model"
+        temperature = 0.5
+        steps = [gen_code_after_unit_tests]
+>       dbs = DBs(
+            DB("/tmp"), DB("/tmp"), DB("/tmp"), DB("/tmp"), DB("/tmp"), DB("/tmp"), DB("/tmp")
+        )
+E       TypeError: DBs.__init__() takes 7 positional arguments but 8 were given
+
+tests/test_collect.py:22: TypeError
+___________________________ test_DBs_initialization ____________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-12/test_DBs_initialization0')
+
+    def test_DBs_initialization(tmp_path):
+        dir_names = [
+            "memory",
+            "logs",
+            "preprompts",
+            "input",
+            "workspace",
+            "archive",
+            "project_metadata",
+        ]
+        directories = [tmp_path / name for name in dir_names]
+    
+        # Create DB objects
+        dbs = [DB(dir) for dir in directories]
+    
+        # Create DB instance
+>       dbs_instance = DBs(*dbs)
+E       TypeError: DBs.__init__() takes 7 positional arguments but 8 were given
+
+tests/test_db.py:37: TypeError
+______________________________ test_invalid_path _______________________________
+
+    def test_invalid_path():
+>       with pytest.raises((PermissionError, OSError)):
+E       Failed: DID NOT RAISE (<class 'PermissionError'>, <class 'OSError'>)
+
+tests/test_db.py:49: Failed
+________________________ test_DBs_dataclass_attributes _________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-12/test_DBs_dataclass_attributes0')
+
+    def test_DBs_dataclass_attributes(tmp_path):
+        dir_names = [
+            "memory",
+            "logs",
+            "preprompts",
+            "input",
+            "workspace",
+            "archive",
+            "project_metadata",
+        ]
+        directories = [tmp_path / name for name in dir_names]
+    
+        # Create DB objects
+        dbs = [DB(dir) for dir in directories]
+    
+        # Create DBs instance
+>       dbs_instance = DBs(*dbs)
+E       TypeError: DBs.__init__() takes 7 positional arguments but 8 were given
+
+tests/test_db.py:124: TypeError
+_________________________________ test_archive _________________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-12/test_archive0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f28f0598340>
+
+    def test_archive(tmp_path, monkeypatch):
+>       dbs = setup_dbs(
+            tmp_path,
+            [
+                "memory",
+                "logs",
+                "preprompts",
+                "input",
+                "workspace",
+                "archive",
+                "project_metadata",
+            ],
+        )
+
+tests/steps/test_archive.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-12/test_archive0')
+dir_names = ['memory', 'logs', 'preprompts', 'input', 'workspace', 'archive', ...]
+
+    def setup_dbs(tmp_path, dir_names):
+        directories = [tmp_path / name for name in dir_names]
+    
+        # Create DB objects
+        dbs = [DB(dir) for dir in directories]
+    
+        # Create DBs instance
+>       return DBs(*dbs)
+E       TypeError: DBs.__init__() takes 7 positional arguments but 8 were given
+
+tests/steps/test_archive.py:22: TypeError
+=========================== short test summary info ============================
+FAILED tests/test_collect.py::test_collect_learnings - TypeError: DBs.__init_...
+FAILED tests/test_db.py::test_DBs_initialization - TypeError: DBs.__init__() ...
+FAILED tests/test_db.py::test_invalid_path - Failed: DID NOT RAISE (<class 'P...
+FAILED tests/test_db.py::test_DBs_dataclass_attributes - TypeError: DBs.__ini...
+FAILED tests/steps/test_archive.py::test_archive - TypeError: DBs.__init__() ...
+=================== 5 failed, 11 passed, 1 xfailed in 4.99s ====================

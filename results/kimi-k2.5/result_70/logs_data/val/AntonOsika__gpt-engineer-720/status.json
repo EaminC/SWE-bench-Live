@@ -1,0 +1,61 @@
+{
+ "instance_id": "AntonOsika__gpt-engineer-720",
+ "pre_patch_status": {
+  "tests/test_ai.py::test_ai": "pass",
+  "tests/test_chat_to_files.py::test_to_files": "pass",
+  "tests/test_chat_to_files.py::test_to_files_with_square_brackets": "pass",
+  "tests/test_chat_to_files.py::test_files_with_brackets_in_name": "pass",
+  "tests/test_chat_to_files.py::test_files_with_file_colon": "pass",
+  "tests/test_chat_to_files.py::test_files_with_back_tick": "pass",
+  "tests/test_chat_to_files.py::test_files_with_newline_between": "pass",
+  "tests/test_chat_to_files.py::test_files_with_newline_between_header": "pass",
+  "tests/test_collect.py::test_collect_learnings": "fail",
+  "tests/test_db.py::test_DB_operations": "pass",
+  "tests/test_db.py::test_DBs_initialization": "fail",
+  "tests/test_db.py::test_invalid_path": "fail",
+  "tests/test_db.py::test_large_files": "pass",
+  "tests/test_db.py::test_concurrent_access": "pass",
+  "tests/test_db.py::test_error_messages": "pass",
+  "tests/test_db.py::test_DBs_dataclass_attributes": "fail",
+  "tests/steps/test_archive.py::test_archive": "fail"
+ },
+ "post_patch_status": {
+  "tests/test_db.py::test_large_files": "pass",
+  "tests/test_chat_to_files.py::test_files_with_brackets_in_name": "pass",
+  "tests/test_chat_to_files.py::test_files_with_newline_between": "pass",
+  "tests/test_db.py::test_DBs_dataclass_attributes": "pass",
+  "tests/steps/test_archive.py::test_archive": "pass",
+  "tests/test_chat_to_files.py::test_to_files": "pass",
+  "tests/test_db.py::test_invalid_path": "fail",
+  "tests/test_db.py::test_DB_operations": "pass",
+  "tests/test_chat_to_files.py::test_files_with_back_tick": "pass",
+  "tests/test_db.py::test_concurrent_access": "pass",
+  "tests/test_collect.py::test_collect_learnings": "pass",
+  "tests/test_ai.py::test_ai": "pass",
+  "tests/test_db.py::test_error_messages": "pass",
+  "tests/test_chat_to_files.py::test_files_with_file_colon": "pass",
+  "tests/test_chat_to_files.py::test_files_with_newline_between_header": "pass",
+  "tests/test_chat_to_files.py::test_to_files_with_square_brackets": "pass",
+  "tests/test_db.py::test_DBs_initialization": "pass"
+ },
+ "PASS_TO_PASS": [
+  "tests/test_chat_to_files.py::test_files_with_back_tick",
+  "tests/test_chat_to_files.py::test_files_with_brackets_in_name",
+  "tests/test_db.py::test_large_files",
+  "tests/test_chat_to_files.py::test_files_with_newline_between",
+  "tests/test_db.py::test_concurrent_access",
+  "tests/test_chat_to_files.py::test_to_files",
+  "tests/test_ai.py::test_ai",
+  "tests/test_db.py::test_error_messages",
+  "tests/test_chat_to_files.py::test_files_with_file_colon",
+  "tests/test_db.py::test_DB_operations",
+  "tests/test_chat_to_files.py::test_files_with_newline_between_header",
+  "tests/test_chat_to_files.py::test_to_files_with_square_brackets"
+ ],
+ "FAIL_TO_PASS": [
+  "tests/test_collect.py::test_collect_learnings",
+  "tests/steps/test_archive.py::test_archive",
+  "tests/test_db.py::test_DBs_dataclass_attributes",
+  "tests/test_db.py::test_DBs_initialization"
+ ]
+}

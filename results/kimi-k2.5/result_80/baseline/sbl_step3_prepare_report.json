@@ -1,0 +1,343 @@
+{
+  "task_files_total": 16,
+  "task_files_non_empty": 11,
+  "instances_merged": 32,
+  "merged_output": "baseline/sbl_task_instances_with_tests.jsonl",
+  "launch_dataset": "launch/data/sbl_baseline/dataset.jsonl",
+  "launch_config": "launch/data/sbl_baseline/config.json",
+  "instances": [
+    {
+      "instance_id": "Aider-AI__aider-1239",
+      "repo": "Aider-AI/aider",
+      "pull_number": 1239,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/Aider-AI__aider/tasks/aider-task-instances.jsonl"
+    },
+    {
+      "instance_id": "AntonOsika__gpt-engineer-173",
+      "repo": "AntonOsika/gpt-engineer",
+      "pull_number": 173,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/AntonOsika__gpt-engineer/tasks/gpt-engineer-task-instances.jsonl"
+    },
+    {
+      "instance_id": "AntonOsika__gpt-engineer-409",
+      "repo": "AntonOsika/gpt-engineer",
+      "pull_number": 409,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 7
+      },
+      "source_file": "baseline/sbl_inputs/AntonOsika__gpt-engineer/tasks/gpt-engineer-task-instances.jsonl"
+    },
+    {
+      "instance_id": "AntonOsika__gpt-engineer-930",
+      "repo": "AntonOsika/gpt-engineer",
+      "pull_number": 930,
+      "language": "Python",
+      "ext_counts": {
+        ".json": 1,
+        ".py": 1
+      },
+      "source_file": "baseline/sbl_inputs/AntonOsika__gpt-engineer/tasks/gpt-engineer-task-instances.jsonl"
+    },
+    {
+      "instance_id": "AntonOsika__gpt-engineer-1198",
+      "repo": "AntonOsika/gpt-engineer",
+      "pull_number": 1198,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 3
+      },
+      "source_file": "baseline/sbl_inputs/AntonOsika__gpt-engineer/tasks/gpt-engineer-task-instances.jsonl"
+    },
+    {
+      "instance_id": "FoundationAgents__MetaGPT-1459",
+      "repo": "FoundationAgents/MetaGPT",
+      "pull_number": 1459,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 3
+      },
+      "source_file": "baseline/sbl_inputs/FoundationAgents__MetaGPT/tasks/MetaGPT-task-instances.jsonl"
+    },
+    {
+      "instance_id": "Significant-Gravitas__AutoGPT-2616",
+      "repo": "Significant-Gravitas/AutoGPT",
+      "pull_number": 2616,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 7
+      },
+      "source_file": "baseline/sbl_inputs/Significant-Gravitas__AutoGPT/tasks/AutoGPT-task-instances.jsonl"
+    },
+    {
+      "instance_id": "Significant-Gravitas__AutoGPT-3144",
+      "repo": "Significant-Gravitas/AutoGPT",
+      "pull_number": 3144,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 4
+      },
+      "source_file": "baseline/sbl_inputs/Significant-Gravitas__AutoGPT/tasks/AutoGPT-task-instances.jsonl"
+    },
+    {
+      "instance_id": "Significant-Gravitas__AutoGPT-4278",
+      "repo": "Significant-Gravitas/AutoGPT",
+      "pull_number": 4278,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 7
+      },
+      "source_file": "baseline/sbl_inputs/Significant-Gravitas__AutoGPT/tasks/AutoGPT-task-instances.jsonl"
+    },
+    {
+      "instance_id": "Significant-Gravitas__AutoGPT-4652",
+      "repo": "Significant-Gravitas/AutoGPT",
+      "pull_number": 4652,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/Significant-Gravitas__AutoGPT/tasks/AutoGPT-task-instances.jsonl"
+    },
+    {
+      "instance_id": "agentscope-ai__agentscope-443",
+      "repo": "agentscope-ai/agentscope",
+      "pull_number": 443,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/agentscope-ai__agentscope/tasks/agentscope-task-instances.jsonl"
+    },
+    {
+      "instance_id": "agentscope-ai__agentscope-1141",
+      "repo": "agentscope-ai/agentscope",
+      "pull_number": 1141,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 3
+      },
+      "source_file": "baseline/sbl_inputs/agentscope-ai__agentscope/tasks/agentscope-task-instances.jsonl"
+    },
+    {
+      "instance_id": "agentscope-ai__agentscope-1279",
+      "repo": "agentscope-ai/agentscope",
+      "pull_number": 1279,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/agentscope-ai__agentscope/tasks/agentscope-task-instances.jsonl"
+    },
+    {
+      "instance_id": "agentscope-ai__agentscope-1290",
+      "repo": "agentscope-ai/agentscope",
+      "pull_number": 1290,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/agentscope-ai__agentscope/tasks/agentscope-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-3994",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 3994,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 4
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "crewAIInc__crewAI-4073",
+      "repo": "crewAIInc/crewAI",
+      "pull_number": 4073,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/crewAIInc__crewAI/tasks/crewAI-task-instances.jsonl"
+    },
+    {
+      "instance_id": "dapr__dapr-agents-152",
+      "repo": "dapr/dapr-agents",
+      "pull_number": 152,
+      "language": "Python",
+      "ext_counts": {
+        ".yaml": 1,
+        ".py": 5
+      },
+      "source_file": "baseline/sbl_inputs/dapr__dapr-agents/tasks/dapr-agents-task-instances.jsonl"
+    },
+    {
+      "instance_id": "langchain-ai__langgraph-4842",
+      "repo": "langchain-ai/langgraph",
+      "pull_number": 4842,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/langchain-ai__langgraph/tasks/langgraph-task-instances.jsonl"
+    },
+    {
+      "instance_id": "langchain-ai__langgraph-5707",
+      "repo": "langchain-ai/langgraph",
+      "pull_number": 5707,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/langchain-ai__langgraph/tasks/langgraph-task-instances.jsonl"
+    },
+    {
+      "instance_id": "langchain-ai__langgraph-5771",
+      "repo": "langchain-ai/langgraph",
+      "pull_number": 5771,
+      "language": "Python",
+      "ext_counts": {
+        ".md": 1,
+        ".lock": 1,
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/langchain-ai__langgraph/tasks/langgraph-task-instances.jsonl"
+    },
+    {
+      "instance_id": "langchain-ai__langgraph-5798",
+      "repo": "langchain-ai/langgraph",
+      "pull_number": 5798,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/langchain-ai__langgraph/tasks/langgraph-task-instances.jsonl"
+    },
+    {
+      "instance_id": "langchain-ai__langgraph-5801",
+      "repo": "langchain-ai/langgraph",
+      "pull_number": 5801,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 9,
+        ".ambr": 1
+      },
+      "source_file": "baseline/sbl_inputs/langchain-ai__langgraph/tasks/langgraph-task-instances.jsonl"
+    },
+    {
+      "instance_id": "langchain-ai__langgraph-6106",
+      "repo": "langchain-ai/langgraph",
+      "pull_number": 6106,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/langchain-ai__langgraph/tasks/langgraph-task-instances.jsonl"
+    },
+    {
+      "instance_id": "langchain-ai__langgraph-6161",
+      "repo": "langchain-ai/langgraph",
+      "pull_number": 6161,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/langchain-ai__langgraph/tasks/langgraph-task-instances.jsonl"
+    },
+    {
+      "instance_id": "langchain-ai__langgraph-6236",
+      "repo": "langchain-ai/langgraph",
+      "pull_number": 6236,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 7
+      },
+      "source_file": "baseline/sbl_inputs/langchain-ai__langgraph/tasks/langgraph-task-instances.jsonl"
+    },
+    {
+      "instance_id": "langchain-ai__langgraph-6509",
+      "repo": "langchain-ai/langgraph",
+      "pull_number": 6509,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/langchain-ai__langgraph/tasks/langgraph-task-instances.jsonl"
+    },
+    {
+      "instance_id": "langchain-ai__langgraph-6586",
+      "repo": "langchain-ai/langgraph",
+      "pull_number": 6586,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 5
+      },
+      "source_file": "baseline/sbl_inputs/langchain-ai__langgraph/tasks/langgraph-task-instances.jsonl"
+    },
+    {
+      "instance_id": "langchain-ai__langgraph-6665",
+      "repo": "langchain-ai/langgraph",
+      "pull_number": 6665,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/langchain-ai__langgraph/tasks/langgraph-task-instances.jsonl"
+    },
+    {
+      "instance_id": "mastra-ai__mastra-6241",
+      "repo": "mastra-ai/mastra",
+      "pull_number": 6241,
+      "language": "JS/TS",
+      "ext_counts": {
+        ".md": 1,
+        ".ts": 2
+      },
+      "source_file": "baseline/sbl_inputs/mastra-ai__mastra/tasks/mastra-task-instances.jsonl"
+    },
+    {
+      "instance_id": "mastra-ai__mastra-6612",
+      "repo": "mastra-ai/mastra",
+      "pull_number": 6612,
+      "language": "JS/TS",
+      "ext_counts": {
+        ".ts": 2
+      },
+      "source_file": "baseline/sbl_inputs/mastra-ai__mastra/tasks/mastra-task-instances.jsonl"
+    },
+    {
+      "instance_id": "reworkd__AgentGPT-302",
+      "repo": "reworkd/AgentGPT",
+      "pull_number": 302,
+      "language": "JS/TS",
+      "ext_counts": {
+        ".tsx": 1,
+        ".ts": 2
+      },
+      "source_file": "baseline/sbl_inputs/reworkd__AgentGPT/tasks/AgentGPT-task-instances.jsonl"
+    },
+    {
+      "instance_id": "strands-agents__harness-sdk-994",
+      "repo": "strands-agents/harness-sdk",
+      "pull_number": 994,
+      "language": "Python",
+      "ext_counts": {
+        ".py": 2
+      },
+      "source_file": "baseline/sbl_inputs/strands-agents__sdk-python/tasks/sdk-python-task-instances.jsonl"
+    }
+  ],
+  "next_commands": [
+    "cd launch",
+    "export OPENAI_API_KEY=...  # required by RepoLaunch",
+    "export TAVILY_API_KEY=...  # required by RepoLaunch",
+    "python -m launch.run --config-path data/sbl_baseline/config.json"
+  ]
+}

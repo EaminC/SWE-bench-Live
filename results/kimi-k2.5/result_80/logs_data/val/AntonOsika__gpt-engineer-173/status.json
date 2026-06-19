@@ -1,0 +1,26 @@
+{
+ "instance_id": "AntonOsika__gpt-engineer-173",
+ "pre_patch_status": {
+  "tests/test_ai.py::test_ai": "pass",
+  "tests/test_chat_to_files.py::test_to_files": "pass",
+  "tests/test_chat_to_files.py::test_to_files_with_square_brackets": "fail",
+  "tests/test_chat_to_files.py::test_files_with_brackets_in_name": "pass",
+  "tests/test_db.py::test_db": "pass"
+ },
+ "post_patch_status": {
+  "tests/test_ai.py::test_ai": "pass",
+  "tests/test_chat_to_files.py::test_to_files": "pass",
+  "tests/test_db.py::test_db": "pass",
+  "tests/test_chat_to_files.py::test_to_files_with_square_brackets": "pass",
+  "tests/test_chat_to_files.py::test_files_with_brackets_in_name": "pass"
+ },
+ "PASS_TO_PASS": [
+  "tests/test_ai.py::test_ai",
+  "tests/test_chat_to_files.py::test_to_files",
+  "tests/test_db.py::test_db",
+  "tests/test_chat_to_files.py::test_files_with_brackets_in_name"
+ ],
+ "FAIL_TO_PASS": [
+  "tests/test_chat_to_files.py::test_to_files_with_square_brackets"
+ ]
+}
